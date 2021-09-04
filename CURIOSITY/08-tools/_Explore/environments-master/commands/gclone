@@ -1,3 +1,0 @@
-git clone --recurse $1
-cd $(basename $1 .git)
-git submodule foreach --recursive git checkout master

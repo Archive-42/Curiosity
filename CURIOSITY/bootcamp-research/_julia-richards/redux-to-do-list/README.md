@@ -1,1 +1,0 @@
-# redux-to-do-list

@@ -1,1 +1,0 @@
-# React Twitter Revisited Starter

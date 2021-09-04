@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAEA,AAAA,IAAI,CAAC;EACH,OAAO,EAAE,GAAG;EACZ,QAAQ,EAAE,KAAK;EACf,KAAK,EAAE,GAAG;EACV,UAAU,EAAE,GAAG;EACf,QAAQ,EAAE,MAAM;EAChB,gBAAgB,EAAE,KAAK;EACvB,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,GAAG,CAAC,GAAG,CAAC,IAAI,CAAC,qBAAkB;CAC5C",
-    "sources": [
-        "../modules/pop.scss"
-    ],
-    "names": [],
-    "file": "pop.css"
-}

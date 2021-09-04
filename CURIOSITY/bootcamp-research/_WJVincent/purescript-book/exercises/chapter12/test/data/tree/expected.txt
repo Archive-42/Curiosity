@@ -1,6 +1,0 @@
-./root.txt
-./a.txt
-./b/a.txt
-./b/b.txt
-./b/c/a.txt
-./c/a/a.txt

@@ -1,7 +1,0 @@
-{
-  "imports": {
-    "@stripe/stripe-js": "./@stripe/stripe-js.js",
-    "bepis": "./bepis.js",
-    "style.dss": "./style.dss.js"
-  }
-}

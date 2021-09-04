@@ -1,1 +1,0 @@
-export const basePath = process.env.REACT_APP_BASE_PATH || `http://localhost:4000`

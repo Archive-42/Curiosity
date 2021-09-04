@@ -1,7 +1,0 @@
-syntax: glob
-*.pyc
-*.swp
-.DS_Store
-answers
-.git
-.idea

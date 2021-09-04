@@ -1,2 +1,0 @@
-require('./User');
-require('./Question');
