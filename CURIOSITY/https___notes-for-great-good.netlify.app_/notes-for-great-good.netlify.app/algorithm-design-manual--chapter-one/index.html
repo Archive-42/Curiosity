@@ -1,0 +1,823 @@
+<!DOCTYPE html><html>
+<!-- Mirrored from notes-for-great-good.netlify.app/algorithm-design-manual--chapter-one/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:37:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.45 'Open Sans',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:'Open Sans',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}ul{margin-left:1.45rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.45rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;font-size:0.85rem;line-height:1.45rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;font-size:1rem;line-height:1.45rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}blockquote{margin-left:1.45rem;margin-right:1.45rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.45rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.45rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.45rem;margin-bottom:calc(1.45rem / 2);margin-top:calc(1.45rem / 2);}li > ul{margin-left:1.45rem;margin-bottom:calc(1.45rem / 2);margin-top:calc(1.45rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.45rem / 2);}code{font-size:0.85rem;line-height:1.45rem;}kbd{font-size:0.85rem;line-height:1.45rem;}samp{font-size:0.85rem;line-height:1.45rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:0.96667rem;padding-right:0.96667rem;padding-top:0.725rem;padding-bottom:calc(0.725rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><link rel="apple-touch-icon" sizes="96x96" href="../icons/icon-96x96c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><title data-react-helmet="true"></title><style data-href="/styles.d86a406e5dede3da8914.css">.container-wrapper{text-align:center;margin:auto;width:60%;min-height:calc(100vh - 310px);flex:1 1}.container-wrapper section{padding:3rem 1.5rem}@media (max-width:900px){.container-wrapper{width:90%;min-height:calc(100vh - 360px)}}@media (max-width:600px){.container-wrapper{width:95%}}code[class*=language-],pre[class*=language-]{color:#ccc;font-size:1em;white-space:pre;word-break:normal}pre[class*=language-]{margin:.5em 0}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.inserted{color:green}li>code,p>code{background:#131316;word-break:normal;padding:.4em .5em;margin:.5em 0;overflow:auto;border-radius:.3em}code[class*=language-],li>code,p>code,pre[class*=language-]{color:#f8f8f2;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;text-align:left;word-spacing:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-],pre[class*=language-]{background:none;word-break:break-word}pre[class*=language-]{padding:1em;margin:1.5rem 0;overflow:auto;border-radius:.3em;background:#131316}pre[class*=language-]::-webkit-scrollbar-thumb{background:#3498db}pre[class*=language-]::-webkit-scrollbar-track{background: #4b4e57}pre[class*=language-]::-webkit-scrollbar{width:12px;height:12px}li>code[class*=language-],p>code[class*=language-]{border-radius:.3em;background:rgba(52,152,219,.2);color:#2e3246;bottom:2px;position:relative}img{margin-bottom:0}.token.operator{color:#bc78d7}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#7ad7e2}.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#ef514f}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#e5db89}.language-css .token.string,.style .token.string,.token.entity,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name{color:#e6db74}.token.function{color:#84c16a}.token.keyword{color:#6095ea}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.table{overflow:auto;max-width:-webkit-fit-content;max-width:-moz-fit-content;max-width:fit-content;margin:auto}.gatsby-highlight pre[class*=language-].line-numbers{padding-left:2.8em}.gatsby-highlight{border-radius:.3em;margin:.5em 0;padding:1em;overflow:auto}.gatsby-highlight pre[class*=language-].line-numbers{padding:0 0 0 2.8em;overflow:initial}.gatsby-highlight pre[class*=language-].line-numbers span.line-numbers-rows{width:3em!important}.language-asm,.language-racket,.language-text{-webkit-margin-start:15px;margin-inline-start:15px;display:flex}code.language-html,code.language-javascript,code.language-md,code.language-ruby{left:15px}section.wrapper div.gatsby-highlight,section.wrapper div.tagsContainer{padding:0}pre[class*=language-].line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.content-wrapper li,.content-wrapper p{letter-spacing:-.003em;--baseline-multiplier:0.179;--x-height-multiplier:0.35;font-size:1.15rem;line-height:2}.content-wrapper li code{padding:.2rem .5rem;margin:.5rem 0}.content-wrapper a:not(.gatsby-resp-image-link):not(.anchor){color:#000;box-shadow:inset 0 -2px 0 #3498db;border-bottom:1px solid #3498db;-webkit-transition:all .4s cubic-bezier(.645,.045,.355,1);transition:all .4s cubic-bezier(.645,.045,.355,1);text-decoration:none}.content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):focus,.content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):hover{background:rgba(51,68,153,.53);color:#000}.wrapper h1{margin-top:3rem}.wrapper h2{margin-top:1rem}.wrapper h1,.wrapper h2,.wrapper h3,.wrapper h4,.wrapper h5,.wrapper h6{display:inline-block;position:relative}.wrapper h1 a,.wrapper h2 a,.wrapper h3 a,.wrapper h4 a,.wrapper h5 a,.wrapper h6 a{box-shadow:none;border-bottom:none}.wrapper h1 a:focus,.wrapper h1 a:hover,.wrapper h2 a:focus,.wrapper h2 a:hover,.wrapper h3 a:focus,.wrapper h3 a:hover,.wrapper h4 a:focus,.wrapper h4 a:hover,.wrapper h5 a:focus,.wrapper h5 a:hover,.wrapper h6 a:focus,.wrapper h6 a:hover{background:none}.wrapper:hover .anchor svg{opacity:.8}.footer-wrapper{position:static;height:60px;width:100%;justify-content:center;bottom:0;box-shadow:0 -3px 26px rgba(0,0,0,.5);background:linear-gradient(-45deg,#3e5fbc,#284187);font-family:OpenSans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-weight:500}.footer-text{margin:0;padding-top:15px;padding-bottom:15px;justify-content:center;display:flex;text-align:center;color:#f0f0f0}.footer-text a{color:#62fdfe;font-weight:700;margin:0 15px}.footer-text span{color:transparent;display:flex;flex-direction:row;align-items:center;text-shadow:0 0 0 #fff}@font-face{font-family:Open Sans;font-style:normal;font-display:swap;font-weight:300;src:local("Open Sans Light "),local("Open Sans-Light"),url(../static/open-sans-latin-300-60c866748ff15f5b347fdba64596b1b1.woff2) format("woff2"),url(../static/open-sans-latin-300-521d17bc9f3526c690e8ada6eee55bec.woff) format("woff")}@font-face{font-family:Open Sans;font-style:italic;font-display:swap;font-weight:300;src:local("Open Sans Light italic"),local("Open Sans-Lightitalic"),url(../static/open-sans-latin-300italic-06bbd3188b34820cd83a0e0b3d0a6f57.woff2) format("woff2"),url(../static/open-sans-latin-300italic-8a648ff38ded89ea15916e84529d62d3.woff) format("woff")}@font-face{font-family:Open Sans;font-style:normal;font-display:swap;font-weight:400;src:local("Open Sans Regular "),local("Open Sans-Regular"),url(../static/open-sans-latin-400-cffb686d7d2f4682df8342bd4d276e09.woff2) format("woff2"),url(../static/open-sans-latin-400-bf2d0783515b7d75c35bde69e01b3135.woff) format("woff")}@font-face{font-family:Open Sans;font-style:italic;font-display:swap;font-weight:400;src:local("Open Sans Regular italic"),local("Open Sans-Regularitalic"),url(../static/open-sans-latin-400italic-987032ea5d57c93d8da215678eae3b86.woff2) format("woff2"),url(../static/open-sans-latin-400italic-db70d0b9cb27ada1a260a2b35e756b8b.woff) format("woff")}@font-face{font-family:Open Sans;font-style:normal;font-display:swap;font-weight:600;src:local("Open Sans SemiBold "),local("Open Sans-SemiBold"),url(../static/open-sans-latin-600-223a277bd88d8a90c8cdf24cda0ad5f5.woff2) format("woff2"),url(../static/open-sans-latin-600-1cd5320f8937d337b61d5117cf9d7b28.woff) format("woff")}@font-face{font-family:Open Sans;font-style:italic;font-display:swap;font-weight:600;src:local("Open Sans SemiBold italic"),local("Open Sans-SemiBolditalic"),url(../static/open-sans-latin-600italic-4950a7205f0b5cefe41fc03ac346e236.woff2) format("woff2"),url(../static/open-sans-latin-600italic-318ea1ada4102c0704a0637228dcad03.woff) format("woff")}@font-face{font-family:Open Sans;font-style:normal;font-display:swap;font-weight:700;src:local("Open Sans Bold "),local("Open Sans-Bold"),url(../static/open-sans-latin-700-d08c09f2f169f4a6edbcf8b8d1636cb4.woff2) format("woff2"),url(../static/open-sans-latin-700-623e3205570002af47fc2b88f9335d19.woff) format("woff")}@font-face{font-family:Open Sans;font-style:italic;font-display:swap;font-weight:700;src:local("Open Sans Bold italic"),local("Open Sans-Bolditalic"),url(../static/open-sans-latin-700italic-c02f5da6e82e1efe0b45841bfd49ce37.woff2) format("woff2"),url(../static/open-sans-latin-700italic-72e19cbb0e38c6773a7751156752cec4.woff) format("woff")}@font-face{font-family:Open Sans;font-style:normal;font-display:swap;font-weight:800;src:local("Open Sans ExtraBold "),local("Open Sans-ExtraBold"),url(../static/open-sans-latin-800-aaeffaf205b9bbb09920089a14dbe9e8.woff2) format("woff2"),url(../static/open-sans-latin-800-c6aa0c4a601fb6ac66f8253fa594dff5.woff) format("woff")}@font-face{font-family:Open Sans;font-style:italic;font-display:swap;font-weight:800;src:local("Open Sans ExtraBold italic"),local("Open Sans-ExtraBolditalic"),url(../static/open-sans-latin-800italic-6b3973ffe02bb6a8be0f8453506ec032.woff2) format("woff2"),url(../static/open-sans-latin-800italic-79b58175343190550489efe46a7f1138.woff) format("woff")}article{padding:3rem 1.5rem}.bloglist-image{margin:auto;position:relative;box-shadow:0 15px 25px rgba(0,0,0,.2);-webkit-transition:all .4s cubic-bezier(.175,.885,.32,1.275);transition:all .4s cubic-bezier(.175,.885,.32,1.275);border-radius:.4rem;min-height:300px;flex-basis:100%;max-width:100%;width:100%}@media (max-width:800px){.bloglist-image{flex-basis:100%;max-width:100%;width:100%;margin-bottom:1.5rem}}@media (max-width:500px){.bloglist-image{min-height:200px}}.bloglist-image img{border-radius:.4rem;height:100%;width:100%}.bloglist-image:hover{box-shadow:0 40px 45px rgba(0,0,0,.1);-webkit-transform:scale(1.04);transform:scale(1.04)}.bloglist-image a{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:.4rem}.bloglist-image a>div,.bloglist-image a>div>div{position:static!important}.bloglist-image a>div>div:focus{outline:none;box-shadow:0 0 0 5px #284187}.bloglist-information h1{display:inline-block;color:#333438;-webkit-transition:all .4s;transition:all .4s}.bloglist-information h1:hover{color:#3498db}.bloglist-information{text-align:center;flex-basis:100%;max-width:100%;word-wrap:break-word;word-break:break-word;width:100%}@media (max-width:800px){.bloglist-information{flex-basis:100%;max-width:100%;width:100%}}.bloglist-date{margin-top:1rem;font-size:12px;color:#4b4e57}.bloglist-title{margin:0;font-size:24px}@font-face{font-family:Candal;font-style:normal;font-display:swap;font-weight:400;src:local("Candal Regular "),local("Candal-Regular"),url(../static/candal-latin-400-be36f832d599fa7c57c638a610ce6e2e.woff2) format("woff2"),url(../static/candal-latin-400-089f55042fcefeb66b9e98cdd0eb37ca.woff) format("woff")}.header-wrapper{-webkit-clip-path:polygon(100% 0,0 0,0 70%,50% 100%,100% 70%);clip-path:polygon(100% 0,0 0,0 70%,50% 100%,100% 70%);background:linear-gradient(45deg,#3e5fbc,#284187);height:250px;position:relative;overflow:hidden}@media (max-width:600px){.header-wrapper{-webkit-clip-path:polygon(100% 0,0 0,0 90%,50% 100%,100% 90%);clip-path:polygon(100% 0,0 0,0 90%,50% 100%,100% 90%)}}.header-text{color:#fff;z-index:0;position:absolute;top:50%;left:50%;height:inherit;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);display:flex;flex-direction:column;text-align:center;width:100%;max-width:70rem;margin-top:3rem;align-items:center}.header-text h1{font-size:28px;margin:20px 0 5px;padding:0 2rem}.header-text h2{font-size:22px;padding:0;margin:2.5px 0 5px}.header-text h3{font-size:20px;margin:2.5px 0;padding:0 2rem}.header-text h4{font-size:14px;margin:5px 0;padding:0 2rem}.header-subtitle{max-width:650px;color:#f0f0f0;margin-top:30px;padding:0 2rem}.headroom-wrapper{position:fixed;height:102px;z-index:2000;top:0}.headroom{display:flex;justify-content:space-between;flex-direction:row;width:100vw;height:2.5rem}.headroom svg{padding:1rem 1.5rem}.headroom svg g{fill:#fff}.headroom--unfixed{position:relative;padding-left:15px;padding-top:15px;justify-content:space-between;-webkit-transform:translateY(0);transform:translateY(0)}.headroom--scrolled,.headroom--unfixed{-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out}.headroom--unpinned{padding-left:15px;padding-top:15px;-webkit-transform:translateY(-100%);transform:translateY(-100%)}.headroom--pinned,.headroom--unpinned{position:fixed;-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out}.headroom--pinned{padding:15px 0 15px 15px;-webkit-transform:translateY(0);transform:translateY(0);background-color:#3e5fbc;box-shadow:0 5px 30px rgba(0,0,0,.2)}.headroom--pinned nav a{color:#fff}.headroom--pinned nav a:hover{border-color:#333438;color:#333438}.headroom--pinned nav a:focus{color:#333438}.headroom--pinned svg{height:2.5rem}.headroom---pinned svg g{fill:#333438}.headroom--pinned span{color:#333438}.postlist-wrapper{margin-bottom:2rem;position:relative;z-index:100;border-radius:.4rem;box-shadow:0 15px 25px rgba(0,0,0,.2);-webkit-transition:all .4s cubic-bezier(.175,.885,.32,1.275);transition:all .4s cubic-bezier(.175,.885,.32,1.275);height:17rem;flex-basis:calc(33.3% - 2.5rem);max-width:calc(33.3% - 2.5rem);width:calc(33.3% - 2.5rem)}.postlist-wrapper:hover{box-shadow:0 50px 50px rgba(0,0,0,.1);-webkit-transform:scale(1.04);transform:scale(1.04)}@media (max-width:1000px){.postlist-wrapper{flex-basis:calc(49.95% - 1rem);max-width:calc(49.95% - 1rem);width:calc(49.95% - 1rem);height:18rem}}@media (max-width:700px){.postlist-wrapper{flex-basis:100%;max-width:100%;width:100%;height:15rem}}.postlist-styledLink{display:flex;flex-direction:row;justify-content:space-between;padding:1rem;z-index:3;overflow:hidden}.postlist-styledLink,.postlist-styledLink:after{position:absolute;top:0;left:0;right:0;bottom:0;border-radius:.4rem}.postlist-styledLink:after{content:"";display:block;width:100%;height:100%;background:-webkit-gradient(linear,left top,left bottom,from(transparent),color-stop(50%,rgba(0,0,0,.3)),color-stop(80%,rgba(0,0,0,.7)),to(rgba(0,0,0,.8)));background:linear-gradient(180deg,transparent 0,rgba(0,0,0,.3) 50%,rgba(0,0,0,.7) 80%,rgba(0,0,0,.8));z-index:-10;-webkit-transition:opacity .4s;transition:opacity .4s}.postlist-image{position:absolute;top:0;overflow:hidden;right:0;left:0;bottom:0;z-index:1;-o-object-fit:cover;object-fit:cover;border-radius:.4rem}.postlist-image img{border-radius:.4rem;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content}.postlist-image img>div,.postlist-image img>div>div{position:static!important}.postlist-info{color:#f0f0f0;margin:auto;bottom:0;left:0}.postlist-info span{font-size:14px}.postlist-title h2{margin:auto;padding-top:.5rem;text-align:center;font-size:26px}.postlist-title h3{font-size:20px;margin-top:.5rem;margin-bottom:.5rem}.postlist-title span{font-size:16px;display:flex}.postlist-title{display:flex;flex-direction:column;align-items:center}.navbar-styledLink{display:flex;font-weight:700;align-items:center}.navbar-nav{display:flex;flex-grow:0.1;padding-right:15px;justify-content:space-between;font-family:Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-weight:500;font-size:1.1rem;align-self:center;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content}.navbar-nav a{color:#fff;-webkit-transition:all .4s;transition:all .4s;text-shadow:1px 1px 5px #000,2px 2px 1px #000}.navbar-nav a:hover{color:#f0f0f0;font-weight:700}.tagsContainer{margin:1rem 0;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center}.tagsContainer a{margin:0 1rem 1rem 0;color:#2e3246;padding:.3rem .6rem;background:#cecece;border-radius:10px}.tagsContainer a:hover{color:#f0f0f0;background:#3e5fbc;border:#3e5fbc}.tag-styledLink{color:#f0f0f0;padding:5px 10px;border:1px solid #fff;border-radius:20px}.tag-styledLink:hover{color:#2e3246;background:#f0f0f0}.tag-information{text-align:center}.tag-information h1{font-size:2rem;margin-bottom:1.25rem}.post-suggestionBar{display:flex;flex-wrap:nowrap;justify-content:space-between;width:100vw}.post-postSuggestion{display:flex;align-items:center;margin:1rem}.post-postSuggestion a{width:100%}.post-postSuggestion h3{font-size:inherit}h3.prev-post{text-align:left}h3.next-post{text-align:right}button.next-post,button.prev-post{color:grey;background-color:transparent;border:none}button.next-post:hover,button.prev-post:hover{color:#000}:focus{outline:none}*,:after,:before{box-sizing:inherit}html{text-rendering:optimizeLegibility;overflow-x:hidden;box-sizing:border-box;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body,html{width:100%;height:100%;margin:0;padding:0}body{display:flex;flex-direction:column;min-height:100vh}a{-webkit-transition:color .5s;transition:color .5s}a,a:hover{text-decoration:none}h1{font-family:Candal,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}table{table-layout:fixed;overflow:scroll;width:auto!important}td,th{padding:10px!important;width:-webkit-max-content;width:-moz-max-content;width:max-content}.index-postWrapper{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;margin:4rem 4rem 1rem}@media (max-width:1000px){.index-postWrapper{margin:4rem 2rem 1rem}}@media (max-width:700px){.index-postWrapper{margin:4rem 1rem 1rem}}.gatsby-image-wrapper{height:100%}section.container-wrapper{padding:3rem 1.5rem}section.wrapper{min-height:calc(100vh - 300px);height:100%}section.wrapper div{padding:3rem 1.5rem}</style><link rel="sitemap" type="application/xml" href="../sitemap.xml"/><link rel="shortcut icon" href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="manifest" href="../manifest.webmanifest"/><meta name="theme-color" content="#3e7bf2"/><link rel="apple-touch-icon" sizes="48x48" href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="apple-touch-icon" sizes="72x72" href="../icons/icon-72x72c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><meta name="generator" content="Gatsby 2.3.25"/><link rel="apple-touch-icon" sizes="144x144" href="../icons/icon-144x144c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="apple-touch-icon" sizes="192x192" href="../icons/icon-192x192c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="apple-touch-icon" sizes="256x256" href="../icons/icon-256x256c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="apple-touch-icon" sizes="384x384" href="../icons/icon-384x384c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="apple-touch-icon" sizes="512x512" href="../icons/icon-512x512c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link as="script" rel="preload" href="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"/><link as="script" rel="preload" href="../1-6c82cfd6aba31a386fde.js"/><link as="script" rel="preload" href="../app-63577178a3bdd725b6eb.js"/><link as="script" rel="preload" href="../styles-aa92193d8aa2fe2f8548.js"/><link as="script" rel="preload" href="../webpack-runtime-fd7c0e3081b0f1218320.js"/><link as="fetch" rel="preload" href="../static/d/745/path---algorithm-design-manual-chapter-one-236-7ca-SN4YHN85gi7J9PV7hJAO5LzSraA.json" crossorigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div><div class="headroom-wrapper"><div class="headroom headroom--unfixed"><a class="navbar-styledLink" href="../index.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAoCAYAAAB5ADPdAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAHsIAAB7CAF4JB2hAAABWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgpMwidZAAAHVklEQVRYCcWYW4iVVRSAZ7x1MbXybs7V0szMS5YymIGUIVQQGUEPvXSBIKnXjHoJevMpkKAeiiACKcGEIkenNOpBTTNSM3XUJkcdNUdLx3F0+r59/nX6xzMzzpyXFnyz73utvdba+z9aUVGmdHd3V8ZS6tNhCYyzj3JIjJVTFjcuZ7FrMOA1igZohhHwQWVl5V4No7xKe9BS1olQOFRNlCsoXoJqWAA32qZ/mAZRlnXoYWwyKFERcoXyJhY+Ax0wG0bCrXAYlsI34KGvwKCkHE/FmrlomgYt0JnTOpb6klx70NVQMOiFLHgADI/cAor76bn79GTm0UGHsF+jDBUMhSFZmQ/3vShvBz1jjmnMxKycTFkDyvBsrfvIdY3s0ygWe3tMoCtwNSu7LBkbjTKVXoDxcBb2we3QDTeAoa1gfme21n2E5f0/GfmTu0eSzCBvjydeDpNAZUfgW/DqG7KTMAH2wyYwz8Jr9ayvor0MXO/z4PoNGHYudNAukRJXxmTKWcx+G7w9JrI3y8fR+t+gJ34Fb+DH8Ak0QhPoMZ+H46CONjgP3lDLNzHsODooKj1sDykJH5P0kP2vgwaMgYWgolY4BTOgHuaBMhxqUq2iYj6lBjtfT54B37FFoIGGfiUoJU4p6cx5ySReDRdB9/smheyhotEa5aYapHLDY5j0rKd3rRdhCjhfOQ3fgWnzIg5o681bMZk5ScLyUbRuBhVq0PfwJOyAe+BuMHdC9IpoWIh7TAUvw4dwAPS6+WgY3V8JnYUWf69N9IjvX4yZE3rgH1Chmx4EN1XZbRCHsgyoJtFjTdABEe7mNFIwxNxSQmehxd/YNDpiwp90aJAn+g30zjow0U3uy6DE/Pxp9VYX6Mn54FgcwH7rzYTuDKHTKfm1NHNGMcFN0gQWeIqN4AbHQBkL7fAI+AyoQAM0zHViW7yd5pTh8kkx8fXc+Ky+gdI3zHcvfbgz/XZXDDPRrDDoIr/8Xn2T03eoCupARYbQvNL4MIZqMiZvmPu51ii0gN41f7zJlu7zGHqccxT2o9unI/RXJoPo0JjFFI/C/XAHXAKN0kDzwlxSkR5wncaF+7dQd9xrr4Gu9ZKYj14U5ykq1sNnwQi4h97/Bb7GuIIHaWjQKxRzoRYU3a83ZsIsCCUalU5E6Yb9icaJa8KTrvWAGrstq3uhJoFeXA9v+YF8kIonrINl4ONWDXPAyRrnqfWOm6pENNyQKGthK5h35qEXIYx2TRjlHq41dOozCnqyCtSjgeecYCXySDdPzPCj6obiAjfWEEulGcwFw7EaVoI3U/H2Kq41VM7RUNda2u9Bza/poH7DvxvG+sn2kVsDDeDAHtB6b1gNaJziKfMSxtmvUtt6x7Z1D3yt2K9Byik4AuZoPewAD7k2KcIwO98A3yNPcAGM+3wYD3mFbqJCD+B6lRwC10wDQ+P8MNR558G5jp0AdRyA02Cfa92jkWT/wifB302HKF+mcyHoMZO7FswPxfAZWhNeg1Rgn56x3QaOTQdFgxTnKSoODxkq6641tCa8/IgdGlkQDYt6lPStglZoh8ug+ApvhksZHZSK4z6CShdcTLXu7ibK9+FC1nYv1+4Ak7yH0Kehhbhjoaf2aUjvSbZgKV0HoROcfBL0nMncBIZI71jGO6SHxBAfgyfgXUj7U5oSjl9Cp+NJp8YAXYUH/FoPqUBZDhPBWzQSVK4htl+FaWDIRoAh8u3xVmmcbcPwEzwFW8E9nOPl8QaPwYhllEr85A7dBU8Vxtgts5T2EnDjyeBNbAE33AKH4U7wDYubqWfaQTGJ9ehc+AiqoRGOgh5vBg17GJSiMYVmFr40kn0DOYG3bSr486U+K5+j1Et1oNeU8IqbaoRvjgmsp3xE3cOwbYYzoCGK3nXvu9CV/iVtZ17cOMTNVOCX3bC6WE/9DvZVwSJQzDPFNXrGtgb4EFuGcY4vBp+EJqiFOvBZcK6fFv8RYT4VPZY3KjpNRnFzN5sBG0E5Ap66GsIzVJMSFS2AMEiPdoEH1HMrQDkG9uu55PW8QfQVb435hMHJYp+BA4zpGZN0JpyCVtAjXgDfF/PDR28cGD7bigltrtk+DPtAr3sQE35nVu5Cp89Dyf/O6N6ixATKWjrfAUPjrXIzQ+gjuBfWw/Og8howJCa641tBwxtBD80GD6HXjYAh06urMMp3i+K/0NGfcsKyKDnD3PBxUKkh+AO2s8HPlL4v71HMA0PxUFbqTZ8Cb+rTzD3BvAbqc8DbqqfN0S8Z84Gl6GkQY72LhvU+koxJecicF2AnrIN4wX+gvgk+A0PWpzDeI0r5iflEL/ZjffrdTIfGxQVwE+vR3kbdpB8FcQg9MRq+Yo9OFLt/zI/Sffy/iWjT7Cm9GuWUbJE3qVdhfDdKzS9DZd6pZAr488N8UlR+tVAd+N844cBXMBNjvFnK5+DV/hQ0xJvnz49dzCm5VYwNSPqM6/VWoxTd6Rl5lrkmsmE7CGvo96qncdr/j2DABAntGhT1csp/AQmuNkNaDuFXAAAAAElFTkSuQmCC" alt="Gatsby Logo"/></a><nav class="navbar-nav"><a href="../index.html">Home</a><a href="../blog/index.html">Tagged List</a></nav></div></div><div class="header-wrapper"><div class="header-text"><h1>Algorithm Design Manual:</h1><h2>Chapter One</h2><h3>Introduction to Algorithm Design</h3><h4>2018-12-18</h4></div></div><section class="wrapper"><div><div class="content-wrapper"><p>Designing good algorithms for real-world problems requires the use of techniques (data structures, dynamic programming, backtracking, heuristics, modeling) and resources (other implementations that already exist and can be referenced to as a basis).</p>
+<p>Collected implementations of algorithms can be found at <a href="http://www.cs.sunysb.ed/~algorith">http://www.cs.sunysb.ed/~algorith</a> (though that redirects you to <a href="http://www.algorist.com/algorist.html">this website</a></p>
+<p>Links to example problems can be found at <del>programming - challenges . com</del> - nope, that doesn't exist anymore. He also mentions online-judge.vva.es. Finally found uva.onlinejudge.org which has the problems he mentions in Chapter 1 under the right numbers, but the website is kind of horrendously slow. Still, <a href="https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=1">this</a> should get you to any of the questions you're looking for.</p>
+<p><strong>Algorithms</strong> are procedures for solving geernal, well-specified, problems. These problems are specified by describing the list of instances it is designed to work on and what the resulting output of each instance should be. It is a procedure to take any of the possible input instances and transform it into the desired output.</p>
+<p>An <strong>instance</strong> is a specific use case for a problem with a specific input in order to determine its output from the problem</p>
+<p><strong>Insertion sort</strong> is a method for sorting a list/array of values by starting with a single element and iterating through the elements, swapping elements that are out of place</p>
+<h4>Three qualities of a good algorithm:</h4>
+<ul>
+<li>Correct</li>
+<li>Efficient</li>
+<li>Easy to implement</li>
+</ul>
+<h3>Problem: Robot Tour Optimization</h3>
+<p><strong>Input</strong>: A set <em>S</em> of <em>n</em> points in the plane
+<strong>Output</strong> What is the shortest cycle tour that visits each point in the set <em>S</em>?</p>
+<h4>Nearest Neighbor Psuedocode</h4>
+<p>NearestNeighbor(<em>P</em>)</p>
+<p>       Pick and visit an initial point <em>p₀</em> from <em>P</em></p>
+<p>       <em>p = p₀</em></p>
+<p>       <em>i</em> = 0</p>
+<p>       While there are still unvisited points</p>
+<p>              <em>i</em> = <em>i</em> + 1</p>
+<p>              select <em>pᵢ</em> to be the closest unvisited point to <em>pᵢ₋₁</em></p>
+<p>              Visit <em>pᵢ</em></p>
+<p>       Return to <em>p₀</em> from <em>p<sub>n</sub>₋₁</em></p>
+<p>       <strong>This does not work in situations where all points are along a line - might lead to jumping from left to right</strong></p>
+<h4>ClosestPair Pseudocode</h4>
+<p>ClosestPair(<em>P</em>)</p>
+<p>       Let <em>n</em> be the number of points in set <em>P</em></p>
+<p>       For <em>i</em> = 1 to <em>n</em> - 1 do</p>
+<p>              <em>d</em> = ∞</p>
+<p>              For each pair of endpoints <em>(s, t)</em> from distinct vertex chains</p>
+<p>                     if <em>dist(s, t)</em> ≤ d and then <em>s<sub>m</sub></em> = <em>s, t<sub>m</sub></em> = <em>t</em>, and <em>d = dist(s, t)</em></p>
+<p>              Connect (<em>s<sub>m</sub></em>, <em>t<sub>m</sub></em>) by an edge</p>
+<p>       Connect the two endpoints by an edge</p>
+<p>       <strong>This doesn't work if the data points are two rows of equally spaced points where the two rows are slightly closer than the dots in each row to each other</strong></p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/89a99e89b6cb22fc6d1085d5e4eaa752/10244/ClosestPairCounterExample.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 401px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 38.65336658354115%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAABKklEQVQoz3WSzW7CMBCE8/7PADeeAE5IHCpUOAOHSsANRA6EkDg/zn+GWTc2qdqutMJ2dj7PrvHU7Qa0LWz0fe9SIr/foeMYDWuapkGSJPB9H1VVmTPF7xnTar2PyQSX4xEtN13XvcHDejef47TdoqI4JSxNU8S8QNZFXWO3WuFruTS1ovd0UUBrjTzPze0iKHjWDq6zLDP5X9SE2lrjMHw8ZOUOpC0LF1AURb+A/agbqRUTmr8GGCnl5vVXKIKDIPh2SpE4GtcXZQnbpQFezmeU3MiNYt0lnXYsSJ9PaDqQKCkWsB1NS03IBwn4SK7l9XSK8HpFRqgUysDt0BXFn7MZ/P3e9uqEFeE1gafNBofF4v0oPZ38aJEjkLQRccbJsB//nVwQYhny7QXNYWsj3L+DBQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="ClosestPairCounterExample"
+        title=""
+        src="../static/89a99e89b6cb22fc6d1085d5e4eaa752/10244/ClosestPairCounterExample.png"
+        srcset="/static/89a99e89b6cb22fc6d1085d5e4eaa752/f723e/ClosestPairCounterExample.png 188w,
+/static/89a99e89b6cb22fc6d1085d5e4eaa752/d744b/ClosestPairCounterExample.png 375w,
+/static/89a99e89b6cb22fc6d1085d5e4eaa752/10244/ClosestPairCounterExample.png 401w"
+        sizes="(max-width: 401px) 100vw, 401px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h4>OptimalTSP(P) PsuedoCode</h4>
+<p>OptimalTSP(<em>P</em>)</p>
+<p>       <em>d</em> = ∞</p>
+<p>       For each of the <em>n!</em> permutations, <em>Pᵢ</em> of point set <em>P</em></p>
+<p>              If (cost(<em>Pᵢ</em>) ≤ <em>d</em>) then <em>d</em> = cost(<em>Pᵢ</em>) and <em>P<sub>min</sub> = Pᵢ</em></p>
+<p>       Return <em>P<sub>min</sub></em></p>
+<p>       <strong>This is accurate but very slow</strong></p>
+<h4>Difference between algorithms and heuristics</h4>
+<p>Algorithms always produce a correct result.
+Heuristics may usually do a good job, but do not provide a guarantee</p>
+<h3>Problem: Moving Scheduling Problem</h3>
+<p><strong>Input</strong>: A set <em>I</em> of <em>n</em> intervals on the line
+<strong>Output</strong>: What is the largest subset of mutually non-overlapping intervals which can be selected from <em>I</em>?</p>
+<h4>Earliest Job First Pseudocode</h4>
+<p>EarliestJobFirst(<em>I</em>)</p>
+<p>       Accept the earliest starting job <em>j</em> from <em>I</em> which does not overlap any previously accepted job and repeat until no such jobs remain</p>
+<p>Taking one job may exclude 2, etc., so no guarantee that it will yield the largest subset</p>
+<h4>Shortest Job First Pseudocode</h4>
+<p>ShortestFirst(<em>I</em>)</p>
+<p>       While(<em>I</em> ≠ ∅) do</p>
+<p>              Accept the shortest job <em>j</em> from <em>I</em>.</p>
+<p>              Delete <em>j</em>, and any interval which intersects <em>j</em> from <em>I</em></p>
+<p>       <strong>Accepting the shortest job may block us from taking two other jobs</strong></p>
+<h4>Exhaustive Scheduling Pseudocode</h4>
+<p>ExhaustiveScheduling(<em>I</em>)</p>
+<p>       <em>j</em> = 0</p>
+<p>       <em>S<sub>max</max> = ∅</em></p>
+<p>       For each of the 2<sup><em>n</em></sup> subsets, <em>Sᵢ</em> of intervals <em>I</em></p>
+<p>              If (<em>Sᵢ</em> is mutually non-overlapping) and <em>(size (Sᵢ) > j</em>)</p>
+<p>                     then <em>j = size(Sᵢ)</em> and <em>S<sub>max</sub></em> = <em>Sᵢ</em></p>
+<p>              Return <em>S<sub>max</sub></em></p>
+<p>       <strong>Gets all the possibilities, but isn't efficient when size of input gets larger</strong></p>
+<h4>Optimal Scheduling Psuedocode</h4>
+<p>OptimalScheduling(<em>I</em>)</p>
+<p>       While (<em>I</em> ≠ ∅) do</p>
+<p>              Accept the job <em>j</em> from <em>I</em> with the earliest completion date</p>
+<p>              Delete <em>j</em> and any interval which intersects <em>j</em> from <em>I</em></p>
+<p><strong>NOTE</strong>: ∅ is a symbol for "empty set"</p>
+<p><strong>Lesson</strong>: Reasonable-looking algorithms can easily be incorrect. Algorithm correctness is a property that must be carefully demonstrated</p>
+<h3>Mathematical Proof Characteristics</h3>
+<ul>
+<li>Clear, precise statements of what you are trying to prove</li>
+<li>Set of assumptions of things which are taken to be true and hence used as part of the proof</li>
+<li>Chain of reasoning which takes you from these assumptions to the statement you are trying to prove</li>
+<li>∎ QED to indicate finished "this is demonstrated"</li>
+</ul>
+<p>Proofs are only useful when honest - brief and to the point arguments explaining why an algorithm satistifes a nontrivial correctness property</p>
+<p><strong>Take Home</strong>: The heart of any algorithm is an idea. If your idea is not clearly revealed when you express an algorithm, then you are using too low-level a notation to describe it</p>
+<h4>Problem specifications have two parts:</h4>
+<ul>
+<li>Set of allowed input instances</li>
+<li>Required properties of the algorithm's output</li>
+</ul>
+<p><strong>Take Home</strong>: An important and honorable technique in algorithm design is to narrow the set of allowable instances until there is a correct and efficient algorithm. For example, we can restrict a graph problem from general graphs down to trees, or a geometric problem from two dimensions to one.</p>
+<h4>Common traps in specifying output requirements:</h4>
+<ul>
+<li>Asking an ill-defined question</li>
+<li>Creating compound goals</li>
+</ul>
+<h3>Counter-Examples - Instances which disprove an algorithm</h3>
+<p>Good counter-examples have two important properties:</p>
+<ul>
+<li>
+<p>Verifiability</p>
+<ul>
+<li>Calculate what answer the algorithm gives</li>
+<li>Display/provide a better answer so as to prove the algorithm didn't find it</li>
+</ul>
+</li>
+<li>Simplicity</li>
+</ul>
+<h3>Techniques for coming up with counter-examples:</h3>
+<ul>
+<li>Think small - when algorithms fail, there is usually a very simple example on which they fail</li>
+<li>Seek extremes</li>
+<li>Think exhaustively</li>
+<li>Hunt for the weakness</li>
+<li>Go for the tie (good way to break a greedy heuristic)</li>
+</ul>
+<h3>Recursion</h3>
+<p><strong>Recursion</strong> is mathematical induction - in both, have general and boundary conditions, with general condition breaking the problem into smaller pieces and the boundary condition terminating the recursion</p>
+<p>One should be suspicious of inductive proofs because subtle reaoning errors can creep in:
+First kind of error are boundary errors
+Second are cavalier extension claims - adding an element could cause entire optimal solution to change</p>
+<p><strong>Take Home</strong>: Mathematical induction is usually the right way to verify the correctness of a recursive or incremental insertion algorithm</p>
+<h3>Stop and Think: Incremental Correctness</h3>
+<p><strong>Problem</strong>: Prove the correctness of the following recursive algorithm for incrementing natural numbers (i.e., y -> y + 1):</p>
+<div class="gatsby-highlight" data-language="text"><pre style="counter-reset: linenumber NaN" class="language-text line-numbers"><code class="language-text">Increment(y)
+    if (y = 0 then return (1) else
+        if (y mod 2) = 1 then
+            return (2 * Increment(⌊y/2⌋)
+        else return (y + 1)</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>⌊⌋ are floor symbols. This threw me at first because I mistook them for absolute value symbols.</p>
+<div class="gatsby-highlight" data-language="text"><pre style="counter-reset: linenumber NaN" class="language-text line-numbers"><code class="language-text">Increment(3)
+    if (3 = 0 then return (1) else
+        if (3 mod 2) = 1 then - nope
+            return (2 * Increment([3/2]))
+
+Increment(1)
+    if (1 = 0 then return (1) else
+        if (1 mod 2) = 1 then
+            return (2 * Increment([1/2]))
+
+Increment(0)
+    if (0 = 0 then return (1)
+
+// 2 * (2 * (1)) = 4</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h3>Summations</h3>
+<p>Summation formulae are concise expressions describing the addition of an arbitrarily large set of numbers, in particular the formula</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/8997d86bec56810416508c616441c672/35a5c/Summations.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 266px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 19.172932330827066%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAsklEQVQY02Ooq6tTZaAS+P//PwODrq6uaElJiWpvb685yHAXFxf+oqIi8draWuPS0lIjoJjonDlzhCorK3XLyspsgHKas2bNEpswYQIrUJxvxowZQsXFxWptbW3WkyZNUmNITU1VASpU6evrU2tqapKzsLDgKC8vlwIaBBJXqq6uFgYqlq2qqlICGqpRUVEh29raKgk0lBdkUWNjozhQnTJQvRZQTJkhOTnZGuhURmp5GwDo30hZC1UFrwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Summations"
+        title=""
+        src="../static/8997d86bec56810416508c616441c672/35a5c/Summations.png"
+        srcset="/static/8997d86bec56810416508c616441c672/f723e/Summations.png 188w,
+/static/8997d86bec56810416508c616441c672/35a5c/Summations.png 266w"
+        sizes="(max-width: 266px) 100vw, 266px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>There are simple closed forms for summations of many algebraic functions. For example, since the sum of <em>n</em> ones is <em>n</em>,</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/d5efb5114b36ed8cbf6f458873a136e9/76e43/Summation2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 73px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 69.86301369863014%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsSAAALEgHS3X78AAACZUlEQVQ4y2Po6elhZgCCZcuWlXV0dLxeunSpL4g/Z84csDjJwM3NjQ1EJycnG7S2tnZOmTIlCMRPTExkBdEiIiIMp0+fZqAKMDAwYATRU6dOZYSJ7dq1C78mZWXlRkFBwUCgS+w4OTmdpKWlXY2MjFrs7Oz8kNUtWbIERd/bt28ZJk+eDGbPnz+fYdGiRYzd3d0MDAEBAd36+vp3/v//D5LjDg8P50lJSXEsLS3tBYqxrVixgmvhwoWKIEmQmri4OMbg4GDGkJAQxpiYGIbjx49juhLomo3W1tazoFxGZLm5c+dq5OfnrwAahjOSdu7cybNu3Tp5YEQKMEBtZgJ681Z0dHQSiA90BautrS0jUBxseFhYWA2QzQliA9XoAV3oCnShG9AnmiCxxYsXNwDBvMLCwhIGU1NTcGwCFZUHBgbGgNhRUVFsMNurqqqEgQYuOnHihDiID/SmFVBtGNDAcGDKMAGJ5ebmJgDFoxobGyG+BKa/5La2tlJkbwBdJHL37l2uBQsWiHp7e1sAvSSIy8vNzc3iM2fOFFq+fLkeQ1JSkkd6evoCoDgbMLZFZ82aZebl5RUJFJ8FNJQFWSMw8TNAfcMAdCGYXV9fj2p6VlbWfAsLi3ZgmDU6Ojp2xsfHL3JyctocERGRCJIHWsbi4eHBtGHDBrD6efPmwQ2sq6sDi9XU1DB2dXUxAH3DBEtTssiW9Pf324DohIQEsIJjx44RnxuA/pcAJsia4uJia6ALHVeuXGlZXl4+BRqOjNBkQbyBwIQtPGPGjBUVFRXBwHwdAQwnJyC7D5iv+UHy27dvJym7AgCuRuguwKC/EwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Summation2"
+        title=""
+        src="../static/d5efb5114b36ed8cbf6f458873a136e9/76e43/Summation2.png"
+        srcset="/static/d5efb5114b36ed8cbf6f458873a136e9/76e43/Summation2.png 73w"
+        sizes="(max-width: 73px) 100vw, 73px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>The sum of the first <em>n</em> even integers can be seen by pairing up the <em>i</em>th and (<em>n-i</em>+1)th integers:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/52673cedbcb1abb93f19b34da2bae858/4947e/Summation3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 320px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 18.125%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsSAAALEgHS3X78AAAAwElEQVQY02OoqakRYICCCRMm6Le2tjoyUAIyMzOlu7u7BVxcXNhMTEwsIiMj1SZNmiQDNJwHaLg0EAvFxsay9Pf3C3d2dvJXVVVpNDc3C7u5ubG1t7dLt7W1yff29vI2NDSI1tXVKTCUlZXJ19fXS3t7e/PFxMToFxQUaPf09KgDLREDalQH+kAeaCAnULMM0HAJoHptkPqgoCChpqYmrcbGRt2WlhYpoDpJINZhSElJ0YO5NicnxzEtLc2WEh8DABmvRW+7ZhqvAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Summation3"
+        title=""
+        src="../static/52673cedbcb1abb93f19b34da2bae858/4947e/Summation3.png"
+        srcset="/static/52673cedbcb1abb93f19b34da2bae858/f723e/Summation3.png 188w,
+/static/52673cedbcb1abb93f19b34da2bae858/4947e/Summation3.png 320w"
+        sizes="(max-width: 320px) 100vw, 320px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<h3>Two basic classes of summation formaulae in algorithm analysis:</h3>
+<p><strong>Arithmetic progressions</strong>
+The arithmetic progression for selection sort is:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/260e5bde8128c2cdfe879bff93b8c354/fa414/Summation4.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 205px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 24.39024390243903%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAABD0lEQVQY02NgwAKSkpI4W1pa3B0dHblA/P///zMQDXp7e5X6+/v5Jk6cKAzTbGho6CcrK6ubmJioeuDAAU6gMOPkyZOZm5qaOPv6+kTmzJnDDrSUY/r06ezNzc1SnZ2dEkB5idzcXB0GoCL7xsbGuLKyMp3w8HC5+Ph4wejoaE1fX19toOHMXV1d5i4uLtKZmZnSQM0x7e3tHg0NDc51dXW6c+fOVYiLizOvrKx07OjosE1OTs5gANrGMWnSJJ7ly5fzglyooqLCCHSZbWhoqCuQNgGJOTg4MKuqqjLm5eWxANXzVlRUsAItYwLJAQ1mnTVrllRhYSFbVFQUM9ZgCAsLE6iurrY0NjZmYyARAAC2TWDu3Ff29gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Summation4"
+        title=""
+        src="../static/260e5bde8128c2cdfe879bff93b8c354/fa414/Summation4.png"
+        srcset="/static/260e5bde8128c2cdfe879bff93b8c354/f723e/Summation4.png 188w,
+/static/260e5bde8128c2cdfe879bff93b8c354/fa414/Summation4.png 205w"
+        sizes="(max-width: 205px) 100vw, 205px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>It's important that the sum is quadratic, not that the constant is 1/2. In general,</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/1f9f5be8299025885465f7d1adc9f3e0/c6ec9/Summations5.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 206px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 24.271844660194176%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAAsSAAALEgHS3X78AAABEUlEQVQY02NggILy8nIYk+H///9gurKyUqO5udmcAQnA5HCC3t5eZSBmB7HnzJkjXFdXxwdiu7m5CWtqagbp6uoqlZWVyQPVmBcVFXGC5IqLi0Vramq0uru7Rdra2uRnzJjh2NTUZATk6zM0NjY6AQWDp06dagw0LDY5OVklODhYHaiINSgoyL2qqopt9uzZykA1HjExMQJAMfm0tDQzoOHptbW1cUAfBC9evFilpaVFNj09PYBh5syZnPPmzeMCSkpPmTJFfNasWSwgVxQWFvJFRUV5hIWFOWVkZKiAxNTU1BiBYsxQrzNOmDCBD9m3q1evlsYbHECXSALDERyGQMsYsYVfdnY2w+TJkxmBLgXzAX2yZ/meI0sqAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Summation5"
+        title=""
+        src="../static/1f9f5be8299025885465f7d1adc9f3e0/c6ec9/Summations5.png"
+        srcset="/static/1f9f5be8299025885465f7d1adc9f3e0/f723e/Summations5.png 188w,
+/static/1f9f5be8299025885465f7d1adc9f3e0/c6ec9/Summations5.png 206w"
+        sizes="(max-width: 206px) 100vw, 206px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>for <em>p</em>≥1. Thus, sum of squares is cubic and the sum of cubes is quartic.</p>
+<p>Big theta (ϴ(<em>x</em>)) notation will be explained later in book.
+For <em>p</em> &#x3C; -1 the sum converges to a constant, even as <em>n</em> -> ∞</p>
+<p><strong>Geometric progression</strong>
+In geometric progressions, the index of the loop affects the exponent, ie:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/bb5e84f87a5fd3f3e13bc74ffe3c9a4d/348ae/Summation6.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 291px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 17.18213058419244%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAA0ElEQVQI12NYs2YNMwMa0NbW5ktMTLQH0iz///9nhIkvWrSItbOzkw/EBooz7N69mwkmB+IDzWJkSElJsW1pabGoq6vTaGhoMIyLi+Nzc3PTNDMzU+7t7ZVrbGzU8PT0FADKG7S3t5tPnTpV293dnTM8PFyqp6dHByhvU1JSomhsbMxSU1NjwJCVlcXT19cnPGnSJNH+/n4RkG1paWmyQIt8ysvLZffs2cNsbW3NPHHiRGGgZlaQvI+PD2NCQgI70EBhIBbp7u7mBYnX19fzAQAFr0t47S+yrQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Summations6"
+        title=""
+        src="../static/bb5e84f87a5fd3f3e13bc74ffe3c9a4d/348ae/Summation6.png"
+        srcset="/static/bb5e84f87a5fd3f3e13bc74ffe3c9a4d/f723e/Summation6.png 188w,
+/static/bb5e84f87a5fd3f3e13bc74ffe3c9a4d/348ae/Summation6.png 291w"
+        sizes="(max-width: 291px) 100vw, 291px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>How we interpret the sum depends on the <em>base</em> of the progression, i.e., <em>a</em>. When <em>a</em> &#x3C; 1 this converges to a constant even as n -> ∞</p>
+<p>This series convergence proves to be the great "free lunch" of algorithm analysis. It means that the sum of a linear number of things can be constant, not linear. For example, 1 + 1/2 + 1/4 + 1/8+...≤ 2 no matter how many terms we add up.</p>
+<p>When <em>a</em> > 1, the sum grows rapidly with each new term, as in 1 + 2 + 4 + 8 + 16 + 32 = 63. Indeed, 
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/e26115c4dfec3248c066a432cf90c239/45687/Summation7.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 142px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 14.084507042253522%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAzUlEQVQI12Po7+/X6+7u1r1x4wY3AxJYunSpcm9vrwCy2IQJExTmz5+vAhRXhfJ1gDhqzpw5HrW1tSlAWoshOzvbMzMzM6irqyu2vLw8EKSwrKwsMi0tLaSpqUkqNDRULjw83CYiIoI7Jiamori4eGpWVpZ/ampqANCQ6IkTJ1qvX79eF6hfLTY2VpWhsLAQ5EJboKQp0LWOc+fONeno6LADssOB4sIeHh78QMOUbGxsmCsrK7Wam5uNpk2bZtPS0hIxdepULWQfANUrAwBD9lRReUAAPwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Summations7"
+        title=""
+        src="../static/e26115c4dfec3248c066a432cf90c239/45687/Summation7.png"
+        srcset="/static/e26115c4dfec3248c066a432cf90c239/45687/Summation7.png 142w"
+        sizes="(max-width: 142px) 100vw, 142px"
+      />
+    </span>
+  </span>
+  
+  </a>
+     for <em>a</em> > 1</p>
+<h3>Stop And Think: Factorial Formulae</h3>
+<p><strong>Problem</strong>: Prove that     
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/d0b3e92428558d9b6e0ccee8412615db/14f29/Factorial.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 183px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 27.86885245901639%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABSUlEQVQY02OYNGlSJAMSaGxsZARiOD82NpYRxq6qqmK0tbVlKC0tZUAHycnJEIagoKBEcHCw3f///1EUTJ48mXPlypVgw0ByZ86cYUeWX758OcvGjRv5gOp4YGLz5s1jYbCzs3MCcYAuNWppaVGur683mzVrlmxDQ0N4amqqVFBQkEpCQoJ4c3OzK1DOqaSkhANoiElNTY1QTk6OO9C1Qfn5+TyhoaHsurq6EgxAQa329naBtrY21enTp4uWlZWp1dXVSU6bNk0TqJDbx8dHpLq6WghomQnQElOgWv6enh6T8PBwrqKiItOOjg4toBmc/v7+QlpaWnwMXl5eLtHR0WEMBAB6kEDFGDEEga7wANquDmIDnc+UlZXFGBUVxdDd3c1QUFDAEBgYCKZBABgEjGlpaQwZGRmMvb29YDFg+DPU1tYyAF0I5gMAfpl3bkXdnUIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Factorial"
+        title=""
+        src="../static/d0b3e92428558d9b6e0ccee8412615db/14f29/Factorial.png"
+        srcset="/static/d0b3e92428558d9b6e0ccee8412615db/14f29/Factorial.png 183w"
+        sizes="(max-width: 183px) 100vw, 183px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    
+Note: Formula in book actually had n at the top to the right of the sum and i = 1 on the bottom to the right of the sum, but further examples had it oriented this way</p>
+<p><strong>Solution</strong>: First verify the base case (here we do <em>n</em> = 1, though <em>n</em> = 0 could have been done:</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/f9ea28333a94bc07a1bef384862f43c5/4c6d5/Factorial2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 312px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 17.307692307692307%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAr0lEQVQI12OwsrJyy8vLk+nt7ZVqa2tTrKqqko+KihLJycmRDA8P5yktLdVsaGiQAfLl6urq9DMyMjizs7OlwsLChIqKihRDQ0MF8vPzxSMjI4VLSkpEGZKSkpyBijSmTZvG1d7eLgA0lCcgIIAzNTWVGyjHXlFRITx58mTuwsJCnpaWFuH///8zpKSkcAEN5MzKyuKPj49nzszM5AwODuYEquFiANpqBnSFJAOVAAB1GDsvH2e4ZAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Factorial2"
+        title=""
+        src="../static/f9ea28333a94bc07a1bef384862f43c5/4c6d5/Factorial2.png"
+        srcset="/static/f9ea28333a94bc07a1bef384862f43c5/f723e/Factorial2.png 188w,
+/static/f9ea28333a94bc07a1bef384862f43c5/4c6d5/Factorial2.png 312w"
+        sizes="(max-width: 312px) 100vw, 312px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Assume the statement is true up to <em>n</em>. To prove the general case of <em>n</em> + 1, observer that rolling out the largest term</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/37647361c7a2409786e04cf66857c0c3/4947e/Factorial3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 320px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 16.875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVQI12NwdHS0r6mpkero6JDt6upSKykpUcjOzpZpa2vT7O3tFQfKqRUXFyu3trYqt7e3a9fX10sXFhbq9/f3y+bl5SnZ2tpaAtXJA+WkgWqMGFJTU23S0tKUNm3axAxUzJmUlMQKNICzu7ubF6iJHWgRJ9ACDqAGbqAYH5Bmz83N5Zw9ezZrQ0MDX0ZGhnVycrLM/PnzWWprazkZmpubbUpLS8UYyAA9PT2snZ2d9n5+ftwwMQC8BUX81MWgxQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Factorial3"
+        title=""
+        src="../static/37647361c7a2409786e04cf66857c0c3/4947e/Factorial3.png"
+        srcset="/static/37647361c7a2409786e04cf66857c0c3/f723e/Factorial3.png 188w,
+/static/37647361c7a2409786e04cf66857c0c3/4947e/Factorial3.png 320w"
+        sizes="(max-width: 320px) 100vw, 320px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>reveals the left side of our inductive assumption. Substituting the right side gives us</p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/314c88d4c6bba8748da33a1ffd8d7286/c18f7/Factorial4.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 343px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 15.74344023323615%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAA0UlEQVQI12MoKCjwLyoqkmQAggkTJjAyIIEPHz4w7Nu3D0VszZo1zDNmzGBCFpszZw7LqVOnGP7//8/A4OTk5FBTUyPT0dEh29nZqZ6cnCxZW1ur2tbWJt/d3S1TWFio3tjYKA/k6wCxbH5+vhZIrqmpSamlpUVz0qRJolVVVSY5OTmi6enpogxAhlVGRoYMyHSgQSzu7u5Mra2tHEDD2GbPns1SVlbGCrSQtaenh7O/v58V6CNWIM08ZcoUdqDBHLNmzWIBqmeLjIxkCggIYAQAOj9TgL7hl+QAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Factorial4"
+        title=""
+        src="../static/314c88d4c6bba8748da33a1ffd8d7286/c18f7/Factorial4.png"
+        srcset="/static/314c88d4c6bba8748da33a1ffd8d7286/f723e/Factorial4.png 188w,
+/static/314c88d4c6bba8748da33a1ffd8d7286/c18f7/Factorial4.png 343w"
+        sizes="(max-width: 343px) 100vw, 343px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/e8b7e017f8a22855c273707b6c3a66a1/d8176/Factorial5.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 233px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 7.725321888412016%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsSAAALEgHS3X78AAAAo0lEQVQI12Nob283yczM5J07d66sr6+vRE9Pj21xcbFdU1OTdG9vr0xBQYF8ZWWl/aRJkwzLy8u5J0+erFhRUSEMFHPLzc0VmTlzpmxwcLBgY2OjA1CPIkNNTY0XEMsCFZoqKysLNjQ0WLW2tho0NzfLV1dXawEN1QCyfYDiLt3d3eJ9fX3WXl5evHl5eQ4tLS1S/f39ZkCHCBcVFZl1dXWpAQBZMD/OguQ2YgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Factorial5"
+        title=""
+        src="../static/e8b7e017f8a22855c273707b6c3a66a1/d8176/Factorial5.png"
+        srcset="/static/e8b7e017f8a22855c273707b6c3a66a1/f723e/Factorial5.png 188w,
+/static/e8b7e017f8a22855c273707b6c3a66a1/d8176/Factorial5.png 233w"
+        sizes="(max-width: 233px) 100vw, 233px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/a2ec89b5a42156e322cf54065410169c/db935/Factorial6.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 110px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 16.363636363636363%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsSAAALEgHS3X78AAAAyUlEQVQI12NgQALt7e08M2bMcEIW+///PyuI3rt3L2tlZaVrX19fUFdXl21bW5s5srqrV69yNTU1uTBERUXpBAcHu6SlpYkEBgaqNTY22gA1NFVXV/uCFNbV1WUCxdxB7PLy8sTY2Fg7oJ6IoqIixz179rC5urrqBwQEyIHkExMTc0EGqoSEhFgADRNobm5WnDBhgldqaqon0CXBIEXTp0/3mTVrljaInZ6enlNRUWENcunq1auVgXxGb29vAQcHB06gT1hiYmIiALGYS5zyZNYxAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Factorial6"
+        title=""
+        src="../static/a2ec89b5a42156e322cf54065410169c/db935/Factorial6.png"
+        srcset="/static/a2ec89b5a42156e322cf54065410169c/db935/Factorial6.png 110w"
+        sizes="(max-width: 110px) 100vw, 110px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>This general trick of separating out the largest term lies at the heart of all proofs.</p>
+<h3>Modeling the Problem</h3>
+<p><strong>Modeling</strong> is the the skill of taking your application and describing it in such a way that you can connect what problems you need to solve with the abstract algorithms you can use to solve them</p>
+<h3>Combinatorial Objects (Common Structures):</h3>
+<p><strong>Here is a list of common objects and the keywords to know to use them</strong></p>
+<p><strong>Permutation</strong>: Arrangements of items. Keywords: arrangement, tour, ordering, sequence</p>
+<p><strong>Subsets</strong>: Selections from a larger group of items. As order does not matter in subsets as they matter in permutations, permutations of subsets are considered identical. Keywords: cluster, collection, committee, group, packaging, selection</p>
+<p><strong>Trees</strong>: A structure used to represent hierarchical relationships between items. Keywords: dominance relationship, ancestor/descendant relationship, taxonomy, hierarchy</p>
+<p><strong>Graphs</strong>: Structures used to represent relationships between arbitrary pairs of objects. Keywords: network, circuit, web, relationship</p>
+<p><strong>Points</strong>: Represent locations in geometric space. Keywords: positions, sites, data records, locations</p>
+<p><strong>Polygons</strong>: Represent regions in geometric space, eg borders of a country can be described by a polygon on a map/plane. Keywords: regions, shapes, configurations, boundaries</p>
+<p><strong>Strings</strong>: Sequence of characters or patterns. Keywords: text, characters, patterns, labels</p>
+<p>Recursive decompositions of combinatorial objects:</p>
+<p><strong>Permutations</strong></p>
+<p>{4, 1, 5, 2, 3} -> 4+{1, 4, 2, 3}</p>
+<p><strong>Subsets</strong></p>
+<p>{1, 2, 7, 9} -> 9+{1, 2, 7}</p>
+<p><strong>Trees</strong></p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/e7cdc69664e1e68fddc655439a13040c/fad5d/Trees.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 308px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 29.87012987012987%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1UlEQVQY031RWw6CMBDs/W/EIeCDAH8SBSQiWB8QEMoybjdAGmOcpN1Hp7s7rQJjWRZZFnkYYux7uPnvtWEhEvuqazSHg/jKJYzjCOJ4MmYv+AtuYbsb5pv1jrIbcaCLAvPasW9bPC8X8WmehUx81nLeNt3Q3W4YOLfBTioF3yzxejzuB0PX4V6W4ldVhSAIkCQJPM9DlmU7r8lzdFrv8Z2HUiJxmkCORMNT/ZO8cawicnIz89XJ9yXQ3PnBUxFLKuP456fQ+iSWq1cF5ygSW6cp2qbBB/oD08fLCQF2AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Trees"
+        title=""
+        src="../static/e7cdc69664e1e68fddc655439a13040c/fad5d/Trees.png"
+        srcset="/static/e7cdc69664e1e68fddc655439a13040c/f723e/Trees.png 188w,
+/static/e7cdc69664e1e68fddc655439a13040c/fad5d/Trees.png 308w"
+        sizes="(max-width: 308px) 100vw, 308px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p><strong>Graphs</strong></p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/aa62d0b2dea87cb3d65c7430fa8f3836/caea0/Graphs.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 306px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 16.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAl0lEQVQI102OyQ6DMAxE+f+f4hNYbuXUKuxSoEHQ7J6aiKL6Mtb4je3MHAdEXeNXRARRVdi3Dc+iAHmP/zrnr7JEMOb2zvyH+ZY1Izb0NfQcttam3jmXdFlXCCGQ5zkeTZM8w3wkujN0qY8RmWxbWK0huw7u+mbpexz7DjVNcHwghIC3UlBSQs1zWrCOIzQziR+GxG/MfwFbC+aTvsXbOQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Graphs"
+        title=""
+        src="../static/aa62d0b2dea87cb3d65c7430fa8f3836/caea0/Graphs.png"
+        srcset="/static/aa62d0b2dea87cb3d65c7430fa8f3836/f723e/Graphs.png 188w,
+/static/aa62d0b2dea87cb3d65c7430fa8f3836/caea0/Graphs.png 306w"
+        sizes="(max-width: 306px) 100vw, 306px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p><strong>Point Sets</strong></p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/e9cd13128e642d91c8f7358cbba75b43/ff71e/PointSet.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 416px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 34.61538461538461%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA6UlEQVQoz11SWxKDIAzk/rf0t9W2PkBAIN3NJJ22O4PEmMdmYxhjiMPtep6St+3H7wcP6deld61VemtyzLM0+oDAx5WzOh2tFPUR8fGQf2gBFGP73rvaRNl3Cc268HwjPp/KqMQoBcXXdZWckjRrpETQuJPpcchpE4WExIokFq5IcKb0OcsNwdM0yYZYskivl8bHZZFqMRdkYoNA5wBtBhHdtKAm++2m3xwnCtJPSdzfbOQEaTKYBlYms4KXZGOqTvf7x+bN0SiLM6O2zCFYiNJ8lsKOvgjd5t92v/+AYYW5DLVxF1sKWb8BDlgl2ohTPX0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Point set"
+        title=""
+        src="../static/e9cd13128e642d91c8f7358cbba75b43/ff71e/PointSet.png"
+        srcset="/static/e9cd13128e642d91c8f7358cbba75b43/f723e/PointSet.png 188w,
+/static/e9cd13128e642d91c8f7358cbba75b43/d744b/PointSet.png 375w,
+/static/e9cd13128e642d91c8f7358cbba75b43/ff71e/PointSet.png 416w"
+        sizes="(max-width: 416px) 100vw, 416px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p><strong>Polygons</strong></p>
+<p>
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/c83e1cd4acc47be61e8eec3194bf88bc/67234/Polygons.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 316px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 46.202531645569614%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAzUlEQVQoz12SSw6AMAhEe/9beQyX7t0Z/5+aR/IMlqQpZYYplJaabN/3uixL+Od5fj72PM9vYeDkYNu2xSrrugYBAdZ93wEQO44jYgpmA4MLjih4CM7zHI7Ckq1EMslwOSNCDkYcvl0VApYt0Vvxr+v6VcbFCLCDw+OMz16syETbtc1xHOswDLXrutr3fcTh5qeRGxUayGD2rRrhaZo+XGHblV9sxYGw007bajsQcd9U0eJ08nvkNtqvkn9E+84hqBjVZWtFnajD8Nu0/BcoGcUwMTqi3wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Polygons"
+        title=""
+        src="../static/c83e1cd4acc47be61e8eec3194bf88bc/67234/Polygons.png"
+        srcset="/static/c83e1cd4acc47be61e8eec3194bf88bc/f723e/Polygons.png 188w,
+/static/c83e1cd4acc47be61e8eec3194bf88bc/67234/Polygons.png 316w"
+        sizes="(max-width: 316px) 100vw, 316px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p><strong>Strings</strong></p>
+<p>A L G O R I T H M -> A | L G O R I T H M</p>
+<p><strong>Take Home</strong>: Modeling your application in terms of well-defined structures and algorithms is the most important single step towards a solution</p>
+<h3>Recursive Objects</h3>
+<p>The key to recursive thinking is looking for things that are comprised of smaller things of the same type. All of the items in the combinatorial objects list could be thought about recursively.</p>
+<p><strong>Permutations</strong>: If you delete the first element of a permutation, you'll get a permutation of the remaining elements. Permutations are recursive objects.</p>
+<p><strong>Subset</strong>: Subsets contain subsets of even smaller subsets. Subsets are also recursive objects</p>
+<p><strong>Trees</strong>: If you delete the root of a tree, you'll get a collection of smaller trees. If you delete a leaf, you're left with a slightly smaller tree. Trees are recursive objects.</p>
+<p><strong>Graphs</strong> If you remove any edge or vertex from a graph, the resulting structure is still a graph. Graphs are recursive objects</p>
+<p><strong>Points</strong>: If you remove or separate points, you're still left with points. Points are recursive objects.</p>
+<p><strong>Polygons</strong>: Polygons are recursive because you can split them apart by adding chords between nonagent vertices and still end up with a polygon. The smallest simple polygon is a triangle</p>
+<p><strong>Strings</strong> If you add or remove characters of a string, you're still left with a string</p>
+<h3>Psychic Lottery</h3>
+<p><strong>Problem</strong>: Given four lotto numbers (out of 15), find smallest number of tickets needed to guarantee at least one winning ticket.</p>
+<ul>
+<li>Need a way to generate subsets</li>
+<li>Need a way to cover</li>
+<li>Need to keep track of combinations covered</li>
+<li>Need search algorithm to decide what to pick next</li>
+</ul>
+<h4>PseudoCode</h4>
+<p>LottoTicketSet(<em>n, k, l</em>)</p>
+<p>       Initialize the
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/de7ce253a913f85bcaa4233067310294/5dcab/lotto.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 31px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 145.16129032258064%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAdCAYAAACqhkzFAAAACXBIWXMAAAsSAAALEgHS3X78AAAFd0lEQVRIx5VWfUiWVxS/74dvCrEVMmY6RojkNAVdfkXYSJvzI6cklgimZmVavpotp6nlR0k6P8NEpdQKLavV5hcVUfRBLNSarpiplTbKieVWqQxJ737nvvd59o4Ro/vPOefe+5x7z++c87sPa2lpYTRqamp0JO/fvx9y5coVfu/eva/JvnXrlpin0d/fryX54MGDyJKSkj/27t37KdkXLlywIDk+Pm7a2NnZKT6amZmxh2Pe0dHRKH1ojx07pr948aKuq6tLt3nzZl1dXd0CWtixY0d0cnLy75xzG7LfvHmjHsw8PT2FER0d3YWNbex/RnV1tRXJlJSUH4uLi9/C6QdkQ2oZTjeQ0dDQkJWTk4M5vlz5MC0tbWFeXl7okydP/Nrb26O2b98ecfPmzc+Vdexdsnv3bo4oMshes2aNVlmw2rhx46sjR478QLaXl5cecwZg1X/69GlOB92+ffvbAwcO9OJWI7THAoNkRkZGA6Kii/wTAnAxpqam8hcvXixV5i5fvrz04cOHMYWFhT/5+Pg001xubm5JVFTUIOknTpwQWM7Pz38WHh7Okcgi1SFOmVq1alWTNDXPnj3TKGsBAQFDgOM70p2dnU/W19f3K/tKS0uF05iYmF+Cg4O/Vx2uXLlyIjEx8RvSgZnFtWvX9KTfvXs3LSgoaJ50YO0WGxvL9+3bl3ru3DkjzZWXlwuHBw8ezNqyZQuF7cZaW1tj1q9fz4eHh2Npsa+vT5+VlSUcZmZmxu7fv3+A9Bs3bjhVVFQ8BTx3BgcHo2kONWwh72RYt24dx14vtmvXrmqE8hvNwrFaS2fOnFEjWL16tapTPSp6VVWVgGZqasomLCyMsrKcLVu2rNTX11dkzsPDQyuzzszluwZg0Mh9H8fHx3MkcEhAAOOpdKhD6JQk8QFqjJWVlQl9dnaW1dbWsqNHj6oHjY2NKQ6XoAJ4eno6Z66urq1JSUnDtODt7a1j7zGmp6dJiG+sra3zt23bxhkVLQrzjsTqvRzSsLOzUxKTjBrljAraaDR2v8thQUGBkGg5/aFDhwTGkGLu5cuXJERFWFpapm/YsIFTljkw7JH1+C+He/bsERJlpFXmUKca8z0ODg7KDRMAHWdWVlaVmzZtEll2c3P7zw1DQkKEg5GRkXDwnyvpkBozDMXw8/M7SZdjtra2JRERESLLjo6O2t7eXnUTbq6VTj2ys7P58ePHK8gGu1hIolWy/Ami4OgcztAyJS4uLsOyp/WKs6GhITYxMSEcgjS8AwMDx0BjX5A9Ojoq5hsbG9WyocLOz88/xcDOxdSHc3Nz4bQIJzpy5u/vzy5dumQhu6Mc+DwnvaenRz3U3d1dwdOwdu1aKk57Bkee1Mvo0TRaQW8rIFONCt3e3j4bXDmpsAxoTbwfwF7c9PDhw4mRkZH80aNHPmLH1q1bX+GEauUdef36NcMjpYRjs3Pnzr+AbwDZTk5OasabmpoMsgr6kNBOFXzwWh6YguhnIdltbW0anKiEswjYcHCiqywTzcDAgOn9MB3ojL1v0aIVzOxtWIyw/8Qz8KXkN+2KFSvEB+DJeGR5aHJy8lfgF0pzoC8d+lzAkZCQEB0XF0eXEdxInGeQC1XgtGEFp/Pnz+skjaUgaf3Nzc2CkfFYaSU5aCB1oaGhPwOyUgUuc6oyULaRnDK5qDt79iyT5LoEjhYrESF8S5J4DloIDgxrsru7u0344j0WyvXr143gNA5+XCQfJSohrXnngL70snw80bvPUU4uZKPodeYYmq5rcmJEgY+haD+SeGqKioqonNRfkcePH/vhXaHOiJev5gIJh6kjFKf4tRCnVFZW+sORnWQWjdm/jdCvXr3qhsr4Ct98qHyLfx2x52/7Gbfd5SzOjgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="lotto"
+        title=""
+        src="../static/de7ce253a913f85bcaa4233067310294/5dcab/lotto.png"
+        srcset="/static/de7ce253a913f85bcaa4233067310294/5dcab/lotto.png 31w"
+        sizes="(max-width: 31px) 100vw, 31px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    -element bit-vector <em>V</em> to all false</p>
+<p>       While there exists a false entry in <em>V</em></p>
+<p>              Select a <em>k</em>-subset <em>T</em> of {1, ...<em>n</em>} as the next ticket to buy</p>
+<p>              For each of the <em>l</em>-subsets of <em>Tᵢ</em> of <em>T</em>, <em>V[rank(Tᵢ)]</em> = true</p>
+<p>       Report the set of tickets bought</p>
+<p>Client provided counter-example - 5 tickets would cover when the algorithm had said it would take 28.</p>
+<p>Problem in modeling -> didn't need to cover every combination (which they would have realized if they'd attempted to solve a small example by hand before jumping into code)</p>
+<p>Recommended books for war stories: <em>Mythical Man Month</em> and <em>Programming Pearls</em></p></div><div class="tagsContainer"><a href="../tags/algorithms/index.html"><span>Algorithms</span></a><a href="../tags/algorithm%20design%20manual/index.html"><span>Algorithm Design Manual</span></a></div></div></section><div class="post-suggestionBar"><div class="post-postSuggestion"><a href="../computer-science-distilled-chapter-i/index.html"><button value="prev" aria-label="previous" class="prev-post"><h3 class="prev-post">&lt;&lt; Previous:<br/>Computer Science Distilled<br/>1.1 Basics &amp; 1.2 Logic</h3></button></a></div><div class="post-postSuggestion"><a href="../algorithm-design-manual--chapter-two/index.html"><button value="next" aria-label="next" class="next-post"><h3 class="next-post">&gt;&gt; Next:<br/>Algorithm Design Manual:<br/>Algorithm Analysis</h3></button></a></div></div><footer class="footer-wrapper"><div class="footer-text"><span>Notes for Great Good    <span role="img" aria-label="pawprints">🐾</span><a href="https://amyshackles.com/">Amy Shackles</a></span></div></footer></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-post-jsx","jsonName":"algorithm-design-manual-chapter-one-236","path":"/Algorithm-Design-Manual--Chapter-One"};window.dataPath="745/path---algorithm-design-manual-chapter-one-236-7ca-SN4YHN85gi7J9PV7hJAO5LzSraA";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-63577178a3bdd725b6eb.js"],"component---src-pages-tags-jsx":["/component---src-pages-tags-jsx-e522a5598fa2964ee6de.js"],"component---src-templates-tag-jsx":["/component---src-templates-tag-jsx-5f637c2edf65bf3f9f1c.js"],"component---src-templates-post-jsx":["/component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"],"component---src-pages-404-jsx":["/component---src-pages-404-jsx-095f8c7d93b57e5a6681.js"],"component---src-pages-blog-jsx":["/component---src-pages-blog-jsx-316bdf552f6880939952.js"],"component---src-pages-index-jsx":["/component---src-pages-index-jsx-89fc494ceffadedf0b62.js"],"pages-manifest":["/pages-manifest-e0687b1a66911235678c.js"]};/*]]>*/</script><script src="../webpack-runtime-fd7c0e3081b0f1218320.js" async=""></script><script src="../styles-aa92193d8aa2fe2f8548.js" async=""></script><script src="../app-63577178a3bdd725b6eb.js" async=""></script><script src="../1-6c82cfd6aba31a386fde.js" async=""></script><script src="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js" async=""></script></body>
+<!-- Mirrored from notes-for-great-good.netlify.app/algorithm-design-manual--chapter-one/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:37:10 GMT -->
+</html>

@@ -1,0 +1,130 @@
+body,
+html {
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: 2px;
+  border-color: black;
+  background-color: plum;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  text-transform: uppercase;
+}
+
+button[disabled] {
+  background-color: lightgray;
+  color: grey;
+  cursor: not-allowed;
+}
+
+button:active {
+  background-color: palegreen;
+}
+
+input {
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1em;
+  margin-bottom: 1em;
+  outline: none;
+  padding: 0.5em;
+}
+
+input:focus {
+  border-bottom: 2px solid plum;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+#board-holder {
+  flex: 0 0 525px;
+}
+
+#board-squares {
+  display: grid;
+  grid-template-columns: repeat(7, 75px);
+  grid-template-rows: repeat(6, 75px);
+}
+
+#click-targets {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#form-holder {
+  display: flex;
+  flex: 0 0 150px;
+  flex-direction: column;
+  padding: 1em;
+}
+
+#overlay {
+  background-image: url(./images/connect-four.png);
+  background-size: cover;
+  height: 450px;
+  position: absolute;
+  top: 75px;
+  width: 525px;
+}
+
+.click-target {
+  background-color: transparent;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 65px;
+  height: 65px;
+  margin: 5px;
+  width: 65px;
+  transition: background-color ease-in-out 0.25s;
+}
+
+.is-invisible {
+  visibility: hidden;
+}
+
+.token {
+  box-sizing: border-box;
+  border-radius: 65px;
+  height: 65px;
+  margin: 5px;
+  width: 65px;
+}
+
+.token.red {
+  background-color: palevioletred;
+}
+
+.token.black {
+  background-color: palegreen;
+}
+
+.red .click-target:hover {
+  background-color: palevioletred;
+}
+
+.black .click-target:hover {
+  background-color: palegreen;
+}
+
+.full.click-target {
+  border: 1px solid white;
+}
+
+.full.click-target:hover {
+  background-color: white;
+  cursor: no-drop;
+}

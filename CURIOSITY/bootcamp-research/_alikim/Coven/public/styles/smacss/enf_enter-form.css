@@ -1,0 +1,23 @@
+/* enter-form */
+.enf {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+}
+.enf > ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  line-height: 1.5rem
+}
+.enf-btn {
+  width: 65vw;
+  margin: 1.5rem 0 0;
+  padding: 1rem;
+}
+.enf-input {
+  width: 65vw;
+  line-height: 1.5rem;
+}

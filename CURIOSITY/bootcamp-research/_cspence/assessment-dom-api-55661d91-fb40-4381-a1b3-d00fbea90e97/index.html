@@ -1,0 +1,182 @@
+<!-- DO NOT CHANGE THE HTML IN THIS FILE OR YOU MAY FAIL -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selection, Event Handling, and Storage Assessment Project</title>
+  <link href="./site.css" rel="stylesheet">
+</head>
+<body>
+  <h3>Important Note:</h3>
+  <p>
+    Don't forget to refresh the page when you save changes to the "your-code.js"
+    file.
+  </p>
+  <fieldset>
+    <legend>PROBLEM 1: Set the square red</legend>
+    <ul>
+      <li>Button id: <code>turn-square-red</code></li>
+      <li>Div id: <code>red-outlined-square</code></li>
+    </ul>
+    <p>
+      When you click the button below, you should add the "red" CSS class to the
+      red-outlined square. That will turn the square solid red. Write code in the
+      "your-code.js" file to make that happen.
+    </p>
+    <div class="problem-area" id="problem-area-1">
+      <button id="turn-square-red">Turn the square solid red</button>
+      <div id="red-outlined-square"></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>PROBLEM 2: Add some text</legend>
+    <ul>
+      <li>Button id: <code>add-content-to-rectangle</code></li>
+      <li>Div id: <code>empty-rectangle</code></li>
+    </ul>
+    <p>
+      When you click the button below, you should add the text "XYZ" to the
+      inner HTML of the rectangle div. Write code in the "your-code.js" file to
+      make that happen.
+    </p>
+    <div class="problem-area" id="problem-area-2">
+      <button id="add-content-to-rectangle">Add XYZ to the rectangle</button>
+      <div id="empty-rectangle"></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>PROBLEM 3: Add an image</legend>
+    <ul>
+      <li>Button id: <code>add-image-to-rectangle</code></li>
+      <li>Div id: <code>lonely-square</code></li>
+    </ul>
+    <p>
+      When you click the button below, you should create an image element, set
+      its source attribute to "./images/logo-emblem-black.svg", and add it as a
+      child to the square div. Write code in the "your-code.js" file to make
+      that happen.
+    </p>
+    <div class="problem-area" id="problem-area-3">
+      <button id="add-image-to-rectangle">Add image to the square</button>
+      <div id="lonely-square"></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>PROBLEM 4: No bubbling</legend>
+    <ul>
+      <li>Div id: <code>bubble-trouble</code></li>
+    </ul>
+    <p>
+      When you click the solid orange rectangle below with the text "bubble
+      trouble" in it, then the rectangle surrounding it should _not_ turn black
+      because you have stopped the propagation of the event up the stack. Write
+      code in the "your-code.js" file to make that happen.
+    </p>
+    <div class="problem-area" id="problem-area-4">
+      <div>
+        <div id="bubble-trouble">bubble trouble</div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>PROBLEM 5: Count by one</legend>
+    <ul>
+      <li>Global variable name: <code>counterValue</code></li>
+      <li>Decrement button id: <code>decrement</code></li>
+      <li>Increment button id: <code>increment</code></li>
+      <li>Zero out button id: <code>zero-out</code></li>
+      <li>Counter value span id: <code>counter-value</code></li>
+    </ul>
+    <p>
+      There's a global variable named <code>counterValue</code>.
+    </p>
+    <ul>
+      <li>
+        When you click the "Increment (+1)" button, you should add one to the
+        value of <code>counterValue</code> and update the inner HTML of
+        the counter value span to the new value of <code>counterValue</code>.
+      </li>
+      <li>
+        When you click the "Decrement (-1)" button, you should subtract one
+        from the value of <code>counterValue</code> and update the inner HTML
+        of the counter value span to the new value of <code>counterValue</code>.
+      </li>
+      <li>
+        When you click the "Zero out" button, you should set the value of
+        <code>counterValue</code> to zero and update the inner HTML of the
+        counter value span to the new value of <code>counterValue</code>.
+      </li>
+    </ul>
+    <p>
+      Write code in the "your-code.js" file to make that happen.
+    </p>
+    <div class="problem-area" id="problem-area-5">
+      <button id="increment">Increment (+1)</button>
+      <button id="decrement">Decrement (-1)</button>
+      <button id="zero-out">Zero out</button>
+      <div id="counter-value-message">
+        Counter value: <span id="counter-value"></span>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>PROBLEM 6: Storage and key presses</legend>
+    <ul>
+      <li>Input box id: <code>my-name-is</code></li>
+    </ul>
+    <p>
+      Subscribe to the <a
+      href="https://developer.mozilla.org/en-US/docs/Web/API/Document/keyup_event"
+      target="_blank">"keyup"</a> event of the input box. When the event occurs,
+      store the value of the input box in local storage. When the page loads, if
+      there's a stored value in local storage for the input box, set the value
+      of the input box to the stored value. Write code in the "your-code.js"
+      file to make that happen.
+    </p>
+    <p>
+      What this means is that if someone types "Sugar face" into the text box
+      and refreshes the page, then the text "Sugar face" should show back up in
+      the text box after the page loads.
+    </p>
+    <p>
+      To get the value of what is in the text box, get the element by its id and
+      use the <code>value</code> property on it to get and set the value of the
+      input box. For example, if you had the following HTML:
+      <pre>&lt;input type="text" id="nickname"&gt;</pre>
+      the following code would set the value of the input box to "Dima".
+      <pre>document
+  .getElementById('nickname')
+  .value = 'Dima';</pre>
+    </p>
+    <div class="problem-area" id="problem-area-6">
+      <input type="text" id="my-name-is" placeholder="My name is">
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>PROBLEM 7: Don't go there!</legend>
+    <ul>
+      <li>Link id: <code>going-away</code></li>
+    </ul>
+    <p>
+      Subscribe to the "click" event of the link below and prevent the default
+      behavior from occurring. You'll know it works when you click on the link
+      and it doesn't open another window with the App Academy Web site in it.
+    </p>
+    <div class="problem-area" id="problem-area-7">
+      <a href="https://appacademy.io" target="_blank" id="going-away">
+        App Academy
+      </a>
+    </div>
+  </fieldset>
+
+  <script src="./scripts/not-your-code.js"></script>
+  <script src="./your-code.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/CS5-Netlify",
+          "title": "CS5: Netlify",
+          "tags": ["CS5", "Netlify", "DevOps"],
+          "subtitle": null,
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "Netlify"
+  }
+}

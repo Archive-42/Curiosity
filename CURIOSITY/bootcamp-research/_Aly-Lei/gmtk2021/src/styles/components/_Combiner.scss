@@ -1,0 +1,34 @@
+.combinerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0rem auto 0;
+  justify-content: center;
+  // border: 30px solid $color-cauldron;
+  width: 70%;
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 50%;
+  }
+}
+
+    .cauldronContainer {
+      position: relative;
+      z-index: 2;
+      background-image: url(../../images/gui/cauldron.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 28rem;
+      width: 40rem;
+      margin: 2rem auto;
+  } 
+
+    .cauldronLiquidContainer {
+      // z-index: -1;
+    transition: all 1s ease;
+    position: absolute;
+      width: 22rem;
+      height: 22rem;
+      border-radius: 50%;
+    }
+

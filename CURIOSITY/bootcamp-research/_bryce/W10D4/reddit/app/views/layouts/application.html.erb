@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reddit</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if logged_in? %>
+      <ul>
+        <li><%= current_user.username %></li>
+        <li><form action="<%=session_url%>" method="POST">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Logout">
+        </form></li>
+        <li><a href="<%=new_sub_url%>">Make a new sub</a></li>
+        <li><a href="<%=subs_url%>">All subs</a></li>
+      </ul>
+    <%else%>
+      <a href="<%= new_session_url%>">Login</a>
+    <%end%>
+
+    <% if flash[:errors] %>
+      <%= flash[:errors] %>
+    <% end %>
+      
+    <%= yield %>
+  </body>
+</html>

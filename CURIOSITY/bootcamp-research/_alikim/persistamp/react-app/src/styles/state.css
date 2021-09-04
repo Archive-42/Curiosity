@@ -1,0 +1,17 @@
+
+.is-focused  {
+  color: white;
+  background-color: black;
+  outline: none;
+}
+
+.char-counter {
+  display: block;
+  color: #aaa;
+  text-align: right;
+  font-size: 0.6rem;
+}
+
+.is-in-debt, .is-err {
+  color: red;
+}

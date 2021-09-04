@@ -1,0 +1,28 @@
+.sections-nav {
+  border-bottom: 1px solid $light-gray;
+}
+
+.sections-nav ul {
+  display: flex; 
+  justify-content: center;
+  // margin: 0 auto;
+}
+
+.sections-nav li {
+  padding: 10px;
+}
+
+.sections-nav a:hover {
+  background-color: $gray;
+  
+}
+
+.sections-nav a {
+  text-decoration: none;
+}
+
+.sections-nav > ul > li:last-of-type > a {
+  text-decoration: underline;
+  font-size: 8px;
+  text-transform: uppercase;
+}

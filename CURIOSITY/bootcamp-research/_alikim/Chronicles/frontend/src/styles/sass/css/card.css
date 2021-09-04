@@ -1,0 +1,51 @@
+.card {
+  position: relative;
+  margin: 0.5rem;
+  width: 70%;
+  margin: 0.5rem auto;
+  min-height: 2rem;
+  border-radius: 1rem;
+  padding: 0rem;
+  background-color: ivory;
+  box-shadow: 5px 5px 6px lightgray;
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+}
+
+.card:hover > .card-pic {
+  font-size: 1.5rem;
+}
+
+.card-pic {
+  position: absolute;
+  font-size: 1.2rem;
+  width: 2rem;
+  height: 2rem;
+  float: left;
+  /* margin: 0.5rem 1rem; */
+  border-radius: 0.5rem 0 0 0.5rem;
+  /* border-right-width: 6px; */
+  /* border-right-style: double; */
+  color: white;
+  /* transform: rotate(-10deg); */
+  transition: all 0.1s ease-out;
+}
+
+.card-pic > i {
+  position: absolute;
+}
+
+.card.active {
+  box-shadow: 5px 5px 5px darkgray;
+}
+
+.yrc-con {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  align-content: center;
+  align-items: baseline;
+  width: 88%;
+  margin-left: 3.5rem;
+}
+/*# sourceMappingURL=card.css.map */

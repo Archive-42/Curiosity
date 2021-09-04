@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,GAAG,WAAW,AAAA,QAAQ,CAAC;EACzB,aAAa,EAAE,iBAAiB;EAChC,mBAAmB,EAAE,CAAC;EACtB,gBAAgB,EAAE,UAAU;CAC7B;;AACD,AAAA,IAAI,GAAG,aAAa,AAAA,QAAQ,CAAC;EAC3B,MAAM,EAAE,KAAK;EACb,aAAa,EAAE,IAAI;EACnB,aAAa,EAAE,iBAAiB;EAChC,gBAAgB,EAAE,KAAK;CACxB",
+    "sources": [
+        "../modules/txt.scss"
+    ],
+    "names": [],
+    "file": "txt.css"
+}

@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  nginx:
+    build:
+      context: .
+    image: bamorgan13/nginx-compose
+    ports:
+      - 81:80

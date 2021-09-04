@@ -1,0 +1,1043 @@
+{
+	"info": {
+		"_postman_id": "9a933944-7ac2-4f85-8341-01dee29bb171",
+		"name": "GitBook API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User and Organizations",
+			"item": [
+				{
+					"name": "Get Current User",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Current User Organizations",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/orgs/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"orgs",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User or Organization",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/owners/:ownerID",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"owners",
+								":ownerID"
+							],
+							"variable": [
+								{
+									"key": "ownerID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Spaces",
+			"item": [
+				{
+					"name": "List Current User Spaces",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/user/spaces",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"user",
+								"spaces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List User or Organization Spaces",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/owners/:ownerID/spaces",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"owners",
+								":ownerID",
+								"spaces"
+							],
+							"variable": [
+								{
+									"key": "ownerID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Space",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/spaces/:spaceID",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"spaces",
+								":spaceID"
+							],
+							"variable": [
+								{
+									"key": "spaceID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Analytics",
+			"item": [
+				{
+					"name": "Get Space Content Analytics",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/spaces/:spaceID/analytics/content",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"spaces",
+								":spaceID",
+								"analytics",
+								"content"
+							],
+							"variable": [
+								{
+									"key": "spaceID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Space Search Analytics",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/spaces/:spaceID/analytics/search?endAt&startAt",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"spaces",
+								":spaceID",
+								"analytics",
+								"search"
+							],
+							"query": [
+								{
+									"key": "endAt",
+									"value": null
+								},
+								{
+									"key": "startAt",
+									"value": null
+								}
+							],
+							"variable": [
+								{
+									"key": "spaceID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Content (Read)",
+			"item": [
+				{
+					"name": "Revisions",
+					"item": [
+						{
+							"name": "List Pages",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content"
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Version Pages",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content/v/:versionID",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content",
+										"v",
+										":versionID"
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										},
+										{
+											"key": "versionID",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Pages",
+					"item": [
+						{
+							"name": "Get Page Content by ID",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content/v/:versionID/id/:pageID?format=",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content",
+										"v",
+										":versionID",
+										"id",
+										":pageID"
+									],
+									"query": [
+										{
+											"key": "format",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										},
+										{
+											"key": "versionID",
+											"value": ""
+										},
+										{
+											"key": "pageID",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Page Content by Path",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content/v/:versionID/url/:path?format",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content",
+										"v",
+										":versionID",
+										"url",
+										":path"
+									],
+									"query": [
+										{
+											"key": "format",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										},
+										{
+											"key": "versionID",
+											"value": ""
+										},
+										{
+											"key": "path",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Assets",
+					"item": [
+						{
+							"name": "List Space Assets",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content/assets",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content",
+										"assets"
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Content (Edit)",
+			"item": [
+				{
+					"name": "Versions",
+					"item": [
+						{
+							"name": "Update Version",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"title\": \"PM Version\",\n\t\"ref\": \"pm-version\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content/v/:versionID/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content",
+										"v",
+										":versionID",
+										""
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										},
+										{
+											"key": "versionID",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Version",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content/v/:versionID/",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content",
+										"v",
+										":versionID",
+										""
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										},
+										{
+											"key": "versionID",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Pages",
+					"item": [
+						{
+							"name": "Insert Page by ID",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"pages\": [\n\t\t{\n\t\t\t\"title\": \"\",\n\t\t\t\"description\": \"\",\n\t\t\t\"path\": \"\",\n\t\t\t\"document\": \"\"\n\t\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content/v/:versionID/id/:pageID",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content",
+										"v",
+										":versionID",
+										"id",
+										":pageID"
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										},
+										{
+											"key": "versionID",
+											"value": ""
+										},
+										{
+											"key": "pageID",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Insert Page by Path",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"pages\": [\n\t\t{\n\t\t\t\"title\": \"\",\n\t\t\t\"description\": \"\",\n\t\t\t\"path\": \"\",\n\t\t\t\"document\": \"\"\n\t\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content/v/:versionID/url/:path",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content",
+										"v",
+										":versionID",
+										"url",
+										":path"
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										},
+										{
+											"key": "versionID",
+											"value": ""
+										},
+										{
+											"key": "path",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Page by ID",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"title\": \"\",\n\t\"description\": \"\",\n\t\"path\": \"\",\n\t\"document\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content/v/:versionID/id/:pageID",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content",
+										"v",
+										":versionID",
+										"id",
+										":pageID"
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										},
+										{
+											"key": "versionID",
+											"value": ""
+										},
+										{
+											"key": "pageID",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Page by Path",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"title\": \"\",\n\t\"description\": \"\",\n\t\"path\": \"\",\n\t\"document\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content/v/:versionID/url/:path",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content",
+										"v",
+										":versionID",
+										"url",
+										":path"
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										},
+										{
+											"key": "versionID",
+											"value": ""
+										},
+										{
+											"key": "path",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Assets",
+					"item": [
+						{
+							"name": "Insert Asset",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"\",\n\t\"content\": \"\",\n\t\"encoding\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/spaces/:spaceID/content/assets",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"spaces",
+										":spaceID",
+										"content",
+										"assets"
+									],
+									"variable": [
+										{
+											"key": "spaceID",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Hello",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "8c6e5e6f-fe3a-4b69-8862-010182189cb3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}",
+					"host": [
+						"{{BASE_URL}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1214676f-6da2-460c-a535-cb300dac2a29",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ccdf7664-6cd5-4a59-a729-f06a809978fe",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "825dcd4d-abbc-49ea-a700-7bedd96aa209",
+			"key": "BASE_URL",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

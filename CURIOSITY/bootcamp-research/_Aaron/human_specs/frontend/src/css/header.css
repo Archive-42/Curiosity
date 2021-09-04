@@ -1,0 +1,48 @@
+.navBar_root {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-areas: "left middle right";
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.navBar_left {
+  display: flex;
+  flex-direction: row;
+  grid-area: left;
+  max-width: 25rem;
+}
+
+.navBar_middle {
+  display: grid;
+  grid-area: middle;
+}
+
+.navBar_right {
+  display: flex;
+  flex-direction: row;
+  grid-area: right;
+  max-width: 25rem;
+}
+
+.navBar_iconContainer {
+  /* grid-template-areas: 'dashboard help profile'; */
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+  max-width: 25rem;
+  width: fit-content;
+  justify-content: center;
+}
+
+.navBar_iconWrapper {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  padding: 0.5rem;
+  cursor: "pointer";
+}
+
+.navBar_iconWrapper:hover {
+  color: red;
+}

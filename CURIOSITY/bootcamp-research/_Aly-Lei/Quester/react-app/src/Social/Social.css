@@ -1,0 +1,50 @@
+.social__container--friends {
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+}
+
+.social__container--inbox {
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+}
+
+.friend {
+  background-image: url("../assets/paper_texture.jpg");
+  margin: 10px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 3px;
+  border: 1px solid white;
+}
+
+.friendname {
+  color: #292d3e;
+  text-shadow: 0 0 4px rgb(212, 255, 244);
+}
+
+.letter {
+  background-image: url(../assets/paper_texture.jpg);
+  padding: 20px;
+  border-radius: 3px;
+  border: 1px solid white;
+  margin: 3px;
+  text-align: center;
+}
+
+.message_form {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  background-image: url(../assets/paper_texture.jpg);
+  background-position: center;
+}
+
+.grid__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ". . .";
+}

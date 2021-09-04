@@ -1,0 +1,451 @@
+
+/* This @charset element is optional, as "utf-8" is the default, and likely that is all that you will need. */
+
+/* This is a CSS comment. An external .css style sheet like this cannot have HTML tags. */
+
+/* The link element within the head of an HTML document can be used to link to a .css document from within the HTML doc.
+
+<head>
+  <title>Insert Title Here</title>
+  <link rel="stylesheet" href="/path/stylesheet.css">
+</head>
+
+On the flip side, an @import rule can be used within the style element in the HTML doc's head. @import rules must go at the beginning of the style element before any selectors. You can import more than one style sheet, with the last style sheet taking precedence in the cascade.
+
+<head>
+  <style>
+    @import url("/path/stylesheet.css");
+    p { font-face: Verdana;}
+  </style>
+  <title>Insert Title Here</title>
+</head>
+
+You can also limit a style sheet's import to specific media types, like screen, print, or projection or viewing environments lik orientation or screen size.
+
+EXAMPLES:
+@import url(print_styles.css) print;
+@import "small_device.css" screen and (max-width: 320px;);
+
+Designing style sheets to be modular is a useful and popular technique.
+
+EXAMPLE:
+<!-- basic typography -->
+@import url("type.css");
+
+<!-- form inputs -->
+@import url("forms.css");
+
+<!-- navigation -->
+@import url("list-nav.css");
+
+<!-- site-specific styles -->
+body {background: orange; }
+p {font: 1em Georgia, serif; }
+
+*/
+.getting-started {
+  
+}
+.html-for-structure {
+  
+}
+.css-for-presentation {
+  
+}
+.javascript-for-behavior {
+  
+}
+.web-images {
+  
+}
+.appendices {
+  
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url("media/Raleway/Raleway-VariableFont_wght.ttf");
+}
+
+/* For testing/tracking */
+* {outline: 0px gray dashed; }
+header nav a.inactive {
+  color: lightgray;
+}
+
+html {
+  text-size-adjust: none;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+
+
+
+/* CONTAINER BLOCKS */
+body {
+  display: grid;
+  grid:
+    [header-start] "header header" max-content
+    [content-start] "content side" max-content
+    /[main-start] 70% [side-start] 25%;
+    column-gap: 5%;
+    row-gap: 2rem;
+  margin: 0 5%;
+  background: linear-gradient(180deg, rgb(148,148,148) 20px, rgb(101,176,191) 21px, rgb(122,189,203) 30px, rgb(191,234,242) 31px, rgba(196,237,245,1) 39px, rgba(255,255,255,1) 40px);
+}
+
+h1, h2 {
+  margin-top: 3rem;
+  font-family: Raleway, Futura Lt BT, Calibri Light, sans-serif;
+  text-transform: uppercase;
+}
+main h2 {
+  color: rgb(0, 120, 200);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+p {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: justify;
+}
+aside p {
+  text-align: left;
+  font-size: 0.8rem;
+  font-family: Calibri, 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+}
+
+/* HEADER AND NAV */
+      header {
+        grid-area: header;
+        margin: 0;
+        padding: 0;
+      }
+      main {
+        grid-area: content;
+      }
+      #my-own-site {
+        z-index: 1;
+        position: relative;
+        top: 6rem;
+        margin: 0;
+        border-radius: 10px;
+        border: 1px cadetblue solid;
+        padding: 1rem;
+        background-color: white;
+        height: min-content;
+        overflow: hidden;
+      }
+      #sidebar { 
+        grid-area: side;
+      }
+      .in-this-chapter {
+        z-index: 0;
+        position: sticky;
+        top: 6rem;
+        margin-top: 1rem;
+        height: min-content;
+        text-align: right;
+        font-size: 0.8rem;
+      }
+      .in-this-chapter h3 {
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        font-family: Raleway, Futura Lt BT, Calibri Light, sans-serif;
+        font-variation-settings: 'wght' 600;
+        font-size: 0.8rem;
+      }
+      .in-this-chapter ul {
+        margin: 0;
+        list-style-type: none;
+        font-family: Raleway, Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
+      }
+      .in-this-chapter ul li {
+        margin: 0.8rem 0;
+      }
+      .in-this-chapter a {
+        color: gray;
+        text-decoration: none;
+      }
+      .in-this-chapter a:hover {
+        color: cadetblue;
+      }
+
+      header div.parts {
+        border-bottom: solid 1px cadetblue;
+        padding-bottom: 0.2rem;
+        font-size: 1.2rem; 
+        text-transform: uppercase;
+      }
+      header span.part {
+        padding-right: 1rem;
+        font-variation-settings: 'wght' 800;
+      }
+      
+      header ol.contents {
+        margin: 0;
+        padding: 1rem;
+        text-align: left;
+        list-style-type: none;
+      }
+      header ol.chapters {
+        list-style-type: none; 
+      }
+      /* TODO: Change the parts into collapsed accordians with JS later on. */
+      ol.chapters li { margin: 0.5rem 0; }
+      header nav a {
+        color: black;
+        text-decoration: none; 
+        font: bold 1.2rem Calibri, sans-serif;
+      }
+      header nav a:hover {
+        color: cadetblue;
+      }
+      
+      /* #index {  */
+        /* background: linear-gradient(to bottom, burlywood, peachpuff 8%, white); } */
+      
+      #index nav {
+        margin: 0.5em auto;
+        border-radius: 20px;
+        border: 14px double black; 
+        padding-bottom: 1em;
+        /* background-color: lightyellow; */
+        /* background: repeating-linear-gradient(45deg, mistyrose, mistyrose 10px, lightyellow 10px, lightyellow 20px); */
+
+      }
+      #index nav li {
+        height: 1.5rem;
+        list-style: none; 
+        }
+        
+      #index nav a {
+        text-decoration: none;
+        font: 1rem Raleway, Gabriola, sans-serif;
+      }
+
+/* HEADINGS */
+      h1, h2 {
+        font-weight: normal;
+        text-transform: uppercase;
+        font-family: Raleway, sans-serif;
+      }
+      h1 {
+        margin: 3rem 0 1rem;
+        text-align: center;
+      }
+      h2 {
+        margin: 2.5rem 0 0.5rem;
+        font-size: 2rem;
+      }
+      h3 {
+        margin: 0.5em;
+      }
+
+      /* Chapter Titles */
+      #chapter {
+        display: grid;
+        grid:
+          [chap-start] "title chap" max-content
+          [num-start] "title num" 5rem
+          /[title-start] 70% [chap-num-start] 30%;
+        width: auto;
+        margin: 0;
+      }
+      #chap {
+        /* display: block; */
+        grid-area: chap;
+        margin: 0;
+        color: mediumseagreen;
+        /* line-height: 0.2rem; */
+        text-align: right;
+        letter-spacing: 0.2rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      #num {
+        /* display: block; */
+        grid-area: num;
+        margin: 0;
+        font-variation-settings: 'wght' 600;
+        font-size: 5rem;
+        line-height: 3.5rem;
+        text-align: right;
+      }
+      #chap-title {
+        grid-area: title;
+        text-align: left;
+        align-self: end;
+      }
+      
+      /* TERMS AND DESCRIPTIONS */
+      i {
+        color: gray;
+      }
+      code, dt {
+        color: mediumseagreen;
+        font: 0.8rem Consolas, monospace;
+      }
+      dt {
+        margin: 0.2rem 0 0;
+      }
+      dd {
+        font: 0.7rem Calibri Light, Corbel, sans-serif;
+      }
+      
+      h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+        font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
+      }
+/*
+outline: width color style
+
+#SPACE
+clear: 
+display: 
+order: 
+z-index: 
+position:
+float:
+
+grid:
+grid-template-rows: [opt-name-1] length [opt-name-2 opt-name-3] length 
+grid-template-columns: [opt-name-1] length [opt-name-2 opt-name-3] length
+grid-template-areas: 
+"cell-name cell-name"
+". ."
+
+flex: grow shrink basis
+flex-flow: direction wrap
+justify-content: 
+align-items:
+align-content:
+align-self: 
+
+#BOX
+box-sizing:
+width:
+height:
+overflow:
+
+shape-outside:
+shape-margin:
+margin: top right bottom left
+border-radius:
+border: width color style
+border-image: src slice (opt:fill) / width / outset repeat
+padding:
+
+color:
+background: color gradient image clip origin position size repeat attachment
+box-shadow: 
+opacity:
+
+#CONTENT
+content: 
+
+#what of these text properties can be included in 'font'?
+text-align:
+line-height:
+text-indent:
+
+font: style weight stretch variant size/line height family
+list-style: position type image
+
+word-spacing:
+letter-spacing:
+text-transform:
+text-decoration:
+text-shadow:
+
+
+
+
+tag class id reqattributes(src alt)  style(last)
+
+---
+
+#Elements ordered for CSS hierarchy
+
+html
+body
+general effects that aren't section-specific
+
+header
+header-specific content (navi, etc)
+
+footer
+footer-specific content (address, etc)
+
+main
+main-specific content
+
+article
+article-specific content
+
+section
+section-specific content
+
+aside
+aside-specific content
+
+----
+
+div
+span
+
+class
+id
+
+----
+
+# Text body content
+h1 > h6
+p
+ul
+ol
+li
+dl
+dt
+dd
+
+# Non-textblock content.
+figure
+figurecaption
+image
+blockquote
+embed - video, audio, canvas, iframe, etc.
+table - table, caption, tr, th, td
+forms
+
+# Inline elements
+#INLINE SEMANTICALLY MEANINGFUL
+em
+strong
+mark/highlight
+subscript
+superscript
+quote
+pre
+code
+
+#INFORMATIVE
+abbr
+cite
+define
+time text
+insert/delete
+
+#INLINE DECORATIVE
+italic
+underline
+strike-through
+small text
+word break
+
+*/

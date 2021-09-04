@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  db:
+    environment: 
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=fruitstand
+    image: postgres:latest
+    networks:
+      - fruitstand
+    ports:
+      - 5405:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  
+  web:
+    build: .
+    image: bamorgan13/fruit_stand
+    depends_on: 
+      - db
+    environment:
+      - DATABASE_URL=postgresql+psycopg2://user:password@db/fruitstand
+      - PORT=5000
+    networks:
+      - fruitstand
+    ports:
+      - 8080:5000
+    
+
+networks:
+  fruitstand:
+
+volumes:
+  postgres-data:

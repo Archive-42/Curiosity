@@ -1,0 +1,26 @@
+<h3><%=@album.title%></h3>
+
+<h5>Tracks</h5>
+<% if @album.tracks.empty? %>
+    <p>This album has no tracks... yet!</p>
+<% else %>
+    <section class="box">
+    <% @album.tracks.each do |track| %>
+        <a class="item" href=<%=track_url(track)%>><%= track.name %></a>
+    <% end %>
+    </section>
+<% end %>
+
+<%= content_for :footer do %>
+    <h5>Links</h5>
+    <section class="box">
+        <a class="item" href=<%=new_album_track_url(@album)%>>New Track</a>
+        <a class="item" href=<%=edit_album_url%>>Edit Album</a>
+        <form class="item" action="<%= album_url(@album) %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" value="Destroy Album">
+        </form>
+        <a class="item" href=<%=band_url(@album.band)%>>Back to <%=@album.band.name%></a>
+    </section>
+<% end %>

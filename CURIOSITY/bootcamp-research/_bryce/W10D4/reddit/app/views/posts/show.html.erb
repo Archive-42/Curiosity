@@ -1,0 +1,65 @@
+<h1><%= @post.title %> by <%= @post.author.username %></h1>
+
+<div>
+    Content: <br>
+    <%= @post.content %> <br>
+</div>
+
+<strong>Subs</strong>
+
+<ul>
+    <% @post.subs.each do |sub| %>
+        <li><a href="<%=sub_url(sub)%>"><%=sub.title%></a></li>
+    <% end %>
+</ul>
+
+<h1>Comments</h1>
+
+<a href="<%=new_post_comments_url(@post)%>">Comment on this post!</a>
+
+<ul>
+    <% @post.comments.each do |comment| %>
+        <li> <a href="<%= comment_url(comment)%>"><%= comment.content %> </a></li>
+    <% end %>
+</ul>
+
+
+
+<% if @post.author == current_user %>
+    <a href="<%=edit_post_url(@post)%>">Edit post</a>
+    <form action="<%=post_url%>" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete Post">
+    </form>
+<% end %>
+
+<!--
+<ul>
+    parent_comments.each do |comment|
+        <li>comment
+            <ul>
+                child_comment_list(comment)
+            </ul> think we can remove this ul
+        </li>
+    end
+</ul>
+
+
+def child_comment_list(comment)
+    return if comment.child_comments.empty?
+    <ul>
+    comment.child_comments.each do |child|
+        <li>child 
+        child_comment_list(child)
+        </li>
+    end
+    </ul>
+end
+
+top post 
+  first child post
+     first child child... til no child
+  second child
+
+-->

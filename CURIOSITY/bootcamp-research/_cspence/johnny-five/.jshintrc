@@ -1,0 +1,27 @@
+{
+  "esversion": 7,
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": false,
+  "newcap": false,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "boss": true,
+  "eqnull": true,
+  "node": true,
+  "strict": false,
+  "quotmark": "double",
+  "unused": true,
+  "globals": {
+    "exports": true,
+    "document": true,
+    "$": true,
+    "Radar": true,
+    "WeakMap": true,
+    "window": true,
+    "copy": true,
+    "mocks": true
+  }
+}

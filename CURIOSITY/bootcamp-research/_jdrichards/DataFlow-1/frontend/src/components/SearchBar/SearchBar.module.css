@@ -1,0 +1,17 @@
+.searchBar {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  outline: none;
+  border-radius: 0.25rem;
+  border: thin solid black;
+}
+
+.searchBar:focus {
+  border: thin solid blue;
+}
+
+.div {
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}

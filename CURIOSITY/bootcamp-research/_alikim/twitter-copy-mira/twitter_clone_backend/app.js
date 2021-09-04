@@ -1,0 +1,41 @@
+const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors")
+const environment = require('./config');
+const indexRouter = require('./routes/index')
+const tweetsRouter = require('./routes/tweets')
+const usersRouter = require('./routes/users')
+
+const app = express();
+
+app.use(morgan("dev"));
+app.use(express.json()); // parse request body content formatted in JSON to be usable through req.body
+app.use(cors({ origin: "http://localhost:4001"}))
+
+app.use("/", indexRouter);
+app.use("/tweets", tweetsRouter);
+app.use("/users", usersRouter);
+
+// Catch unhandled requests and forward to error handler.
+app.use((req, res, next) => {
+  const err = new Error("The requested resource couldn't be found.");
+  err.status = 404;
+  next(err);
+});
+
+// Custom error handlers.
+
+// Generic error handler.
+app.use((err, req, res, next) => {
+  console.log('We are indeed reaching you, generic error handler.')
+  res.status(err.status || 500);
+  const isProduction = environment === "production";
+  res.json({
+    title: err.title || "Server Error",
+    message: err.message,
+    errors: err.errors,
+    stack: isProduction ? null : err.stack,
+  });
+});
+
+module.exports = app;

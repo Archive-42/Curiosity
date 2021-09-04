@@ -1,0 +1,173 @@
+// Place all the styles related to the api/servers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
+.server-container {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background-color: $dark-grey;
+	z-index: -1;
+
+	.server-nav {
+		width: 72px;
+		min-width: 72px;
+		height: 100%;
+		background-color: $almost-black;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		z-index: 1;
+
+		.server-nav-list {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.server-nav-separator {
+				width: 32px;
+				height: 2px;
+				margin-top: 8px;
+				background-color: $dark-grey;
+				border-radius: 1px;
+			}
+			.server-nav-li {
+				height: 56px;
+				width: 48px;
+
+				.server-nav-selector-indicator {
+					width: 8px;
+					height: 20px;
+					border-radius: 4px;
+					position: relative;
+					background-color: $light-grey;
+					left: -16px;
+					top: -66px;
+					opacity: 0;
+					transition: 0.3s;
+					transform: scale(0);
+				}
+
+				.server-nav-create {
+					margin-top: 8px;
+					&:hover {
+						border-radius: 15px;
+						background-color: $green;
+					}
+				}
+				.server-nav-li-link,
+				.server-nav-create,
+				.server-nav-discovery {
+					width: 48px;
+					height: 48px;
+					border-radius: 50%;
+					background-color: $dark-grey;
+					transition: 0.3s;
+
+					.server-nav-create-icon {
+						background-image: image_url('plus_icon_green.png');
+						&:hover,
+						&.active {
+							background-image: image_url('plus_icon_white.png');
+						}
+					}
+					.server-nav-discovery-icon {
+						background-image: image_url('search_icon_green.png');
+						margin-top: 8px;
+						&:hover,
+						&.active {
+							background-image: image_url('search_icon_white.png');
+						}
+					}
+					.server-nav-create-icon,
+					.server-nav-discovery-icon {
+						background-repeat: no-repeat;
+						background-position: center;
+						background-size: 50%;
+						width: inherit;
+						height: inherit;
+						border-radius: inherit;
+						background-color: inherit;
+						transition: inherit;
+
+						&:hover,
+						&.active {
+							border-radius: 15px;
+							background-color: $green;
+						}
+					}
+
+					.server-icon {
+						width: inherit;
+						height: inherit;
+						margin-top: 8px;
+						border-radius: inherit;
+						background-color: inherit;
+						transition: inherit;
+
+						&:hover {
+							border-radius: 15px;
+							background-color: $purple;
+						}
+					}
+				}
+
+				&:hover {
+					.server-nav-li-link-name,
+					.server-nav-arrow-left,
+					.server-nav-selector-indicator,
+					.server-name-label-container {
+						opacity: 1;
+					}
+					.server-nav-selector-indicator {
+						transform: scale(1);
+					}
+				}
+
+				.server-name-label-container,
+				.server-nav-selector-container {
+					display: flex;
+					align-items: center;
+					z-index: 1;
+				}
+				.server-nav-arrow-left {
+					width: 0;
+					height: 0;
+					border-top: 8px solid transparent;
+					border-bottom: 8px solid transparent;
+					border-right: 8px solid black;
+					position: relative;
+					left: 54px;
+					top: -40px;
+					opacity: 0;
+				}
+				.server-nav-li-link-name {
+					position: relative;
+					white-space: nowrap;
+					left: 54px;
+					top: -40px;
+					background-color: black;
+					color: $light-grey;
+					padding: 8px;
+					border-radius: 5px;
+					opacity: 0;
+					pointer-events: none;
+				}
+
+				.active {
+					border-radius: 15px;
+					background-color: $purple;
+				}
+
+				div .active {
+					background-color: $white;
+					border-radius: 4px;
+					height: 40px;
+					opacity: 1;
+					transform: scale(1);
+					top: -76px;
+				}
+			}
+		}
+	}
+}

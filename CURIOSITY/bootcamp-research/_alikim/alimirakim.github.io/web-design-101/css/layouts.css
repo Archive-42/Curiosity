@@ -1,0 +1,42 @@
+body {
+  /* Page grid setup */
+  display: grid;
+  grid:
+      [header-start] "header header" max-content
+      [content-start] "content side" max-content
+      [footer-start] "footer footer" max-content
+      / [main-start] 70% [side-start] 25%;
+  column-gap: 5%;
+  row-gap: 8rem;
+}
+
+/* Grid cell containers */
+.l-header { grid-area: header; }
+main { grid-area: content; }
+.l-sidebar { grid-area: side; }
+
+/* Chapter title */
+.l-chapter {
+  display: grid;
+  grid:
+    [chap-start] "title chap" max-content
+    [num-start] "title num" 5rem
+    /[title-start] 70% [chap-num-start] 30%;
+  width: auto;
+  margin: 0;
+}
+.l-chap-title {
+  grid-area: title;
+  text-align: left;
+  align-self: end;
+}
+.l-chap {
+  /* display: block; */
+  grid-area: chap;
+  margin: 0;
+}
+.l-num {
+  /* display: block; */
+  grid-area: num;
+  margin: 0;
+}

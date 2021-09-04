@@ -1,0 +1,17 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/State-Machines",
+          "title": "State Machines",
+          "tags": ["state machines", "theory of computation"],
+          "subtitle": null,
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "state machines"
+  }
+}

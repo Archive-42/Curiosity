@@ -1,0 +1,48 @@
+.profileContainer {
+    max-width: 1300px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 610px;
+    margin: auto;
+	border: 1px solid #f2f2f2;
+    box-shadow: 0 2px 12px -5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.userImg {
+    height: 175px;
+    width: 175px;
+    object-fit: cover;
+}
+
+.userContainer {
+    height: 175px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 2px 12px -5px rgba(0, 0, 0, 0.1);
+}
+
+.userDescription {
+    padding: 0 20px 0 20px;
+    width: 100%;
+    color: #2c3e50;
+}
+
+.profileLinks {
+    color: #2c3e50;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#uploadHeading {
+    color: #2c3e50;
+}
+
+.profileSongsContainer {
+    margin-top: 20px;
+}

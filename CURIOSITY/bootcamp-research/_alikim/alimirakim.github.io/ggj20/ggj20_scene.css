@@ -1,0 +1,92 @@
+
+/* .scene */
+
+div.center-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+
+.scene {
+  min-width: 200px;
+  max-width: 400px;
+  margin: 2em 6em 50px;
+  border-radius: 50px;
+  border-top: 20px double gold;
+  border-bottom: 20px double gold;
+  padding: 2em 3em 3em;
+  color: slategray;
+  background-color: white;
+  text-align: center;
+  }
+
+h2 {
+  font: 2em Georgia, serif;
+  font-style: italic;
+  margin: 0;
+  }
+
+/* Recap sentence prefacing the scenario description. */
+h2 + p {
+  margin: 0em;
+  color: darkgray;
+  font: italic 1em Cambria, serif; 
+  }
+
+.scene-art { font-size: 5.5em;
+  margin: 0; padding: 0; }
+
+/* Scenario description. First letter and line are decorated. */
+p.scene-txt {
+  text-align: justify; 
+  font: 1em Cambria, serif;
+  }
+p.scene-txt::first-letter {
+  font: 2em Cambria, serif;
+  color: coral;
+  float: left;
+  margin: 0 0.25em;
+}
+p.scene-txt::first-line {
+  letter-spacing: 0.1em;
+  font-variant: small-caps;
+  color: darkseagreen;
+}
+p.scene-prompt{ 
+  border-top: 4px double slategray;
+  border-bottom: 4px double slategray;
+  padding: 0.5em;
+  font: bold 1.25em Georgia, serif; }
+
+.pc-emoji {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  list-style-type: none;
+  font-size: 4rem;
+  margin: 1em 1em 0.5em;
+  }
+
+.pc-emoji li {
+  min-width: 100px;
+  min-height: 100px;
+  }
+
+  /* emoji links. Transparent until clicked. */
+  a {text-decoration: none; }
+  a:link, a:visited {opacity: 50%; } 
+  a:hover, a:focus {opacity: 85%; }
+  a:active {opacity: 100; }
+
+    footer {
+      clear: both; text-align: center; 
+      color: white;
+      background-color: salmon;
+      }
+    footer small {font-variant: small-caps; }
+
+
+

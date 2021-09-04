@@ -1,0 +1,17 @@
+/* gallery cards */
+.spot {
+  width: 50vw;
+  height: 15rem;
+}
+
+.gal {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30%);
+  grid-gap: 1rem;
+}
+
+.gal-card {
+  max-height: 10rem;
+  overflow: hidden;
+}
+/*# sourceMappingURL=gal.css.map */

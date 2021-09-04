@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143831373-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143831373-2');
+  </script>
+
+  <meta property='og:title' content='Crystal Escape' />
+  <meta property='og:type' content='website' />
+  <meta property='og:image' content='https://bamorgan13.github.io/CrystalEscape/documentation/CrystalEscape_og-image.jpg' />
+  <meta property='og:description' content="Crystal Escape is a side-scrolling space shooter reminiscent of Gradius, R-Type, and other shoot-em-ups of the 8- and 16-bit eras. The player pilots a spaceship, avoiding obstacles and enemies in search of crystals to power up their ship and make their escape back home. Shooting enemies can reveal powerups to alter the ship's speed or weapon. Grabbing the crystal in each level moves the player on to the next zone, where their ship will move faster and also be bombarded with even more enemies." />
+  <meta property='og:url' content='https://bamorgan13.github.io/CrystalEscape/' />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Crystal Escape</title>
+  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Faster+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/stylesheets/reset.css" type="text/css">
+  <link rel="stylesheet" href="assets/stylesheets/game.css" type="text/css">
+  <link rel="stylesheet" href="assets/stylesheets/animations.css" type="text/css">
+  <script type="text/javascript" src="bundle.js"></script>
+</head>
+<body>
+  <nav>
+    <h1 class="game-title">Crystal Escape</h1>
+    <ul class="nav-links-list">
+      <li>
+        <div class="nav-links-list-header">
+          <p>Created by Bryce Morgan</p>
+          <p>Connect with me:</p>
+        </div>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/bryce-morgan-a8792138/">
+          <div class="logo linkedin" alt="linkedin"></div>
+        </a>
+      </li>
+      <li>
+        <a href="https://angel.co/bryce-morgan-1">
+          <div class="logo angellist" alt="angellist"></div>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/bamorgan13">
+          <div class="logo github" alt="github"></div>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:bamorgan13@gmail.com">
+          <div class="logo email" alt="email"></div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main class="main-container">
+    <div class="sprite-group-container left">
+      <div class="sprite-container ship">
+        <img class="sprite ship" src="./assets//images/sprites/ship.png" alt="ship sprite">
+      </div>
+      <div class="sprite-container crystal">
+        <img class="sprite crystal" src="./assets//images/sprites/crystal.png" alt="crystal sprite">
+      </div>
+      <div class="sprite-container enemy-small">
+        <img class="sprite enemy-small" src="./assets//images/sprites/enemy-small.png" alt="small enemy sprite">
+      </div>
+      <div class="sprite-container enemy-large">
+        <img class="sprite enemy-large" src="./assets//images/sprites/enemy-large.png" alt="large enemy sprite">
+      </div>
+      <div class="sprite-container bullet bullet-1">
+        <img class="sprite bullet bullet-1" src="./assets//images/sprites/bullet.png" alt="bullet sprite">
+      </div>
+      <div class="sprite-container bullet bullet-2">
+        <img class="sprite bullet bullet-2" src="./assets//images/sprites/bullet.png" alt="bullet sprite">
+      </div>
+      <div class="sprite-container bullet bullet-3">
+        <img class="sprite bullet bullet-3" src="./assets//images/sprites/bullet.png" alt="bullet sprite">
+      </div>
+    </div>
+    <div class="canvas-container">
+      <div class="HUD-background-box left"></div>
+      <div class="HUD-background-box right"></div>
+      <canvas id="hud-frame-canvas" width="1200" height="600"></canvas>
+      <canvas id="background-canvas" width="800" height="400"></canvas>
+      <canvas id="midground-canvas" width="800" height="400"></canvas>
+      <canvas tabindex="1" id="game-canvas" width="800" height="400"></canvas>
+    </div>
+    <div class="sprite-group-container right">
+      <div class="sprite-container ship">
+        <img class="sprite ship" src="./assets//images/sprites/ship.png" alt="ship sprite">
+      </div>
+      <div class="sprite-container crystal">
+        <img class="sprite crystal" src="./assets//images/sprites/crystal.png" alt="crystal sprite">
+      </div>
+      <div class="sprite-container enemy-small">
+        <img class="sprite enemy-small" src="./assets//images/sprites/enemy-small.png" alt="small enemy sprite">
+      </div>
+      <div class="sprite-container enemy-large">
+        <img class="sprite enemy-large" src="./assets//images/sprites/enemy-large.png" alt="large enemy sprite">
+      </div>
+      <div class="sprite-container bullet bullet-1">
+        <img class="sprite bullet bullet-1" src="./assets//images/sprites/bullet.png" alt="bullet sprite">
+      </div>
+      <div class="sprite-container bullet bullet-2">
+        <img class="sprite bullet bullet-2" src="./assets//images/sprites/bullet.png" alt="bullet sprite">
+      </div>
+      <div class="sprite-container bullet bullet-3">
+        <img class="sprite bullet bullet-3" src="./assets//images/sprites/bullet.png" alt="bullet sprite">
+      </div>
+    </div>
+  </main>
+</body>
+</html>

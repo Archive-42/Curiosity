@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACH,OAAO,EAAE,IAAI;CACd",
+    "sources": [
+        "../modules/opt.scss"
+    ],
+    "names": [],
+    "file": "opt.css"
+}

@@ -1,0 +1,35 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Programming-Foundations--Coding-Efficiency",
+          "title": "Programming Foundations:",
+          "tags": ["foundations", "efficiency"],
+          "subtitle": "Coding Efficiency",
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Programming-Foundations--Algorithms",
+          "title": "Programming Foundations:",
+          "tags": ["foundations", "algorithms", "sorting"],
+          "subtitle": "Algorithms",
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Programming-Foundations--Data-Structures",
+          "title": "Programming Foundations:",
+          "tags": ["foundations", "data structures"],
+          "subtitle": "Data Structures",
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "foundations"
+  }
+}

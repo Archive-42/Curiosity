@@ -1,0 +1,73 @@
+html, body, figure, ul, li, h1 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    text-align: inherit;
+    box-sizing: border-box;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 470px;
+    border: 10px solid black;
+    padding: 0;
+}
+
+.box{
+    width: 150px;
+    background: gray;
+    border: 10px solid black;
+    list-style: none;
+    height: 150px;
+    text-align: center;
+    font-size: 64px;
+    padding-top: 15px;
+}
+.box:hover{
+    background: yellow;
+    cursor: pointer;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+h1{
+  text-align: center;
+    width: auto;
+    font-size: 64px;
+    font-weight: bold;
+    margin: 30px;
+}
+.ttt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.winner {
+    background: green;
+    color: white;
+    
+}
+
+.loser{
+    background: white;
+    color: red
+    
+}
+
+.marked{
+    background: white;
+    
+}
+
+p{
+    font-size: 64px;
+    text-align: center;
+    font-weight: bold;
+}

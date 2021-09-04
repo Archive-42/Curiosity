@@ -1,0 +1,46 @@
+.itemContainer {
+  display: flex;
+  position: relative;
+  width: 5em;
+  height: 5em;
+  margin: 0.5em;
+  border-radius: 50%;
+  cursor: pointer;
+  // background: linear-gradient(300deg, rgba(2,0,36,0.8) 0%, rgba(110,130,151,0.8) 55%, rgba(80,113,158,0.5) 100%);
+  // background: linear-gradient(300deg, rgba(2,0,36,1) 0%, rgba(2,0,36,0.8) 55%, rgba(20,10,56,0.5) 100%);
+  // background: black;
+
+  .itemCard {
+    position: relative;
+    top: 4.2em;
+    border: 2px ridge rgb(255, 255, 255);
+    background-color: rgb(188, 182, 175);
+    height: max-content;
+    max-height: 2.5em;
+    margin: 0 auto;
+    padding: 0.2em 0.5em;
+    overflow: hidden;
+  p {
+      width: 100%;
+      text-align: center;
+      font-family: $display-label;
+      font-weight: bold;
+    }
+  }
+
+  .disabled {
+    color: gray;
+    filter: grayscale(100%);
+  }
+
+  img {
+    margin: 0 auto;
+    height: 4.5em;
+    width: 4.5em;
+    // border-radius: 100%;
+}
+}
+
+.hidden {
+  display: none;
+}

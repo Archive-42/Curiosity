@@ -1,0 +1,23 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Computer-Science-Distilled-Chapter-II",
+          "title": "Computer Science Distilled",
+          "tags": [
+            "computer science",
+            "Computer Science Distilled",
+            "Big O Notation",
+            "time complexity",
+            "space complexity"
+          ],
+          "subtitle": "Complexity",
+          "chapter": "Chapter Two"
+        }
+      }
+    ],
+    "tagName": "space complexity"
+  }
+}

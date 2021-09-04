@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+}
+
+.newExerciseForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.workouts {
+    background-color: var(--primary-bg-color);
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    width: 100vw;
+    padding: 20px;
+    overflow: scroll;
+    align-items: center;
+    background-image: url('https://body-builder-project.s3.us-east-2.amazonaws.com/bg-logged-in-3.jpg');
+}
+
+.newWorkoutForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.workouts::-webkit-scrollbar {
+    display: none;
+}
+
+.userInfo {
+    background-color: var(--primary-bg-color);
+    display: flex;
+    padding: 20px;
+    height: 95vh;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('https://body-builder-project.s3.us-east-2.amazonaws.com/bg-logged-in-3.jpg');
+}

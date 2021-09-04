@@ -1,0 +1,1333 @@
+<!DOCTYPE html><html>
+<!-- Mirrored from notes-for-great-good.netlify.app/algorithm-design-manual--chapter-eight/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:36:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.45 'Open Sans',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:'Open Sans',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:'Candal',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif;font-weight:500;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}ul{margin-left:1.45rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.45rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;font-size:0.85rem;line-height:1.45rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;font-size:1rem;line-height:1.45rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}blockquote{margin-left:1.45rem;margin-right:1.45rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.45rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.45rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.45rem;margin-bottom:calc(1.45rem / 2);margin-top:calc(1.45rem / 2);}li > ul{margin-left:1.45rem;margin-bottom:calc(1.45rem / 2);margin-top:calc(1.45rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.45rem / 2);}code{font-size:0.85rem;line-height:1.45rem;}kbd{font-size:0.85rem;line-height:1.45rem;}samp{font-size:0.85rem;line-height:1.45rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:0.96667rem;padding-right:0.96667rem;padding-top:0.725rem;padding-bottom:calc(0.725rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><link rel="apple-touch-icon" sizes="96x96" href="../icons/icon-96x96c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><title data-react-helmet="true"></title><style data-href="/styles.d86a406e5dede3da8914.css">.container-wrapper{text-align:center;margin:auto;width:60%;min-height:calc(100vh - 310px);flex:1 1}.container-wrapper section{padding:3rem 1.5rem}@media (max-width:900px){.container-wrapper{width:90%;min-height:calc(100vh - 360px)}}@media (max-width:600px){.container-wrapper{width:95%}}code[class*=language-],pre[class*=language-]{color:#ccc;font-size:1em;white-space:pre;word-break:normal}pre[class*=language-]{margin:.5em 0}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.inserted{color:green}li>code,p>code{background:#131316;word-break:normal;padding:.4em .5em;margin:.5em 0;overflow:auto;border-radius:.3em}code[class*=language-],li>code,p>code,pre[class*=language-]{color:#f8f8f2;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;text-align:left;word-spacing:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-],pre[class*=language-]{background:none;word-break:break-word}pre[class*=language-]{padding:1em;margin:1.5rem 0;overflow:auto;border-radius:.3em;background:#131316}pre[class*=language-]::-webkit-scrollbar-thumb{background:#3498db}pre[class*=language-]::-webkit-scrollbar-track{background: #4b4e57}pre[class*=language-]::-webkit-scrollbar{width:12px;height:12px}li>code[class*=language-],p>code[class*=language-]{border-radius:.3em;background:rgba(52,152,219,.2);color:#2e3246;bottom:2px;position:relative}img{margin-bottom:0}.token.operator{color:#bc78d7}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#7ad7e2}.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#ef514f}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#e5db89}.language-css .token.string,.style .token.string,.token.entity,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name{color:#e6db74}.token.function{color:#84c16a}.token.keyword{color:#6095ea}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.table{overflow:auto;max-width:-webkit-fit-content;max-width:-moz-fit-content;max-width:fit-content;margin:auto}.gatsby-highlight pre[class*=language-].line-numbers{padding-left:2.8em}.gatsby-highlight{border-radius:.3em;margin:.5em 0;padding:1em;overflow:auto}.gatsby-highlight pre[class*=language-].line-numbers{padding:0 0 0 2.8em;overflow:initial}.gatsby-highlight pre[class*=language-].line-numbers span.line-numbers-rows{width:3em!important}.language-asm,.language-racket,.language-text{-webkit-margin-start:15px;margin-inline-start:15px;display:flex}code.language-html,code.language-javascript,code.language-md,code.language-ruby{left:15px}section.wrapper div.gatsby-highlight,section.wrapper div.tagsContainer{padding:0}pre[class*=language-].line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.content-wrapper li,.content-wrapper p{letter-spacing:-.003em;--baseline-multiplier:0.179;--x-height-multiplier:0.35;font-size:1.15rem;line-height:2}.content-wrapper li code{padding:.2rem .5rem;margin:.5rem 0}.content-wrapper a:not(.gatsby-resp-image-link):not(.anchor){color:#000;box-shadow:inset 0 -2px 0 #3498db;border-bottom:1px solid #3498db;-webkit-transition:all .4s cubic-bezier(.645,.045,.355,1);transition:all .4s cubic-bezier(.645,.045,.355,1);text-decoration:none}.content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):focus,.content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):hover{background:rgba(51,68,153,.53);color:#000}.wrapper h1{margin-top:3rem}.wrapper h2{margin-top:1rem}.wrapper h1,.wrapper h2,.wrapper h3,.wrapper h4,.wrapper h5,.wrapper h6{display:inline-block;position:relative}.wrapper h1 a,.wrapper h2 a,.wrapper h3 a,.wrapper h4 a,.wrapper h5 a,.wrapper h6 a{box-shadow:none;border-bottom:none}.wrapper h1 a:focus,.wrapper h1 a:hover,.wrapper h2 a:focus,.wrapper h2 a:hover,.wrapper h3 a:focus,.wrapper h3 a:hover,.wrapper h4 a:focus,.wrapper h4 a:hover,.wrapper h5 a:focus,.wrapper h5 a:hover,.wrapper h6 a:focus,.wrapper h6 a:hover{background:none}.wrapper:hover .anchor svg{opacity:.8}.footer-wrapper{position:static;height:60px;width:100%;justify-content:center;bottom:0;box-shadow:0 -3px 26px rgba(0,0,0,.5);background:linear-gradient(-45deg,#3e5fbc,#284187);font-family:OpenSans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-weight:500}.footer-text{margin:0;padding-top:15px;padding-bottom:15px;justify-content:center;display:flex;text-align:center;color:#f0f0f0}.footer-text a{color:#62fdfe;font-weight:700;margin:0 15px}.footer-text span{color:transparent;display:flex;flex-direction:row;align-items:center;text-shadow:0 0 0 #fff}@font-face{font-family:Open Sans;font-style:normal;font-display:swap;font-weight:300;src:local("Open Sans Light "),local("Open Sans-Light"),url(../static/open-sans-latin-300-60c866748ff15f5b347fdba64596b1b1.woff2) format("woff2"),url(../static/open-sans-latin-300-521d17bc9f3526c690e8ada6eee55bec.woff) format("woff")}@font-face{font-family:Open Sans;font-style:italic;font-display:swap;font-weight:300;src:local("Open Sans Light italic"),local("Open Sans-Lightitalic"),url(../static/open-sans-latin-300italic-06bbd3188b34820cd83a0e0b3d0a6f57.woff2) format("woff2"),url(../static/open-sans-latin-300italic-8a648ff38ded89ea15916e84529d62d3.woff) format("woff")}@font-face{font-family:Open Sans;font-style:normal;font-display:swap;font-weight:400;src:local("Open Sans Regular "),local("Open Sans-Regular"),url(../static/open-sans-latin-400-cffb686d7d2f4682df8342bd4d276e09.woff2) format("woff2"),url(../static/open-sans-latin-400-bf2d0783515b7d75c35bde69e01b3135.woff) format("woff")}@font-face{font-family:Open Sans;font-style:italic;font-display:swap;font-weight:400;src:local("Open Sans Regular italic"),local("Open Sans-Regularitalic"),url(../static/open-sans-latin-400italic-987032ea5d57c93d8da215678eae3b86.woff2) format("woff2"),url(../static/open-sans-latin-400italic-db70d0b9cb27ada1a260a2b35e756b8b.woff) format("woff")}@font-face{font-family:Open Sans;font-style:normal;font-display:swap;font-weight:600;src:local("Open Sans SemiBold "),local("Open Sans-SemiBold"),url(../static/open-sans-latin-600-223a277bd88d8a90c8cdf24cda0ad5f5.woff2) format("woff2"),url(../static/open-sans-latin-600-1cd5320f8937d337b61d5117cf9d7b28.woff) format("woff")}@font-face{font-family:Open Sans;font-style:italic;font-display:swap;font-weight:600;src:local("Open Sans SemiBold italic"),local("Open Sans-SemiBolditalic"),url(../static/open-sans-latin-600italic-4950a7205f0b5cefe41fc03ac346e236.woff2) format("woff2"),url(../static/open-sans-latin-600italic-318ea1ada4102c0704a0637228dcad03.woff) format("woff")}@font-face{font-family:Open Sans;font-style:normal;font-display:swap;font-weight:700;src:local("Open Sans Bold "),local("Open Sans-Bold"),url(../static/open-sans-latin-700-d08c09f2f169f4a6edbcf8b8d1636cb4.woff2) format("woff2"),url(../static/open-sans-latin-700-623e3205570002af47fc2b88f9335d19.woff) format("woff")}@font-face{font-family:Open Sans;font-style:italic;font-display:swap;font-weight:700;src:local("Open Sans Bold italic"),local("Open Sans-Bolditalic"),url(../static/open-sans-latin-700italic-c02f5da6e82e1efe0b45841bfd49ce37.woff2) format("woff2"),url(../static/open-sans-latin-700italic-72e19cbb0e38c6773a7751156752cec4.woff) format("woff")}@font-face{font-family:Open Sans;font-style:normal;font-display:swap;font-weight:800;src:local("Open Sans ExtraBold "),local("Open Sans-ExtraBold"),url(../static/open-sans-latin-800-aaeffaf205b9bbb09920089a14dbe9e8.woff2) format("woff2"),url(../static/open-sans-latin-800-c6aa0c4a601fb6ac66f8253fa594dff5.woff) format("woff")}@font-face{font-family:Open Sans;font-style:italic;font-display:swap;font-weight:800;src:local("Open Sans ExtraBold italic"),local("Open Sans-ExtraBolditalic"),url(../static/open-sans-latin-800italic-6b3973ffe02bb6a8be0f8453506ec032.woff2) format("woff2"),url(../static/open-sans-latin-800italic-79b58175343190550489efe46a7f1138.woff) format("woff")}article{padding:3rem 1.5rem}.bloglist-image{margin:auto;position:relative;box-shadow:0 15px 25px rgba(0,0,0,.2);-webkit-transition:all .4s cubic-bezier(.175,.885,.32,1.275);transition:all .4s cubic-bezier(.175,.885,.32,1.275);border-radius:.4rem;min-height:300px;flex-basis:100%;max-width:100%;width:100%}@media (max-width:800px){.bloglist-image{flex-basis:100%;max-width:100%;width:100%;margin-bottom:1.5rem}}@media (max-width:500px){.bloglist-image{min-height:200px}}.bloglist-image img{border-radius:.4rem;height:100%;width:100%}.bloglist-image:hover{box-shadow:0 40px 45px rgba(0,0,0,.1);-webkit-transform:scale(1.04);transform:scale(1.04)}.bloglist-image a{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:.4rem}.bloglist-image a>div,.bloglist-image a>div>div{position:static!important}.bloglist-image a>div>div:focus{outline:none;box-shadow:0 0 0 5px #284187}.bloglist-information h1{display:inline-block;color:#333438;-webkit-transition:all .4s;transition:all .4s}.bloglist-information h1:hover{color:#3498db}.bloglist-information{text-align:center;flex-basis:100%;max-width:100%;word-wrap:break-word;word-break:break-word;width:100%}@media (max-width:800px){.bloglist-information{flex-basis:100%;max-width:100%;width:100%}}.bloglist-date{margin-top:1rem;font-size:12px;color:#4b4e57}.bloglist-title{margin:0;font-size:24px}@font-face{font-family:Candal;font-style:normal;font-display:swap;font-weight:400;src:local("Candal Regular "),local("Candal-Regular"),url(../static/candal-latin-400-be36f832d599fa7c57c638a610ce6e2e.woff2) format("woff2"),url(../static/candal-latin-400-089f55042fcefeb66b9e98cdd0eb37ca.woff) format("woff")}.header-wrapper{-webkit-clip-path:polygon(100% 0,0 0,0 70%,50% 100%,100% 70%);clip-path:polygon(100% 0,0 0,0 70%,50% 100%,100% 70%);background:linear-gradient(45deg,#3e5fbc,#284187);height:250px;position:relative;overflow:hidden}@media (max-width:600px){.header-wrapper{-webkit-clip-path:polygon(100% 0,0 0,0 90%,50% 100%,100% 90%);clip-path:polygon(100% 0,0 0,0 90%,50% 100%,100% 90%)}}.header-text{color:#fff;z-index:0;position:absolute;top:50%;left:50%;height:inherit;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);display:flex;flex-direction:column;text-align:center;width:100%;max-width:70rem;margin-top:3rem;align-items:center}.header-text h1{font-size:28px;margin:20px 0 5px;padding:0 2rem}.header-text h2{font-size:22px;padding:0;margin:2.5px 0 5px}.header-text h3{font-size:20px;margin:2.5px 0;padding:0 2rem}.header-text h4{font-size:14px;margin:5px 0;padding:0 2rem}.header-subtitle{max-width:650px;color:#f0f0f0;margin-top:30px;padding:0 2rem}.headroom-wrapper{position:fixed;height:102px;z-index:2000;top:0}.headroom{display:flex;justify-content:space-between;flex-direction:row;width:100vw;height:2.5rem}.headroom svg{padding:1rem 1.5rem}.headroom svg g{fill:#fff}.headroom--unfixed{position:relative;padding-left:15px;padding-top:15px;justify-content:space-between;-webkit-transform:translateY(0);transform:translateY(0)}.headroom--scrolled,.headroom--unfixed{-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out}.headroom--unpinned{padding-left:15px;padding-top:15px;-webkit-transform:translateY(-100%);transform:translateY(-100%)}.headroom--pinned,.headroom--unpinned{position:fixed;-webkit-transition:all .25s ease-in-out;transition:all .25s ease-in-out}.headroom--pinned{padding:15px 0 15px 15px;-webkit-transform:translateY(0);transform:translateY(0);background-color:#3e5fbc;box-shadow:0 5px 30px rgba(0,0,0,.2)}.headroom--pinned nav a{color:#fff}.headroom--pinned nav a:hover{border-color:#333438;color:#333438}.headroom--pinned nav a:focus{color:#333438}.headroom--pinned svg{height:2.5rem}.headroom---pinned svg g{fill:#333438}.headroom--pinned span{color:#333438}.postlist-wrapper{margin-bottom:2rem;position:relative;z-index:100;border-radius:.4rem;box-shadow:0 15px 25px rgba(0,0,0,.2);-webkit-transition:all .4s cubic-bezier(.175,.885,.32,1.275);transition:all .4s cubic-bezier(.175,.885,.32,1.275);height:17rem;flex-basis:calc(33.3% - 2.5rem);max-width:calc(33.3% - 2.5rem);width:calc(33.3% - 2.5rem)}.postlist-wrapper:hover{box-shadow:0 50px 50px rgba(0,0,0,.1);-webkit-transform:scale(1.04);transform:scale(1.04)}@media (max-width:1000px){.postlist-wrapper{flex-basis:calc(49.95% - 1rem);max-width:calc(49.95% - 1rem);width:calc(49.95% - 1rem);height:18rem}}@media (max-width:700px){.postlist-wrapper{flex-basis:100%;max-width:100%;width:100%;height:15rem}}.postlist-styledLink{display:flex;flex-direction:row;justify-content:space-between;padding:1rem;z-index:3;overflow:hidden}.postlist-styledLink,.postlist-styledLink:after{position:absolute;top:0;left:0;right:0;bottom:0;border-radius:.4rem}.postlist-styledLink:after{content:"";display:block;width:100%;height:100%;background:-webkit-gradient(linear,left top,left bottom,from(transparent),color-stop(50%,rgba(0,0,0,.3)),color-stop(80%,rgba(0,0,0,.7)),to(rgba(0,0,0,.8)));background:linear-gradient(180deg,transparent 0,rgba(0,0,0,.3) 50%,rgba(0,0,0,.7) 80%,rgba(0,0,0,.8));z-index:-10;-webkit-transition:opacity .4s;transition:opacity .4s}.postlist-image{position:absolute;top:0;overflow:hidden;right:0;left:0;bottom:0;z-index:1;-o-object-fit:cover;object-fit:cover;border-radius:.4rem}.postlist-image img{border-radius:.4rem;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content}.postlist-image img>div,.postlist-image img>div>div{position:static!important}.postlist-info{color:#f0f0f0;margin:auto;bottom:0;left:0}.postlist-info span{font-size:14px}.postlist-title h2{margin:auto;padding-top:.5rem;text-align:center;font-size:26px}.postlist-title h3{font-size:20px;margin-top:.5rem;margin-bottom:.5rem}.postlist-title span{font-size:16px;display:flex}.postlist-title{display:flex;flex-direction:column;align-items:center}.navbar-styledLink{display:flex;font-weight:700;align-items:center}.navbar-nav{display:flex;flex-grow:0.1;padding-right:15px;justify-content:space-between;font-family:Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-weight:500;font-size:1.1rem;align-self:center;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content}.navbar-nav a{color:#fff;-webkit-transition:all .4s;transition:all .4s;text-shadow:1px 1px 5px #000,2px 2px 1px #000}.navbar-nav a:hover{color:#f0f0f0;font-weight:700}.tagsContainer{margin:1rem 0;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center}.tagsContainer a{margin:0 1rem 1rem 0;color:#2e3246;padding:.3rem .6rem;background:#cecece;border-radius:10px}.tagsContainer a:hover{color:#f0f0f0;background:#3e5fbc;border:#3e5fbc}.tag-styledLink{color:#f0f0f0;padding:5px 10px;border:1px solid #fff;border-radius:20px}.tag-styledLink:hover{color:#2e3246;background:#f0f0f0}.tag-information{text-align:center}.tag-information h1{font-size:2rem;margin-bottom:1.25rem}.post-suggestionBar{display:flex;flex-wrap:nowrap;justify-content:space-between;width:100vw}.post-postSuggestion{display:flex;align-items:center;margin:1rem}.post-postSuggestion a{width:100%}.post-postSuggestion h3{font-size:inherit}h3.prev-post{text-align:left}h3.next-post{text-align:right}button.next-post,button.prev-post{color:grey;background-color:transparent;border:none}button.next-post:hover,button.prev-post:hover{color:#000}:focus{outline:none}*,:after,:before{box-sizing:inherit}html{text-rendering:optimizeLegibility;overflow-x:hidden;box-sizing:border-box;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body,html{width:100%;height:100%;margin:0;padding:0}body{display:flex;flex-direction:column;min-height:100vh}a{-webkit-transition:color .5s;transition:color .5s}a,a:hover{text-decoration:none}h1{font-family:Candal,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}table{table-layout:fixed;overflow:scroll;width:auto!important}td,th{padding:10px!important;width:-webkit-max-content;width:-moz-max-content;width:max-content}.index-postWrapper{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;margin:4rem 4rem 1rem}@media (max-width:1000px){.index-postWrapper{margin:4rem 2rem 1rem}}@media (max-width:700px){.index-postWrapper{margin:4rem 1rem 1rem}}.gatsby-image-wrapper{height:100%}section.container-wrapper{padding:3rem 1.5rem}section.wrapper{min-height:calc(100vh - 300px);height:100%}section.wrapper div{padding:3rem 1.5rem}</style><link rel="sitemap" type="application/xml" href="../sitemap.xml"/><link rel="shortcut icon" href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="manifest" href="../manifest.webmanifest"/><meta name="theme-color" content="#3e7bf2"/><link rel="apple-touch-icon" sizes="48x48" href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="apple-touch-icon" sizes="72x72" href="../icons/icon-72x72c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><meta name="generator" content="Gatsby 2.3.25"/><link rel="apple-touch-icon" sizes="144x144" href="../icons/icon-144x144c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="apple-touch-icon" sizes="192x192" href="../icons/icon-192x192c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="apple-touch-icon" sizes="256x256" href="../icons/icon-256x256c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="apple-touch-icon" sizes="384x384" href="../icons/icon-384x384c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link rel="apple-touch-icon" sizes="512x512" href="../icons/icon-512x512c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"/><link as="script" rel="preload" href="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"/><link as="script" rel="preload" href="../1-6c82cfd6aba31a386fde.js"/><link as="script" rel="preload" href="../app-63577178a3bdd725b6eb.js"/><link as="script" rel="preload" href="../styles-aa92193d8aa2fe2f8548.js"/><link as="script" rel="preload" href="../webpack-runtime-fd7c0e3081b0f1218320.js"/><link as="fetch" rel="preload" href="../static/d/915/path---algorithm-design-manual-chapter-eight-e-34-bd8-4K6EX2Bfd9NlvjGiZU5IJvepxA.json" crossorigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group"><div><div class="headroom-wrapper"><div class="headroom headroom--unfixed"><a class="navbar-styledLink" href="../index.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAoCAYAAAB5ADPdAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAHsIAAB7CAF4JB2hAAABWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgpMwidZAAAHVklEQVRYCcWYW4iVVRSAZ7x1MbXybs7V0szMS5YymIGUIVQQGUEPvXSBIKnXjHoJevMpkKAeiiACKcGEIkenNOpBTTNSM3XUJkcdNUdLx3F0+r59/nX6xzMzzpyXFnyz73utvdba+z9aUVGmdHd3V8ZS6tNhCYyzj3JIjJVTFjcuZ7FrMOA1igZohhHwQWVl5V4No7xKe9BS1olQOFRNlCsoXoJqWAA32qZ/mAZRlnXoYWwyKFERcoXyJhY+Ax0wG0bCrXAYlsI34KGvwKCkHE/FmrlomgYt0JnTOpb6klx70NVQMOiFLHgADI/cAor76bn79GTm0UGHsF+jDBUMhSFZmQ/3vShvBz1jjmnMxKycTFkDyvBsrfvIdY3s0ygWe3tMoCtwNSu7LBkbjTKVXoDxcBb2we3QDTeAoa1gfme21n2E5f0/GfmTu0eSzCBvjydeDpNAZUfgW/DqG7KTMAH2wyYwz8Jr9ayvor0MXO/z4PoNGHYudNAukRJXxmTKWcx+G7w9JrI3y8fR+t+gJ34Fb+DH8Ak0QhPoMZ+H46CONjgP3lDLNzHsODooKj1sDykJH5P0kP2vgwaMgYWgolY4BTOgHuaBMhxqUq2iYj6lBjtfT54B37FFoIGGfiUoJU4p6cx5ySReDRdB9/smheyhotEa5aYapHLDY5j0rKd3rRdhCjhfOQ3fgWnzIg5o681bMZk5ScLyUbRuBhVq0PfwJOyAe+BuMHdC9IpoWIh7TAUvw4dwAPS6+WgY3V8JnYUWf69N9IjvX4yZE3rgH1Chmx4EN1XZbRCHsgyoJtFjTdABEe7mNFIwxNxSQmehxd/YNDpiwp90aJAn+g30zjow0U3uy6DE/Pxp9VYX6Mn54FgcwH7rzYTuDKHTKfm1NHNGMcFN0gQWeIqN4AbHQBkL7fAI+AyoQAM0zHViW7yd5pTh8kkx8fXc+Ky+gdI3zHcvfbgz/XZXDDPRrDDoIr/8Xn2T03eoCupARYbQvNL4MIZqMiZvmPu51ii0gN41f7zJlu7zGHqccxT2o9unI/RXJoPo0JjFFI/C/XAHXAKN0kDzwlxSkR5wncaF+7dQd9xrr4Gu9ZKYj14U5ykq1sNnwQi4h97/Bb7GuIIHaWjQKxRzoRYU3a83ZsIsCCUalU5E6Yb9icaJa8KTrvWAGrstq3uhJoFeXA9v+YF8kIonrINl4ONWDXPAyRrnqfWOm6pENNyQKGthK5h35qEXIYx2TRjlHq41dOozCnqyCtSjgeecYCXySDdPzPCj6obiAjfWEEulGcwFw7EaVoI3U/H2Kq41VM7RUNda2u9Bza/poH7DvxvG+sn2kVsDDeDAHtB6b1gNaJziKfMSxtmvUtt6x7Z1D3yt2K9Byik4AuZoPewAD7k2KcIwO98A3yNPcAGM+3wYD3mFbqJCD+B6lRwC10wDQ+P8MNR558G5jp0AdRyA02Cfa92jkWT/wifB302HKF+mcyHoMZO7FswPxfAZWhNeg1Rgn56x3QaOTQdFgxTnKSoODxkq6641tCa8/IgdGlkQDYt6lPStglZoh8ug+ApvhksZHZSK4z6CShdcTLXu7ibK9+FC1nYv1+4Ak7yH0Kehhbhjoaf2aUjvSbZgKV0HoROcfBL0nMncBIZI71jGO6SHxBAfgyfgXUj7U5oSjl9Cp+NJp8YAXYUH/FoPqUBZDhPBWzQSVK4htl+FaWDIRoAh8u3xVmmcbcPwEzwFW8E9nOPl8QaPwYhllEr85A7dBU8Vxtgts5T2EnDjyeBNbAE33AKH4U7wDYubqWfaQTGJ9ehc+AiqoRGOgh5vBg17GJSiMYVmFr40kn0DOYG3bSr486U+K5+j1Et1oNeU8IqbaoRvjgmsp3xE3cOwbYYzoCGK3nXvu9CV/iVtZ17cOMTNVOCX3bC6WE/9DvZVwSJQzDPFNXrGtgb4EFuGcY4vBp+EJqiFOvBZcK6fFv8RYT4VPZY3KjpNRnFzN5sBG0E5Ap66GsIzVJMSFS2AMEiPdoEH1HMrQDkG9uu55PW8QfQVb435hMHJYp+BA4zpGZN0JpyCVtAjXgDfF/PDR28cGD7bigltrtk+DPtAr3sQE35nVu5Cp89Dyf/O6N6ixATKWjrfAUPjrXIzQ+gjuBfWw/Og8howJCa641tBwxtBD80GD6HXjYAh06urMMp3i+K/0NGfcsKyKDnD3PBxUKkh+AO2s8HPlL4v71HMA0PxUFbqTZ8Cb+rTzD3BvAbqc8DbqqfN0S8Z84Gl6GkQY72LhvU+koxJecicF2AnrIN4wX+gvgk+A0PWpzDeI0r5iflEL/ZjffrdTIfGxQVwE+vR3kbdpB8FcQg9MRq+Yo9OFLt/zI/Sffy/iWjT7Cm9GuWUbJE3qVdhfDdKzS9DZd6pZAr488N8UlR+tVAd+N844cBXMBNjvFnK5+DV/hQ0xJvnz49dzCm5VYwNSPqM6/VWoxTd6Rl5lrkmsmE7CGvo96qncdr/j2DABAntGhT1csp/AQmuNkNaDuFXAAAAAElFTkSuQmCC" alt="Gatsby Logo"/></a><nav class="navbar-nav"><a href="../index.html">Home</a><a href="../blog/index.html">Tagged List</a></nav></div></div><div class="header-wrapper"><div class="header-text"><h1>Algorithm Design Manual:</h1><h2>Chapter Eight</h2><h3>Dynamic Programming</h3><h4>2019-01-27</h4></div></div><section class="wrapper"><div><div class="content-wrapper"><p><strong>Dynamic Programming</strong> is a technique for efficiently implementing a recursive algorithm by storing partial results. Generally the right approach for optimization of combinatorial objects with an inherent <em>left</em> and <em>right</em> order (character strings, rooted trees, integer sequences). Tradeoff of space for time.</p>
+<h3>Fibonacci Examples</h3>
+<p><strong>Recursive</strong></p>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token keyword">long</span> fib_recursive <span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span><span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span><span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">fib_recursive</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fib_recursive</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p><strong>Computation tree for computing fib_recursive(6)</strong>
+
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/fbab0798753e994029f037bb94155566/09e65/Fib_Recursive.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 750px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 37.416777629826896%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsSAAALEgHS3X78AAAAtUlEQVQoz22R2Q7FIAhE+f9v7UMX7arSHHPHkOaSEASGcUTzn7XWPJ6v6/J1Xf2+by+ljF6t1Z/n8X3fPefc8zhnkQwSgESIzvP04zhGP14KmXBgiJgJxE1SFG3btj4QCVG8LMvAMKPcBIBMBCJFBeeU0qihijrqeY1w5MwayhiY57kTE3Hq0zT1HspwSLkYp49T147ZrSEVp0kD10cAiCsgB0ftu1dFQy5S4299TQr/1WMffwEwAic4bN+mCQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Fib_Recursive.png"
+        title=""
+        src="../static/fbab0798753e994029f037bb94155566/26fb4/Fib_Recursive.png"
+        srcset="/static/fbab0798753e994029f037bb94155566/f723e/Fib_Recursive.png 188w,
+/static/fbab0798753e994029f037bb94155566/d744b/Fib_Recursive.png 375w,
+/static/fbab0798753e994029f037bb94155566/26fb4/Fib_Recursive.png 750w,
+/static/fbab0798753e994029f037bb94155566/09e65/Fib_Recursive.png 751w"
+        sizes="(max-width: 750px) 100vw, 750px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p><strong>Caching</strong></p>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAXN 45 </span><span class="token comment">/* longest interesting n */</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> UNKNOWN -1 </span><span class="token comment">/* contents denote empty cell */</span>
+
+<span class="token keyword">long</span> f<span class="token punctuation">[</span>MAXN<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token comment">/* array for caching computed fib values */</span>
+
+log <span class="token function">fib_cached</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>f<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">==</span> UNKNOWN<span class="token punctuation">)</span> f<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">fib_cached</span><span class="token punctuation">(</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fib_cached</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> f<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">long</span> <span class="token function">fib_cached_driver</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span> <span class="token comment">/* counter */</span>
+    f<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    f<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> f<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> UNKNOWN<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">fib_cached</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p><strong>Computation tree for computing fib_cached(6)</strong>
+
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/8f08788b7aa7128c7d9656e16d6d7824/6f41d/Fib_Cached.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 601px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 46.755407653910154%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAAAs0lEQVQoz5VRiw7DIAj0/7+1tdVqfVTLcmQaZuyyXUKMiAd3KHrjvu9+ypDvpRSKMdK2bXQcB6WUOFdr7XVqRiaRcybnHIUQOEDQcF0X587z5AZopmZk6AgiFFhruVjiqTHI1Viw7zt577scACfyaDCzRZJ/SAYJPkpZ7a1NPBKO9y4ZUyEAYwz7MpM3Sh2hGpnWmqeTZj8tbOZhJ8QClmXhRcD8f6aZEkLeuq7s3zd/fsULag3HnQCra1QAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="Fib_Cached.png"
+        title=""
+        src="../static/8f08788b7aa7128c7d9656e16d6d7824/6f41d/Fib_Cached.png"
+        srcset="/static/8f08788b7aa7128c7d9656e16d6d7824/f723e/Fib_Cached.png 188w,
+/static/8f08788b7aa7128c7d9656e16d6d7824/d744b/Fib_Cached.png 375w,
+/static/8f08788b7aa7128c7d9656e16d6d7824/6f41d/Fib_Cached.png 601w"
+        sizes="(max-width: 601px) 100vw, 601px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>Caching makes sense when space of distinct parameter values is modest enough to afford cost of storage.</p>
+<h3>Take Home:</h3>
+<p>Explicit caching of the results of recursive calls provides most of the benefits of dynamic programming, including usually the same running time as the more elegant full solution:</p>
+<p><strong>Dynamic Fib</strong></p>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token keyword">long</span> <span class="token function">fib_dynamic</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span> <span class="token comment">/* counter */</span>
+    <span class="token keyword">long</span> f<span class="token punctuation">[</span>MAXN<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">/* array of cache completed fib values */</span>
+    f<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    f<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> f<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> f<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>f<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> f<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>This uses O(n) time and space. We can do better.</p>
+<p><strong>Ultimate Fib - Using Constant Space</strong></p>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token keyword">long</span> <span class="token function">fib_ultimate</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span> <span class="token comment">/* counter */</span>
+    <span class="token keyword">long</span> back2 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> back1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">/* last two values of f[n] */</span>
+    <span class="token keyword">long</span> next<span class="token punctuation">;</span> <span class="token comment">/* placeholder for sum */</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span><span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        next <span class="token operator">=</span> back1 <span class="token operator">+</span> back2<span class="token punctuation">;</span>
+        back2 <span class="token operator">=</span> back1<span class="token punctuation">;</span>
+        back1 <span class="token operator">=</span> next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> back1 <span class="token operator">+</span> back2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h3>Binomial Coefficients</h3>
+<p>Class of counting numbers where <em>(<sup>n</sup><sub>k</sub>)</em> (note: place imagine that <em>n</em> to be directly above that <em>k</em>) counts the number of ways to choose <em>k</em> things out of <em>n</em> possibilities. <em>(<sup>n</sup><sub>k</sub>) = n!/((n-k)!k!)</em> - could calculate with factorials, but risk arithmetic overflow. A stable way to compute binomial coefficients is using the recurrence relation implicit in construction of Pascal's Triangle.</p>
+<p><strong>Pascal's Triangle</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre style="counter-reset: linenumber NaN" class="language-text line-numbers"><code class="language-text">                    1
+                1       1
+            1       2       1
+        1       3       3       1
+    1       4       6       4       1
+1       5       10      10      5       1</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p><strong>Evaluation Order for binomial_coefficient at m[5, 4]</strong></p>
+<table>
+<thead>
+<tr>
+<th>n/k</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>A</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>G</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>1</td>
+<td>H</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td>2</td>
+<td>3</td>
+<td>I</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>E</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>J</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>F</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>K</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A-K, recurrence evaluations 1-10. Matrix contents after evaluation</strong></p>
+<table>
+<thead>
+<tr>
+<th>n/k</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>4</td>
+<td>6</td>
+<td>4</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>5</td>
+<td>10</td>
+<td>10</td>
+<td>5</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Each number is the sum of the two directly above it.<br>
+Recurrence relation implicit in this is that:<br/>
+
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/13a668b1748820e820cd06e5052121ba/a150e/nk.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 217px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 21.658986175115206%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAACXBIWXMAAYagAAGGoAEnFmSiAAAAr0lEQVQI1yWPWQqAMBBDe//TiHgOEXel4g6KoriL4vKgP0NIM3lT0XWdaZpt287z/H3fsiye5yVJsq6r4zhlWRLAP88zCAIpJbEwDLMsK4pCVFXFG4koiqZpapoG577v4zhYwKEoz3P8NE2v68Lc951pWZbAhcZyHMfw+76H8DwPjehhGIBTgUYoDPN9X9u2xTiOmqZBU+62bbqu+75Pkeu6zLqu1XfUjYZhgEWQ+QEw79pBcjEgfwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="nk.png"
+        title=""
+        src="../static/13a668b1748820e820cd06e5052121ba/a150e/nk.png"
+        srcset="/static/13a668b1748820e820cd06e5052121ba/f723e/nk.png 188w,
+/static/13a668b1748820e820cd06e5052121ba/a150e/nk.png 217w"
+        sizes="(max-width: 217px) 100vw, 217px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p>No recurrence is complete without a base case: Empty set and complete set.</p>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token keyword">long</span> <span class="token function">binomial_coefficient</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> k<span class="token punctuation">)</span> <span class="token keyword">int</span> n<span class="token punctuation">,</span> k<span class="token punctuation">;</span> <span class="token comment">/* compute n, choose k */</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">,</span> j<span class="token punctuation">;</span> <span class="token comment">/* counters */</span>
+    <span class="token keyword">long</span> bc<span class="token punctuation">[</span>MAXN<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>MAXN<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">/* talbe of binomial coefficients */</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> bc<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> bc<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+            bc<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> bc<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> bc<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> bc<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h3>Appropriate String Matching</h3>
+<p>Three natural types of changes to a string:</p>
+<ul>
+<li><em>Substitution</em>: Replace a single character from pattern <em>P</em> with a different character in text <em>T</em> (e.g.: changing "shot" to "spot")</li>
+<li><em>Insertion</em>: Insert a single character into pattern <em>P</em> to help it match text <em>T</em>, (e.g., "ago" into "agog")</li>
+<li><em>Deletion</em>: Delete a single character in pattern <em>P</em> to help it match text <em>T</em> (e.g.: "hour" to "our)</li>
+</ul>
+<p>String simularity testing requires setting a cost of each transform operation. Assigning each a cost of 1 defines the edit distance between strings.</p>
+<h4>Edit Distance By Recursion</h4>
+<p><em>D[i, j]</em> -> minimum number of differences between <em>P<sub>1</sub>, P<sub>2</sub>,...P<sub>i</sub> and segment of \</em>T_ ending at <em>j</em>. <em>D[i, j]</em> is the minimum of the three possible ways to extend smaller strings.</p>
+<ul>
+<li>If <em>(P<sub>i</sub> = T<sub>j</sub>)</em>, then <em>D[i-1, j-1]</em>, else <em>D[i-1, j-1]+1</em> - means we either match or substitute the <em>ith</em> and <em>jth</em> characters, depending on whether the tail characters are ths same</li>
+<li><em>D[i, j-1] + 1</em> - Means there is an extra character in the text to account for - so don't need to advance pattern pointer and do need to pay cost of insertion</li>
+<li><em>D[i-1, j]+1</em> - Means there is an extra character in the pattern to remove, so we do not need to advance the text pointer and do have to pay the cost of deletion</li>
+</ul>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MATCH 0 </span><span class="token comment">/* enumerated type symbol for match */</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> INSERT 1 </span><span class="token comment">/* enumerated type symbol for insert */</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> DELETE 2 </span><span class="token comment">/* enumerated type symbol for delete */</span>
+
+<span class="token keyword">int</span> <span class="token function">string_compare</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>t<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* Note: We use add index conventions here - see tables below */</span>
+    <span class="token keyword">int</span> k<span class="token punctuation">;</span> <span class="token comment">/* counter */</span>
+    <span class="token keyword">int</span> opt<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">/* cost of the three options */</span>
+    <span class="token keyword">int</span> lowest_cost<span class="token punctuation">;</span> <span class="token comment">/* lowest cost */</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> j<span class="token operator">*</span> <span class="token function">indel</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> i<span class="token operator">*</span> <span class="token function">indel</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    opt<span class="token punctuation">[</span>MATCH<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">string_compare</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> t<span class="token punctuation">,</span> i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">match</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> t<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    opt<span class="token punctuation">[</span>INSERT<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">string_compare</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> t<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">indel</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    opt<span class="token punctuation">[</span>DELETE<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">string_compare</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> t<span class="token punctuation">,</span> i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">indel</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    lowest_cost <span class="token operator">=</span> opt<span class="token punctuation">[</span>MATCH<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>k<span class="token operator">=</span>INSERT<span class="token punctuation">;</span> k<span class="token operator">&lt;=</span>DELETE<span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>opt<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">&lt;</span> lowest_cost<span class="token punctuation">)</span> lowest_cost <span class="token operator">=</span> opt<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> lowest_cost<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>This is correct, but slow. Since at every string position, the recursion branches three ways, it grows at the rate of at least 3<sup>n</sup>.</p>
+<h4>Edit Distance by Dynamic Programming</h4>
+<p>Important observation is that most of the recursive calls are computing things that have already been computed.</p>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> cost<span class="token punctuation">;</span> <span class="token comment">/* cost of reaching this cell */</span>
+    <span class="token keyword">int</span> parent<span class="token punctuation">;</span> <span class="token comment">/* parent cell */</span>
+<span class="token punctuation">}</span> cell<span class="token punctuation">;</span>
+
+cell m<span class="token punctuation">[</span>MAXLEN<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>MAXLEN<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">/* dynamic programming table */</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>Differences of note from recursive version:</p>
+<ul>
+<li>Intermediate values are obtained using the table lookup instead of recursive calls</li>
+<li>Updates parent field of each cell, which allows us to reconstruct the edit sequence later</li>
+<li>It's implemented using a goal_cell() function instead of returning m[|P|][|t|].cost -> can apply to a wider class of problems</li>
+</ul>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token keyword">int</span> <span class="token function">string_compare</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span> t<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> k<span class="token punctuation">;</span> <span class="token comment">/* counters */</span>
+    <span class="token keyword">int</span> opt<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">/* cost of the three options */</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> MAXLEN<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token function">strlen</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            opt<span class="token punctuation">[</span>MATCH<span class="token punctuation">]</span> <span class="token operator">=</span> m<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>cost <span class="token operator">+</span> <span class="token function">match</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>t<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            opt<span class="token punctuation">[</span>INSERT<span class="token punctuation">]</span> <span class="token operator">=</span> m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>cost <span class="token operator">+</span> <span class="token function">indel</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            opt<span class="token punctuation">[</span>DELETE<span class="token punctuation">]</span> <span class="token operator">=</span> m<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>cost <span class="token operator">+</span> <span class="token function">indel</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>cost <span class="token operator">=</span> opt<span class="token punctuation">[</span>MATCH<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>parent <span class="token operator">=</span> MATCH<span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>k<span class="token operator">=</span>INSERT<span class="token punctuation">;</span> k<span class="token operator">&lt;=</span>DELETE<span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>opt<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">&lt;</span> m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>cost<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>cost <span class="token operator">=</span> opt<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>parent <span class="token operator">=</span> k<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">goal_cell</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> t<span class="token punctuation">,</span> <span class="token operator">&amp;</span>i<span class="token punctuation">,</span> <span class="token operator">&amp;</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>cost<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>Example of a dynamic programming matrix for editing distance computation, with optimal alignment path highlighted in bold:</p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<div class="table">
+<table class="tg">
+  <tr>
+    <th class="tg-0pky"></th>
+    <th class="tg-0pky">T</th>
+    <th class="tg-0pky"></th>
+    <th class="tg-0pky">y</th>
+    <th class="tg-0pky">o</th>
+    <th class="tg-0pky">u</th>
+    <th class="tg-0pky">-</th>
+    <th class="tg-0pky">s</th>
+    <th class="tg-0pky">h</th>
+    <th class="tg-0pky">o</th>
+    <th class="tg-0pky">u</th>
+    <th class="tg-0lax">l</th>
+    <th class="tg-0lax">d</th>
+    <th class="tg-0lax">-</th>
+    <th class="tg-0lax">n</th>
+    <th class="tg-0lax">o</th>
+    <th class="tg-0lax">t</th>
+  </tr>
+  <tr>
+    <td class="tg-0lax">P</td>
+    <td class="tg-0lax">pos</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">12</td>
+    <td class="tg-0lax">13</td>
+    <td class="tg-0lax">14</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">:</td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">12</td>
+    <td class="tg-0lax">13</td>
+    <td class="tg-0lax">14</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">t:</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">**1**</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">12</td>
+    <td class="tg-0lax">13</td>
+    <td class="tg-0lax">13</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">h:</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">**2**</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">12</td>
+    <td class="tg-0lax">13</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">o:</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">**2**</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">12</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">u:</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">**2**</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">11</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">-:</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">**2**</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">10</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">s:</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">**2**</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">10</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">h:</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">**2**</td>
+    <td class="tg-0lax">**3**</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">10</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">a:</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">**4**</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">10</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">l:</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">**4**</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">l:</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">**5**</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">8</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">-:</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">**5**</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">n:</td>
+    <td class="tg-0lax">12</td>
+    <td class="tg-0lax">12</td>
+    <td class="tg-0lax">12</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">**5**</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">o:</td>
+    <td class="tg-0lax">13</td>
+    <td class="tg-0lax">13</td>
+    <td class="tg-0lax">13</td>
+    <td class="tg-0lax">12</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">**5**</td>
+    <td class="tg-0lax">6</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">t:</td>
+    <td class="tg-0lax">14</td>
+    <td class="tg-0lax">14</td>
+    <td class="tg-0lax">14</td>
+    <td class="tg-0lax">13</td>
+    <td class="tg-0lax">12</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">**5**</td>
+  </tr>
+</table>
+</div>
+<p>Parent matrix for edit distance computation, with the optimal alignment path highlighted in bold:</p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<div class="table">
+<table class="tg">
+  <tr>
+    <th class="tg-0pky"></th>
+    <th class="tg-0pky">T</th>
+    <th class="tg-0pky"></th>
+    <th class="tg-0pky">y</th>
+    <th class="tg-0pky">o</th>
+    <th class="tg-0pky">u</th>
+    <th class="tg-0pky">-</th>
+    <th class="tg-0pky">s</th>
+    <th class="tg-0pky">h</th>
+    <th class="tg-0pky">o</th>
+    <th class="tg-0pky">u</th>
+    <th class="tg-0pky">l</th>
+    <th class="tg-0pky">d</th>
+    <th class="tg-0pky">-</th>
+    <th class="tg-0pky">n</th>
+    <th class="tg-0pky">o</th>
+    <th class="tg-0pky">t</th>
+  </tr>
+  <tr>
+    <td class="tg-0lax">P</td>
+    <td class="tg-0lax">pos</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">12</td>
+    <td class="tg-0lax">13</td>
+    <td class="tg-0lax">14</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">:</td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">**-1**</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">t:</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">**2**</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">h:</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">o:</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">1</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">u:</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">-:</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">s:</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">h:</td>
+    <td class="tg-0lax">7</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">**1**</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">a:</td>
+    <td class="tg-0lax">8</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">l:</td>
+    <td class="tg-0lax">9</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">l:</td>
+    <td class="tg-0lax">10</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">-:</td>
+    <td class="tg-0lax">11</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">n:</td>
+    <td class="tg-0lax">12</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">o:</td>
+    <td class="tg-0lax">13</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">**0**</td>
+    <td class="tg-0lax">1</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">t:</td>
+    <td class="tg-0lax">14</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">0</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">**0**</td>
+  </tr>
+</table>
+</div>
+<h4>Reconstructing the Path</h4>
+<p>Walk decisions back from goal state following the parent pointer to earlier cell until you hit the initial cell</p>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token function">reconstruct_path</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span> t<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>parent <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>parent <span class="token operator">==</span> MATCH<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">reconstruct_path</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> t<span class="token punctuation">,</span> i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">match_out</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> t<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>parent <span class="token operator">==</span> INSERT<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">reconstruct_path</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> t<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">insert_out</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>parent <span class="token operator">==</span> DELETE<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">reconstruct_path</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> t<span class="token punctuation">,</span> i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">delete_out</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h4>Variations of Edit Distance:</h4>
+<p><code class="language-text">string_compare</code> and path <code class="language-text">reconstruct_path</code> routines reference functions not yet defined. They fall into four categories:</p>
+<ul>
+<li><em>Table initialization</em>:</li>
+</ul>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token function">row_init</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    m<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>cost <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> m<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>parent <span class="token operator">=</span> INSERT<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> m<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>parent <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">column_init</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>cost <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>parent <span class="token operator">=</span> DELETE<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>parent <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<ul>
+<li><em>Priority costs</em>:
+<em>match(c, d)</em> and <em>indel(c)</em> present costs for transforming character <em>c</em> to <em>d</em> and inserting/deleting character <em>c</em>. For standard edit distance, match should cost nothing if characters are identical and 1 otherwise. <em>indel</em> r4eturns 1 regardless of what the argument is.</li>
+</ul>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token keyword">int</span> <span class="token function">match</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token punctuation">,</span> <span class="token keyword">char</span> d<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> d<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">indel</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<ul>
+<li><em>Goal Cell Identification</em>: returns the indices of the cell marking the endpoing of the solution. For edit distance, length of the two input strings.</li>
+</ul>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token function">goal_cell</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>t<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>i<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">*</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">*</span>i <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token operator">*</span>j <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre></div>
+<ul>
+<li><em>Traceback Actions</em>: <em>match</em>out<em>, _insert</em>out<em>, and _delete</em>out_ perform actions for edit ops during traceback. For edit distance, might mean printing the name of the operation or character involved.</li>
+</ul>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token function">insert_out</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>t<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"I"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">delete_out</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"D"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">match_out</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>t<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> t<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"M"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"S"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>Several poroblems can now be solved as special cases of edit distance using minor changes to some of the sub functions.</p>
+<ul>
+<li><em>Substring Matching</em>: Want an edit distance where the cost of starting the match is independent of position in the text so that a match in the middle is not prejudiced against. Goal state then is chapest place to match entire pattern in the text rather than the end of both strings.</li>
+</ul>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token function">row_init</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    m<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>cost <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    m<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>parent <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">goal_cell</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>t<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>i<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> k<span class="token punctuation">;</span> <span class="token comment">/* counter */</span>
+
+    <span class="token operator">*</span>i <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token operator">*</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>k <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> k<span class="token operator">&lt;</span><span class="token function">strlen</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>m<span class="token punctuation">[</span><span class="token operator">*</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">.</span>cost <span class="token operator">&lt;</span> m<span class="token punctuation">[</span><span class="token operator">*</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">*</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span>cost<span class="token punctuation">)</span> <span class="token operator">*</span>j <span class="token operator">=</span> k<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<ul>
+<li><em>Longest Common Sequence</em>:</li>
+</ul>
+<p><em>Common sequence</em> - all the identical-character matches in an edit trace. To maximize the number of matches, prevent the substitution of non-identical characters. Only way to get rid of noncommon sequences is through deletion/insertion. Minimum cost alignment has fewest <em>indels</em> to preserve longest common substring. Change match_cost to make substitutions expensive.</p>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token keyword">int</span> <span class="token function">match</span><span class="token punctuation">(</span><span class="token keyword">char</span> c<span class="token punctuation">,</span> <span class="token keyword">char</span> d<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>c <span class="token operator">==</span> d<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">return</span> MAXLEN<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre></div>
+<ul>
+<li><em>Maximum Monotone Sequence</em>: A numerical sequence is <em>monotonically increasing</em> if the <em>ith</em> element is at least as big as the <em>(i-1)st</em> element. The maximum monotone sequence problem wants to delete the fewest number of elements from an input string to leave a monotonically increasing subsequence. (e.g., 243517698 would be 23568)</li>
+</ul>
+<p>Saving space in dynamic programming is very important because memory is limited.</p>
+<h3>Longest Increasing Sequence</h3>
+<p>Three steps for solving a problem by dynamic programming:</p>
+<ol>
+<li>Formulate answer as a recurrence relation or recursive algorithm</li>
+<li>Show that the number of different parameter values taken on by recurrence are bounded by a (hopefully small) polynomial</li>
+<li>Specify an order of evaluation for recurrence so partial results you need are available when needed.</li>
+</ol>
+<p>How to make algorithm to find longest monotonically increasing subsequence:
+<em>S = {2, 4, 3, 5, 1, 7, 6, 9, 8}</em><br/>
+Longest increasing subsequence has length 5 - {2, 3, 5, 6, 8}<br/>
+There are four longest increasing runs of length 2 - (2, 4), (3, 5), (1, 7), (6, 9)</p>
+<p>How to tell that numbers can be skipped? Can use recurrence.</p>
+<ul>
+<li>
+<p>Define <em>l<sub>i</sub></em> to be the length of the longest sequence ending with <em>s<sub>i</sub></em></p>
+</li>
+<li>
+<p>Longest increasing sequence containing the <em>nth</em> number will be formed by appending it to the longest increasing sequence to the left of <em>n</em> that ends on a number smaller than <em>s<sub>n</sub></em> This computes l<sub>i</sub>:</p>
+<p><em>0 &#x3C; j &#x3C; i</em></p>
+<p><em>l<sub>i</sub> = max l<sub>j + 1</em> where <em>(s<sub>j</sub> &#x3C; s<sub>i</sub>)</em>,</p>
+<p><em>l<sub>0</sub> = 0</em></p>
+</li>
+</ul>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<div class="table">
+<table class="tg">
+  <tr>
+    <th class="tg-0pky">Sequence s&lt;sub&gt;i&lt;/sub&gt;</th>
+    <th class="tg-0pky">2</th>
+    <th class="tg-0pky">4</th>
+    <th class="tg-0pky">3</th>
+    <th class="tg-0pky">5</th>
+    <th class="tg-0pky">1</th>
+    <th class="tg-0pky">7</th>
+    <th class="tg-0pky">6</th>
+    <th class="tg-0pky">9</th>
+    <th class="tg-0pky">8</th>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Length l&lt;sub&gt;i&lt;/sub&gt;</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">3</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">5</td>
+    <td class="tg-0lax">5</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Predecessor P&lt;sub&gt;i&lt;/sub&gt;</td>
+    <td class="tg-0lax"></td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">1</td>
+    <td class="tg-0lax">2</td>
+    <td class="tg-0lax">-</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">4</td>
+    <td class="tg-0lax">6</td>
+    <td class="tg-0lax">6</td>
+  </tr>
+</table>
+</div>
+<h3>Take Home:</h3>
+<p>Once you understand dynamic programming, it can be easier to work out such algorithms from scratch than to try to look them up.</p>
+<h3>Partition Problem:</h3>
+<p>Given a shelf of books, partition work between three people without rearranging the books in the most fair way.</p>
+<p><em>Input</em>: An arrangement <em>S</em> of nonnegative numbers {s<sub>1</sub>,...s<sub>n</sub>} and an integer <em>k</em>
+<em>Output</em>: Partition <em>S</em> into <em>k</em> or fewer ranges to minimize maximum sum over all ranges without reordering.</p>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c">partition <span class="token punctuation">(</span><span class="token keyword">int</span> s<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> m<span class="token punctuation">[</span>MAXN<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>MAXK<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">/* DP table for values */</span>
+    <span class="token keyword">int</span> d<span class="token punctuation">[</span>MAXN<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>MAXK<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">/* DP table for dividers */</span>
+    <span class="token keyword">int</span> p<span class="token punctuation">[</span>MAXN<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">/* prefix sums array */</span>
+    <span class="token keyword">int</span> cost<span class="token punctuation">;</span> <span class="token comment">/* test split cost */</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> k<span class="token punctuation">;</span> <span class="token comment">/* counters */</span>
+
+    p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">/* construct prefix sums */</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">/* initialize boundaries */</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> k<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> m<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token comment">/* evaluate main recurrence */</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> k<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> MAXINT<span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> x <span class="token operator">&lt;=</span> <span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cost <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>m<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span>p<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> cost<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    m<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> cost<span class="token punctuation">;</span>
+                    d<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">reconstruct_partitions</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* print book partition */</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token function">reconstruct_partitions</span><span class="token punctuation">(</span><span class="token keyword">int</span> s<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> d<span class="token punctuation">[</span>MAXN<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>MAXK<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token function">print_books</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">reconstruct_partition</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> d<span class="token punctuation">,</span> d<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> k<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">print_books</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> d<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<div class="gatsby-highlight" data-language="c"><pre style="counter-reset: linenumber NaN" class="language-c line-numbers"><code class="language-c"><span class="token function">print_books</span><span class="token punctuation">(</span><span class="token keyword">int</span> s<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> start<span class="token punctuation">,</span> <span class="token keyword">int</span> end<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>                  <span class="token comment">/* counter */</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> start<span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> end<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">" %d "</span><span class="token punctuation">,</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h3>Parsing Context-Free Grammars</h3>
+<p><strong>Context-Free Grammar Example</strong></p>
+<p>sentence::= noun-phrase<br/>
+                          verb-phrase<br/>
+noun-phrase::= article noun<br/>
+verb-phrase::= verb noun-phrase<br/>
+article::= <em>the, a</em><br/>
+noun::= <em>cat, milk</em><br/>
+verb::= <em>drank</em></p>
+<p><strong>Associated Parse Tree</strong>
+
+  <a
+    class="gatsby-resp-image-link"
+    href="../static/268d5453235f897c3754af5cebcaa791/954da/parse-tree.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+  
+  <span
+    class="gatsby-resp-image-wrapper"
+    style="position: relative; display: block;  max-width: 642px; margin-left: auto; margin-right: auto;"
+  >
+    <span
+      class="gatsby-resp-image-background-image"
+      style="padding-bottom: 40.65420560747664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAAA20lEQVQoz4WRiQqEMAxE+/8fKYgHUhHv+8jyApEqu+xATdMkk0l013XJG8dxyLquUpalJEkiXdfJtm36/i3f3rCOD8kQtG0r4zjKsiyy7/ujiJx5njVGA7uf56lEdhzJTdNIlmWqBhVhZwreQHme55KmqUzT9Ii5vu9VGUAlvpGFB6CK3LAJE9V1rZYpHMoYwQqKovhJiDIKgZEiArVMR8zBagUk4YeLDu8Uhw1Q673XO/usqkocqmxvWPx/hAZGHYbhjuHryLDbn0T+e2RDFEX3egCKzIcwjmP5AIKgckd5DDKlAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    >
+      <img
+        class="gatsby-resp-image-image"
+        style="width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;"
+        alt="parse-tree.png"
+        title=""
+        src="../static/268d5453235f897c3754af5cebcaa791/954da/parse-tree.png"
+        srcset="/static/268d5453235f897c3754af5cebcaa791/f723e/parse-tree.png 188w,
+/static/268d5453235f897c3754af5cebcaa791/d744b/parse-tree.png 375w,
+/static/268d5453235f897c3754af5cebcaa791/954da/parse-tree.png 642w"
+        sizes="(max-width: 642px) 100vw, 642px"
+      />
+    </span>
+  </span>
+  
+  </a>
+    </p>
+<p><em>Chomsky normal form</em>: Every nontrivial rule consists of either exactly two nonterminals <em>(X -> YZ)</em> or exactly one terminal symbol <em>(X -> α)</em>. One-character terminal symbols define boundary conditions of the recurrence.</p>
+<h3>Take Home:</h3>
+<p>For any optimization problem on left-to-right objects, such as characters in a string, elements of a permutation, points around a polygon, or leaves in a search tree, dynamic programming likely leads to an efficient algorithm to find the optimal solution.</p>
+<h3>Take Home:</h3>
+<p>Without an inherent left-to-right ordering on the objects, dynamic programming is usually doomed to require exponential space and time.</p>
+<h3>Note from note-taker:<br/></h3>
+<p>As mathematics is not something that I have an education in and I am reading this book for the sole purpose of improving my understanding of algorithms as they pertain to computer science, I skip around a fair bit. There are more topics covered in these chapters than I will account for in my notes.</p></div><div class="tagsContainer"><a href="../tags/algorithms/index.html"><span>Algorithms</span></a><a href="../tags/dynamic%20programming/index.html"><span>Dynamic programming</span></a><a href="../tags/algorithm%20design%20manual/index.html"><span>Algorithm Design Manual</span></a></div></div></section><div class="post-suggestionBar"><div class="post-postSuggestion"><a href="../algorithm-design-manual--chapter-nine/index.html"><button value="prev" aria-label="previous" class="prev-post"><h3 class="prev-post">&lt;&lt; Previous:<br/>Algorithm Design Manual:<br/>Intractable Problems and Approximation Algorithms</h3></button></a></div><div class="post-postSuggestion"><a href="../algorithm-design-manual--chapter-ten/index.html"><button value="next" aria-label="next" class="next-post"><h3 class="next-post">&gt;&gt; Next:<br/>Algorithm Design Manual:<br/>How to Design Algorithms</h3></button></a></div></div><footer class="footer-wrapper"><div class="footer-text"><span>Notes for Great Good    <span role="img" aria-label="pawprints">🐾</span><a href="https://amyshackles.com/">Amy Shackles</a></span></div></footer></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.page={"componentChunkName":"component---src-templates-post-jsx","jsonName":"algorithm-design-manual-chapter-eight-e34","path":"/Algorithm-Design-Manual--Chapter-Eight"};window.dataPath="915/path---algorithm-design-manual-chapter-eight-e-34-bd8-4K6EX2Bfd9NlvjGiZU5IJvepxA";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-63577178a3bdd725b6eb.js"],"component---src-pages-tags-jsx":["/component---src-pages-tags-jsx-e522a5598fa2964ee6de.js"],"component---src-templates-tag-jsx":["/component---src-templates-tag-jsx-5f637c2edf65bf3f9f1c.js"],"component---src-templates-post-jsx":["/component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"],"component---src-pages-404-jsx":["/component---src-pages-404-jsx-095f8c7d93b57e5a6681.js"],"component---src-pages-blog-jsx":["/component---src-pages-blog-jsx-316bdf552f6880939952.js"],"component---src-pages-index-jsx":["/component---src-pages-index-jsx-89fc494ceffadedf0b62.js"],"pages-manifest":["/pages-manifest-e0687b1a66911235678c.js"]};/*]]>*/</script><script src="../webpack-runtime-fd7c0e3081b0f1218320.js" async=""></script><script src="../styles-aa92193d8aa2fe2f8548.js" async=""></script><script src="../app-63577178a3bdd725b6eb.js" async=""></script><script src="../1-6c82cfd6aba31a386fde.js" async=""></script><script src="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js" async=""></script></body>
+<!-- Mirrored from notes-for-great-good.netlify.app/algorithm-design-manual--chapter-eight/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:36:58 GMT -->
+</html>

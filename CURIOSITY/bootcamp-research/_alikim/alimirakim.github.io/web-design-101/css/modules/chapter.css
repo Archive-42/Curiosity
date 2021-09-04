@@ -1,0 +1,17 @@
+
+
+.chap {
+  color: mediumseagreen;
+  /* line-height: 0.2rem; */
+  text-align: right;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.num {
+  font-variation-settings: 'wght' 600;
+  font-size: 5rem;
+  line-height: 3.5rem;
+  text-align: right;
+}

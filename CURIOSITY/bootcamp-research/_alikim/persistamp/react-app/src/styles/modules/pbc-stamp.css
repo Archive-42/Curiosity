@@ -1,0 +1,19 @@
+/* program board card - stamp */
+
+.stamp-spot {
+  position: relative;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  border: 6px double rgba(255,255,255,0.1);
+  /* border: 5px double rgba(0,0,0,0.2); */
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+}
+
+.stamp-spot:hover {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+.stamp-spot:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}

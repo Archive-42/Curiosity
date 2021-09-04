@@ -1,0 +1,21 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Eight",
+          "title": "Algorithm Design Manual:",
+          "tags": [
+            "algorithms",
+            "dynamic programming",
+            "Algorithm Design Manual"
+          ],
+          "subtitle": "Dynamic Programming",
+          "chapter": "Chapter Eight"
+        }
+      }
+    ],
+    "tagName": "dynamic programming"
+  }
+}

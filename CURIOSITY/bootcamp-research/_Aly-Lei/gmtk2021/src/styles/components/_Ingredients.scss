@@ -1,0 +1,37 @@
+
+.shelfContainer {
+  position: relative;
+
+  h2 {
+    position: absolute;
+    top: -4.5rem;
+    left: 2rem;
+    margin: 0;
+    color: white;
+    font: 5rem $display-title-pencil;
+  }
+
+  .ingredientsContainer {
+    position: relative;
+    background-color: rgba(200,200,200,0.2);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6.5em, 1fr));
+    gap: 1.5em 0.6em;
+    max-height: 40rem;
+    width: 90%;
+    overflow-y: auto;
+    margin: 0 auto;
+    padding: 5rem 6rem 8rem 5rem;
+    // overflow: visible;
+      &.disabled {
+        pointer-events: none;
+        opacity: 70%;
+      }
+
+    .ingredientContainer {
+      margin: 0 auto;
+
+    }
+  }
+}

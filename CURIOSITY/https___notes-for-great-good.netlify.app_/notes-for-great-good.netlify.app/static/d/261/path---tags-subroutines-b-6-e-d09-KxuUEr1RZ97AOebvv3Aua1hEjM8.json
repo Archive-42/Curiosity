@@ -1,0 +1,17 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Computer-Architecture-Subroutines",
+          "title": "Computer Architecture: Subroutines",
+          "tags": ["computer architecture", "subroutines"],
+          "subtitle": null,
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "subroutines"
+  }
+}

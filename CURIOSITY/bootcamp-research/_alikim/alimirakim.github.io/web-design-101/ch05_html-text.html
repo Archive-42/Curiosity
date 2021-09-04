@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ch05 Marking Up Text</title>
+  <style>
+    @import "about_stylesheets.css";
+    * { outline: 0px red dotted; }
+
+    table { border: 2px gray solid; }
+    th, td {
+      padding: 0.2em 0.5em;
+      border: 1px silver solid;
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+<header id="page-header">
+  
+  <h1 id="title">Chapter 5: Marking Up Text</h1>
+  
+  
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol class="toc__parts">
+      <li class="toc__part">
+        <div class="parts"><span class="part">Part I.</span> Start</div>
+        <ol class="chapters">
+          <li><a href="ch01_start.html">1. Getting Started</a></li>
+          <li><a href="ch02_web.html" class="inactive">2. The Web</a></li>
+          <li><a href="ch03_concepts.html" class="inactive">3. Big Concepts</a></li>
+        </ol>
+      </li>
+      <li><div class="parts"><span class="part">Part II.</span> HTML</div>
+        <ol class="chapters">
+          <li><a href="ch04_html-page.html" class="inactive">4. A Simple Page</a></li>
+          <li><a href="ch05_html-text.html">5. Text</a></li>
+          <li><a href="ch06_html-links.html" class="inactive">6. Links</a></li>
+          <li><a href="ch07_html-images.html" class="inactive">7. Images</a></li>
+          <li><a href="ch08_html-tables.html">8. Tables</a></li>
+          <li><a href="ch09_html-forms.html">9. Forms</a></li>
+          <li><a href="ch10_html-media.html">10. Media</a></li>
+        </ol>
+      </li>
+      <li><div class="parts"><span class="part">Part III.</span> CSS</div>
+        <ol class="chapters">
+          <li><a href="ch11_css-intro.html" class="inactive">11. Intro to CSS</a></li>
+          <li><a href="ch12_css-text.html">12. Formatting Text</a></li>
+          <li><a href="ch13_css-color-bg.html">13. Color &amp; Background</a></li>
+          <li><a href="ch14_css-box.html">14. The Box</a></li>
+          <li><a href="ch15_css-float-pos.html">15. Float &amp; Position</a></li>
+          <li><a href="ch16_css-flex-grid.html">16a. Flexbox &amp; Grid</a></li>
+          <li><a href="ch16b_css-grid.html">16b. Grid</a></li>
+          <li><a href="ch17_css-rwd.html" class="inactive">17. RWD</a></li>
+          <li><a href="ch18_css-trans-anim.html">ch18. Animation</a></li>
+          <li><a href="ch19_css-more.html" class="inactive">19. More CSS</a></li>
+          <li><a href="ch20_tools.html" class="inactive">20. Tools</a></li>
+        </ol>
+      </li>
+      <!-- <li><div class="parts"><span class="part">Part IV.</span> JavaScript</div>
+        <ol class="chapters">
+          <li><a href="ch21_js-intro" class="inactive">21. Intro to JS</a></li>
+          <li><a href="ch22_js-use" class="inactive">22. Using JS</a></li>
+        </ol>
+      </li>
+      <li><div class="parts"><span class="part">Part V.</span> Images</div>
+        <ol class="chapters">
+          <li><a href="ch23_img-basics" class="inactive">23. Web Images</a></li>
+          <li><a href="ch24_img-production" class="inactive">24. Asset Production</a></li>
+          <li><a href="ch25_img-svg" class="inactive">25. SVG</a></li>
+        </ol>
+      </li>
+      <li><div class="parts"><span class="part">Part VI.</span> Appendix</div>
+        <ol class="chapters">        
+          <li><a href="appendix_html5_attrib" class="inactive">HTML5 Attributes</a></li>
+          <li><a href="appendix_selectors" class="inactive">Selectors &amp; Misc.</a></li>
+          <li><a href="appendix_colors" class="inactive">Color Table</a></li>
+          <li><a href="appendix_fonts" class="inactive">Font Collection</a></li>
+        </ol>
+      </li> -->
+    </ol>
+  </nav>
+
+<h1>Chapter 5: Marking Up Text</h1>
+</header>
+
+<main>
+  <nav>
+    <ul>
+      <li><a href="/">Navigation Element</a></li>
+      <li><a href="/">'Organizing Page Content'</a></li>
+      <li><a href="/">Main Content</a></li>
+      <li><a href="/">Headers &amp; Footers</a></li>
+      <li><a href="/">Sections &amp; Articles</a></li>
+      <li><a href="/">Aside (Sidebars)</a></li>
+      <li><a href="/">Navigation</a></li>
+      <li><a href="/">Addresses</a></li>
+    </ul>
+  </nav>
+
+<h2 class="pretty">HTML Document: Skeleton</h2>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title> <i>Title here</i> &lt;/title&gt;
+  link
+  &lt;style&gt;
+    @import css
+  /style
+&lt;/head&gt;
+
+&lt;body&gt;
+ header
+    nav
+    /nav
+ /header
+
+main
+
+article
+    section
+    /section
+/article
+
+aside
+/aside
+
+/main
+
+footer
+  address
+  /address
+/footer
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+<section id="body-elements">
+  <h2 class="pretty">Grouping Elements</h2>
+  <dl>
+    <dt><code>&lt;header&gt;</code></dt>
+      <dd>Used for heading titles, navigational links, introductory content, a logo or icon, authorship information. You can have multiple headers in one document.</dd>
+    <dt><code>&lt;main&gt;</code></dt>
+      <dd></dd>
+    <dt><code>&lt;footer&gt;</code></dt>
+      <dd></dd>
+    <dt><code>&lt;article&gt;</code></dt>
+      <dd>Similar to sections, but specifically for self-contained content that can stand alone or be reused in a different context. Articles can be nested in a section and vice versa.
+      </dd>
+    <dt><code>&lt;section&gt;</code></dt>
+      <dd>A unit used to divide content into smaller chunks, like by chapters or topics. Sections typically include a heading and other content.</dd>
+    <dt><code>&lt;aside&gt;</code></dt>
+      <dd>Identifies content that is separate from, but tangentially related to, surrounding content. Examples include:
+      <ul>
+        <li>sidebars</li>
+        <li>pull quotes</li>
+        <li>background information</li>
+        <li>lists of links</li>
+        <li>callouts</li>
+        <li>et cetera...</li>
+      </ul>
+      </dd>
+    <dt><code>&lt;div&gt;</code></dt>
+      <dd>Div element. Indicates a division of content. Div and span have no inherent presentation qualities of their own. They are a blank canvas; id and class attributes are applied to individualize and give them meaning. ids are unique, while classes signify a grouping of like types.</dd>
+    <dt><code>&lt;span&gt;</code></dt>
+      <dd>Span element. Indicates a word or phrase for which no text-level element currently exists. It does not automatically add line breaks like div does.</dd>
+  </dl>
+
+  <h4>Example:</h4>
+  <header>header</header>
+  <main>main</main>
+  <article>article</article>
+  <section>section</section>
+  <aside>aside</section>
+  <footer>footer</footer>
+
+  <nav>Navigation element.</nav>
+      <address>
+      Address element. Used to hold contact information for the website or content creator. Often placed in footers.
+      </address>
+</section>
+
+<hr>
+
+
+<section id="block-elements">
+  <h2 class="pretty">Block Elements</h2>
+
+  <h3 class="pretty">Heading Elements</h3>
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+
+  <hr>
+
+  <h3 class="pretty">Body Text Elements</h3>
+  <h3>&lt;p&gt;</h3>
+  <p>Paragraph element. Main page content goes in the body.</p>
+
+  <h3>&lt;blockquote&gt;</h3>
+  <blockquote>
+    <h4>Blockquote Element</h4>
+    <p>This is a long quotation, or a 'block quote' element.</p>
+    <p>Content within a blockquote element should itself by contained in other element types, such as paragraph, heading, or list.</p>
+  </blockquote>
+
+  <h3>&lt;pre&gt;</h3>
+  <pre>
+    Preformatted element.
+      display exactly as it is typed, including all w   h   i   t   e   space.
+      By default, 
+          it also displays 
+          in a constant-width
+          font.
+  </pre>
+
+  <hr>
+
+  <h3 class="pretty">List Elements</h3>
+  <h3>&lt;ul&gt;</h3>
+  <ul>
+      <li>Unordered list element.</li>
+      <li>&lt;li&gt;</li>
+      <li>List item element.</li>
+  </ul>
+
+  <h3>&lt;ol&gt;</h3>
+  <ol>
+      <li>Ordered list element.</li>
+      <li>&lt;li&gt;</li>
+      <li>List item element.</li>
+  </ol>
+
+  <h3>&lt;dl&gt;</h3>
+  <dl>
+    <dt>&lt;dt&gt;</dt>
+      <dd>&lt;dd&gt;</dd>
+    <dt>Description List</dt>
+      <dd>Terms paired with Descriptions.</dd>
+    <dt>Term</dt>
+      <dd>Description.</dd>
+    <dt>Term, Name, or Label</dt>
+      <dd><p>Only dt and dd elements are allowed within a dl element.</p>
+      <p>Headings or content-grouping elements like paragraphs cannot be put in dt elements, but can be put in dd elements.</p>
+      <dd>Multiple dd elements can be put under one dt element and vice versa.</dd>
+  </dl>
+
+<h3 class="pretty">Misc. Block Elements</h3>
+<h3>&lt;hr&gt;</h3>
+<hr>
+<p>Horizontal rule element.</p>
+
+  <hr>
+
+  <h3>&lt;figure&gt; &amp; &lt;figcaption&gt;</h3>
+  <figure>
+    <p>'Figure' elements identify content that supports some point in the main text. Figures can be images, video, code snippets, text, a table, almost anything.</p>
+    <p>Content in a Figure element should be treated and referenced as a self-contained unit; if a figure is removed, the figure as well as the text should still make sense when isolated from the other.</p>
+  <figcaption>'Figure caption' elements provide a text caption for a figure.</figcaption>
+  </figure>
+
+  <h3>&lt;img&gt;</h3>
+</section>
+
+<hr>
+
+<!-- THE INLINE ELEMENT ROUNDUP -->
+<section id="inline-elements">
+  <h2>Inline Elements</h2>
+  <dl>
+    <dt><code>&lt;em&gt;</code></dt>
+      <dd><em>Emphasized text. Used for stressing vocal emphasis on words.</em></dd>
+    <dt><code>&lt;strong&gt;</code></dt>
+      <dd><strong>Strong text. Used to indicate important, serious, or urgent information.</strong></dd>
+    <dt><code>&lt;s&gt;</code></dt>
+      <dd><s>Strike-through text. Used to indicate incorrect information.</s></dd>
+    <dt><code>&lt;small&gt;</code></dt>
+      <dd><small>Small text. Indicates an addendum or side note to main text.</small></dd>
+    <dt><code>&lt;q&gt;</code></dt>
+      <dd><q>Quote text. Used for short quotes.</q></dd>
+    <dt><code>&lt;abbr&gt;</code></dt>
+      <dd><abbr title="Abbreviation">Abbr</abbr> text. Used to indicate abbreviations or acronyms.</dd>
+    <dt><code>&lt;cite&gt;</code></dt>
+      <dd><cite>Cite text. Used to identify a reference to another source, such as a book, article, etc.</cite></dd>
+    <dt><code>&lt;dfn&gt;</code></dt>
+      <dd><dfn>Defining instance</dfn> text. Used to highlight the first instance of a word in a document.</dd>
+    <dt><code>&lt;code&gt;</code></dt>
+      <dd><code>Code text. Used to show code. Also related are var (variable), samp (program sample), kbd (user-entered keyboard strokes), data.</code></dd>
+    <dt><code>&lt;sub&gt;</code></dt>
+      <dd><sub>Subscript text.</sub> [TODO] List the uses of subscript text.</dd>
+    <dt><code>&lt;sup&gt;</code></dt>
+      <dd><sup> Superscript text.</sup> [TODO] List the uses of superscript text.</dd>
+    <dt><code>&lt;mark&gt;</code></dt>
+      <dd><mark>Mark text. Used to highlight words.</mark></d>
+    <dt><code>&lt;time&gt;</code></dt>
+      <dd>Time text. Used to add machine-readable time metadata to text. <time datetime="2020-01-20T15:40:00">January 20th, 2020, 3:40 PM</time>, Gaithersburg MD.</dd>
+    <dt><code>&lt;del&gt; &lt;ins&gt;</code></dt>
+      <dd>Inserted or deleted text used to indicate parts of a document that have been modified. For example, <del title="deleted">Deleted Text</del><ins>Inserted Text</ins></dd>
+    <dt><code>&lt;b&gt;</code></dt>
+      <dd><b>Bold text. Used to bold words.</b></dd>
+    <dt><code>&lt;i&gt;</code></dt>
+      <dd><i>Italic text. Used to italicize words.</i></dd>
+    <dt><code>&lt;u&gt;</code></dt>
+      <dd><u>Underline text. Used to underline words.</u></dd>
+    <dt><code>&lt;wbr&gt;</code></dt>
+      <dd>Word break element. Used to create a desireable line break opportunity when there is not enough room to fit a whole word comfortably. For example, let us break the word exped<wbr>itiously. between <i>exped</i> and <i>itiously</i>.</dd>
+    <dt><code>&lt;br&gt;</code></dt>
+      <dd>Break<br>
+        element. Used to add a line break within a block element.</dd>
+  </dl>
+</section>
+
+
+
+
+<!-- GENERIC ELEMENTS (DIV AND SPAN) -->
+<hr>
+    <p>Class and id attributes are global attributes and can thus be applied to any tag.</p>
+</div>
+
+<ul>
+    <li>Span examples: Telephone class.</li>
+    <li>Iita: <span class="tel">000.8282</span></li>
+    <li>pikat: <span class="tel">888.4887</span></li>
+    <li>toby: <span class="tel">777.360</span></li>
+</ul>
+
+
+<!-- CHARACTER ESCAPES -->
+<hr>
+<p>For special characters that may confuse the code, 'character escapes' can be used instead. Character escapes begin with an <b>ampersand (&amp;)</b> and end with a <b>semicolon (;)</b> .</p>
+
+<table>
+  <caption>Syntax character escapes.</caption>
+  <tr>
+    <th><abbr title="Character">Char.</abbr></th>
+    <th>Escape</th>
+    <th>Meaning</th>
+  </tr>
+  <tr>
+    <td>&lt;
+    <td>&amp;lt;</td>
+    <td>Less Than</td>
+  </tr>
+  <tr>
+    <td>&gt;</td>
+    <td>&amp;gt;</td>
+    <td>Greater Than</td>
+  </tr>
+  <tr>
+    <td>&quot;</td>
+    <td>&amp;quot;</td>
+    <td>QUOTation mark</td>
+  </tr>
+  <tr>
+    <td>&apos;</td>
+    <td>&amp;apos;</td>
+    <td>APOStrophe</td>
+  </tr>
+  <tr>
+    <td>&amp;</td>
+    <td>&amp;amp;</td>
+    <td>AMPersand</td>
+  </tr>
+</table>
+
+
+<table>
+  <caption>?White-space? Character Escapes</caption>
+  <thead>
+      <tr>
+        <th scope="col"><abbr title="Character">Char.</abbr></th>
+        <th scope="col">Escape</th>
+        <th scope="col">Meaning</th>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&amp;nbsp;</td>
+        <td>Non-Breaking SPace</td>
+      </tr>
+      <tr>
+        <td>&ensp;</td>
+        <td>&amp;ensp;</td>
+        <td>EN SPace</td>
+      </tr>
+      <tr>
+        <td>&emsp;</td>
+        <td>&amp;emsp;</td>
+        <td>EM SPace</td>
+      </tr>
+      <tr>
+        <td>&#8203;</td>
+        <td>&amp;#8203;</td>
+        <td>zero-width space</td>
+      </tr>
+      <tr>
+        <td>&zwnj;</td>
+        <td>&amp;zwnj;</td>
+        <td>Zero-Width Non-Joiner</td>
+      </tr>
+      <tr>
+        <td>&zwj;</td>
+        <td>&amp;zwj;</td>
+        <td>Zero-Width Joiner</td>
+      </tr>
+</table>
+
+
+
+<table>
+  <caption>??? Character Escapes</caption>
+  <thead>
+    <tr>
+      <th scope="col"><abbr title="Character">Char.</abbr></th>
+      <th scope="col">Escape</th>
+      <th scope="col">Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&lsquo;</td>
+      <td>&amp;lsquo;</td>
+      <td>Left Single QUOte</td>
+    </tr>
+    <tr>
+      <td>&rsquo;</td>
+      <td>&amp;rsquo;</td>
+      <td>Right Single QUOte</td>
+    </tr>
+    <tr>
+      <td>&ldquo;</td>
+      <td>&amp;ldquo;</td>
+      <td>Left Double QUOte</td>
+    </tr>
+    <tr>
+      <td>&rdquo;</td>
+      <td>&amp;rdquo;</td>
+      <td>Right Double QUOte</td>
+    </tr>
+    <tr>
+      <td>&hellip;</td>
+      <td>&amp;hellip;</td>
+      <td>Horizontal ELLIPse</td>
+    </tr>
+    <tr>
+      <td>&copy;</td>
+      <td>&amp;copy;</td>
+      <td>COPYright</td>
+    </tr>
+    <tr>
+      <td>&reg;</td>
+      <td>&amp;reg;</td>
+      <td>REGistered trademark</td>
+    </tr>
+    <tr>
+      <td>&trade;</td>
+      <td>&amp;trade;</td>
+      <td>TRADEmark</td>
+    </tr>
+    <tr>
+      <td>&pound;</td>
+      <td>&amp;pound;</td>
+      <td>POUND</td>
+    </tr>
+    <tr>
+      <td>&yen;</td>
+      <td>&amp;yen;</td>
+      <td>YEN</td>
+    </tr>
+    <tr>
+      <td>&euro;</td>
+      <td>&amp;euro;</td>
+      <td>EURO</td>
+    </tr>
+    <tr>
+      <td>&ndash;</td>
+      <td>&amp;ndash;</td>
+      <td>eN DASH</td>
+    </tr>
+    <tr>
+      <td>&mdash;</td>
+      <td>&amp;mdash;</td>
+      <td>eM DASH</td>
+</table>
+
+<!-- www.w3.org/TR/html5/syntax#named-character-references
+Web Standard Project: www.webstandards.org/learn/reference/charts/entities -->
+
+</body></html>

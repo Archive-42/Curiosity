@@ -1,0 +1,137 @@
+extends layout.pug
+include includes/utils
+
+block content
+  //- link(rel="stylesheet" type="text/css" href="/styles/story.css")
+  //- script(defer type="module" src="/js/story.js")
+
+  //- .str = SToRy
+  article.str
+    h1= story.title
+    h2= story.subtitle
+    +authorBlurb(story.Author)
+    time(datetime=`${story.createdAt}`)= story.createdAt
+    button.btn-bookmark.fas.fa.fa-bookmark
+    img(src=`/assets/stories/${ story.id }-1.jpg` alt=``)
+
+    section.str-body!= story.body
+
+    section.str-widgets
+      +storyIcons(story)
+    
+
+    aside.l-panel.str-side
+      section.str-side-author
+        h3 Written By
+          span.author #{story.Author.firstName} #{story.Author.lastName}
+        p= story.Author.bio
+        button.btn-follow Follow
+      hr
+      section.str-side-widgets
+        +storyIcons(story)
+        
+        
+    .author-highlight
+      +authorBlurb(story.Author)
+
+    //- .ast = Author STories
+    article.ast
+      h2 More From #{story.Author.firstName} #{story.Author.lastName}
+      //- each story in authorStories
+        article.ast-cell
+          +storyCell(story)
+
+    
+    //- .cmt = CoMmenTs
+    article.cmt
+      form.cmt-form(action="/api/comments", method="POST")
+        textarea
+        button Cancel
+        button Respond
+      h2 Comments
+      //- each comment in comments
+        //- TODO Maybe not a whole 'blurb'?
+        //- +authorBlurb(comment.User)
+        time(datetime=`${comment.createdAt}`)= comment.createdAt
+        .cmt-body comment.body
+        //- TODO Edit/Delete buttons for logged-in users?
+        hr
+
+
+
+
+
+
+
+
+
+  //- article(class="story-container")
+  //-   h1(class="story-title" id="story-title" data-story=story)= story.title
+  //-   .story-author-info-top
+  //-     img(class="md-icon top-author-img" src=`/assets/av/${story.authorId}.jpg` alt=`Author ${ story.Author.firstName } ${ story.Author.lastName }`)
+  //-     span(class="top-author-name") #{ story.Author.firstName } #{ story.Author.lastName }
+  //-     span(class="top-story-date")= story.createdAt
+  //-     button(class="follow-button top-author-follow btn-primary-inverted" data-author=story.authorId) Follow
+
+    .bookmark-wing
+      img(class="bkmrk bookmark-top md-icon clickable-icon" src="/assets/icons/bookmark.svg")
+
+    img(class="story-image" src=`/assets/stories/${ story.id }-1.jpg` alt="Story Image")
+
+    .story-body= story.body
+
+    div(class="below-body-options")
+      .likes-on-side.clickable-icon
+        img(class="sm-icon i-like-this" src="/assets/icons/heart.svg" data-storyid=story.id data-likes=story.Likes)
+        span(class="bottom-option-span likeCount") #{ story.Likes.length } Likes
+      .comments-on-side.comment-show.clickable-icon
+        if story.Comments.length > 0
+          img(class="sm-icon" src="/assets/icons/chat_blue.svg")
+        else
+          img(class="sm-icon" src="/assets/icons/chat.svg")
+        span(class="bottom-option-span") #{ story.Comments.length } Comments
+
+    div(class="author-below-body")
+      img(class="author-below-item md-icon" src=`/assets/av/${story.authorId}.jpg` alt=`Author ${ story.Author.firstName } ${ story.Author.lastName }`)
+      span(class="author-below-item auth-name") #{ story.Author.firstName } #{ story.Author.lastName }
+      button(class="author-below-item follow-button btn-primary-inverted" data-author=story.authorId) Follow
+
+  //- div(class="story-options")
+  //-   span #{ story.Author.firstName } #{ story.Author.lastName }
+  //-   button(class="follow-button btn-primary-inverted" data-author=story.authorId) Follow
+  //-   span(class="flex-opt double clickable-icon")
+  //-     img(class="sm-icon i-like-this" src="/assets/icons/heart.svg" data-storyid=story.id data-likes=story.Likes)
+  //-     span(class="count likeCount")= story.Likes.length
+  //-   span(class="flex-opt double comment-show clickable-icon")
+  //-     if story.Comments.length > 0
+  //-       img(class="sm-icon" src="/assets/icons/chat_blue.svg")
+  //-     else
+  //-       img(class="sm-icon" src="/assets/icons/chat.svg")
+  //-     span(class="the-comment-count")= story.Comments.length
+  //-   img(class="bkmrk sm-icon flex-opt clickable-icon" src="/assets/icons/bookmark.svg")
+
+
+  //- .comments-bar#comments
+  //-   span(id="comment-bar-header")
+  //-     h2 Comments (
+  //-       span(class="the-comment-count") #{ story.Comments.length })
+  //-     img(class="md-icon close-comments-btn" alt="close comments" src="/assets/icons/close_icon.svg")
+  //-   form(method="post" action="/comments" id="commentForm" data-story=story.id)
+  //-     span(id="currentCommentingUserDisplay")
+  //-       img(class="sm-icon" id="commenting-person-head" src="/assets/icons/${story.authorId}.jpg")
+  //-       span(id="currentUserName")
+  //-     textarea(id="comment" class="my-original-comment" name="comment" placeholder="Tell us what you think...")
+  //-     button(type="submit" id="submitComment" class="btn-primary") Submit Comment
+  //-   ul(id="commentList")
+  //-     if story.Comments.length > 0
+  //-       each comment in story.Comments
+  //-         li(class="full-comment" data-commentid=comment.id data-user=comment.userId)
+  //-           ul(class="comment-ul")
+  //-             li(class="commenting-user")
+  //-               img(class="sm-icon" src=`/assets/av/${story.authorId}.jpg`)
+  //-               span #{ comment.firstName } #{ comment.lastName }
+  //-             li(class="comment-body")= comment.body
+  //-             li(class="comment-time")= comment.createdAt
+  //-             li(class="my-comment-options" data-user=comment.userId)
+  //-               button(class="editBtn btn-primary") Edit
+  //-               button(class="dltBtn btn-primary-red") Delete

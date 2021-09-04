@@ -1,0 +1,187 @@
+.manage-events-container {
+	background: #f8f7fa;
+	min-height: calc(100vh - 60px);
+}
+
+.manage-events-header-container {
+	height: 46px;
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 0 15px;
+	box-sizing: border-box;
+}
+
+.manage-events-header-list {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	border-bottom: 1px solid #eeedf2;
+}
+
+.manage-events-header-list-item {
+	padding: 0 16px;
+	color: #6f7287;
+	font-weight: 600;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.manage-events-header-list-item:nth-child(1) {
+	padding-left: 0;
+}
+
+.manage-events-header-list-item div {
+	cursor: pointer;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	font-size: 15px;
+	border-bottom: 2px solid transparent;
+}
+
+.manage-events-header-list-item-active div {
+	color: #d1410c;
+	border-bottom: 2px solid #d1410c;
+}
+
+.manage-events-header-list-item span {
+	padding-left: 5px;
+	font-size: 15px;
+}
+
+.manage-events-list-item-none {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: white;
+	height: 150px;
+	color: #6f7287;
+	padding: 10px;
+	margin-top: 10px;
+	box-sizing: border-box;
+}
+
+.manage-events-list-item-none i {
+	font-size: 64px;
+}
+
+.manage-events-list-item-none span {
+	margin-top: 5px;
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+}
+
+.manage-events-container h1 {
+	max-width: 1080px;
+	font-size: 2rem;
+	line-height: 2.5rem;
+	letter-spacing: 0.5px;
+	color: rgb(30, 10, 60);
+	margin: 0 auto;
+	padding: 20px 15px;
+	box-sizing: border-box;
+}
+
+.manage-events-list-container {
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 0 15px;
+	box-sizing: border-box;
+}
+
+.manage-events-list-container ul {
+	list-style: none;
+}
+
+.manage-events-list-item {
+	display: flex;
+	justify-content: space-between;
+	background: white;
+	margin-top: 10px;
+	padding-bottom: 10px;
+	box-sizing: border-box;
+	color: rgb(111, 114, 135);
+}
+
+.manage-events-list-item-info {
+	padding: 0 10px;
+	margin-top: 10px;
+}
+
+.manage-events-list-item i {
+	font-size: 12px;
+	width: 15px;
+}
+
+.manage-events-list-item-info h3 span {
+	cursor: pointer;
+	font-weight: 400;
+	color: rgb(61, 100, 255);
+}
+
+.manage-events-list-item-info h3,
+.manage-events-list-item-info span,
+.manage-events-list-item-actions li,
+.manage-events-list-item-capacity,
+.manage-events-list-item-no-capacity,
+.manage-events-list-item-progress-fraction,
+.manage-events-list-item-progress-fraction span {
+	font-size: .9333333333rem;
+	line-height: 1.25rem;
+}
+
+.manage-events-list-item-actions {
+	display: flex;
+	margin-top: 10px;
+}
+
+.manage-events-list-item-actions:hover {
+	color: rgb(61, 100, 255);
+}
+
+.manage-events-list-item-actions li:hover {
+	cursor: pointer;
+}
+
+.manage-events-list-item-actions-text {
+	margin-right: 15px;
+}
+
+.manage-events-list-item-capacity {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 10px;
+	width: 175px;
+	height: 60px;
+	box-sizing: border-box;
+}
+
+.manage-events-list-item-progress-bar {
+	height: 5px;
+	overflow: hidden;
+	background: #ededed;
+}
+
+.manage-events-list-item-progress-bar-progress {
+	background: #0d8547;
+	height: 100%;
+}
+
+.manage-events-list-item-progress-fraction {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.manage-events-list-item-progress-fraction span {
+	color: #0d8547;
+}
+
+.manage-events-list-item-no-capacity {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+}

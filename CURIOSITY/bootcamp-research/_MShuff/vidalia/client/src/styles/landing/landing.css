@@ -1,0 +1,128 @@
+.landing-nav{
+    display: flex;
+    width: 100%;
+    min-height: 120px;
+    border-radius: 5px;
+    background: linear-gradient(45deg,#000000 30%, #cc2121 110%);
+    box-shadow: 5px 5px 5px #88888848;
+    align-content: center;
+    justify-content: flex-end;
+}
+
+.sign-up-button{
+    justify-self: flex-end;
+    text-align: center;
+    align-self: center;
+    border: solid 1px black;
+    box-shadow: 2px 2px 2px 2px rgba(88, 88, 88, 0.267);
+    border-radius: 4px;
+    padding: 5px 10px 5px 10px;
+    background: black;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sign-up-button:hover{
+    cursor: pointer;
+}
+
+.log-in-button{
+    justify-self: flex-end;
+    text-align: center;
+    align-self: center;
+    border: solid 1px black;
+    box-shadow: 2px 2px 2px 2px rgba(88, 88, 88, 0.267);
+    border-radius: 4px;
+    padding: 5px 10px 5px 10px;
+    background: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.log-in-button{
+    cursor: pointer;
+}
+
+.submit-button{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    border: solid 1px black;
+    padding: 5px 10px 5px 10px;
+}
+
+.submit-button:hover{
+    cursor: pointer;
+}
+
+.logo{
+    align-self: center;
+    max-height: 40px;
+    max-width: 40px;
+    margin-left: 15px;
+}
+
+.vidalia-landing-title{
+    align-self: center;
+    margin-left: 20px;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.vidalia-landing-title:hover{
+    cursor: default;
+}
+
+.landing-banner{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 250px;
+    overflow-y: hidden;
+    background-image: url('../../images/background-1.jpg');
+    background-size: cover;
+    justify-content: flex-end;
+    border-radius: 3px;
+}
+
+.landing-banner-title{
+    background: rgba(129, 129, 129, 0.466);
+    align-content: flex-end;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+.landing-banner-title:hover{
+    cursor: default;
+}
+
+.footer-wrapper{
+    border-top: solid 1px black;
+    padding-top: 20px;
+    margin-top: 100px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-link-container{
+    font-size: 45px;
+}
+
+.footer-link{
+    color: black;
+}

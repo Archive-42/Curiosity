@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,mBAAmB;AAGnB,AAAA,KAAK,CAAC;EACJ,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;CACd;;AAED,AAAA,IAAI,CAAC;EACH,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,sBAAsB;EAC7C,QAAQ,EAAE,IAAI;CACf;;AAED,AAAA,SAAS,CAAC;EACR,UAAU,EAAE,KAAK;EACjB,QAAQ,EAAE,MAAM;CACjB",
+    "sources": [
+        "../modules/gal.scss"
+    ],
+    "names": [],
+    "file": "gal.css"
+}

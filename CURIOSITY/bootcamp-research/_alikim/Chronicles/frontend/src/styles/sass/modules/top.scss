@@ -1,0 +1,70 @@
+/* MODULE top-header */
+
+.top-title {
+  margin: 0.5rem 0 0;
+  color: rgb(70,60,70);
+  text-align: center;
+  letter-spacing: 1rem;
+  font: 3rem "Modern Antiqua", "Smythe", "Girassol", "Tulpen One", "Diplomata", "Croissant One", "Milonga", "Quintessential", "Bellota Text", "Oregano";
+  transition: all 0.1s ease-in-out;
+}
+.top-title:hover {
+  color: black;
+}
+
+.top-title:active {
+  color: gray;
+}
+
+.top-con {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(230,200,200,0.3);
+}
+.top-con > ul {
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: center;
+  margin: 0;
+  padding: 0.5rem;
+  background-color: rgba(50,40,50,0.1);
+}
+.top-con > ul > a {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  margin: 0 0.2rem;
+  /* border-radius: 0.5rem 1rem 0 0; */
+  transform: skewX(-20deg);
+  border-width: 5px;
+  padding: 0.1rem 1rem;
+  background-color: ivory;
+  opacity: 0.6;
+  border-radius: 0.5rem 0;
+  font: 0.8rem "Croissant One";
+  /* font-weight: bold; */
+  /* text-transform: uppercase; */
+  transition: all 0.1s ease-in;
+}
+.top-con > ul > a:hover {
+  border-radius: 0.5rem;
+  opacity: 1;
+}
+.top-con > ul > .active {
+  // top: 0.2rem;
+  // right: 0.2rem;
+  box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+  opacity: 1;
+  font-weight: bold;
+}
+
+.top-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+}

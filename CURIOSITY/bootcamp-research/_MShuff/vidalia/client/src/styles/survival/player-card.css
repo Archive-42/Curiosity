@@ -1,0 +1,70 @@
+.char-card-game-container{
+    /* border: solid 1px black; */
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 2px rgba(88, 88, 88, 0.315);
+    background-color: white;
+    width: 200px;
+    min-width: 180px;
+    height: 280px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.player-card-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.player-card-level-up-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    border: solid 1px black;
+    border-radius: 4px;
+    width: 240px;
+    min-width: 300px;
+    height: 300px;
+    box-shadow: 2px 2px 2px 2px rgba(88, 88, 88, 0.315);
+    padding: 10px 10px 10px 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.level-up-stat-button{
+    text-align: center;
+    margin-top: 5px;
+    padding: 2px 2px 2px 2px;
+    border-radius: 3px;
+    border: solid 1px rgb(133, 84, 180);
+    background-color: rgba(134, 84, 180, 0.24);
+    color: black;
+}
+
+.level-up-stat-button:hover{
+    cursor: pointer;
+    transition: all;
+    background-color: rgba(134, 84, 180, 0.883);
+    color: white;
+    transition-duration: 1s;
+}
+
+.player-card-level-up-header{
+    text-align: center;
+}
+
+.player-card-name{
+    font-size: 20px;
+}
+
+.player-card-class{
+    font-size: 14px;
+}
+
+.points-container{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}

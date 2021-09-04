@@ -1,0 +1,85 @@
+include includes/signup-form.pug
+include includes/login-form.pug
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title= title
+    meta(name=`viewport` content=`width=device-width, initial-scale=1`)
+    meta(name="description" content="A platform for witches to commune, share knowledge, and publish quality articles about witchery.")
+    meta(name="title" property="og:title" content="Coven")
+    meta(property="og:type" content="Website")
+    //- meta(name="image" property="og:image" content="https://i.postimg.cc/28VZZ4pm/linkedin-persistamp-updated.png")
+    meta(name="description" property="og:description" content="A platform for independent witches to publish their writing for other witches to share.")
+    meta(name="author" content="Alicia Mira Kim")
+
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" rel="stylesheet")
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" rel="stylesheet")
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css" rel="stylesheet")
+    
+    link(rel=`stylesheet` type=`text/css` href=`/styles/smacss/normalize.css`)
+    link(rel=`stylesheet` type=`text/css` href=`/styles/smacss/base.css`)
+    link(rel=`stylesheet` type=`text/css` href=`/styles/smacss/layout.css`)
+    link(rel=`stylesheet` type=`text/css` href=`/styles/smacss/state.css`)
+    link(rel=`stylesheet` type=`text/css` href=`/styles/smacss/theme.css`)
+    link(rel=`stylesheet` type=`text/css` href=`/styles/smacss/enf_enter-form.css`)
+    //- link(rel='stylesheet' type='text/css' href='/styles/globalStyle.css')
+    //- link(rel='stylesheet' type='text/css' href='/styles/navStyle.css')
+    //- link(rel='stylesheet' type='text/css' href='/styles/footer.css')
+    //- script(defer type="module" src="/js/layout.js")
+    script(defer type="module" src="/js/forms.js")
+    
+  body#top
+  
+    header#header
+      //- nav.topnav.navbar-default.topNavStyles
+        //- .leftNav
+      a(href="/") Coven
+      //- p.greetingTag
+      
+      unless userId
+        div.l-twins.anon
+          button.anon.demo-btn Demo
+          button.anon.log-btn Login
+          button.anon.sup-btn Join
+      
+      if userId
+        nav.nav
+          //- button.drop: img(src=`/assets/icons/userid.jpg`).avi
+          ul.drop
+            li: a(href=`/users/${userId}`) Profile
+            li: a(href=`/users/id/bookmarks`) Bookmarks
+            li: a(href=`/write`) Write
+            li: button.logout Logout
+        //- li.demoLogIn.hidden: a.button.demo#demoLink Demo Login
+        //- li.signInButton: a.button#signInButton.signInBanner Login
+        //- li.signUpButton: a.button#signUpButton.signUpBanner Sign up
+        //- nav#nav
+        //-   ul
+
+            //- li.publishStory.hidden: a.button#publishStoryButton Publish
+            //- li.dropdown
+
+            //- .dropdown-container.button.dropdown-toggle
+            //-   a.button.dropdown-toggle: .navAv
+            //-     img(src=`/assets/icons/avatar_blue.svg`)
+            //-   ul#dropdown-menu.dropdown-menu
+            //-     li: a.button#profileButton Profile
+            //-     li: a.button#createStoryButton Write
+            //-     li: a.button#logoutButton Log out
+            
+    block signup
+    block login
+    
+    block content
+
+    footer#footer
+      a(href="/") C
+
+      address
+        a(href="https://github.com/alimirakim") GitHub
+        a(href="") LinkedIn
+        a(href="email:alicia.mira.kim@gmail.com") email
+        
+      small © 2020 Warren Tamagri, Cinthia Spence, Clayton Reinhardt, Mira Kim

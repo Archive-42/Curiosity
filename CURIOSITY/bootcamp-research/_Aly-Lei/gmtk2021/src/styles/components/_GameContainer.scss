@@ -1,0 +1,56 @@
+.GameContainer {
+  background-image: url(../../images/background/witch-academy.jpg);
+  background-size: cover;
+  background-position: center;
+
+  .GameOptions {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 2rem;
+
+    .recipeBookButton {
+      cursor: pointer;
+      width: 20rem;
+      height: 10rem;
+      background-image: url(../../images/gui/recipe-book-button.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+
+    &:hover {
+      background-image: url(../../images/gui/recipe-book-button-hvr.png);
+    }
+    }
+
+    .optionButton {
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+      margin: 0 1rem;
+      
+      background-image: url(../../images/gui/back-button.png);
+      background-size: contain;
+
+      a {
+        border: none;
+      }
+    }
+  }
+
+  .main {
+    background-color: rgba(0,0,0, 0.626);
+    background-color: rgba(247, 251, 255, 0.5);
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      font-size: $font-size-xlarge;
+      color: white;
+      background-color: $color-highlight;
+      text-align: center;
+      padding: $space-large;
+    }
+  }
+}

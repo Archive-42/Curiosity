@@ -1,0 +1,194 @@
+.index-search-bar-wrapper {
+  padding-left: 12px;
+  padding-bottom: 8px;
+  max-width: 1260px;
+  margin: auto;
+}
+
+.index-search-bar-form {
+  display: flex;
+  flex-direction: column;
+  width: 750px;
+}
+
+.index-search-bar-wrapper .city-content {
+  display: flex;
+  align-items: center;
+}
+
+.index-search-bar-content {
+  position: relative;
+}
+
+.index-search-bar-wrapper input,
+.index-search-bar-wrapper input::placeholder {
+  text-decoration: underline;
+  text-decoration-color: #A9A8B3;
+  color: #A9A8B3;
+  font-size: 1.875rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.index-search-bar-wrapper input {
+  color: black;
+  border: none;
+  padding: 12px 14px;
+}
+
+.index-search-bar-wrapper input:focus {
+  outline: none;
+}
+
+.index-search-bar-input-info {
+  font-size: 1.875rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.5px;
+  color: #c2c2cc;
+  font-weight: 700;
+  margin-left: 16px;
+}
+
+.index-search-bar-submit {
+  position: relative;
+}
+
+.index-search-bar-submit button {
+  background: rgb(209, 65, 12);
+  height: 44px;
+  padding: 0 30px 1px;
+  border: 2px solid rgb(209, 65, 12);
+  color: white;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  line-height: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  right: 215px;
+  top: -105px;
+}
+
+.index-search-bar-submit button:focus {
+  outline: none;
+}
+
+.index-search-bar-submit button:hover {
+  border: 2px solid #f05537;
+  background: #f05537;
+}
+
+.index-search-bar-select-wrapper {
+  position: relative;
+  margin-top: 18px;
+}
+
+.index-search-bar-select-wrapper select:focus {
+  outline: none;
+}
+
+.index-search-bar-select {
+  cursor: pointer;
+  display: inline-block;
+  height: 36px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 14px;
+  border-radius: 18px;
+  background: #f8f7fa;
+  color: #39364f;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.index-search-bar-select:hover { 
+  background: #eeedf2;
+}
+
+.index-search-bar-select-arrow:after {
+	font-family: "Font Awesome 5 Free";
+  content: "\f107";
+  font-size: 15px;
+  font-weight: 900;
+  position: absolute;
+  top: 12px;
+  left: 85px;
+  color: #39364f;
+  pointer-events: none;
+}
+
+.index-search-bar-wrapper .date-content {
+  padding-left: 24px;
+}
+
+.index-search-bar-wrapper .react-calendar abbr {
+  font-size: 12px;
+}
+
+.index-search-bar-wrapper .react-calendar {
+  z-index: 999;
+  position: absolute;
+  top: 25px;
+}
+
+.index-search-bar-calendar-hidden {
+  display: none;
+}
+
+.index-search-bar-date-input {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  height: 36px;
+  line-height: 36px;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding-left: 14px;
+  padding-right: 42px;
+  border-radius: 18px;
+  background: rgb(218, 71, 24);
+  color: white;
+}
+
+.index-search-bar-select-close, 
+.index-search-bar-select-clear {
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: -1px;
+  right: 14px;
+  font-size: 20px;
+}
+
+.index-search-bar-select-clear {
+  color: white;
+}
+
+.index-search-bar-wrapper .autocomplete-dropdown-hidden {
+  display: none;
+}
+
+.index-search-bar-wrapper .autocomplete-dropdown-active {
+  position: absolute;
+  max-width: 425px;
+  top: 65px;
+  left: -5px;
+}
+
+.index-search-bar-wrapper .autocomplete-dropdown-cities {
+  left: 40px;
+}
+
+.autocomplete-dropdown-image {
+  height: 100%;
+  width: auto;
+}

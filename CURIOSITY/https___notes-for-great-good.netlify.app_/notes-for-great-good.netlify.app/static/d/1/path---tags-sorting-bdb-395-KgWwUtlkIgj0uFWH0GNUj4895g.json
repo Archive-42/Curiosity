@@ -1,0 +1,31 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Programming-Foundations--Algorithms",
+          "title": "Programming Foundations:",
+          "tags": ["foundations", "algorithms", "sorting"],
+          "subtitle": "Algorithms",
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Four",
+          "title": "Algorithm Design Manual:",
+          "tags": [
+            "algorithms",
+            "sorting",
+            "searching",
+            "Algorithm Design Manual"
+          ],
+          "subtitle": "Sorting and Searching",
+          "chapter": "Chapter Four"
+        }
+      }
+    ],
+    "tagName": "sorting"
+  }
+}

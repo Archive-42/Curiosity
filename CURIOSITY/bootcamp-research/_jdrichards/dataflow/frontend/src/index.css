@@ -1,0 +1,118 @@
+/* No need to open this file for lecture. */
+
+body {
+    background: white;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+}
+
+body * {
+    box-sizing: border-box;
+    color: black;
+}
+
+#root {
+    background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    height: 1000px;
+}
+
+.header {
+    height: 100px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.header * {
+    padding: 10px;
+}
+
+.home {
+    display: flex;
+    flex-flow: column;
+    max-width: 700px;
+    height: calc(100vh - 100px);
+    margin: auto;
+    z-index: 1;
+}
+
+.home > * {
+    width: 100%;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+h1 {
+    margin: 0px;
+}
+
+h3 {
+    margin-bottom: 20px;
+}
+.tableWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+table {
+    min-width: 450px;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 0.5s linear forwards;
+}
+
+td,
+th {
+    text-align: center;
+    padding: 10px;
+    background: darkred;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    margin: auto 20px;
+    text-align: center;
+}
+
+.active {
+    color: darkred;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+table a {
+    text-decoration: underline;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

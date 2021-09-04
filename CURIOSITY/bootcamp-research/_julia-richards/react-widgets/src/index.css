@@ -1,0 +1,82 @@
+/* TODO Add site wide styles */
+.time-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.date-container {
+	display: flex;
+	justify-content: space-between;
+}
+.time_date-container {
+	width: 80%;
+	font-size: 28px;
+	color: white;
+	font-family: Orbitron;
+	width: 550px;
+	height: 94px;
+	border: 2px solid black;
+	margin: 20px 20px 20px 20px;
+	padding: 10px;
+	background-color: orange;
+	background-size: cover;
+	background-position-y: 20%;
+	font-family: Orbitron;
+}
+.tab-header {
+	margin: 0 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.tab-header > li {
+	width: 33%;
+	border-top: 2px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 2px solid black;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	padding: 5px;
+	text-align: center;
+	cursor: pointer;
+	background-color: lightpink;
+}
+
+.tab-header > li:first-child {
+	border-left: 2px solid black;
+}
+
+.tab-header > li:last-child {
+	border-right: 2px solid black;
+}
+
+.tab-header > li:hover {
+	background-color: lightblue;
+	color: white;
+}
+
+.tab-header > li.active {
+	color: white;
+	font-weight: bold;
+	background-color: lightblue;
+	border-bottom: 0px;
+}
+
+.tabs {
+	width: 240px;
+}
+
+.tab-content {
+	font-weight: bold;
+	color: white;
+	height: 192px;
+	margin: 0 20px;
+	border-left: 2px solid black;
+	border-bottom: 2px solid black;
+	border-right: 2px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: lightblue;
+}

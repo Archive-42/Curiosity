@@ -1,0 +1,22 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Cracking-The-Coding-Interview--Technical-Interviews",
+          "title": "Cracking the Coding Interview",
+          "tags": [
+            "Cracking the Coding Interview",
+            "technical interviews",
+            "algorithms",
+            "data structures"
+          ],
+          "subtitle": "Technical Interviews",
+          "chapter": "Chapter 7"
+        }
+      }
+    ],
+    "tagName": "technical interviews"
+  }
+}

@@ -1,0 +1,19 @@
+
+.buttonBase {
+  min-width: 10rem;
+  height: 4rem;
+  cursor: pointer;
+  margin: 1rem;
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem 2rem;
+  color: white;
+  background-color: $color-highlight;
+  box-shadow: 5px 5px 0 $color-secondary;
+  font: bold 2rem "Mate SC", serif;
+  line-height: 1rem;
+
+  &:disabled {
+    color: gray;
+  }
+}

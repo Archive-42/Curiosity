@@ -1,0 +1,15 @@
+// Longest increasing subsequence
+//
+
+"use strict";
+{
+  Object.assign(self, {lis, lis_memoized});
+
+  function lis( s ) {
+
+  }
+
+  function lis_memoized( s, m ) {
+
+  }
+}

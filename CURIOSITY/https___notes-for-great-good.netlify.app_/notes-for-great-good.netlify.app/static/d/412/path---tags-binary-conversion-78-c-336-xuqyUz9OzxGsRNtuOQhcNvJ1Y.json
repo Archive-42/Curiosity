@@ -1,0 +1,17 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Binary-Conversion",
+          "title": "Binary Conversion",
+          "tags": ["binary conversion"],
+          "subtitle": null,
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "binary conversion"
+  }
+}

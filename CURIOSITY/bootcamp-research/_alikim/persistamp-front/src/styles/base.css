@@ -1,0 +1,13 @@
+/* For global css rules. If the rule is on a generic tag, like 'a', 'h1', etc.,
+it probably belongs here. */
+
+body {
+    background-color:rgb(20, 30, 50);
+    color: seashell;
+}
+table, tr, th, td {
+  border-radius: 0.3rem;
+  border: 1px solid rgb(100,100,100,0.5);
+  padding: 0.2rem;
+  text-align: center;
+}

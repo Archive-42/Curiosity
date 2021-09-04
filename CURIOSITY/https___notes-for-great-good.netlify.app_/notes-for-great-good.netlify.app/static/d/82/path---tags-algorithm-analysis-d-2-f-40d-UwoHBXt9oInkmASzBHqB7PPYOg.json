@@ -1,0 +1,21 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Two",
+          "title": "Algorithm Design Manual:",
+          "tags": [
+            "algorithms",
+            "algorithm analysis",
+            "Algorithm Design Manual"
+          ],
+          "subtitle": "Algorithm Analysis",
+          "chapter": "Chapter Two"
+        }
+      }
+    ],
+    "tagName": "algorithm analysis"
+  }
+}
