@@ -1,6 +1,0 @@
-
-    Contact: bryan.guner@gmail.com
-    Acknowledgments: https://github.com/dosyago/vulnerability-reports
-    Preferred-Languages: EN
-    Canonical: https://browsergap.xyz/security.txt
-    Policy: mailto:bryan.guner@gmail.com?subject=Please+send+RDP+Policy
