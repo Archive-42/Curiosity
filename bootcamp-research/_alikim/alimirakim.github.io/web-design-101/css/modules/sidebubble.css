@@ -1,0 +1,18 @@
+
+.bubble {
+  z-index: 1;
+  position: relative;
+  top: 6rem;
+  margin: 0;
+  border-radius: 10px;
+  border: 1px cadetblue solid;
+  padding: 1rem;
+  background-color: white;
+  height: min-content;
+  overflow: hidden;
+}
+.bubble > p {
+  text-align: left;
+  font-size: 0.8rem;
+  font-family: Calibri, 'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+}

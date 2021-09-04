@@ -1,0 +1,36 @@
+.map-page-wrap {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  grid-template-rows: auto;
+  grid-gap: 24px;
+  align-items: flex-start;
+  max-width: 1080px;
+  margin: 0 auto 3rem;
+  padding: 10px;
+}
+
+.map-page-wrap .main {
+}
+
+.map-page-wrap .main img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin-top: 16px;
+}
+
+.map-page-wrap .sidebar {
+  margin-top: 2rem;
+}
+
+.map-page-wrap .sidebar .sidebar-item {
+  margin-top: 1rem;
+}
+
+.map-page-wrap .sidebar .sidebar-item h4 {
+  margin-bottom: 0.5rem;
+}
+
+.map-page-wrap .sidebar .sidebar-item ul {
+  margin-left: 1em;
+}

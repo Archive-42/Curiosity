@@ -1,0 +1,48 @@
+/* activity board */
+.hbd {
+  /* max-width: min-content; */
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li, .rrh {
+  break-inside: avoid-column;
+  /* width: min-content; */
+}
+.rrh {
+  height: max-content;
+}
+
+.programBoards-container {
+  column-width: 25rem;
+  -webkit-column-width: 25rem;
+  column-gap: 0.5rem;
+  -webkit-column-gap: 0.5rem;
+  column-fill: balance;
+  -webkit-column-fill: balance;
+  /* margin: 0.5rem 1rem 0.5rem 0; */
+  /* width: 95%; */
+  min-width: 20rem;
+  margin: 0.5rem;
+  
+  /* align-content: center; */
+  /* justify-content: center; */
+
+  /* margin-top: 1rem;
+  display: grid;
+  width: 100%;
+  grid-auto-flow: dense;
+  justify-content: center;
+  align-items: stretch;
+  justify-items: stretch;
+  grid-auto-columns: auto;
+  grid-template-columns: repeat(auto-fill, minmax(26rem, min-content));
+  grid-gap: 1rem;
+  margin-bottom: 5rem; */
+
+}

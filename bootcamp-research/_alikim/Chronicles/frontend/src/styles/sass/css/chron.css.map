@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACV,OAAO,EAAE,CAAC;EACV,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,QAAQ;EACjB,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,kBAAe;CAC/C",
+    "sources": [
+        "../modules/chron.scss"
+    ],
+    "names": [],
+    "file": "chron.css"
+}

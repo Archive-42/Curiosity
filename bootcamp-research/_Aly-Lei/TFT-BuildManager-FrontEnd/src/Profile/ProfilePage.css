@@ -1,0 +1,21 @@
+.profile__image {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.Profile__Container {
+  background-color: rgb(255, 243, 228);
+  width: 20%;
+  padding: 2%;
+  margin: 1%;
+  border-radius: 5px;
+}
+
+.Collection {
+  width: 100%;
+  padding: 0 5% 1% 5%;
+  margin: 1%;
+}

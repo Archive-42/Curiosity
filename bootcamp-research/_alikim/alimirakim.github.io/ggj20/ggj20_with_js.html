@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Global Game Jam 2020</title>
+  <style>
+    @import url("ggj20_environment.css");
+    @import url("ggj20_scene.css");
+    @import url("ggj20_charas.css");
+
+    * { outline: dotted blue 0px; }
+
+    /* Grass and trees backdrop. */
+    body { 
+      background-color: black; }
+
+  </style>
+</head>
+
+<body>
+<header>
+  <h1><nav><a href="map.html">🗺️</a>Sylvan Mountains</nav></h1>
+  <!-- <audio src="" autoplay with option controls. Can it continue across pages? I don't think so... maybe just be SFX. And you can set a cookie/universal setting to have them muted by default.-->
+</header>
+
+<main>
+  <!-- TODO: Fix the pc and npc classes to be name-consisdtent. -->
+
+<div class="center-wrapper">
+<section class="scene">
+  <h2 id="title"></h2>
+  <p id="recap"></p>
+
+  <img class="scene-art" id="illust" src="" alt="">
+
+  <p class="scene-txt" id="scene-text"></p>
+
+  <p class="scene-prompt" id="prompt"></p>
+
+    <ul class="pc-emoji">
+        <li class="choice" id="choice-1"></li>
+        <li class="choice" id="choice-2"></li>
+      <li class="choice" id="choice-3"></li>
+    </ul>
+
+</section>
+
+<aside class="npc" id="npc_image">
+  <img src="" alt="">
+  <h3 class="name" id="npc_name"></h3>
+</aside>
+
+<aside class="pc">
+  <img src="images/om_genie.png" alt="GenieBot">
+  <h3 class="name">GenieBot</h3>
+  </div>
+</aside>
+
+<!-- TODO: How to ensure semantic-important elements are noted in the HTML, like the graphics for the environment? -->
+
+</main>
+
+<footer>
+  <small>Copyright &copy; almyki 2020.</small>
+</footer>
+
+// D KLFJADS; FLADSJF A;SDLFJASD ;LADSJFDAS ;LKDSAJF
+<script>
+
+var scenes = [
+    {
+        'title': "Welcome, GenieBot",
+        'recap': "You have entered the area of the Sylvan Mountains...",
+        'scene-text': "As you explore your surroundings, at first nothing seems particularly amiss. You don't see any obvious glitches or signs of broken code. However, the place does seem a bit empty, with only a pair of barren mountains and a storm brewing in the distance.",
+        'prompt': "You decide to...",
+        'choice-1': [1, "👁️"],
+        'choice-2': [2, "👂"],
+        'choice-3': [3, "👄"],
+        'illust': ["images/ap_snowy-mountain.png", "mountain"],
+        'npc_image': ["", ""],
+        'npc_name': "",
+    },
+    {
+        'title': "Nothing to See Here",
+        'recap': "You give the area another thorough scan.",
+        'illust': ["", ""],
+        'scene-text': "Try as you might, you can't see anything else of interest in the area.",
+        'prompt': "Next in your investigation, you...",
+        'choice-1': [1, "👂"],
+        'choice-2': [2, "👄"],
+        'choice-3': [3, "👄"],
+        'illust': ["images/ap_snowy-mountain.png", "mountain"],
+        'npc_image': ["images/om_elf.png", "elf"],
+        'npc_name': "NPC Elf",
+    },
+  ];
+
+var current_scene = scenes[0];
+const id_keys = Object.keys(current_scene);
+
+function changeScene(scene) {
+  var current_scene = (scene);
+  var title = document.getElementById('title');
+  // var element_type = document.getElementById('title').tagName;
+  // if (element_type == "h2") {
+  title.innerHTML = current_scene['title'];
+
+  var recap = document.getElementById('recap');
+  recap.innerHTML = current_scene['recap'];
+
+  var scene_text = document.getElementById('scene-text');
+  scene_text.innerHTML = current_scene['scene-text'];
+
+  var prompt = document.getElementById('prompt');
+  prompt.innerHTML = current_scene['prompt'];
+
+  var illust = document.getElementById('illust');
+  illust.setAttribute("src", current_scene['illust'][0]);
+  illust.setAttribute("alt", current_scene['illust'][1]);
+
+  var choice_1 = document.getElementById('choice-1');
+  choice_1.innerHTML = current_scene['choice-1'][1];
+  };
+
+changeScene(scenes[0]);
+
+.addEventListener("click", changeScene(scenes[1]));
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+.registrations-page {
+}
+
+.tickets-likes-section {
+  /* width: 65%; */
+  margin-left: 35%;
+}
+
+.past-tickets,
+.current-tickets {
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+.past-tickets h2,
+.current-tickets h2,
+.likes-on-reg-page h2 {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.25px;
+  margin-right: -0.25px;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+.current-tickets .event-index-list,
+.past-tickets .event-index-list,
+.likes-on-reg-page .event-index-list {
+  width: auto;
+  max-width: 700px;
+}
+
+.likes-on-reg-page .event-index-list {
+  max-width: none;
+}
+
+.nothing-here {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nothing-here-image {
+  background: url('../assets//images/no_ticket.png');
+  height: 120px;
+  width: 120px;
+  background-repeat: no-repeat;
+}
+
+.nothing-here-text {
+  color: #6f7287;
+  font-size: 1.05rem;
+  line-height: 1.5rem;
+  margin-top: 32px;
+}
+
+hr {
+  max-width: 700px;
+  margin-left: 0;
+  opacity: 0.3;
+}
+
+.likes-on-reg-page {
+  margin-top: 20px;
+}
+
+.likes-on-reg-page ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.likes-on-reg-page h2 i {
+  margin-left: 10px;
+}
+
+.event-in-square .event-index-list__item__content-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.event-in-square .copy-area {
+  padding: 20px;
+  display: flex;
+}
+.event-in-square .event-index-list__item__title-link {
+  padding-left: 0;
+  margin-top: -4px;
+}
+
+.event-in-square .event-index-list__item__like-button {
+  top: 155px;
+  right: 41px;
+  background: white;
+}
+
+.event-in-square .event-index-list__item__like-button:hover {
+  background-color: #f8f7fa;
+}
+
+.event-in-square .free-indicator {
+  right: 15px;
+  left: auto;
+}

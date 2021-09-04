@@ -1,0 +1,201 @@
+// state.generator.title
+// state.generator.tagTypeChances.tagType
+// state.generator.tagTypeChances[0].chances[0].chance
+
+{
+  "id": 2,
+  "title": "Earthy",
+  "user": {
+    "id": 1,
+    "username": "admin",
+    "email": "almyki@gmail.com",
+    "createdAt": "2020-11-05T03:22:07.971Z",
+    "updatedAt": "2020-11-05T03:22:07.971Z"
+  },
+  "tagTypeChances": [
+    {
+      "id": 1,
+      "chanceLock": 0.01,
+      "typeId": 1,
+      "type": "gender",
+      "chances": [
+        {
+          "tagId": 1,
+          "tag": "boy",
+          "chanceId": 1,
+          "chance": 0.45
+        },
+        {
+          "tagId": 2,
+          "tag": "girl",
+          "chanceId": 2,
+          "chance": 0.45
+        },
+        {
+          "tagId": 3,
+          "tag": "unisex",
+          "chanceId": 3,
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "chanceLock": 0.01,
+      "typeId": 2,
+      "type": "culture",
+      "chances": [
+        {
+          "tagId": 4,
+          "tag": "eastern",
+          "chanceId": 4,
+          "chance": 0.8
+        },
+        {
+          "tagId": 5,
+          "tag": "western",
+          "chanceId": 5,
+          "chance": 0.2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "chanceLock": 0.01,
+      "typeId": 3,
+      "type": "theme",
+      "chances": [
+        {
+          "tagId": 6,
+          "tag": "nature",
+          "chanceId": 6,
+          "chance": 0.6
+        },
+        {
+          "tagId": 7,
+          "tag": "astronomy",
+          "chanceId": 7,
+          "chance": 0.3
+        },
+        {
+          "tagId": 8,
+          "tag": "geology",
+          "chanceId": 8,
+          "chance": 0.1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "chanceLock": 0.01,
+      "typeId": 4,
+      "type": "type",
+      "chances": [
+        {
+          "tagId": 9,
+          "tag": "full",
+          "chanceId": 9,
+          "chance": 0.5
+        },
+        {
+          "tagId": 10,
+          "tag": "nickname",
+          "chanceId": 10,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "chanceLock": 0.01,
+      "typeId": 5,
+      "type": "style",
+      "chances": [
+        {
+          "tagId": 11,
+          "tag": "cute",
+          "chanceId": 11,
+          "chance": 0.5
+        },
+        {
+          "tagId": 12,
+          "tag": "nerdy",
+          "chanceId": 12,
+          "chance": 0.5
+        },
+        {
+          "tagId": 13,
+          "tag": "fancy",
+          "chanceId": 13,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "chanceLock": 0.01,
+      "typeId": 6,
+      "type": "popularity",
+      "chances": [
+        {
+          "tagId": 14,
+          "tag": "common",
+          "chanceId": 14,
+          "chance": 0.95
+        },
+        {
+          "tagId": 15,
+          "tag": "rare",
+          "chanceId": 15,
+          "chance": 0.05
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "chanceLock": 0.01,
+      "typeId": 7,
+      "type": "first letter",
+      "chances": [
+        {
+          "tagId": 16,
+          "tag": "A",
+          "chanceId": 16,
+          "chance": 0.5
+        },
+        {
+          "tagId": 17,
+          "tag": "B",
+          "chanceId": 17,
+          "chance": 0.5
+        },
+        {
+          "tagId": 18,
+          "tag": "C",
+          "chanceId": 18,
+          "chance": 0.5
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "chanceLock": 0.01,
+      "typeId": 8,
+      "type": "meaning",
+      "chances": [
+        {
+          "tagId": 19,
+          "tag": "hope",
+          "chanceId": 19,
+          "chance": 0.5
+        },
+        {
+          "tagId": 20,
+          "tag": "love",
+          "chanceId": 20,
+          "chance": 0.5
+        }
+      ]
+    }
+  ]
+}

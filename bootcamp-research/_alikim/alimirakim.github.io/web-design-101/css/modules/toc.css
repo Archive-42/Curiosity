@@ -1,0 +1,29 @@
+
+.is-toc-heavy {
+  padding-right: 1rem;
+  font-variation-settings: 'wght' 800;
+}
+.toc > .part {
+  border-bottom: solid 1px cadetblue;
+  padding-bottom: 0.2rem;
+  font-size: 1.2rem; 
+  text-transform: uppercase;
+}
+.toc .parts {
+  margin: 0;
+  padding: 1rem;
+  text-align: left;
+  list-style-type: none;
+}
+.toc .chapters {
+  list-style-type: none; 
+}
+/* TODO: Change the parts into collapsed accordians with JS later on. */
+.toc .chapter {
+  margin: 0.5rem 0;
+}
+.toc a {
+  color: black;
+  text-decoration: none; 
+  font: bold 1.2rem Calibri, sans-serif;
+}

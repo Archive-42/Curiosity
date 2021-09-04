@@ -1,0 +1,139 @@
+
+IDEA - Muunokhoi and the Elf
+You play as Muunokhoi after she rescued this elf. Your goal is to figure out as much about the Elf as possible so as to find the clues to return them home. With this design, the story itself is linear, but the gameplay is full of important yet non-permanent non-truly-branching options. Think like Ace Attorney's story-telling. As a form of concrete progression, you have a 'data sheet' that you fill out slowly with the facts that you discover as you discover them. It can have lots of info, even mundane things. Examples: The elf's name, their religion, favorite food, fear, the climate of where they used to live, et cetera. You can also do some things to collect objects that may be important. 
+
+
+-----
+
+
+black screen, green codey colors.
+
+[Hello, Repair Genie/Bot. Players have been complaining that they can't access the [Sylvan Mountains] area. There must be a glitch in the level map, so please take a look and fix the bug for us. Not to worry, you will be rewarded for your service.]
+
+['Login' button]
+
+---
+
+Title of Game Webworld
+Map buttons grid - grayed out/hidden except silvan mountains.
+
+---
+
+Sylvan Mountains
+🗺️ Navi link - map button 
+Background - empty mountains
+
+BRANCH 1
+Welcome to the Sylvan Mountains
+You look around. At first it doesn't seem like anything is wrong. There are no obvious glitches visible in the air or breaking any objects. However, the place does seem rather empty. After thinking for a moment, you decide to...
+
+👁️ - look around - see nothing, reloop
+👂 - listen closely - hear a hint, but reloop
+👄 - call out - an elf magically appears
+
+
+BRANCH 2
+👋 smiley/wave - they shyly smile and wave back. --> smiley/wave
+😲 Astonished Face - they jump and exclaim as well, and disappear again --> surprise/! 😨 Fearful Face 😱 Face Screaming in Fear
+🤬 Face with Symbols on Mouth - curse them for spooking you --> fear
+
+---
+
+BRANCH 3a
+disappeared --> 
+    🙇 Person Bowing - apologise --> reappears --> worry face
+    😅 Grinning Face with Sweat 😓 Downcast Face with Sweat - sheepish --> reappears --> 😟 Worried Face
+    😠 Angry Face - shout come back --> silence, reloop
+
+---
+
+BRANCH 3b
+query -->
+    land --> 😞 Disappointed Face 💔 Broken Heart -->
+    🧝 elf --> they live here. --> house
+    bug --> 🤔 Thinking Face 🤨 Face with Raised Eyebrow
+
+BRANCH 4
+query -->
+    😒 Unamused Face -> 😖 Confounded Face 😦 Frowning Face with Open 😣 Persevering Face ☹ Frowning Face Mouth reloop to disappear
+    😟 Worried Face 😧 Anguished Face 😞 Disappointed Face hug/comfort -> sad smile, 😥 Sad but Relieved Face
+    romance ❤️ Red Heart -> embarassed denial 😳 Flushed Face
+
+🗯️ Right Anger Bubble
+🗨️ Left Speech Bubble
+💭 Thought Balloon
+💬 Speech Balloon
+1️⃣ Keycap Digit One 2️⃣ Keycap Digit Two 3️⃣ Keycap Digit Three
+🔵 Blue Circle 🔷 Large Blue Diamond
+
+
+🏩 Love Hotel
+‼ Double Exclamation Mark
+⁉ Exclamation Question Mark
+❓ Question Mark
+❔ White Question Mark
+❕ White Exclamation Mark
+❗ Exclamation Mark
+✔ Check Mark
+❌ Cross Mark
+💦 Sweat Droplets
+🔧 Wrench
+
+query -->
+    ⛰️ Mountain --> 🙅 Person Gesturing No 🙆 Person Gesturing OK --> 
+    ☁️ Cloud sky/cloud --> x hand
+    🏡 House with Garden land/home --> x hand
+
+mountain query -->
+    💣 Bomb 🧨 Firecracker --> fear anger x hands, reloop
+    heart --> *yes, 3 --> (two hints for same job)
+    🌋 Volcano --> fear x (replace)
+
+sky query --> 
+    ⛈️ Cloud with Lightning and Rain --> 🌩️ Cloud with Lightning thunder angry face (delete)
+    🕒 Three O’Clock --> *nod, star --> reloop
+    🐦 Bird --> heart, confused
+
+land/home query -->
+    🐶 Dog Face 🐾 Paw Prints --> 3 -> 1/2/3 --> 🐅 Tiger 🐐 Goat 🦌 Deer 🦅 Eagle
+    🌱 Seedling > 🌲 Evergreen Treeplant --> pine tree
+    🏗️ Building Construction 🏭 Factory --> x shake head, reloop
+
+when reloop, give a 'back question' option and a 'goodbye' option.
+↩️ Right Arrow Curving Left
+🔗 Link
+
+base query becomes - mountain/sky/cloud. all reloops eventually after giving all info.
+
+🗺️ World Map
+'flip' button --> flips to code form page. graphics same for background and 'scene box'. scene box now has the html and/or css of the page, and buttons at the top. buttons take you to each 'aspect' of the code to be fixed. 
+
+PROBLEMS TO FIX:
+replace volcano with mountain
+remove thunder cloud
+change background to starry night
+add 3 animals
+add a row of trees bottom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

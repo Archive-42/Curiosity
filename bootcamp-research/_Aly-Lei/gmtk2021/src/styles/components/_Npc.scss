@@ -1,0 +1,71 @@
+.Npc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+  .imageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+      height: 50vh;
+      width: 50vh;
+      margin: 0 auto;
+    }
+  }
+
+  .name {
+    position: absolute;
+    z-index: 1;
+    top: -6rem;
+    left: 1rem;
+    width: max-content;
+    margin: 1rem;
+    border-radius: 50%;
+    background: $color-bg-primary;
+    box-shadow: 5px 5px 0 $color-highlight;
+    font: 5rem $body-fancy;
+    color: $color-highlight;
+    padding: 0 $space-large $space-small 0;
+  }
+
+  .dialogue-box {
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid white;
+    box-shadow: 5px 5px 0 white;
+    // border: 5px ridge white;
+    //flex-direction: column;
+
+    padding: $space-medium $space-large;
+    margin: 0 $space-large;
+    height: 20rem;
+    line-height: 2.5rem;
+    background-color: $color-bg-light-transp;
+    color: $color-black;
+    display: flex;
+    align-items: center;
+    overflow-y: auto;
+    overflow: visible;
+    font-family: $body-typewriter;
+    // font: $font-size-large $body-casual;
+    line-height: 3rem;
+    
+    .continue {
+      cursor: pointer;
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+
+  .footer {
+    background: rosybrown;
+    font-size: $font-size-tiny;
+    padding: $space-small;
+    display: flex;
+    justify-content: center;
+  }
+}

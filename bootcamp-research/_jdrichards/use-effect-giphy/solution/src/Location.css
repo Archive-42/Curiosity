@@ -1,0 +1,12 @@
+.location {
+  position: absolute;
+  bottom: 20;
+  right: 20;
+}
+.agreement {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 40;
+  right: 20;
+}

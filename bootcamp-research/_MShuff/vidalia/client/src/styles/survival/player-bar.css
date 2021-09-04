@@ -1,0 +1,164 @@
+.player-bar{
+    display: flex;
+    margin-top: 20px;
+    background: linear-gradient(45deg,#111111 30%, #43257c 120%);
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px #88888848;
+    padding: 10px 10px 10px 10px;
+    justify-content: space-around;
+}
+
+.inventory-container{
+    border-radius: 4px;
+    background-color: white;
+    min-width: 180px;
+    margin-left: 5px;
+    max-height: 280px;
+    overflow-y: scroll;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 5px 5px 5px #88888848;
+}
+
+.inventory-container::-webkit-scrollbar{
+    display: none;
+}
+
+.equipment-header{
+    text-align: center;
+    background-color: rgb(53, 77, 143);
+    color: white;
+    font-size: 18px;
+    padding: 10px 5px 10px 5px;
+    position: sticky;
+    top: 0;
+}
+
+.use-ability-container{
+    display: flex;
+    align-items: center;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 5px 5px 5px 5px;
+}
+
+.ability-name{
+    text-align: center;
+}
+
+.ability-description{
+    font-size: 12px;
+    text-align: center;
+}
+
+.ability-uses{
+    text-align: center;
+}
+
+.use-ability-button{
+    align-self: center;
+    border: solid 1px black;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.246);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3px 5px 3px 5px;
+    text-align: center;
+    font-size: 10px;
+    margin-left: auto;
+}
+
+.use-ability-button:hover{
+    cursor: pointer;
+    transition: all;
+    transition-duration: 1s;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.HP-bar{
+    background-color: rgb(65, 163, 65);
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.player-item-container{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px black;
+    padding: 5px 5px 5px 5px;
+}
+
+.info-button{
+    border-radius: 3px;
+    border: solid 1px rgb(128, 85, 199);
+    background-color: rgba(129, 85, 199, 0.075);
+    color: black;
+    text-align: center;
+    padding: 3px 5px 3px 5px;
+    margin-right: auto;
+}
+
+.info-button:hover{
+    cursor: pointer;
+    background-color: rgba(129, 85, 199, 0.808);
+    color: white;
+    transition: all;
+    transition-duration: 1s;
+}
+
+.use-item-button{
+    font-size: 10px;
+    border: solid 1px black;
+    border-radius: 3px;
+    text-align: center;
+    padding: 3px 5px 3px 5px;
+    background-color:  rgba(0, 0, 0, 0.246);
+    color: black;
+    margin-left: auto;
+}
+
+.use-item-button:hover{
+    cursor: pointer;
+    transition: all;
+    transition-duration: 1s;
+    background-color:  rgb(0, 0, 0);
+    color: white;
+}
+
+.weapon-container{
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px black;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 5px 5px 5px 5px;
+}
+
+.weapon-header{
+    font-size: 14px;
+    margin-right: auto;
+}
+
+.info-button-weapon{
+    border-radius: 3px;
+    border: solid 1px rgb(84, 97, 173);
+    background-color: rgba(84, 97, 173, 0.109);
+    color: black;
+    text-align: center;
+    padding: 3px 5px 3px 5px;
+    margin-right: auto;
+}
+
+.info-button-weapon:hover{
+    cursor: pointer;
+    background-color: rgba(84, 97, 173, 0.603);
+    color: white;
+    transition: all;
+    transition-duration: 1s;
+}

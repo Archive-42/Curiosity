@@ -1,0 +1,56 @@
+.my-tour-plans {
+  max-width: 720px;
+  margin: 2rem auto;
+}
+
+.my-tour-plans__header {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1rem;
+}
+
+.my-tour-plans .my-tour-plans__header h1 {
+  font-size: 28px;
+  line-height: 32px;
+  margin: 0 0.5rem 0 0;
+}
+
+.my-tour-plans__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tour-plan-item {
+  margin: 0;
+  padding: 1.15rem;
+  box-shadow: var(--box-shadow);
+  background-color: #fff;
+  width: 100%;
+  min-height: 10.5rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "text map";
+  grid-column-gap: 3rem;
+}
+
+.tour-plan-item:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
+.tour-plan-item .map {
+  grid-area: image;
+}
+
+.tour-plan-item .text {
+  grid-area: text;
+}
+
+.tour-plan-item #remove-button {
+  display: none;
+}
+
+.tour-plan-item:hover #remove-button {
+  display: block;
+  margin-top: 1em;
+}

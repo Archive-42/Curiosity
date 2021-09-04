@@ -1,0 +1,56 @@
+
+block.splashBody
+  .headlineOne
+    h1.splashSubHeadGroup.splashPageText Show everyone <br> what matters to you.
+    h2.headlineOneTag.splashPageText Explore new interests and bring discussion to the table.
+
+    section.splash
+      .splashTopics
+        each topic in topics
+          button.topicButton
+            img(src=`/assets/topics/${topic.id}.svg` class="topicButton"  width=30 height=30 viewbox="0 0 30 30" fill="none")
+            span=    topic.topic
+    .signUpBanner
+      button.signUpBanner#signUpBanner.splashPageText Get Started
+  //- h1.spashHead.splashPageText ME DAYUM
+  //- .healineOneSpan
+  //-   img(src="/icons/Bear_of_California_glow_2.svg" class="californiaBear")
+  //-   h2.splashTextOne Find riveting stories about bears here!
+
+  .borderLine
+
+  .headlineTwo
+    .headlineTextContainer
+      h1.splashHead1.splashPageText YOU DAYUM
+      h2.splashHead3.splashPageText
+        |Tell us all about why you love bears
+        br
+        |just as much as we do!
+      img(src="/icons/Bear_of_California_glow_2.svg" class="californiaBear")
+
+  .borderLine
+
+  .slideShowContainer
+    .slideShowImgContainer
+      .slideShowText.slide1
+        h2.splashText.splashPageText Show us what you've got,
+        h2.splashText.splashPageText  and bring your stories to life!
+      img(src="/icons/sunBear.jpg").slideImg.slide2.hidden
+      img(src="/icons/polar.jpg").slideImg.slide3.hidden
+      img(src="/icons/happyGrizzly.jpg").slideImg.slide4.hidden
+      img(src="/icons/Bear_of_California_(Black).svg").slideImg4.slide5.hidden
+    .slideShowNavigation
+      .slideShowNavigationButton1.slideShowButton.currentSlideButton
+      .slideShowNavigationButton2.slideShowButton
+      .slideShowNavigationButton3.slideShowButton
+      .slideShowNavigationButton4.slideShowButton
+      .slideShowNavigationButton5.slideShowButton
+
+  .borderLine
+
+  .headlineThree
+    .headlineTextContainer
+      h1.splashHead.splashPageText WE DAYUM
+      h2.splashText.splashPageText Become a part of our community!<br>Join an ever growing community of at least four people!
+      .signUpBanner
+      button.signUpBanner#signUpBanner.splashPageText Get Started

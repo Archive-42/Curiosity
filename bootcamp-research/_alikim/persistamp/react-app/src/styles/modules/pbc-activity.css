@@ -1,0 +1,107 @@
+/* program board card - activity row */
+
+.activity-row {
+  position:relative;
+}
+
+
+.activity-header {
+  border-radius: 5px;
+  /* border-bottom: 1px dotted; */
+  /* border-top: 1px dotted; */
+  margin-bottom: 0.5rem;
+}
+
+.activity-btns {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
+
+.activity-btn-con {
+  display: block;
+  width: 100%;
+  max-width: 80%;
+}
+
+
+.activity-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 2rem;
+  opacity: 0.8;
+  border-radius: 5px;
+  border-bottom: 1px dotted;
+  white-space: nowrap;
+  flex: 1 1 auto;
+}
+
+.activity-btn:hover {
+  background: rgba(0,0,0,0.2);
+  opacity: 1;
+}
+
+.activity-ico {
+  opacity: 0.8;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px dotted;
+  border-radius: 50%;
+  flex: none;
+  margin-right: 0.5rem;
+  background: none;
+}
+.activity-ico:hover {
+  transform: scale(1.2);
+  transition: all 0.1s ease;
+  background-color: rgba(0,0,0,0.2);
+  border: 2px solid;
+}
+.activity-ico:focus {
+  outline: none;
+}
+.activity-ico:active {
+  color:white;
+}
+
+.activity-title {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  color: whitesmoke;
+  font-family: Calibri, Roboto, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-variant: small-caps;
+  font-size: 1rem;
+  line-height: 0;
+  padding: 0 0.2rem 0.5rem;
+  margin-left: 0.2rem;
+}
+.activity-freq {
+  /* top: 0.7rem; */
+  /* left: 2.5rem; */
+  /* position: absolute; */
+  color: rgba(255,255,255,0.5);
+  font: 0.5rem Calibri Roboto sans-serif;
+  text-transform: lowercase;
+  letter-spacing: 0.1rem;
+  padding-left: 0.1rem;
+  /* height: 0.5rem; */
+  /* line-height: 0rem; */
+}
+.activity-title-txt {
+  line-height: 0.7rem;
+  /* position: absolute; */
+  /* bottom: 0.5rem; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: auto;
+  min-width: 0;
+}
+
+.activity-link:hover {
+  background-color: rgba(0,0,0,0.2);
+}

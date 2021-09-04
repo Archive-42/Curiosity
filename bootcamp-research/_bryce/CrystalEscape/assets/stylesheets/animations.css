@@ -1,0 +1,204 @@
+.sprite-container {
+	animation-duration: 3s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes ship-left {
+	to {
+		top: 450px;
+		right: 240px;
+		transform: rotateY(180deg);
+	}
+}
+
+.left .sprite-container.ship {
+	animation-name: ship-left;
+}
+
+@keyframes ship-right {
+	to {
+		top: 450px;
+		left: 240px;
+		transform: rotateY(180deg);
+	}
+}
+
+.right .sprite-container.ship {
+	animation-name: ship-right;
+}
+
+@keyframes enemy-large-left {
+	to {
+		top: 0px;
+		right: 160px;
+	}
+}
+
+.left .sprite-container.enemy-large {
+	animation-name: enemy-large-left;
+	animation-delay: 1s;
+}
+
+@keyframes enemy-large-right {
+	to {
+		top: 0px;
+		left: 160px;
+	}
+}
+
+.right .sprite-container.enemy-large {
+	animation-name: enemy-large-right;
+	animation-delay: 1s;
+}
+
+@keyframes enemy-small-right {
+	to {
+		top: 200px;
+		left: 80px;
+	}
+}
+
+.right .sprite-container.enemy-small {
+	animation-name: enemy-small-right;
+	animation-delay: 1.5s;
+}
+
+@keyframes enemy-small-left {
+	to {
+		top: 200px;
+		right: 80px;
+	}
+}
+
+.left .sprite-container.enemy-small {
+	animation-name: enemy-small-left;
+	animation-delay: 1.5s;
+}
+
+@keyframes bullet-1-right {
+	to {
+		top: 380px;
+		left: 80px;
+	}
+}
+
+.right .sprite-container.bullet-1 {
+	animation-name: bullet-1-right;
+}
+
+@keyframes bullet-2-right {
+	to {
+		top: 330px;
+		left: 160px;
+	}
+}
+
+.right .sprite-container.bullet-2 {
+	animation-name: bullet-2-right;
+	animation-delay: 0.5s;
+}
+
+@keyframes bullet-3-right {
+	to {
+		top: 280px;
+		left: 240px;
+	}
+}
+
+.right .sprite-container.bullet-3 {
+	animation-name: bullet-3-right;
+	animation-delay: 1s;
+}
+
+@keyframes bullet-1-left {
+	to {
+		top: 380px;
+		right: 80px;
+	}
+}
+
+.left .sprite-container.bullet-1 {
+	animation-name: bullet-1-left;
+}
+
+@keyframes bullet-2-left {
+	to {
+		top: 330px;
+		right: 160px;
+	}
+}
+
+.left .sprite-container.bullet-2 {
+	animation-name: bullet-2-left;
+	animation-delay: 0.5s;
+}
+
+@keyframes bullet-3-left {
+	to {
+		top: 280px;
+		right: 240px;
+	}
+}
+
+.left .sprite-container.bullet-3 {
+	animation-name: bullet-3-left;
+	animation-delay: 1s;
+}
+
+@keyframes crystal-right {
+	0%,
+	100% {
+		top: 80px;
+		left: 280px;
+	}
+	40% {
+		top: 560px;
+		left: 40px;
+	}
+	50% {
+		top: 520px;
+		left: 0px;
+		transform: rotateY(720deg);
+	}
+	85% {
+		top: 0px;
+		left: 100px;
+	}
+}
+
+.right .sprite-container.crystal {
+	animation-name: crystal-right;
+	animation-direction: normal;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+}
+
+@keyframes crystal-left {
+	0%,
+	100% {
+		top: 80px;
+		right: 280px;
+	}
+	40% {
+		top: 560px;
+		right: 40px;
+	}
+	50% {
+		top: 520px;
+		right: 0px;
+		transform: rotateY(720deg);
+	}
+	85% {
+		top: 0px;
+		right: 100px;
+	}
+}
+
+.left .sprite-container.crystal {
+	animation-name: crystal-left;
+	animation-direction: normal;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+}

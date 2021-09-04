@@ -1,0 +1,139 @@
+
+
+.profileTabs {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  margin: 0 20%;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.profileTabs > li > a {
+  position: relative;
+  top: 1px;
+  padding: 0.5rem;
+  color: whitesmoke;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.profileTabs > li > a:hover {
+  position: relative;
+  top: 1px;
+  color: lemonchiffon;
+  border-bottom: 1px solid lemonchiffon;
+}
+.pr-userInfo {
+  display: grid;
+  grid:
+    "name avatar" min-content
+    "joindate avatar" min-content
+    / [name] max-content [av] min-content;
+  justify-content: space-around;
+  justify-items: start;
+  align-items: start;
+  margin: 2rem auto 6rem;
+  width: 70%;
+}
+#userContainer {
+  grid-area: name;
+  justify-self: start;
+  align-self: flex-end;
+  /* display: flex; */
+  /* align-items: center; */
+  align-content: center;
+}
+#userAvContainer {
+  grid-area: avatar;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  border-left: 1rem solid crimson;
+  /* border-right: 10px solid crimson; */
+  /* border-top: 2px solid transparent; */
+  /* border-bottom: 2px solid transparent; */
+}
+.userAv {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+#profileName {
+  font-size: 3rem;
+  font-family: Cambria, serif;
+  margin: 0;
+}
+#joinDate {
+  grid-area: joindate;
+  margin: 0.5rem;
+  color: #aaa;
+  font-size: 1rem;
+  font-style: italic;
+}
+.btnIconic {
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  border: 1px solid lemonchiffon;
+  color: lemonchiffon;
+  background-color: transparent;
+}
+
+
+.profileFeed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ***** */
+.profileFeed > li {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+/* Comment Cards */
+.storyCardMini {
+  background: linear-gradient(240deg,  rgba(54,25,25,1) 0%,rgba(62,33,34,1) 100%);
+  padding: 1rem;
+}
+.cardTitleMini {
+  margin: 0 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.commentBody {
+  margin: 1rem 2rem;
+}
+
+.followCount {
+  color: #aaa;
+  font-size: 0.8rem;
+}
+.followCount > a {
+  margin: 0 0.5rem;
+  color: #aaa;
+}
+.followCount > a:hover {
+  color: lemonchiffon;
+  border-bottom: 1px solid lemonchiffon;
+}
+
+.tabTitle {
+  width: 50%;
+  border-radius: 1rem;
+  border-top: 4px #aaa double;
+  border-bottom:  4px #aaa double;
+  padding: 0.5rem 2rem;
+  color: #aaa;
+  /* text-align: center; */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: normal;
+  font-style: italic;
+}

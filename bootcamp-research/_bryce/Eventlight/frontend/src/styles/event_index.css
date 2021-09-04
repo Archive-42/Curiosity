@@ -1,0 +1,51 @@
+.event-index-list {
+  list-style: none;
+  width: 66%;
+  max-width: 848px;
+}
+
+.event-item-with-date {
+}
+
+.month-day {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.month-day h4 {
+  color: #f05537;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: normal;
+}
+
+.month-day h3 {
+  color: #6f7287;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.25px;
+  margin-right: -0.25px;
+  font-weight: 600;
+}
+
+.event-index-list__main-index {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1260px;
+  width: auto;
+}
+
+.event-index-list__main-index .event-index-list__item {
+  width: 75%;
+}
+.no-events-found {
+  background-image: url('../assets//images/no_results.png');
+  background-repeat: no-repeat;
+  width: 126px;
+  height: 98px;
+  margin: auto;
+  padding-top: 98px;
+  margin-top: 25%;
+}

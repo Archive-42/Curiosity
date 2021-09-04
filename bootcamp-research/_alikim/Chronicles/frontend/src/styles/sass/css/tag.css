@@ -1,0 +1,13 @@
+.tag {
+  display: inline-flex;
+  margin: 0;
+}
+
+.tag > li {
+  border-radius: 1rem;
+  margin: 0.2rem;
+  padding: 0.1rem 1rem 0.2rem;
+  color: white;
+  background-color: rgba(200, 100, 150, 0.8);
+}
+/*# sourceMappingURL=tag.css.map */

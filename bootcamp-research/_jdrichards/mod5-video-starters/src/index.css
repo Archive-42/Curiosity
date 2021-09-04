@@ -1,0 +1,13 @@
+/* TODO Add site wide styles */
+h1,
+h3 {
+  color: saddlebrown;
+}
+
+.button-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 12px 0 0 24px;
+}

@@ -1,0 +1,36 @@
+.wine {
+  position: absolute;
+  top: 5rem;
+  left: 1rem;
+  columns: #281414;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  background: rgb(240, 189, 189);
+  padding: 10px;
+}
+
+.search {
+  position: absolute;
+  top: 5.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 400px;
+  z-index: 10;
+}
+
+.search input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.locate {
+  position: absolute;
+  top: 6rem;
+  height: 3rem;
+  width: 3rem;
+  right: 3rem;
+  z-index: 100;
+}

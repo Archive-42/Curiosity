@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+body {
+  margin: 0;
+  overflow: overlay;
+}
+
+/* Header and Text Colors */
+.goldHead {
+  color: #9e6c36;
+}
+
+.glowHead {
+  color: rgb(255, 207, 148);
+  text-shadow: 0 0 3px rgb(210, 123, 17);
+}
+
+div::-webkit-scrollbar {
+  width: 0;
+}
+div {
+  overflow: -moz-scrollbars-none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
+}
+
+.b_blue {
+  color: #0079d0;
+}
+
+.b_green {
+  color: green;
+}
+
+.b_red {
+  color: rgb(208, 16, 16);
+}
+
+.action {
+  font-family: Anton, sans-serif;
+  margin: 2px;
+  border-radius: 4px;
+  padding: 0 15px;
+  cursor: pointer;
+  height: 32px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+.action:hover {
+  box-shadow: 1px 1px #b6b6b6, 2px 2px #b6b6b6, 3px 3px #b6b6b6;
+  transform: translateX(-3px);
+}
+
+body {
+  font-family: Cinzel;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* flex actions */
+.flex {
+  display: flex;
+}
+
+.jc_sb {
+  justify-content: space-between;
+}
+
+.jc_sa {
+  justify-content: space-around;
+}
+
+.b1 {
+  border: 3px solid red;
+}
+
+.b2 {
+  border: 3px solid blue;
+}
+
+/* width tools */
+
+.w10 {
+  width: 10%;
+}
+
+.w20 {
+  width: 20%;
+}
+.w50 {
+  width: 50%;
+}
+
+.w100 {
+  width: 100%;
+}
+
+/* align-items */
+.al_c {
+  align-items: center;
+}
+
+.als_c {
+  align-self: center;
+}
+
+.jc_c {
+  justify-content: center;
+}
+
+/* margin tools */
+.no_m {
+  margin: 0;
+}
+
+.pos_a {
+  position: absolute;
+}

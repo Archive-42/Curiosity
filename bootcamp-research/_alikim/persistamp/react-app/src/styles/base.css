@@ -1,0 +1,91 @@
+/* For global css rules. If the rule is on a generic tag, like 'a', 'h1', etc.,
+it probably belongs here. */
+
+* {
+  /* transition: all 0.1s ease; */
+  box-sizing: border-box;
+    /* outline: 1px dashed gray; */
+    /* min-width: 0;  */
+    /* min-height: 0; */
+}
+html {
+  overflow-y: scroll !important;
+}
+
+body {
+  padding: 0 !important;
+  /* overflow-x: scroll !important; */
+    /* background-image: url("../images/bgs/wooden-background.jpg"); */
+    background: url("../images/bgs/03.jpg") no-repeat fixed;
+    /* background-image: url("../images/bgs/6.jpg"); */
+    /* background-image: url("../images/bgs/black-marble-patterned-texture-background-marble-thailand-abstract-natural-marble-black-white-design.jpg"); */
+    /* background-image: url("../images/bgs/black-marble.jpg"); */
+    /* background-image: url("../images/bgs/black-marbled-surface.jpg"); */
+    /* background-image: url("../images/bgs/gray-marble-textured-background-design.jpg"); */
+    /* background-image: url("../images/bgs/painted_metal.jpg"); */
+    /* background-image: url("../images/bgs/Wood-Walnut.jpg"); */
+    /* background-image: url("../images/bgs/Wood1.jpg"); */
+    /* background-image: url("../images/bgs/Wood2.jpg"); */
+    background-size: cover;
+    /* background-color: rgba(0,0,0,0.5); */
+    /* background-image: url("../images/bgs/seamless04.png"); */
+    /* background-size: repeat; */
+    height: 100%;
+    margin: 0;
+    /* background: linear-gradient(to bottom, rgb(55, 50, 70) 0%, rgb(20,20,30) 100%); */
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
+    /* background-image: url("https://www.freevector.com/uploads/vector/preview/1469/FreeVector-Splash-Swoosh-Background-Image.jpg") */
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+dt {
+  font: small-caps bold 1rem Cambria, serif;
+}
+dd {
+  padding-left: 1rem;
+}
+
+
+main {
+  padding-bottom: 120px;
+}
+
+table {
+  table-layout: fixed;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+  /* border-spacing: 0.2rem; */
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+button:hover {
+  color: cornflowerblue;
+  color: black;
+  /* background-color:white; */
+}
+
+ul {
+  list-style-type: none;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+ul > li {
+  margin-left: 0;
+}

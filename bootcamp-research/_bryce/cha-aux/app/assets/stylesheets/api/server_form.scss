@@ -1,0 +1,148 @@
+@import 'variables';
+
+@keyframes server-entry {
+	0% {
+		width: 0px;
+		height: 0px;
+		opacity: 0;
+	}
+	80% {
+		width: 550px;
+		height: 450px;
+		opacity: 0.8;
+	}
+}
+
+.server-creation-modal {
+	display: none;
+}
+
+.server-creation-modal.open {
+	display: block;
+}
+
+.server-creation-modal-screen {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.server-creation-modal-form-container {
+	position: absolute;
+	width: 500px;
+	height: 400px;
+	background: $white;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	animation-name: server-entry;
+	animation-duration: 0.2s;
+	animation-timing-function: ease-in;
+
+	.server-creation-modal-form {
+		width: 90%;
+		height: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+
+		.server-creation-form-header-container {
+			padding-top: 5px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: 18px;
+
+			.server-creation-form-header {
+				color: $purple;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+			.server-creation-form-subheader {
+				color: $light-grey;
+				text-align: center;
+				padding: 10px 0;
+			}
+		}
+		.server-creation-form-content-input {
+			margin-top: 10px;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.server-creation-form-input-name {
+				display: flex;
+				flex-direction: column;
+				width: 50%;
+
+				label {
+					color: $grey;
+					text-transform: uppercase;
+					font-weight: bold;
+				}
+				input {
+					color: $black;
+					border-bottom: 2px solid $almost-white;
+					padding: 5px 3px;
+
+					&:focus {
+						color: $black;
+						border-bottom: 2px solid $purple;
+					}
+				}
+			}
+			.server-creation-form-input-file {
+				display: flex;
+				flex-direction: column;
+				width: 40%;
+
+				.server-icon-preview {
+					width: 128px;
+					height: 128px;
+					border: 4px solid $light-grey;
+					border-radius: 50%;
+					background-color: $purple;
+					margin: 5px;
+				}
+			}
+		}
+		.server-errors-list {
+			color: $red;
+			padding: 0 0 5px;
+		}
+		.server-creation-form-input-submit {
+			background: $purple;
+			color: $white;
+			width: 64px;
+			height: 34px;
+			padding: 2px 16px;
+			transition: 0.3s;
+			border-radius: 3px;
+			text-align: center;
+			align-self: flex-end;
+			margin-top: 20px;
+
+			&:hover {
+				background: $black;
+			}
+		}
+	}
+}
+
+.hidden {
+	display: none;
+}

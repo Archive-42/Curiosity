@@ -1,0 +1,204 @@
+/* For layout-effecting css rules. If it effects the placement and physical
+layout of elements on the page, it probably belongs here. Think flexboxes and
+grids, floats, margins and padding, positioning, display types.
+
+Naming convention: 'lo-'. EXAMPLE: 'lo-left-sidebar'*/
+
+.overlay{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.lo-row {
+  display: flex;
+  justify-content: space-around;
+}
+.lo-row > * {
+  width: 30%;
+}
+.lo-third {
+  width: 25%;
+}
+
+.lo-row-fill {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.lo-top-left {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  visibility: hidden;
+}
+
+.lo-align-cen {
+  text-align: center;
+  margin: 0;
+  font: 2rem "Berkshire Swash", "Merienda One", Courgette, Meddon;
+}
+
+
+.pop {
+  z-index: 100;
+  position: fixed;
+  width: 80%;
+  max-height: 80%;
+  overflow: auto;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 5px 5px 10px rgba(70, 70, 80, 0.5);
+}
+
+.lo-pop {
+  z-index: 100;
+  position: fixed;
+  width: 80%;
+  max-height: 80vh;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 5px 5px 10px rgba(70,70,80,0.5);
+  overflow: auto;
+}
+
+.lo-screen {
+  z-index: 80;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  /* background-color: rgba(0,0,0,0.5); */
+  pointer-events: all;
+}
+
+.lo-screen-fill {
+  margin: 0;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  /* box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3); */
+}
+
+.lo-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.lo-center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lo-center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* Small box container */
+.lo-scrollbox-sml {
+  height: 10rem;
+  width: 14rem;
+  overflow-y: auto;
+  padding-right: 2rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.lo-x {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2rem;
+  width: 2rem;
+  margin: 1rem;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  color: gray;
+  background-color: rgba(255,255,255,0.5);
+  font: bold 2rem Calibri;
+  text-align: center;
+  line-height: 0;
+  transition: all 0.2s ease;
+}
+.lo-x:hover {
+  background-color: rgba(200,200,200,0.2);
+}
+
+.lo-x:active {
+  color:white;
+  background-color: lightgray;
+}
+
+.lo-left {
+  float: left;
+}
+
+.lo-row-center {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.lo-main-center {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.loginContainer {
+    /* display: flex;
+    flex-direction: column; */
+    position: relative;
+    text-align: center;
+    background-color:rgb(191, 191, 243);
+    width: 400px;
+    margin: auto;
+    padding: 10px;
+    top: 80px;
+    border-radius: 15px;
+}
+.loginHeader {
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+}
+
+.color-scale-stamped {
+    fill: "black"
+}
+
+.err{
+    margin-left: 25px;
+    text-transform: uppercase;
+    color: red;
+}
+
+.loadingpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin: 1rem 4%;
+}
+.header-container > * {
+  width: 30%;
+}

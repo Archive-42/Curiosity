@@ -1,0 +1,13 @@
+.txt > .ql-toolbar.ql-snow {
+  border-radius: 0.3rem 0.3rem 0 0;
+  border-bottom-width: 0;
+  background-color: whitesmoke;
+}
+
+.txt > .ql-container.ql-snow {
+  height: 10rem;
+  margin-bottom: 1rem;
+  border-radius: 0 0 0.3rem 0.3rem;
+  background-color: white;
+}
+/*# sourceMappingURL=txt.css.map */

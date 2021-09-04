@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  section.l-hook1
+    h1 Welcome to Coven.
+    h2 A mystic community designed for the modern witch. 
+    
+    .hk1-topics
+      each topic in topics
+        button= topic.topic
+    
+    button.sup-btn Join Coven
+  
+  hr
+  
+  p [Slideshow of quotes, profiles, or subject matter here]
+
+  .borderLine
+
+  h2 Coven, a Modern Community for Today's Witch
+  p No matter your specialty, discover in Coven the latest and greatest through high-quality articles written by other members of our sisterhood, or enchant us with your own wicked pools of knowledge.
+  
+
+  button.sup-btn Create Account
+  
+  section
+    small Already a member?
+      button.log-btn Login

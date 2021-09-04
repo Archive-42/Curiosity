@@ -1,0 +1,95 @@
+
+/* main navigation bar */
+
+nav.stamps {
+  /* position: fixed; */
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 1.5rem;
+}
+
+.nav-stamp {
+  position: relative;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin: 0;
+  padding: 0;
+  color: gray;
+  border-width: 3px;
+  background: linear-gradient(0deg, #b9b18e, white);
+  font: bold 0.7rem Cambria;
+  transition: none;
+  background-clip: padding-box;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  text-align: center;
+}
+.nav-stamp:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: linear-gradient(to bottom, #b9b18e 40%, #865 80%);
+}
+
+
+
+
+.logo {
+  /* background-image: url("/icons/turtle.svg"); */
+
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.nav-stamp > i,.nav-stamp > img {
+  transition: none;
+}
+
+.nav-stamp:hover > i, .active > i {
+  transform: scale(1.2);
+  transform-origin: 300% 300%;
+  background: linear-gradient(#b9b18e 50%, #865 60%, #b9b18e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-border-fill-color: transparent;
+}
+
+.nav-stamp:hover > img, .nav-stamp > img:focus {
+  transform-origin: top left;
+  transform: scale(1.5) translate(-50%, -50%);
+}
+
+.stamp_program {
+  color: rgb(200,50,60);
+}
+
+.stamp_messages {
+  color: goldenrod;
+}
+.stamp_settings {
+  color: cadetblue;
+  padding: 0;
+}
+
+.stamp_about {
+  color: cornflowerblue;
+}
+.stamp_logout {
+  color: rebeccapurple;
+}
+
+.stamp-title {
+  position: absolute;
+  bottom: -1rem;
+  width: 100%;
+  font-size: 0.6rem;
+  
+}

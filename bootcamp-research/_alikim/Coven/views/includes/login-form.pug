@@ -1,0 +1,18 @@
+include utils.pug
+
+block login
+  article.log.l-enter.th-dark.is-hidden
+    h2 Coven Login
+    button.log-x.l-exit(type="button") X
+    section.log-err
+
+    form(id="log-form" type="post" action="").enf
+      input(name="_csrf" type="hidden" value=csrfToken required)
+      ul
+        li: +makeInput("e-mail", "email", "email", "demo@user.com", "log-email")
+        li: +makeInput("Password", "password", "password", "1234567890", "log-password")
+      button.log-send Enter
+
+    aside
+      small New to Coven?<br>
+        button.sup-sml Join us

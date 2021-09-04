@@ -1,0 +1,13 @@
+.Congrats {
+  line-height: 3rem;
+  padding: $space-large;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .reset {
+    width: 20rem;
+  }
+}

@@ -1,0 +1,47 @@
+/* TODO Add site wide styles */
+body {
+	--light-pink: #ffede1;
+	--light-blue: #d7f9ff;
+	--light-purple: #afcbff;
+	--background: #f9fbf2;
+	--dark-blue: #0e1c36;
+	--logo: #ff9892;
+	--grey: #bbb;
+	background-color: var(--background);
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	overscroll-behavior: none;
+}
+
+.link-button,
+.button {
+	padding: 0.5em;
+	text-decoration: none;
+	color: inherit;
+	font-size: 16px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: var(--light-blue);
+}
+
+.button.button--danger {
+	background-color: var(--light-pink);
+}
+
+button {
+	cursor: pointer;
+}
+
+button:focus,
+button:active {
+	outline: none;
+}
+
+/* @media (prefers-color-scheme: dark) {
+	body {
+		--light-blue: #d7f9ff;
+		--background: #0e1c36;
+		--dark-blue: #f9fbf2;
+	}
+} */

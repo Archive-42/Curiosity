@@ -1,0 +1,17 @@
+## System and generated files
+.idea
+.DS_Store
+.sass-cache
+.vscode/
+
+## Directories
+log/
+node_modules/
+bower_components/
+cypress/screenshots/
+cypress/videos/
+
+## Files
+result.xml
+npm-debug.log
+dist/index.html

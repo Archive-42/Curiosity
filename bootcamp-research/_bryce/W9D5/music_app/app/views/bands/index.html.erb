@@ -1,0 +1,12 @@
+<h3>Bands</h3>
+
+<section class="box">
+    <% @bands.each do |band| %>
+        <a class="item" href=<%=band_url(band)%>><%= band.name %></a>
+    <% end %>
+</section>
+
+<%= content_for :footer do %>
+    <h5>Links</h5>
+    <a class="item" href=<%=new_band_url%>>Add a Band!</a>
+<% end %>

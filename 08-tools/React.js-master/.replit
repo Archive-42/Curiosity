@@ -1,0 +1,10 @@
+run = """
+./node_modules/.bin/esbuild ./src/App.js \
+	--sourcemap \
+	--loader:.js=jsx \
+	--bundle \
+	--define:process.env.NODE_ENV='"development"' \
+	--outfile=public/bundle.js
+"""
+onBoot = "sleep 1 && cd public && ../node_modules/.bin/static-here"
+language= "nodejs" 

@@ -1,0 +1,66 @@
+- App
+    - Splash Page
+        - Image collage background
+            - Navbar
+            - Main hovering Intro Panel About 'company'
+    - Log In / Sign Up 
+    - Profile Page
+        - User Information
+        - Reviews/Ratings
+        - Orders
+    - Product Browser
+        - Product Search/Filter Bar
+            - Search Bar
+            - Filter Button
+                - Filter Panel
+            - Product List Grid
+                - Product Card
+                    - Main Product Image
+                        - Other product Images
+                    - Product Name
+                    - Product Price
+                    - Product Rating
+    - Product View
+        - Main Image
+        - Other Images for large view
+        - Product Rating
+        - Product Reviews
+        - Product Name
+        - Product Description
+        - Add to Cart Button
+        - Favorite Button
+    - Cart
+        - List of Products
+        - Order details
+            - Prices
+            - Pictures
+            - Quantity
+            - Quantity adjuster
+            - Product Name
+            - Remove Button
+        - Purchase Button
+        - Clear Cart Button
+    - Checkout View
+        - Confirm/Enter Delivery Address
+            - Option to save Delivery address as typical address
+        - Time picker for delivery time
+            - Unavailable times are grayed out
+    - Admin's Map View
+        - Optimal route to every delivery on time
+        - Stops can be scheduled
+            - If any extra time is taken, or if the delivery is behind, customers are notified
+            - Each stop, driver marks delivery fulfilled
+            - 10 minutes at each stop is scheduled in so that times are accurate.
+    - Admin's Schedule View
+        - List of deliveries
+            - Where
+            - When
+            - What needs to be delivered
+            - Who it is for
+        - Option to block off times for breaks or hang outs or errands
+    - Admin's product view
+        - Option to add product
+            - Amount in stock
+            - Prices
+        - Option to remove products
+        - Track in-person/walk-up purchases that don't go through the app

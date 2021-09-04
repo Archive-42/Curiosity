@@ -1,0 +1,41 @@
+{
+    "name": "dataflow",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "per-env",
+        "start:development": "nodemon -r dotenv/config ./bin/www",
+        "start:production": "./bin/www",
+        "createDB": "npx dotenv sequelize db:create && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all",
+        "dropDB": "npx dotenv sequelize db:drop",
+        "reseed": "npx dotenv sequelize db:drop && npx dotenv sequelize db:create && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-async-handler": "^1.1.4",
+        "faker": "^5.1.0",
+        "helmet": "^4.2.0",
+        "morgan": "^1.10.0",
+        "node-fetch": "^2.6.1",
+        "path": "^0.12.7",
+        "per-env": "^1.0.2",
+        "pg": "^8.2.1",
+        "sequelize": "^5.21.9"
+    },
+    "devDependencies": {
+        "dotenv": "^8.2.0",
+        "dotenv-cli": "^3.1.0",
+        "nodemon": "^2.0.4",
+        "sequelize-cli": "^5.5.1"
+    },
+    "engines": {
+        "node": "13.7.0"
+    }
+}

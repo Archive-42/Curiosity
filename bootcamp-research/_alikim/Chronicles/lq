@@ -1,0 +1,31 @@
+[33md485eb1[m[33m ([m[1;36mHEAD -> [m[1;32mweird-schema[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m Working on deletenode option.
+[33mdfb216a[m Nodes remember their xy state! Can create new nodes, but buggy. Working on deleting nodes, then edit, then links/choices, then debugging, then customizing.
+[33m71cd9e0[m Fixed instances of 'conditions' to 'statuses'. Working now, minimally.
+[33me2aed69[m Funny story, react auto-reload doesn't work outside the vm directorffffffffffffffffffffff
+[33m89dfe70[m ??? I moved my project to a different directory, and it seems it made my git think the entire project is new content, so WELP. TIME FOR FULL-PROJECT COMMIT. Silly git.
+[33m80468b1[m I am about to do an obscenely ill-advised huge refactor because fuck me
+[33mf560026[m Image uploading works! NPseed integrated!
+[33mef04360[m Set up testing with Flask's Test Coverage tutorial, but has holes. Must ask instructors. Passing current tests.
+[33m6c7203a[m Fixed seeder bugs, cleaned a bit up, made BASIC TESTS THAT WORK \O/
+[33mc1db29b[m Updated models to make descriptions required and default to 'na'. Fixed Homepage bug. Updating seeder data a bit. Basically starting on V2 for release, production-ready code.
+[33md3422f8[m okayyyyyy F
+[33m8d7556e[m I'm dying. The pizza was probably not worth my life.
+[33me6877b4[m Testing directly pushing to git.
+[33mb4108c2[m APPARENTLY public folder is DUMB and I should just stick ALL my shit into src, OKAY, SURE, FINE
+[33m1189eaf[m commit
+[33mb9bc0da[m I should really commit more. Havn'e done crap worth mentioning except refactoring a metric ton of shit yet again. Add user reducer, normal_user_data utility function, refactored content to match with latest changes, et cetera.
+[33md7b171b[m The icon and color pickers are beautifulgitasl Must finish styling forms, then do some big-picture styling real quick, then react-quill, nodes, player-creation-chronicles.
+[33mdff2c25[m Fixed more bugs, need to continue pushing status back to where it was
+[33m49bc879[m Remade migrations. Huge refactor hopefully done. Seeder data updated and expanded. Site appears superficially functional once more.
+[33m8beac02[m Refactoring the fuck out of these tables. It's a decimation.
+[33m3c319cb[m README is as good as it's gonna get until graduation goddammit James
+[33m42a968c[m Refactor to have more pages for gameplay, game gallery, separate creator portal, etc. Ran into blocker with dynamically updating talespinner nodes.
+[33m450c6c6[m Updating databases, routes, forms extensively. Create/edit/delete forms work for all MVP features except ThreadChoices.
+[33m2e92d4e[m Adding edit and delete forms, working on delete cascade, fixing selection bug.
+[33m39912c5[m Continuing to refactor the fuck out of the creation form to work with all creation types. Seems to minimally work, but must test: creation, edit, make delete form, auto-rerender-states... After forms are finalized, work on custom nodes and node-editting.
+[33m3c84657[m Super-basic playthrough possible include auto-generated back button! Needs conditionals for choices and effect-states.
+[33m83ea540[m Want to start adding tests, set up skeleton folder. Able to 'play tales', rudimentary. Next: add default go-back choice, then toggle to opt-out of allowing go-back. Work on node map creation.
+[33m6ca14d3[m Retooled a shit-ton of database stuff for future-proofing like an idiot, fixed seeder data to match, redid migrations, added reducer, got links to show up on board, able to display gallery of stuff and click to change state of what is displayed.
+[33m8737c97[m Added reducers, actions, thread-making routes and forms, user auto-chronicle/tale setup, etc
+[33m92d0e7e[m Created databases, seeder data for a simple tale, some docs
+[33m5455ec7[m Initial commit, using Bart's flask-react starter.

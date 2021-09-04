@@ -1,0 +1,58 @@
+.comment__header {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 100%;
+    color: rgb(186, 186, 186);
+    border-top: 2px dotted;
+    padding: 2px 2px 0 10px;
+}
+
+.comment__author {
+    font-style: italic;
+}
+
+.comment__date {
+    font-style: italic;
+}
+
+.comment__content {
+    padding: 5px 5px 15px 10px;
+}
+
+.comment__editIcon {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.comment__deleteIcon {
+    cursor: pointer;
+}
+
+.comment__editText {
+    width: 300px;
+    background-color: rgba(1, 10, 20, 90%);
+    color: white;
+}
+
+.comment__editIcon {
+    margin-right: 5px;
+}
+
+.comment__editTextDiv {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+    justify-content: center;
+    border-radius: 10px;
+    align-items: center;
+    background-color: rgba(1, 10, 20, 65%);
+}
+
+.comment__editTextDiv>form>input {
+    border-radius: 10px;
+    padding-left: 10px;
+}

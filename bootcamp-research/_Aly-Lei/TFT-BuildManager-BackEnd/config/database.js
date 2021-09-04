@@ -1,0 +1,23 @@
+const config = require("./index");
+
+const db = config.db;
+const username = db.username;
+const password = db.password;
+const database = db.database;
+const host = db.host;
+
+module.exports = {
+  development: {
+    username,
+    password,
+    database,
+    host,
+    dialect: "postgres",
+  },
+  production: {
+    use_env_variable: "HEROKU_POSTGRESQL_CHARCOAL_URL",
+    dialect: "postgres",
+    dialectOptions: { ssl: true },
+    seederStorage: "sequelize",
+  },
+};

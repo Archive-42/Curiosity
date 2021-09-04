@@ -1,0 +1,248 @@
+.char-container{
+    margin-top: 20px;
+    border: solid 2px black;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px #88888848;
+    padding: 5px 5px 5px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 400px;
+    min-width: 400px;
+    margin-right: 20px;
+}
+
+.nav-button{
+    text-decoration: none;
+}
+
+.new-character{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-top: 20px;
+    border: solid 1px rgb(165, 33, 33);
+    border-radius: 4px;
+    background-color: rgb(165, 33, 33);
+    padding: 5px 5px 5px 5px;
+    max-width: 100px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.char-container:hover{
+    cursor: default;
+}
+
+.char-header{
+    border-bottom: solid 2px black;
+    padding-bottom: 5px;
+}
+
+.char-name{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.char-class-name{
+    font-size: small;
+}
+
+.char-background{
+    font-size: small;
+}
+
+.char-weakness{
+    font-size: small;
+}
+
+.char-stats{
+    border-bottom: solid 2px black;
+    padding-bottom: 10px;
+}
+
+.char-stat-list{
+    border: solid 2px rgb(190, 189, 189);
+}
+
+.char-stat-one{
+    background-color: rgb(190, 189, 189);
+    font-size: 14px;
+    padding: 5px 5px 5px 5px;
+}
+
+.char-stat-two{
+    font-size: 14px;
+    padding: 5px 5px 5px 5px;
+}
+
+.char-stats-header{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0px 5px 0px;
+    padding-bottom: 10;
+}
+
+.char-ability{
+    border-bottom: solid 2px black;
+    padding-bottom: 10px;
+}
+
+.char-ability-header{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0px 5px 0px;
+}
+
+.start-equip-header{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px 0px 5px 0px;
+}
+
+
+
+/* character maker form styles*/
+
+.form-wrapper{
+    /* border: solid 1px black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.character-maker-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 4px;
+    padding: 20px 0px 20px 0px;
+    margin-top: 50px;
+    width: 380px;
+}
+
+.form-area{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.story-field{
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 4px;
+    margin-top: 20px;
+    height: 100px;
+    width: 355px;
+    resize: none;
+}
+
+.story-field:focus{
+    outline: none;
+    border: solid 2px rgb(60, 83, 218);
+}
+
+.ability-intro{
+    border-bottom: solid 2px black;
+    border-top: solid 2px black;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ability-list{
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.class-intro{
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.char-maker-header{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.char-maker-button{
+    margin-top: 20px;
+    font-size: 14px;
+    border: solid 1px rgb(20, 20, 20);
+    background-color: rgb(20, 20, 20);
+    border-radius: 4px;
+    padding: 5px 5px 5px 5px;
+    align-self: center;
+    color: white;
+}
+.char-maker-button:hover{
+    cursor: pointer;
+}
+
+/* select box styles */
+
+.select-box-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.selector-box{
+    padding: 5px 5px 5px 5px;
+    border: solid 2px rgb(168, 34, 34);
+    border-radius: 3px;
+    background-color: rgb(168, 34, 34);
+    color: white;
+}
+
+.selector-box:hover{
+    cursor: pointer;
+}
+
+.select-element{
+    background-color: rgb(105, 105, 105);
+    cursor: pointer;
+}
+
+.select-element:hover{
+    cursor: pointer;
+}
+
+.butn-link-char-maker{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    max-width: 120px;
+    align-items: center;
+}
+
+.link-butn-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.char-element-scroller{
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+    min-width: 500px;
+}
+
+.char-element-scroller::-webkit-scrollbar{
+    display: none;
+}
+
+.button-wrapper{
+    display: flex;
+    justify-content: center;
+}

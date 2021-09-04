@@ -1,0 +1,21 @@
+[
+  {
+    "id": 0,
+    "name": "Linkedin",
+    "link": "https://www.linkedin.com/in/julia-richards-09b5b1b0/",
+    "icon": "/icons/linkedin-tile.svg"
+  },
+  {
+    "id": 1,
+    "name": "Github",
+    "link": "https://github.com/julia-richards",
+    "icon": "/icons/github.svg"
+  },
+  {
+    "id": 2,
+    "name": "AngelList",
+    "link": "https://angel.co/u/julia-richards-2",
+    "icon": "/icons/angel-icon.svg"
+  }
+
+]

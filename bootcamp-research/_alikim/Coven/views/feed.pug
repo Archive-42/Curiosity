@@ -1,0 +1,75 @@
+extends layout
+include includes/utils
+
+block content
+  //- TODO Add the medium's top-level feed block
+
+  //- .fst = Feed STories
+  article.fst
+    article.fst-feature
+      h2 Featured
+      
+      //- TODO Fetch main featured story
+      //- +storyCell(featuredStory)
+      
+    //- TODO Fetch featuredStories
+    //- .l-side
+      each story in featuredStories
+        article.fst-cell
+          +storyCell(story)
+    
+    
+  .l-left-panel
+    //- .fol = FOLlowed authors
+    //- TODO Fetch latest stories from followed authors
+    article.fol
+      h2 Latest From Following
+      //- each follow in follows
+      //-   address.fol-cell
+      //-     img(src=`/assets/users/${follow.id}.jpg` alt=``)
+      //-     h3 #{follow.firstName} #{follow.lastName}
+        
+    //- .top = TOPic watches
+    //- TODO Fetch stories based on latest+watched tags filtered
+    article.top
+      h2 Topics You Watch
+      //- each watch in watches
+      //-   a.top-tag(href=`/topics/${watch.topicId}`)= watch.Topic.type
+      //- //- TODO Link to new page? Or dynamically show options?
+      //- a.top-add(href=`/topics`) +
+    
+    
+  hr.divider
+
+  //- discovery stories
+  article.dst
+    h2 DISCOVER AT COVEN
+    each story in discoveryStories
+      section.dst-cell
+        h3: a(href=`/stories/${story.id}`)
+          span.dst-rank 0#{story.rank} 
+          span.dst-title= story.title
+        address: +authorBlurb(story.Author)
+        //- TODO Ensure datetime value is machine-readable
+        time(datetime=`${story.createdAt}`)= story.createdAt
+
+  hr.divider
+
+
+  //- .lst = Latest STories
+  article.fst
+    h2 Our Latest Stories
+    each story in latestStories
+      article.fst-cell
+        +storyCell(story)
+  
+  
+  //- .bst = Bookmarked STories
+  article.bst
+    h2 Your Bookmarks
+    if isEnoughBookmarks
+      //- each bookmark in bookmarks
+      //-   article.bst-cell
+      //-     +storyCell(bookmark)
+    else
+      p Start saving stories by clicking the bookmark icon and you’ll find them all here.

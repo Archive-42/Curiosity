@@ -1,0 +1,69 @@
+.exerciseForm__button, .loginForm__button, .signUpForm__button {
+    border-radius: 20px;
+    background-color: powderblue;
+    margin-top: 10px;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+.exerciseForm__button:hover, .loginForm__button:hover, .signUpForm__button:hover {
+    background-color: rgb(140, 242, 255);
+}
+
+.newExerciseForm, .newWorkoutForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0 0 0 / 80%);
+    height: auto;
+    width: 400px;
+    border-radius: 20px;
+    padding: 10px;
+    outline: none;
+}
+
+.newExerciseForm>input, .newExerciseForm>select, .newExerciseForm>textarea, .newWorkoutForm>input, .newWorkoutForm>select, .newWorkoutForm>textarea {
+    margin: 5px 0;
+    width: 80%;
+    border-radius: 10px;
+    padding: 0 5px;
+    transition: color 1s;
+    outline: none;
+}
+
+.newExerciseForm>input:hover, .newExerciseForm>select:hover, .newExerciseForm>textarea:hover, .newWorkoutForm>input:hover, .newWorkoutForm>select:hover, .newWorkoutForm>textarea:hover, .loginForm__form>input:hover, .signUpForm__form>input:hover {
+    background-color: rgb(74, 74, 74);
+    color: white;
+    outline: none;
+}
+
+.newExerciseForm>input:focus, .newExerciseForm>select:focus, .newExerciseForm>textarea:focus, .newWorkoutForm>input:focus, .newWorkoutForm>select:focus, .newWorkoutForm>textarea:focus, .loginForm__form>input:focus, .signUpForm__form>input:focus {
+    background-color: rgb(74, 74, 74);
+    color: white;
+    outline: none;
+}
+
+.newExerciseForm>input:focus::placeholder, .newExerciseForm>textarea:focus::placeholder, .newWorkoutForm>input:focus::placeholder, .newWorkoutForm>textarea:focus::placeholder, .loginForm__form>input:focus::placeholder, .signUpForm__form>input:focus::placeholder {
+    color: rgb(255, 93, 93);
+}
+
+.newExerciseForm>input:hover::placeholder, .newExerciseForm>textarea:hover::placeholder, .newWorkoutForm>input:hover::placeholder, .newWorkoutForm>textarea:hover::placeholder, .loginForm__form>input:hover::placeholder, .signUpForm__form>input:hover::placeholder {
+    color: rgb(255, 93, 93);
+}
+
+.newExerciseForm>textarea, .newWorkoutForm>textarea {
+    min-height: 100px;
+    width: 95%;
+}
+
+.newExerciseForm>select>option:disabled, .newWorkoutForm>select>option:disabled, .newWorkoutForm>select>option.workout__option {
+    color: rgb(223, 49, 49);
+}
+
+.MuiPaper-root {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.MuiPaper-root::-webkit-scrollbar {
+    display: none;
+}
