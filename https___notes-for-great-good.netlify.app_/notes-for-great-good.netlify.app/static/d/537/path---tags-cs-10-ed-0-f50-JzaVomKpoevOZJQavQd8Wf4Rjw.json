@@ -1,0 +1,17 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/CS10-Data-Structures-And-Algorithms-Day-One",
+          "title": "CS10: Data Structures & Algorithms",
+          "tags": ["data structures", "algorithms", "CS10"],
+          "subtitle": "Day One",
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "CS10"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/CS10-Data-Structures-And-Algorithms-Day-One",
+          "title": "CS10: Data Structures & Algorithms",
+          "tags": ["data structures", "algorithms", "CS10"],
+          "subtitle": "Day One",
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Programming-Foundations--Data-Structures",
+          "title": "Programming Foundations:",
+          "tags": ["foundations", "data structures"],
+          "subtitle": "Data Structures",
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Three",
+          "title": "Algorithm Design Manual:",
+          "tags": ["algorithms", "data structures", "Algorithm Design Manual"],
+          "subtitle": "Data Structures",
+          "chapter": "Chapter Three"
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Cracking-The-Coding-Interview--Technical-Interviews",
+          "title": "Cracking the Coding Interview",
+          "tags": [
+            "Cracking the Coding Interview",
+            "technical interviews",
+            "algorithms",
+            "data structures"
+          ],
+          "subtitle": "Technical Interviews",
+          "chapter": "Chapter 7"
+        }
+      }
+    ],
+    "tagName": "data structures"
+  }
+}

@@ -1,0 +1,3238 @@
+<!DOCTYPE html>
+<html>
+  <!-- Mirrored from notes-for-great-good.netlify.app/think-like-a-programmer-chapter-ii/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:37:12 GMT -->
+  <!-- Added by HTTrack --><meta
+    http-equiv="content-type"
+    content="text/html;charset=UTF-8"
+  /><!-- /Added by HTTrack -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style id="typography.js">
+      html {
+        font-family: sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      main,
+      menu,
+      nav,
+      section,
+      summary {
+        display: block;
+      }
+      audio,
+      canvas,
+      progress,
+      video {
+        display: inline-block;
+      }
+      audio:not([controls]) {
+        display: none;
+        height: 0;
+      }
+      progress {
+        vertical-align: baseline;
+      }
+      [hidden],
+      template {
+        display: none;
+      }
+      a {
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+      }
+      a:active,
+      a:hover {
+        outline-width: 0;
+      }
+      abbr[title] {
+        border-bottom: none;
+        text-decoration: underline;
+        text-decoration: underline dotted;
+      }
+      b,
+      strong {
+        font-weight: inherit;
+        font-weight: bolder;
+      }
+      dfn {
+        font-style: italic;
+      }
+      h1 {
+        font-size: 2em;
+        margin: 0.67em 0;
+      }
+      mark {
+        background-color: #ff0;
+        color: #000;
+      }
+      small {
+        font-size: 80%;
+      }
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      sub {
+        bottom: -0.25em;
+      }
+      sup {
+        top: -0.5em;
+      }
+      img {
+        border-style: none;
+      }
+      svg:not(:root) {
+        overflow: hidden;
+      }
+      code,
+      kbd,
+      pre,
+      samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+      }
+      figure {
+        margin: 1em 40px;
+      }
+      hr {
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font: inherit;
+        margin: 0;
+      }
+      optgroup {
+        font-weight: 700;
+      }
+      button,
+      input {
+        overflow: visible;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      [type="reset"],
+      [type="submit"],
+      button,
+      html [type="button"] {
+        -webkit-appearance: button;
+      }
+      [type="button"]::-moz-focus-inner,
+      [type="reset"]::-moz-focus-inner,
+      [type="submit"]::-moz-focus-inner,
+      button::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+      [type="button"]:-moz-focusring,
+      [type="reset"]:-moz-focusring,
+      [type="submit"]:-moz-focusring,
+      button:-moz-focusring {
+        outline: 1px dotted ButtonText;
+      }
+      fieldset {
+        border: 1px solid silver;
+        margin: 0 2px;
+        padding: 0.35em 0.625em 0.75em;
+      }
+      legend {
+        box-sizing: border-box;
+        color: inherit;
+        display: table;
+        max-width: 100%;
+        padding: 0;
+        white-space: normal;
+      }
+      textarea {
+        overflow: auto;
+      }
+      [type="checkbox"],
+      [type="radio"] {
+        box-sizing: border-box;
+        padding: 0;
+      }
+      [type="number"]::-webkit-inner-spin-button,
+      [type="number"]::-webkit-outer-spin-button {
+        height: auto;
+      }
+      [type="search"] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+      [type="search"]::-webkit-search-cancel-button,
+      [type="search"]::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      ::-webkit-input-placeholder {
+        color: inherit;
+        opacity: 0.54;
+      }
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+      html {
+        font: 112.5%/1.45 "Open Sans", -apple-system, "BlinkMacSystemFont",
+          "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+        box-sizing: border-box;
+        overflow-y: scroll;
+      }
+      * {
+        box-sizing: inherit;
+      }
+      *:before {
+        box-sizing: inherit;
+      }
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        color: hsla(0, 0%, 0%, 0.8);
+        font-family: "Open Sans", -apple-system, "BlinkMacSystemFont",
+          "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: normal;
+        word-wrap: break-word;
+        font-kerning: normal;
+        -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+        -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+        -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+        font-feature-settings: "kern", "liga", "clig", "calt";
+      }
+      img {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      h1 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 2rem;
+        line-height: 1.1;
+      }
+      h2 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1.51572rem;
+        line-height: 1.1;
+      }
+      h3 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1.31951rem;
+        line-height: 1.1;
+      }
+      h4 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1rem;
+        line-height: 1.1;
+      }
+      h5 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 0.87055rem;
+        line-height: 1.1;
+      }
+      h6 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 0.81225rem;
+        line-height: 1.1;
+      }
+      hgroup {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      ul {
+        margin-left: 1.45rem;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        list-style-position: outside;
+        list-style-image: none;
+      }
+      ol {
+        margin-left: 1.45rem;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        list-style-position: outside;
+        list-style-image: none;
+      }
+      dl {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      dd {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      p {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      figure {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      pre {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      table {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        font-size: 1rem;
+        line-height: 1.45rem;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      fieldset {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      blockquote {
+        margin-left: 1.45rem;
+        margin-right: 1.45rem;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      form {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      noscript {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      iframe {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      hr {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: calc(1.45rem - 1px);
+        background: hsla(0, 0%, 0%, 0.2);
+        border: none;
+        height: 1px;
+      }
+      address {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      b {
+        font-weight: bold;
+      }
+      strong {
+        font-weight: bold;
+      }
+      dt {
+        font-weight: bold;
+      }
+      th {
+        font-weight: bold;
+      }
+      li {
+        margin-bottom: calc(1.45rem / 2);
+      }
+      ol li {
+        padding-left: 0;
+      }
+      ul li {
+        padding-left: 0;
+      }
+      li > ol {
+        margin-left: 1.45rem;
+        margin-bottom: calc(1.45rem / 2);
+        margin-top: calc(1.45rem / 2);
+      }
+      li > ul {
+        margin-left: 1.45rem;
+        margin-bottom: calc(1.45rem / 2);
+        margin-top: calc(1.45rem / 2);
+      }
+      blockquote *:last-child {
+        margin-bottom: 0;
+      }
+      li *:last-child {
+        margin-bottom: 0;
+      }
+      p *:last-child {
+        margin-bottom: 0;
+      }
+      li > p {
+        margin-bottom: calc(1.45rem / 2);
+      }
+      code {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      kbd {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      samp {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      abbr {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+      }
+      acronym {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+      }
+      abbr[title] {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+        text-decoration: none;
+      }
+      thead {
+        text-align: left;
+      }
+      td,
+      th {
+        text-align: left;
+        border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
+        font-feature-settings: "tnum";
+        -moz-font-feature-settings: "tnum";
+        -ms-font-feature-settings: "tnum";
+        -webkit-font-feature-settings: "tnum";
+        padding-left: 0.96667rem;
+        padding-right: 0.96667rem;
+        padding-top: 0.725rem;
+        padding-bottom: calc(0.725rem - 1px);
+      }
+      th:first-child,
+      td:first-child {
+        padding-left: 0;
+      }
+      th:last-child,
+      td:last-child {
+        padding-right: 0;
+      }
+    </style>
+    <link
+      rel="apple-touch-icon"
+      sizes="96x96"
+      href="../icons/icon-96x96c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <title data-react-helmet="true"></title>
+    <style data-href="/styles.d86a406e5dede3da8914.css">
+      .container-wrapper {
+        text-align: center;
+        margin: auto;
+        width: 60%;
+        min-height: calc(100vh - 310px);
+        flex: 1 1;
+      }
+      .container-wrapper section {
+        padding: 3rem 1.5rem;
+      }
+      @media (max-width: 900px) {
+        .container-wrapper {
+          width: 90%;
+          min-height: calc(100vh - 360px);
+        }
+      }
+      @media (max-width: 600px) {
+        .container-wrapper {
+          width: 95%;
+        }
+      }
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #ccc;
+        font-size: 1em;
+        white-space: pre;
+        word-break: normal;
+      }
+      pre[class*="language-"] {
+        margin: 0.5em 0;
+      }
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #2d2d2d;
+      }
+      :not(pre) > code[class*="language-"] {
+        padding: 0.1em;
+        border-radius: 0.3em;
+        white-space: normal;
+      }
+      .token.block-comment,
+      .token.cdata,
+      .token.comment,
+      .token.doctype,
+      .token.prolog {
+        color: #999;
+      }
+      .token.punctuation {
+        color: #ccc;
+      }
+      .token.attr-name,
+      .token.deleted,
+      .token.namespace,
+      .token.tag {
+        color: #e2777a;
+      }
+      .token.function-name {
+        color: #6196cc;
+      }
+      .token.boolean,
+      .token.function,
+      .token.number {
+        color: #f08d49;
+      }
+      .token.class-name,
+      .token.constant,
+      .token.property,
+      .token.symbol {
+        color: #f8c555;
+      }
+      .token.atrule,
+      .token.builtin,
+      .token.important,
+      .token.keyword,
+      .token.selector {
+        color: #cc99cd;
+      }
+      .token.attr-value,
+      .token.char,
+      .token.regex,
+      .token.string,
+      .token.variable {
+        color: #7ec699;
+      }
+      .token.entity,
+      .token.operator,
+      .token.url {
+        color: #67cdcc;
+      }
+      .token.inserted {
+        color: green;
+      }
+      li > code,
+      p > code {
+        background: #131316;
+        word-break: normal;
+        padding: 0.4em 0.5em;
+        margin: 0.5em 0;
+        overflow: auto;
+        border-radius: 0.3em;
+      }
+      code[class*="language-"],
+      li > code,
+      p > code,
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+        text-align: left;
+        word-spacing: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+      code[class*="language-"],
+      pre[class*="language-"] {
+        background: none;
+        word-break: break-word;
+      }
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: 1.5rem 0;
+        overflow: auto;
+        border-radius: 0.3em;
+        background: #131316;
+      }
+      pre[class*="language-"]::-webkit-scrollbar-thumb {
+        background: #3498db;
+      }
+      pre[class*="language-"]::-webkit-scrollbar-track {
+        background: #4b4e57;
+      }
+      pre[class*="language-"]::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+      li > code[class*="language-"],
+      p > code[class*="language-"] {
+        border-radius: 0.3em;
+        background: rgba(52, 152, 219, 0.2);
+        color: #2e3246;
+        bottom: 2px;
+        position: relative;
+      }
+      img {
+        margin-bottom: 0;
+      }
+      .token.operator {
+        color: #bc78d7;
+      }
+      .token.cdata,
+      .token.comment,
+      .token.doctype,
+      .token.prolog {
+        color: #708090;
+      }
+      .token.punctuation {
+        color: #7ad7e2;
+      }
+      .namespace {
+        opacity: 0.7;
+      }
+      .token.constant,
+      .token.deleted,
+      .token.property,
+      .token.symbol,
+      .token.tag {
+        color: #ef514f;
+      }
+      .token.boolean,
+      .token.number {
+        color: #ae81ff;
+      }
+      .token.attr-name,
+      .token.builtin,
+      .token.char,
+      .token.inserted,
+      .token.selector,
+      .token.string {
+        color: #e5db89;
+      }
+      .language-css .token.string,
+      .style .token.string,
+      .token.entity,
+      .token.url,
+      .token.variable {
+        color: #f8f8f2;
+      }
+      .token.atrule,
+      .token.attr-value,
+      .token.class-name {
+        color: #e6db74;
+      }
+      .token.function {
+        color: #84c16a;
+      }
+      .token.keyword {
+        color: #6095ea;
+      }
+      .token.important,
+      .token.regex {
+        color: #fd971f;
+      }
+      .token.bold,
+      .token.important {
+        font-weight: 700;
+      }
+      .token.italic {
+        font-style: italic;
+      }
+      .token.entity {
+        cursor: help;
+      }
+      .table {
+        overflow: auto;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        margin: auto;
+      }
+      .gatsby-highlight pre[class*="language-"].line-numbers {
+        padding-left: 2.8em;
+      }
+      .gatsby-highlight {
+        border-radius: 0.3em;
+        margin: 0.5em 0;
+        padding: 1em;
+        overflow: auto;
+      }
+      .gatsby-highlight pre[class*="language-"].line-numbers {
+        padding: 0 0 0 2.8em;
+        overflow: initial;
+      }
+      .gatsby-highlight
+        pre[class*="language-"].line-numbers
+        span.line-numbers-rows {
+        width: 3em !important;
+      }
+      .language-asm,
+      .language-racket,
+      .language-text {
+        -webkit-margin-start: 15px;
+        margin-inline-start: 15px;
+        display: flex;
+      }
+      code.language-html,
+      code.language-javascript,
+      code.language-md,
+      code.language-ruby {
+        left: 15px;
+      }
+      section.wrapper div.gatsby-highlight,
+      section.wrapper div.tagsContainer {
+        padding: 0;
+      }
+      pre[class*="language-"].line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
+      }
+      pre[class*="language-"].line-numbers > code {
+        position: relative;
+        white-space: inherit;
+      }
+      .line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        font-size: 100%;
+        left: -3.8em;
+        width: 3em;
+        letter-spacing: -1px;
+        border-right: 1px solid #999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+      }
+      .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #999;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+      }
+      .content-wrapper li,
+      .content-wrapper p {
+        letter-spacing: -0.003em;
+        --baseline-multiplier: 0.179;
+        --x-height-multiplier: 0.35;
+        font-size: 1.15rem;
+        line-height: 2;
+      }
+      .content-wrapper li code {
+        padding: 0.2rem 0.5rem;
+        margin: 0.5rem 0;
+      }
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor) {
+        color: #000;
+        box-shadow: inset 0 -2px 0 #3498db;
+        border-bottom: 1px solid #3498db;
+        -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        text-decoration: none;
+      }
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):focus,
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):hover {
+        background: rgba(51, 68, 153, 0.53);
+        color: #000;
+      }
+      .wrapper h1 {
+        margin-top: 3rem;
+      }
+      .wrapper h2 {
+        margin-top: 1rem;
+      }
+      .wrapper h1,
+      .wrapper h2,
+      .wrapper h3,
+      .wrapper h4,
+      .wrapper h5,
+      .wrapper h6 {
+        display: inline-block;
+        position: relative;
+      }
+      .wrapper h1 a,
+      .wrapper h2 a,
+      .wrapper h3 a,
+      .wrapper h4 a,
+      .wrapper h5 a,
+      .wrapper h6 a {
+        box-shadow: none;
+        border-bottom: none;
+      }
+      .wrapper h1 a:focus,
+      .wrapper h1 a:hover,
+      .wrapper h2 a:focus,
+      .wrapper h2 a:hover,
+      .wrapper h3 a:focus,
+      .wrapper h3 a:hover,
+      .wrapper h4 a:focus,
+      .wrapper h4 a:hover,
+      .wrapper h5 a:focus,
+      .wrapper h5 a:hover,
+      .wrapper h6 a:focus,
+      .wrapper h6 a:hover {
+        background: none;
+      }
+      .wrapper:hover .anchor svg {
+        opacity: 0.8;
+      }
+      .footer-wrapper {
+        position: static;
+        height: 60px;
+        width: 100%;
+        justify-content: center;
+        bottom: 0;
+        box-shadow: 0 -3px 26px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(-45deg, #3e5fbc, #284187);
+        font-family: OpenSans, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+          Segoe UI Emoji, Segoe UI Symbol;
+        font-weight: 500;
+      }
+      .footer-text {
+        margin: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        color: #f0f0f0;
+      }
+      .footer-text a {
+        color: #62fdfe;
+        font-weight: 700;
+        margin: 0 15px;
+      }
+      .footer-text span {
+        color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-shadow: 0 0 0 #fff;
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 300;
+        src: local("Open Sans Light "), local("Open Sans-Light"),
+          url(../static/open-sans-latin-300-60c866748ff15f5b347fdba64596b1b1.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-300-521d17bc9f3526c690e8ada6eee55bec.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 300;
+        src: local("Open Sans Light italic"), local("Open Sans-Lightitalic"),
+          url(../static/open-sans-latin-300italic-06bbd3188b34820cd83a0e0b3d0a6f57.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-300italic-8a648ff38ded89ea15916e84529d62d3.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Open Sans Regular "), local("Open Sans-Regular"),
+          url(../static/open-sans-latin-400-cffb686d7d2f4682df8342bd4d276e09.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-400-bf2d0783515b7d75c35bde69e01b3135.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Open Sans Regular italic"), local("Open Sans-Regularitalic"),
+          url(../static/open-sans-latin-400italic-987032ea5d57c93d8da215678eae3b86.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-400italic-db70d0b9cb27ada1a260a2b35e756b8b.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 600;
+        src: local("Open Sans SemiBold "), local("Open Sans-SemiBold"),
+          url(../static/open-sans-latin-600-223a277bd88d8a90c8cdf24cda0ad5f5.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-600-1cd5320f8937d337b61d5117cf9d7b28.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 600;
+        src: local("Open Sans SemiBold italic"),
+          local("Open Sans-SemiBolditalic"),
+          url(../static/open-sans-latin-600italic-4950a7205f0b5cefe41fc03ac346e236.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-600italic-318ea1ada4102c0704a0637228dcad03.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 700;
+        src: local("Open Sans Bold "), local("Open Sans-Bold"),
+          url(../static/open-sans-latin-700-d08c09f2f169f4a6edbcf8b8d1636cb4.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-700-623e3205570002af47fc2b88f9335d19.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 700;
+        src: local("Open Sans Bold italic"), local("Open Sans-Bolditalic"),
+          url(../static/open-sans-latin-700italic-c02f5da6e82e1efe0b45841bfd49ce37.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-700italic-72e19cbb0e38c6773a7751156752cec4.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 800;
+        src: local("Open Sans ExtraBold "), local("Open Sans-ExtraBold"),
+          url(../static/open-sans-latin-800-aaeffaf205b9bbb09920089a14dbe9e8.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-800-c6aa0c4a601fb6ac66f8253fa594dff5.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 800;
+        src: local("Open Sans ExtraBold italic"),
+          local("Open Sans-ExtraBolditalic"),
+          url(../static/open-sans-latin-800italic-6b3973ffe02bb6a8be0f8453506ec032.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-800italic-79b58175343190550489efe46a7f1138.woff)
+            format("woff");
+      }
+      article {
+        padding: 3rem 1.5rem;
+      }
+      .bloglist-image {
+        margin: auto;
+        position: relative;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 0.4rem;
+        min-height: 300px;
+        flex-basis: 100%;
+        max-width: 100%;
+        width: 100%;
+      }
+      @media (max-width: 800px) {
+        .bloglist-image {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+          margin-bottom: 1.5rem;
+        }
+      }
+      @media (max-width: 500px) {
+        .bloglist-image {
+          min-height: 200px;
+        }
+      }
+      .bloglist-image img {
+        border-radius: 0.4rem;
+        height: 100%;
+        width: 100%;
+      }
+      .bloglist-image:hover {
+        box-shadow: 0 40px 45px rgba(0, 0, 0, 0.1);
+        -webkit-transform: scale(1.04);
+        transform: scale(1.04);
+      }
+      .bloglist-image a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 0.4rem;
+      }
+      .bloglist-image a > div,
+      .bloglist-image a > div > div {
+        position: static !important;
+      }
+      .bloglist-image a > div > div:focus {
+        outline: none;
+        box-shadow: 0 0 0 5px #284187;
+      }
+      .bloglist-information h1 {
+        display: inline-block;
+        color: #333438;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+      .bloglist-information h1:hover {
+        color: #3498db;
+      }
+      .bloglist-information {
+        text-align: center;
+        flex-basis: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        word-break: break-word;
+        width: 100%;
+      }
+      @media (max-width: 800px) {
+        .bloglist-information {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+      .bloglist-date {
+        margin-top: 1rem;
+        font-size: 12px;
+        color: #4b4e57;
+      }
+      .bloglist-title {
+        margin: 0;
+        font-size: 24px;
+      }
+      @font-face {
+        font-family: Candal;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Candal Regular "), local("Candal-Regular"),
+          url(../static/candal-latin-400-be36f832d599fa7c57c638a610ce6e2e.woff2)
+            format("woff2"),
+          url(../static/candal-latin-400-089f55042fcefeb66b9e98cdd0eb37ca.woff)
+            format("woff");
+      }
+      .header-wrapper {
+        -webkit-clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
+        clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
+        background: linear-gradient(45deg, #3e5fbc, #284187);
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+      }
+      @media (max-width: 600px) {
+        .header-wrapper {
+          -webkit-clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
+          clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
+        }
+      }
+      .header-text {
+        color: #fff;
+        z-index: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: inherit;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        max-width: 70rem;
+        margin-top: 3rem;
+        align-items: center;
+      }
+      .header-text h1 {
+        font-size: 28px;
+        margin: 20px 0 5px;
+        padding: 0 2rem;
+      }
+      .header-text h2 {
+        font-size: 22px;
+        padding: 0;
+        margin: 2.5px 0 5px;
+      }
+      .header-text h3 {
+        font-size: 20px;
+        margin: 2.5px 0;
+        padding: 0 2rem;
+      }
+      .header-text h4 {
+        font-size: 14px;
+        margin: 5px 0;
+        padding: 0 2rem;
+      }
+      .header-subtitle {
+        max-width: 650px;
+        color: #f0f0f0;
+        margin-top: 30px;
+        padding: 0 2rem;
+      }
+      .headroom-wrapper {
+        position: fixed;
+        height: 102px;
+        z-index: 2000;
+        top: 0;
+      }
+      .headroom {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100vw;
+        height: 2.5rem;
+      }
+      .headroom svg {
+        padding: 1rem 1.5rem;
+      }
+      .headroom svg g {
+        fill: #fff;
+      }
+      .headroom--unfixed {
+        position: relative;
+        padding-left: 15px;
+        padding-top: 15px;
+        justify-content: space-between;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .headroom--scrolled,
+      .headroom--unfixed {
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+      }
+      .headroom--unpinned {
+        padding-left: 15px;
+        padding-top: 15px;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+      }
+      .headroom--pinned,
+      .headroom--unpinned {
+        position: fixed;
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+      }
+      .headroom--pinned {
+        padding: 15px 0 15px 15px;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        background-color: #3e5fbc;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+      }
+      .headroom--pinned nav a {
+        color: #fff;
+      }
+      .headroom--pinned nav a:hover {
+        border-color: #333438;
+        color: #333438;
+      }
+      .headroom--pinned nav a:focus {
+        color: #333438;
+      }
+      .headroom--pinned svg {
+        height: 2.5rem;
+      }
+      .headroom---pinned svg g {
+        fill: #333438;
+      }
+      .headroom--pinned span {
+        color: #333438;
+      }
+      .postlist-wrapper {
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 100;
+        border-radius: 0.4rem;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 17rem;
+        flex-basis: calc(33.3% - 2.5rem);
+        max-width: calc(33.3% - 2.5rem);
+        width: calc(33.3% - 2.5rem);
+      }
+      .postlist-wrapper:hover {
+        box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
+        -webkit-transform: scale(1.04);
+        transform: scale(1.04);
+      }
+      @media (max-width: 1000px) {
+        .postlist-wrapper {
+          flex-basis: calc(49.95% - 1rem);
+          max-width: calc(49.95% - 1rem);
+          width: calc(49.95% - 1rem);
+          height: 18rem;
+        }
+      }
+      @media (max-width: 700px) {
+        .postlist-wrapper {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+          height: 15rem;
+        }
+      }
+      .postlist-styledLink {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        z-index: 3;
+        overflow: hidden;
+      }
+      .postlist-styledLink,
+      .postlist-styledLink:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0.4rem;
+      }
+      .postlist-styledLink:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(transparent),
+          color-stop(50%, rgba(0, 0, 0, 0.3)),
+          color-stop(80%, rgba(0, 0, 0, 0.7)),
+          to(rgba(0, 0, 0, 0.8))
+        );
+        background: linear-gradient(
+          180deg,
+          transparent 0,
+          rgba(0, 0, 0, 0.3) 50%,
+          rgba(0, 0, 0, 0.7) 80%,
+          rgba(0, 0, 0, 0.8)
+        );
+        z-index: -10;
+        -webkit-transition: opacity 0.4s;
+        transition: opacity 0.4s;
+      }
+      .postlist-image {
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 0.4rem;
+      }
+      .postlist-image img {
+        border-radius: 0.4rem;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+      }
+      .postlist-image img > div,
+      .postlist-image img > div > div {
+        position: static !important;
+      }
+      .postlist-info {
+        color: #f0f0f0;
+        margin: auto;
+        bottom: 0;
+        left: 0;
+      }
+      .postlist-info span {
+        font-size: 14px;
+      }
+      .postlist-title h2 {
+        margin: auto;
+        padding-top: 0.5rem;
+        text-align: center;
+        font-size: 26px;
+      }
+      .postlist-title h3 {
+        font-size: 20px;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .postlist-title span {
+        font-size: 16px;
+        display: flex;
+      }
+      .postlist-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .navbar-styledLink {
+        display: flex;
+        font-weight: 700;
+        align-items: center;
+      }
+      .navbar-nav {
+        display: flex;
+        flex-grow: 0.1;
+        padding-right: 15px;
+        justify-content: space-between;
+        font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+          Segoe UI Emoji, Segoe UI Symbol;
+        font-weight: 500;
+        font-size: 1.1rem;
+        align-self: center;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+      }
+      .navbar-nav a {
+        color: #fff;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        text-shadow: 1px 1px 5px #000, 2px 2px 1px #000;
+      }
+      .navbar-nav a:hover {
+        color: #f0f0f0;
+        font-weight: 700;
+      }
+      .tagsContainer {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .tagsContainer a {
+        margin: 0 1rem 1rem 0;
+        color: #2e3246;
+        padding: 0.3rem 0.6rem;
+        background: #cecece;
+        border-radius: 10px;
+      }
+      .tagsContainer a:hover {
+        color: #f0f0f0;
+        background: #3e5fbc;
+        border: #3e5fbc;
+      }
+      .tag-styledLink {
+        color: #f0f0f0;
+        padding: 5px 10px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+      }
+      .tag-styledLink:hover {
+        color: #2e3246;
+        background: #f0f0f0;
+      }
+      .tag-information {
+        text-align: center;
+      }
+      .tag-information h1 {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+      }
+      .post-suggestionBar {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100vw;
+      }
+      .post-postSuggestion {
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+      }
+      .post-postSuggestion a {
+        width: 100%;
+      }
+      .post-postSuggestion h3 {
+        font-size: inherit;
+      }
+      h3.prev-post {
+        text-align: left;
+      }
+      h3.next-post {
+        text-align: right;
+      }
+      button.next-post,
+      button.prev-post {
+        color: grey;
+        background-color: transparent;
+        border: none;
+      }
+      button.next-post:hover,
+      button.prev-post:hover {
+        color: #000;
+      }
+      :focus {
+        outline: none;
+      }
+      *,
+      :after,
+      :before {
+        box-sizing: inherit;
+      }
+      html {
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        -ms-overflow-style: scrollbar;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      a {
+        -webkit-transition: color 0.5s;
+        transition: color 0.5s;
+      }
+      a,
+      a:hover {
+        text-decoration: none;
+      }
+      h1 {
+        font-family: Candal, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+          Segoe UI Symbol;
+      }
+      table {
+        table-layout: fixed;
+        overflow: scroll;
+        width: auto !important;
+      }
+      td,
+      th {
+        padding: 10px !important;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+      }
+      .index-postWrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 4rem 4rem 1rem;
+      }
+      @media (max-width: 1000px) {
+        .index-postWrapper {
+          margin: 4rem 2rem 1rem;
+        }
+      }
+      @media (max-width: 700px) {
+        .index-postWrapper {
+          margin: 4rem 1rem 1rem;
+        }
+      }
+      .gatsby-image-wrapper {
+        height: 100%;
+      }
+      section.container-wrapper {
+        padding: 3rem 1.5rem;
+      }
+      section.wrapper {
+        min-height: calc(100vh - 300px);
+        height: 100%;
+      }
+      section.wrapper div {
+        padding: 3rem 1.5rem;
+      }
+    </style>
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml" />
+    <link
+      rel="shortcut icon"
+      href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <meta name="theme-color" content="#3e7bf2" />
+    <link
+      rel="apple-touch-icon"
+      sizes="48x48"
+      href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="../icons/icon-72x72c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <meta name="generator" content="Gatsby 2.3.25" />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../icons/icon-144x144c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="../icons/icon-192x192c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="256x256"
+      href="../icons/icon-256x256c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="384x384"
+      href="../icons/icon-384x384c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="512x512"
+      href="../icons/icon-512x512c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      as="script"
+      rel="preload"
+      href="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"
+    />
+    <link as="script" rel="preload" href="../1-6c82cfd6aba31a386fde.js" />
+    <link as="script" rel="preload" href="../app-63577178a3bdd725b6eb.js" />
+    <link as="script" rel="preload" href="../styles-aa92193d8aa2fe2f8548.js" />
+    <link
+      as="script"
+      rel="preload"
+      href="../webpack-runtime-fd7c0e3081b0f1218320.js"
+    />
+    <link
+      as="fetch"
+      rel="preload"
+      href="../static/d/409/path---think-like-a-programmer-chapter-ii-d-9-a-b13-yM6AfZtUpT4IEztVy6fhc7tRss.json"
+      crossorigin="use-credentials"
+    />
+  </head>
+  <body>
+    <noscript id="gatsby-noscript"
+      >This app works best with JavaScript enabled.</noscript
+    >
+    <div id="___gatsby">
+      <div style="outline: none" tabindex="-1" role="group">
+        <div>
+          <div class="headroom-wrapper">
+            <div class="headroom headroom--unfixed">
+              <a class="navbar-styledLink" href="../index.html"
+                ><img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAoCAYAAAB5ADPdAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAHsIAAB7CAF4JB2hAAABWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgpMwidZAAAHVklEQVRYCcWYW4iVVRSAZ7x1MbXybs7V0szMS5YymIGUIVQQGUEPvXSBIKnXjHoJevMpkKAeiiACKcGEIkenNOpBTTNSM3XUJkcdNUdLx3F0+r59/nX6xzMzzpyXFnyz73utvdba+z9aUVGmdHd3V8ZS6tNhCYyzj3JIjJVTFjcuZ7FrMOA1igZohhHwQWVl5V4No7xKe9BS1olQOFRNlCsoXoJqWAA32qZ/mAZRlnXoYWwyKFERcoXyJhY+Ax0wG0bCrXAYlsI34KGvwKCkHE/FmrlomgYt0JnTOpb6klx70NVQMOiFLHgADI/cAor76bn79GTm0UGHsF+jDBUMhSFZmQ/3vShvBz1jjmnMxKycTFkDyvBsrfvIdY3s0ygWe3tMoCtwNSu7LBkbjTKVXoDxcBb2we3QDTeAoa1gfme21n2E5f0/GfmTu0eSzCBvjydeDpNAZUfgW/DqG7KTMAH2wyYwz8Jr9ayvor0MXO/z4PoNGHYudNAukRJXxmTKWcx+G7w9JrI3y8fR+t+gJ34Fb+DH8Ak0QhPoMZ+H46CONjgP3lDLNzHsODooKj1sDykJH5P0kP2vgwaMgYWgolY4BTOgHuaBMhxqUq2iYj6lBjtfT54B37FFoIGGfiUoJU4p6cx5ySReDRdB9/smheyhotEa5aYapHLDY5j0rKd3rRdhCjhfOQ3fgWnzIg5o681bMZk5ScLyUbRuBhVq0PfwJOyAe+BuMHdC9IpoWIh7TAUvw4dwAPS6+WgY3V8JnYUWf69N9IjvX4yZE3rgH1Chmx4EN1XZbRCHsgyoJtFjTdABEe7mNFIwxNxSQmehxd/YNDpiwp90aJAn+g30zjow0U3uy6DE/Pxp9VYX6Mn54FgcwH7rzYTuDKHTKfm1NHNGMcFN0gQWeIqN4AbHQBkL7fAI+AyoQAM0zHViW7yd5pTh8kkx8fXc+Ky+gdI3zHcvfbgz/XZXDDPRrDDoIr/8Xn2T03eoCupARYbQvNL4MIZqMiZvmPu51ii0gN41f7zJlu7zGHqccxT2o9unI/RXJoPo0JjFFI/C/XAHXAKN0kDzwlxSkR5wncaF+7dQd9xrr4Gu9ZKYj14U5ykq1sNnwQi4h97/Bb7GuIIHaWjQKxRzoRYU3a83ZsIsCCUalU5E6Yb9icaJa8KTrvWAGrstq3uhJoFeXA9v+YF8kIonrINl4ONWDXPAyRrnqfWOm6pENNyQKGthK5h35qEXIYx2TRjlHq41dOozCnqyCtSjgeecYCXySDdPzPCj6obiAjfWEEulGcwFw7EaVoI3U/H2Kq41VM7RUNda2u9Bza/poH7DvxvG+sn2kVsDDeDAHtB6b1gNaJziKfMSxtmvUtt6x7Z1D3yt2K9Byik4AuZoPewAD7k2KcIwO98A3yNPcAGM+3wYD3mFbqJCD+B6lRwC10wDQ+P8MNR558G5jp0AdRyA02Cfa92jkWT/wifB302HKF+mcyHoMZO7FswPxfAZWhNeg1Rgn56x3QaOTQdFgxTnKSoODxkq6641tCa8/IgdGlkQDYt6lPStglZoh8ug+ApvhksZHZSK4z6CShdcTLXu7ibK9+FC1nYv1+4Ak7yH0Kehhbhjoaf2aUjvSbZgKV0HoROcfBL0nMncBIZI71jGO6SHxBAfgyfgXUj7U5oSjl9Cp+NJp8YAXYUH/FoPqUBZDhPBWzQSVK4htl+FaWDIRoAh8u3xVmmcbcPwEzwFW8E9nOPl8QaPwYhllEr85A7dBU8Vxtgts5T2EnDjyeBNbAE33AKH4U7wDYubqWfaQTGJ9ehc+AiqoRGOgh5vBg17GJSiMYVmFr40kn0DOYG3bSr486U+K5+j1Et1oNeU8IqbaoRvjgmsp3xE3cOwbYYzoCGK3nXvu9CV/iVtZ17cOMTNVOCX3bC6WE/9DvZVwSJQzDPFNXrGtgb4EFuGcY4vBp+EJqiFOvBZcK6fFv8RYT4VPZY3KjpNRnFzN5sBG0E5Ap66GsIzVJMSFS2AMEiPdoEH1HMrQDkG9uu55PW8QfQVb435hMHJYp+BA4zpGZN0JpyCVtAjXgDfF/PDR28cGD7bigltrtk+DPtAr3sQE35nVu5Cp89Dyf/O6N6ixATKWjrfAUPjrXIzQ+gjuBfWw/Og8howJCa641tBwxtBD80GD6HXjYAh06urMMp3i+K/0NGfcsKyKDnD3PBxUKkh+AO2s8HPlL4v71HMA0PxUFbqTZ8Cb+rTzD3BvAbqc8DbqqfN0S8Z84Gl6GkQY72LhvU+koxJecicF2AnrIN4wX+gvgk+A0PWpzDeI0r5iflEL/ZjffrdTIfGxQVwE+vR3kbdpB8FcQg9MRq+Yo9OFLt/zI/Sffy/iWjT7Cm9GuWUbJE3qVdhfDdKzS9DZd6pZAr488N8UlR+tVAd+N844cBXMBNjvFnK5+DV/hQ0xJvnz49dzCm5VYwNSPqM6/VWoxTd6Rl5lrkmsmE7CGvo96qncdr/j2DABAntGhT1csp/AQmuNkNaDuFXAAAAAElFTkSuQmCC"
+                  alt="Gatsby Logo"
+              /></a>
+              <nav class="navbar-nav">
+                <a href="../index.html">Home</a
+                ><a href="../blog/index.html">Tagged List</a>
+              </nav>
+            </div>
+          </div>
+          <div class="header-wrapper">
+            <div class="header-text">
+              <h1>Think Like a Programmer:</h1>
+              <h2>Chapter Two</h2>
+              <h3>Pure Puzzles</h3>
+              <h4>2018-11-29</h4>
+            </div>
+          </div>
+          <section class="wrapper">
+            <div>
+              <div class="content-wrapper">
+                <h2>Problem: Half of a Square</h2>
+                <p>
+                  Write a program that uses only two output statements, cout
+                  &#x3C;&#x3C; "#" and cout &#x3C;&#x3C; "\n" to produce a
+                  pattern of hash symbols shaped like half of a perfect 5x5
+                  square (or a right triangle)
+                </p>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">#####
+####
+###
+##
+#</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span> j <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"#"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>Reducing the Problem</h2>
+                <h3>Problem: A Square (Half of a Square Reduction):</h3>
+                <p>
+                  Write a problem theat uses only two output statements, cout
+                  &#x3C;&#x3C; "#" and cout &#x3C;&#x3C; "\n", to produce a
+                  pattern of hash symbols like a perfect 5x5 square:
+                </p>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">#####
+#####
+#####
+#####
+#####</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> col <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span> col <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> col<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> row <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> row <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> row<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"#"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h3>Problem: A Line (Half of a Square - Further Reduction)</h3>
+                <p>
+                  Write a program that ueses only two output statements, cout
+                  &#x3C;&#x3C; "@" and cout "\n" to produce a line of five
+                  symbols.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> row <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> row <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> row<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"#"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h3>Problem: Count Down By Counting Up</h3>
+                <p>
+                  Write a line of code that goes in the desginated position in
+                  the loop in the listing below. The program redisplays the
+                  numbers 5 through 1, in that order, with each number on a
+                  separate line.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> row <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> row <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> row<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token number">6</span> <span class="token operator">-</span> row <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> row <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> row <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">;</span> row<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> hashNum <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> hashNum <span class="token operator">&lt;=</span> <span class="token number">6</span> <span class="token operator">-</span> row<span class="token punctuation">;</span> hashNum<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"#"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h3>Problem: A Sideways Triangle</h3>
+                <p>
+                  Write a program that uses only two output statements, cout
+                  &#x3C;&#x3C; "#" and cout &#x3C;&#x3C; "\n" to produce a
+                  pattern of hash symbols shaped like a sideways triangle:
+                </p>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">#
+
+##
+
+###
+
+####
+
+#####
+
+####
+
+###
+
+##
+
+#</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h3>Steps:</h3>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span> j <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"#"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span> j <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"#"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>
+                  List of skills and techniques from Half a Square that can be
+                  applied to the problem:
+                </h2>
+                <ul>
+                  <li>
+                    Display a row of symbols of a particular length using a loop
+                  </li>
+                  <li>Display a series of rows using nested loops</li>
+                  <li>
+                    Create a varying number of symbols on each row using an
+                    algebraic expression instead of a fixed value
+                  </li>
+                  <li>
+                    Discover the correct algebraic expression through
+                    experimentation and analysis
+                  </li>
+                </ul>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>8 - row</th>
+                      <th>4 - row</th>
+                      <th>abs(4 - row)</th>
+                      <th>4 - abs(4 - row)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>7</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>2</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>1</td>
+                      <td>1</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>4</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>-1</td>
+                      <td>1</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>-2</td>
+                      <td>2</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td>-3</td>
+                      <td>3</td>
+                      <td>1</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
+
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> row <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> row <span class="token operator">&lt;=</span> <span class="token number">7</span><span class="token punctuation">;</span> row<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> hashNum <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> hashNum <span class="token operator">&lt;=</span> <span class="token number">4</span> <span class="token operator">-</span> <span class="token function">abs</span><span class="token punctuation">(</span><span class="token number">4</span> <span class="token operator">-</span> row<span class="token punctuation">)</span><span class="token punctuation">;</span> hashNum<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"#"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <hr />
+                <h2>Input Processing</h2>
+                <p>
+                  Constraints: Input will be read character by character and
+                  must process each character before reading the next character.
+                  Will not store characters in a data structure.
+                </p>
+                <h2>Luhn Checksum Validation</h2>
+                <p>Used for validating identification numbers.</p>
+                <p>
+                  Using the original number, double the value of every other
+                  digit. Then add the values of the individual digits together.
+                  If a doubled value now has two digits, add individually. The
+                  identification number is valid if the sum is divisible by 10.
+                </p>
+                <p>
+                  Write a program that takes an identification number of
+                  arbitrary length and determines whether the number is valid
+                  under the Luhn formula. Must process each character before
+                  reading the next one.
+                </p>
+                <h3>Break Down the Problem</h3>
+                <p>List of issues:</p>
+                <ol>
+                  <li>Knowing which digits to double</li>
+                  <li>
+                    Treating doubled numbers greater than 10 according to their
+                    individual digits
+                  </li>
+                  <li>Knowing we've reached the end of the number</li>
+                  <li>Readcing each digit separately.</li>
+                </ol>
+                <h3>Tackling the Doubled Digits, 10+</h3>
+                <p>
+                  What are the ranges of possible values? If you start from 0-9
+                  and double, the max value is 18. That means if the doubled
+                  value is 10 or greater, it has to be in the range of 10 to 18,
+                  which means that the first digit is always 1.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token keyword">int</span> digit<span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a single digit number, 0-9: "</span><span class="token punctuation">;</span>
+cin <span class="token operator">>></span> digit<span class="token punctuation">;</span>
+<span class="token keyword">int</span> doubleDigit <span class="token operator">=</span> digit <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> sum<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>doubleDigit <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">)</span> sum <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> doubleDigit <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">else</span> sum <span class="token operator">=</span> doubleDigit<span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Sum of digits in doubled number: "</span> <span class="token operator">&lt;&lt;</span> sum <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Transformed into a function:</p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">doubleDigitValue</span><span class="token punctuation">(</span><span class="token keyword">int</span> digit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> doubleDigit <span class="token operator">=</span> digit <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> sum<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>doubleDigit <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">)</span> sum <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> doubleDigit <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> sum <span class="token operator">=</span> doubleDigit<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h3>Next up: How to read the number properly</h3>
+                <p>
+                  If we read as a numeric type, we'd get one long number and
+                  have a lot of work on our hands. We need to ensure that we can
+                  read a character representing a digit and turn it into an
+                  integer type we can perform mathematical operations on.
+                </p>
+                <h3>
+                  If we took character value and used it as an integer
+                  expression directly:
+                </h3>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token keyword">char</span> digit<span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a one-digit number: "</span><span class="token punctuation">;</span>
+digit <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> sum <span class="token operator">=</span> digit<span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Is the sum of the digits "</span> <span class="token operator">&lt;&lt;</span> sum <span class="token operator">&lt;&lt;</span> <span class="token string">"? \n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Possible output:</p>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">Enter a one-digit number: 7
+Is the sum of the digits 55?</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre>
+                </div>
+                <p>This is because 7 has an ASCII value of 55.</p>
+                <h3>Convert Character Digit to Integer</h3>
+                <p>
+                  Write a program that reads a character from the user
+                  representing a digit, 0 through 9. Convert the character to
+                  the equivalent integer in the range 0-9, then output the
+                  integer to demonstrate the result.
+                </p>
+                <p>
+                  Like earlier when we checked the difference between original
+                  values and desired values, this is an analogous problem. There
+                  is a difference of 48 between original value and desired
+                  value. 48 is the character code in ASCII of 0, so we can use
+                  that to perform subtraction.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token keyword">char</span> digit<span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a one-digit number: "</span><span class="token punctuation">;</span>
+cin <span class="token operator">>></span> digit<span class="token punctuation">;</span>
+<span class="token keyword">int</span> sum <span class="token operator">=</span> digit <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Is the sum of digits "</span> <span class="token operator">&lt;&lt;</span> sum <span class="token operator">&lt;&lt;</span> <span class="token string">"? \n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h3>---</h3>
+                <p>
+                  Now we can move on to see what digits to double. This may take
+                  several steps to figure out, so a good chance to practice
+                  reducing. WHat if we initially limited ourselves to
+                  fixed-length numbers? That would confirm our understanding of
+                  the gheneral formula while making progress toward the ultimate
+                  goal.
+                </p>
+                <h2>Problem: Luhn Checksum Validation: Fixed-Length</h2>
+                <p>
+                  Write a program that takes an identification number (including
+                  its check digit) of length six and determines whether the
+                  number is valid under the Luhn fomula. The program must
+                  process each character before reading the next one.
+                </p>
+                <h3>---</h3>
+                <p>
+                  As before, we can reduce even farther to make getting started
+                  as easy as possible. What if we changed the formula so that
+                  none of the digits is doubled?
+                </p>
+                <h2>Problem: Simple Checksum Validation, Fixed-Length</h2>
+                <p>
+                  Write a program that takews an identification number
+                  (including its check digit) of length six and determines
+                  whether the number is valid under a simple formula where the
+                  values of each digit are summed and the result is checked to
+                  see whether it is divisible by 10. The program must process
+                  each character before reading the next one.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">doubleDigitValue</span><span class="token punctuation">(</span><span class="token keyword">int</span> digit<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">int</span> doubleDigit <span class="token operator">=</span> digit <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token keyword">int</span> sum<span class="token punctuation">;</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>doubleDigit <span class="token operator">>=</span> <span class="token number">10</span><span class="token punctuation">)</span> sum <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">+</span> doubleDigit <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
+ <span class="token keyword">else</span> sum <span class="token operator">=</span> doubleDigit<span class="token punctuation">;</span>
+ <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">char</span> digit<span class="token punctuation">;</span>
+ <span class="token keyword">int</span> checksum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a six-digit number: "</span><span class="token punctuation">;</span>
+ <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> position <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> position <span class="token operator">&lt;=</span> <span class="token number">6</span><span class="token punctuation">;</span> position<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   cin <span class="token operator">>></span> digit<span class="token punctuation">;</span>
+   checksum <span class="token operator">+=</span> digit <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+ cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is "</span> <span class="token operator">&lt;&lt;</span> checksum <span class="token operator">&lt;&lt;</span> <span class="token string">". \n"</span><span class="token punctuation">;</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>checksum <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is divisible by 10.  Valid \n"</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is not divisible by 10.  Invalid \n"</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h3>---</h3>
+                <p>
+                  Now we need to add the logic for the Luhn validation formula
+                  (doubling every other digit from the right). Since we're
+                  currently only working with six-digit numbers, we need to
+                  double the digits in position one, position three, and
+                  position five counting from the left. In other words, double
+                  if position is odd. We can use the modulo operator because
+                  even numbers would be divisible by 2 with no remainder. So if
+                  position % 2 is 1, we know that the position is odd and the
+                  digit should be doubled. Note that means both doubling and
+                  summing the digits of the doubled number if it's 10 or
+                  greater. Now if we need to double, we can send the digit to
+                  the previously defined function and use the result.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">char</span> digit<span class="token punctuation">;</span>
+ <span class="token keyword">int</span> checksum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a six-digit number: "</span><span class="token punctuation">;</span>
+ <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> position <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> position <span class="token operator">&lt;=</span> <span class="token number">6</span><span class="token punctuation">;</span> position<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   cin <span class="token operator">>></span> digit<span class="token punctuation">;</span>
+   <span class="token keyword">if</span> <span class="token punctuation">(</span>position <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> checksum <span class="token operator">+=</span> digit <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+   <span class="token keyword">else</span> checksum <span class="token operator">+=</span> <span class="token function">doubleDigitValue</span><span class="token punctuation">(</span>digit <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+ cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is "</span> <span class="token operator">&lt;&lt;</span> checksum <span class="token operator">&lt;&lt;</span> <span class="token string">". \n"</span><span class="token punctuation">;</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>checksum <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is divisible by 10.  Valid \n"</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+   cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is not divisible by 10.  Invalid \n"</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h3>---</h3>
+                <p>
+                  To ultimately solve this problem, we need to divide and
+                  conquer. Suppose you were asked to modify the code to work
+                  with 10 or 16 digits -> you'd change the 6 to another upper
+                  bound. But validating a 7-digit number would require a
+                  modification because the number of digits is odd and we're
+                  doubling every digit starting from the second on the right,
+                  the first digit on the left is no longer doubled. In that
+                  case, even positions would need to be doubled.
+                </p>
+                <p>
+                  First issue -> how do you tell when you've reached the end of
+                  the number? Character read after the last digit varies based
+                  on operating system.
+                </p>
+                <p>Experiment:</p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a number: "</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> digit<span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    digit <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token keyword">int</span><span class="token punctuation">(</span>digit<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  Typing 17 into the prompt returned 49 55 10 - 49 is ASCII for
+                  1, 55 is ASCII for 7, which means that 10 is the value we're
+                  looking for to indicate the end of a number.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token keyword">char</span> digit<span class="token punctuation">;</span>
+<span class="token keyword">int</span> checksum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> position <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a number with an even number of digits: "</span><span class="token punctuation">;</span>
+digit <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>digit <span class="token operator">!=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>position <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> checksum <span class="token operator">+=</span> digit <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> checksum <span class="token operator">+=</span> <span class="token function">doubleDigitValue</span><span class="token punctuation">(</span>digit <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    digit <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    position <span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is "</span> <span class="token operator">&lt;&lt;</span> checksum <span class="token operator">&lt;&lt;</span> <span class="token string">". \n"</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>checksum <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is divisible by 10.  Valid. \n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is not divisible by 10.  Invalid. \n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  Position is no longer the control variable in a for loop, so
+                  needs to be initialized and incremented separately. Loop is
+                  controlled by a conditional that checks for the character code
+                  that signals the end of the line. Because we have to have a
+                  value to check the first time we go through the loop, we have
+                  to read the first value before the loop starts and then read
+                  every other value inside the loop.
+                </p>
+                <h2>Problem: Positive or Negative</h2>
+                <p>
+                  Write a program that reads 10 integers from the user. After
+                  all the numbers have been entered, the user may ask to display
+                  the count of positive numbers or the count of negative
+                  numbers.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token keyword">int</span> number<span class="token punctuation">;</span>
+<span class="token keyword">int</span> positiveCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> negativeCount <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter 10 integers: "</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cin <span class="token operator">>></span> number<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> positiveCount<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> negativeCount<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">char</span> response<span class="token punctuation">;</span>
+count <span class="token operator">&lt;&lt;</span> <span class="token string">"Do you want the (p)ositive or (n)egative count? "</span><span class="token punctuation">;</span>
+cin <span class="token operator">>></span> response<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>response <span class="token operator">==</span> <span class="token string">'p'</span><span class="token punctuation">)</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Positive count is "</span> <span class="token operator">&lt;&lt;</span> positiveCount <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>response <span class="token operator">==</span> <span class="token string">'n'</span><span class="token punctuation">)</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Negative count is "</span> <span class="token operator">&lt;&lt;</span> negativeCount <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  Keep track of running checksum both ways -- as if the ID is an
+                  odd length and as if the ID is an even length. When we get to
+                  the end of the number, we can return the appropriate checksum.
+                </p>
+                <h2>Putting the Pieces Together</h2>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token keyword">char</span> digit<span class="token punctuation">;</span>
+<span class="token keyword">int</span> oddLengthChecksum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> evenLengthChecksum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> position <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a number: "</span><span class="token punctuation">;</span>
+digit <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>digit <span class="token operator">!=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>position <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        oddLengthChecksum <span class="token operator">+=</span> <span class="token function">doubleDigitValue</span><span class="token punctuation">(</span>digit <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        evenLengthChecksum <span class="token operator">+=</span> digit <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        oddLengthChecksum <span class="token operator">+=</span> digit <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+        evenLengthChecksum <span class="token operator">+=</span> <span class="token function">doubleDigitValue</span><span class="token punctuation">(</span>digit <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    digit <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    position<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> checksum<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>position <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> checksum <span class="token operator">=</span> evenLengthChecksum<span class="token punctuation">;</span>
+<span class="token keyword">else</span> checksum <span class="token operator">=</span> oddLengthChecksum<span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is "</span> <span class="token operator">&lt;&lt;</span> checksum <span class="token operator">&lt;&lt;</span> <span class="token string">". \n"</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>checksum <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is divisible by 10.  Valid. \n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Checksum is not divisible by 10.  Invalid. \n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  Could have used (position % 2 == 1) but it's more confusing to
+                  read - better to say "if position - 1 is even, use the even
+                  checksum" than it is to say "If position is odd, use the even
+                  checksum".
+                </p>
+                <p>
+                  It is always better to take more steps than to try to do too
+                  much at once, even if some steps seem trivial.
+                </p>
+                <hr />
+                <h2>Problem: Decode a Message</h2>
+                <p>
+                  A message has been encoded as a text stream that is to be read
+                  character by character. The stream contains a series of
+                  comma-delimited integers, each a positive number capable of
+                  being represented by a C++ int. However, the character
+                  represented by a particular integer depends on the current
+                  decoding mode. There are three modes: uppercase, lowercase,
+                  and punctuation.
+                </p>
+                <p>
+                  In uppercase mode, each integer represents an uppercase
+                  letter: The integer modulo 27 indicates the letter of the
+                  alphabet (where 1 = A and so on). So an input value of 143 in
+                  uppercase mode would yield the letter H because 143 module 27
+                  is 8 and H is the eighth letter in the alphabet.
+                </p>
+                <p>
+                  The lowercase mode works the same but with lowercase letters;
+                  the remainder of dividing the integer by 27 represents the
+                  lowercase letter (1 = a and so on). So an input value of 56 in
+                  lowercase mode would yield b because 56 modulo 27 is 2 and b
+                  is the second letter of the alphabet.
+                </p>
+                <p>
+                  In punctuation mode, the integer is instead considered modulo
+                  9, with the interpretation given by Table 2-3 below. So 19
+                  would yield an exclamation point because 19 modulo 9 is 1.
+                </p>
+                <p>
+                  At the beginning of each message, the decoding mode is
+                  uppercase ltters. Each time the modulo operation (by 27 or 9
+                  depending on mode) results in 0, the decoding mode switches.
+                  If the current mode is uppercase, the mode switches to
+                  lowercase letters. If the current mode is lowercase, the mode
+                  switches to punctuation, and if the current mode is
+                  punctuation, it switches back to uppercase.
+                </p>
+                <h4>Table 2-3: Punctuation Decoding Mode</h4>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Number</th>
+                      <th>Symbol</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>!</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>?</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>,</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>.</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>(space)</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>;</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>"</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>'</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h4>My Notes on Problem - Restate Problem with Constraints</h4>
+                <ol>
+                  <li>Read a text stream character by character</li>
+                  <li>Characters are separated by commas</li>
+                  <li>Program starts in Uppercase decode mode</li>
+                  <li>
+                    Start decoding characters by performing modulo 27 and using
+                    corresponding letter - 1 = A, etc.
+                  </li>
+                  <li>
+                    If integer modulo 27 == 0, switch to Lowercase decode mode
+                  </li>
+                  <li>
+                    Continue processing characters using modulo 27, though now
+                    letters are in lowercase
+                  </li>
+                  <li>If modulo 27 == 0, switch to Punctuation decode mode</li>
+                  <li>
+                    Continue decoding, but now perform modulo 9 and consult
+                    Table 2-3 to find the punctuation mark the character
+                    represents
+                  </li>
+                  <li>If int modulo 9 == 0, switch decode mode to Uppercase</li>
+                  <li>
+                    Repeat until out of characters to decode (end of line)
+                  </li>
+                </ol>
+                <h4>Notes from Book:</h4>
+                <ol>
+                  <li>
+                    Read character by character until you reach the end of the
+                    line
+                  </li>
+                  <li>
+                    Convert a series of characters representing a number to an
+                    integer
+                  </li>
+                  <li>Convert an integer 1-26 to an uppercase character</li>
+                  <li>Convert an integer 1-26 to a lowercase character</li>
+                  <li>
+                    Convert an integer 1-8 into a punctuation symbol based on
+                    Table 2-3.
+                  </li>
+                  <li>Tracking a decoding mode</li>
+                </ol>
+                <h4>Example of the process</h4>
+                <p>
+                  Original input: 18, 12312, 171, 763, 98423, 1208, 216, 11,
+                  500, 18, 241, 0, 32, 20620, 27, 10
+                </p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>(a)</th>
+                      <th>(b)</th>
+                      <th>(c)</th>
+                      <th>(d)</th>
+                      <th>(e)</th>
+                      <th>(f)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>18</td>
+                      <td>(U)</td>
+                      <td>27</td>
+                      <td>18</td>
+                      <td>R</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>12312</td>
+                      <td>(U)</td>
+                      <td>27</td>
+                      <td>0</td>
+                      <td>→</td>
+                      <td>(L)</td>
+                    </tr>
+                    <tr>
+                      <td>171</td>
+                      <td>(L)</td>
+                      <td>27</td>
+                      <td>6</td>
+                      <td>i</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>763</td>
+                      <td>(L)</td>
+                      <td>27</td>
+                      <td>7</td>
+                      <td>g</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>98423</td>
+                      <td>(L)</td>
+                      <td>27</td>
+                      <td>8</td>
+                      <td>h</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>1208</td>
+                      <td>(L)</td>
+                      <td>27</td>
+                      <td>20</td>
+                      <td>t</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>216</td>
+                      <td>(L)</td>
+                      <td>27</td>
+                      <td>0</td>
+                      <td>→</td>
+                      <td>(P)</td>
+                    </tr>
+                    <tr>
+                      <td>11</td>
+                      <td>(P)</td>
+                      <td>9</td>
+                      <td>2</td>
+                      <td>?</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>500</td>
+                      <td>(P)</td>
+                      <td>9</td>
+                      <td>5</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>18</td>
+                      <td>(P)</td>
+                      <td>9</td>
+                      <td>0</td>
+                      <td>→</td>
+                      <td>(U)</td>
+                    </tr>
+                    <tr>
+                      <td>241</td>
+                      <td>(U)</td>
+                      <td>27</td>
+                      <td>25</td>
+                      <td>Y</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>0</td>
+                      <td>(U)</td>
+                      <td>27</td>
+                      <td>0</td>
+                      <td>→</td>
+                      <td>(L)</td>
+                    </tr>
+                    <tr>
+                      <td>32</td>
+                      <td>(L)</td>
+                      <td>27</td>
+                      <td>5</td>
+                      <td>e</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>20620</td>
+                      <td>(L)</td>
+                      <td>27</td>
+                      <td>19</td>
+                      <td>s</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>27</td>
+                      <td>(L)</td>
+                      <td>27</td>
+                      <td>0</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td>(P)</td>
+                      <td>9</td>
+                      <td>1</td>
+                      <td>!</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>a) Current number in the input</p>
+                <p>b) Current mode</p>
+                <p>c) Divisor for the current mode</p>
+                <p>d) Remainder</p>
+                <p>e) Decoded character or arrow pointing to new mode</p>
+                <p>f) Mode switching to</p>
+                <p>
+                  We already know how to read character by character until we
+                  reach the end of the line because we did that with the Luhn
+                  Checksum problem - reading character by character until we
+                  come across the ASCII value for end-of-line (10).
+                </p>
+                <h3>
+                  Convert a series of characters representing a number to an
+                  integer
+                </h3>
+                <p>
+                  We know how to convert 0-9, but how do we extend that to apply
+                  to multidigit numbers?
+                </p>
+                <p>
+                  Consider a two-diigit numbr. In a two-digit number, the first
+                  digit is the tens digit so you can multiply by 10 and then add
+                  that to the second digit (ones place).
+                </p>
+                <p>
+                  Example: 35 would be integers 3 and 5 and overall integer
+                  would be computed by 3 * 10 + 5
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a two-digit number: "</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> digitChar1 <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> digitChar2 <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> digit1 <span class="token operator">=</span> digitChar1 <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> digit2 <span class="token operator">=</span> digitChar2 <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> overallNumber <span class="token operator">=</span> digit1 <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> digit2<span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"That number as an integer: "</span> <span class="token operator">&lt;&lt;</span> overallNumber <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  While the above code works, it won't be very useful in
+                  extending past two-digit numbers because we would
+                  exponentially increase the number of variables necessary to
+                  accomplish the task. We need to reduce:
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a two-digit number: "</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> overallNumber <span class="token operator">=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+overallNumber <span class="token operator">+=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"That number as an integer: "</span> <span class="token operator">&lt;&lt;</span> overallNumber <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  How do we know which multiplier to use for each digit before
+                  adding to the running total?
+                </p>
+                <h3>Problem: Reading a Number with 3 or 4 Digits:</h3>
+                <p>
+                  Write a program to read a number character by character and
+                  convert it to an integer, using just one char variable and one
+                  int variable. The number will have either 3 or 4 digits.
+                </p>
+                <h3>
+                  Problem: Reading a Number with 3 or 4 Digits, Further
+                  Simplified:
+                </h3>
+                <p>
+                  Write a program to read a number character by character and
+                  convert it to an integer, using just one char variable and two
+                  int variables. The number will have either 3 or 4 digits.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a three-digit or four-digit number: "</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> threeDigitNum <span class="token operator">=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> fourDigitNum <span class="token operator">=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+threeDigitNum <span class="token operator">+=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+fourDigitNum <span class="token operator">+=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">;</span>
+digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+threeDigitNum <span class="token operator">+=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fourDigitNum <span class="token operator">+=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>digitChar <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Number entered: "</span> <span class="token operator">&lt;&lt;</span> threeDigitNum <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    fourDigitNum <span class="token operator">+=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Number entered: "</span> <span class="token operator">&lt;&lt;</span> fourDigitNum <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  In general, since the multiplers for fourDigitNum are 10 times
+                  those of threeDigitNum, the former would always be 10 times
+                  the latter.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a three-digit or four-digit number: "</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">;</span>
+digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+number <span class="token operator">+=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+number <span class="token operator">+=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>digitChar <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Number entered: "</span> <span class="token operator">&lt;&lt;</span> number <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    number <span class="token operator">=</span> number <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Number entered: "</span> <span class="token operator">&lt;&lt;</span> number <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Now we have an exploitable pattern.</p>
+                <p>
+                  To extend to use 5-digit values, you would repeat the process
+                  for reading the fourth character instead of displaying the
+                  result immediately -> Read the 5th character, check to see if
+                  it's an end-of-line. If so, display previous computed number.
+                  If not, multiply the computed number by 10 and add the current
+                  character to it.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a number with three, four, or five digits: "</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">;</span>
+digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+number <span class="token operator">+=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+number <span class="token operator">+=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>digitChar <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Number entered: "</span> <span class="token operator">&lt;&lt;</span> number <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    number <span class="token operator">=</span> number <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>digitChar <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Number enetered: "</span> <span class="token operator">&lt;&lt;</span> number <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        number <span class="token operator">=</span> number <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Number entered: "</span> <span class="token operator">&lt;&lt;</span> number <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  Pattern: if the next value is a digit, multiply the running
+                  total by 10 before adding the integer digit value of the
+                  character.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a number with as many digits as you please: "</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>digitChar <span class="token operator">!=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    number <span class="token operator">=</span> number <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Number entered: "</span> <span class="token operator">&lt;&lt;</span> number <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h5>Explanation (Given input: 12356)</h5>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">Outside while loop:
+First pass:         number = (digitChar - &#39;0&#39;)
+                    digitChar - &#39;0&#39; = 1
+                    number = 1
+
+Inside while loop:
+Second pass:        number = number * 10 + (digit - &#39;0&#39;)
+                    digitChar - &#39;0&#39; = 2
+                    number = 12 (1 * 10 + 2)
+
+Third pass:         number = number * 10 + (digit - &#39;0&#39;)
+                    digitChar - &#39;0&#39; = 3
+                    number = 123 (12 * 10 + 3)
+
+Fourth pass:        number = number * 10 + (digit - &#39;0&#39;)
+                    digitChar - &#39;0&#39; = 5
+                    number = 1235 (123 * 10 + 5)
+
+Fifth pass:         number = number * 10 + (digit - &#39;0&#39;)
+                    digitChar - &#39;0&#39; = 6
+                    number = 12356 (1235 * 10 + 6)</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  This handles the conversion of one series of characters, but
+                  the main problem is going to be working with a list of
+                  comma-separated characters.
+                </p>
+                <p>
+                  For 101, 22[EOL] (end of line), we would need to check for
+                  either a comma or the end of the line, then place code that
+                  processes one number inside a larger loop that continues until
+                  all values are read. The inner loop should stop for EOL and
+                  commas. The outer loop should only stop for EOL.
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a number: "</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> digitChar<span class="token punctuation">;</span>
+<span class="token keyword">do</span> <span class="token punctuation">{</span>
+    digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>digitChar <span class="token operator">!=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>digitChar <span class="token operator">!=</span> <span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        number <span class="token operator">=</span> number <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Number entered: "</span> <span class="token operator">&lt;&lt;</span> number <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>digitChar <span class="token operator">!=</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  Note: Remember not to include spaces when entering values.
+                </p>
+                <h4>Now we can focus on processing individual numbers!</h4>
+                <p>
+                  Converting a number 1-26 to a letter A-Z. This is like the
+                  opposite of what we did to get the individual digit characters
+                  to their integer equivalents. If we subtract the character
+                  code '0' to translate from 0-9 character range to 0-9 integer
+                  range, we should be able to add a character code to translate
+                  from 1-26 to A-Z. What if we add 'A'?
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a number 1-26: "</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> number<span class="token punctuation">;</span>
+cin <span class="token operator">>></span> number<span class="token punctuation">;</span>
+<span class="token keyword">char</span> outputCharacter<span class="token punctuation">;</span>
+outputCharacter <span class="token operator">=</span> number <span class="token operator">+</span> <span class="token string">'A'</span><span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Equivalent symbol: "</span> <span class="token operator">&lt;&lt;</span> outputCharacter <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  This results in an off-by-one error - namely, 1 gives you B, 2
+                  gives you C, etc. So what you really need is number + 'A' - 1;
+                </p>
+                <h4>Convert 1-26 to A-Z:</h4>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a number 1-26: "</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> number<span class="token punctuation">;</span>
+cin <span class="token operator">>></span> number<span class="token punctuation">;</span>
+<span class="token keyword">char</span> outputCharacter<span class="token punctuation">;</span>
+outputCharacter <span class="token operator">=</span> number <span class="token operator">+</span> <span class="token string">'A'</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Equivalent symbol: "</span> <span class="token operator">&lt;&lt;</span> outputCharacter <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h4>Convert 1-26 to a-z:</h4>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a number 1-26: "</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> number<span class="token punctuation">;</span>
+cin <span class="token operator">>></span> number<span class="token punctuation">;</span>
+<span class="token keyword">char</span> outputCharacter<span class="token punctuation">;</span>
+outputCharacter <span class="token operator">=</span> number <span class="token operator">+</span> <span class="token string">'a'</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Equivalent symbol: "</span> <span class="token operator">&lt;&lt;</span> outputCharacter <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h4>Punctuation</h4>
+                <p>
+                  Punctuation is harder because it's not in ASCII order and so
+                  can't be translated dynamically. Instead, a brute force method
+                  is required:
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp">cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter a number 1-8: "</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> number<span class="token punctuation">;</span>
+cin <span class="token operator">>></span> number<span class="token punctuation">;</span>
+<span class="token keyword">char</span> outputCharacter<span class="token punctuation">;</span>
+<span class="token keyword">switch</span> <span class="token punctuation">(</span>number<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">'!'</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">'?'</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">','</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">'.'</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">5</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">' '</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">6</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">';'</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">7</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">'"'</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> <span class="token number">8</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">'\''</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Equivalent symbol: "</span> <span class="token operator">&lt;&lt;</span> outputCharacter <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h4>Switching Modes</h4>
+                <p>
+                  We need a variable to store the current mode. It could be an
+                  integer, but it's more readable as an enumeration. Rule of
+                  thumb: If a variable is only tracking state and there is no
+                  inherent meaning to any particular value, an enumeration is a
+                  good idea. Enum allows us to know what the mode is without
+                  having to decode it (as we would have to if it were an
+                  arbitrary value to represent each mode).
+                </p>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token keyword">enum</span> <span class="token class-name">modeType</span> <span class="token punctuation">{</span>UPPERCASE<span class="token punctuation">,</span> LOWERCASE<span class="token punctuation">,</span> PUNCTUATION<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> number<span class="token punctuation">;</span>
+modeType mode <span class="token operator">=</span> UPPERCASE<span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter some numbers ending with -1. "</span><span class="token punctuation">;</span>
+<span class="token keyword">do</span> <span class="token punctuation">{</span>
+    cin <span class="token operator">>></span> number<span class="token punctuation">;</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Number read: "</span> <span class="token operator">&lt;&lt;</span> number<span class="token punctuation">;</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>mode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> UPPERCASE<span class="token operator">:</span>
+            number <span class="token operator">=</span> number <span class="token operator">%</span> <span class="token number">27</span><span class="token punctuation">;</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token string">". Modulo 27."</span> <span class="token operator">&lt;&lt;</span> number <span class="token operator">&lt;&lt;</span> <span class="token string">". "</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Switch to Lowercase"</span><span class="token punctuation">;</span>
+                mode <span class="token operator">=</span> LOWERCASE<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> LOWERCASE<span class="token operator">:</span>
+            number <span class="token operator">=</span> number <span class="token operator">%</span> <span class="token number">27</span><span class="token punctuation">;</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token string">". Modulo 27 "</span> <span class="token operator">&lt;&lt;</span> number <span class="token operator">&lt;&lt;</span> <span class="token string">". "</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Switch to Punctuation"</span><span class="token punctuation">;</span>
+                mode <span class="token operator">=</span> PUNCTUATION<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> PUNCTUATION<span class="token operator">:</span>
+            number <span class="token operator">=</span> number <span class="token operator">%</span> <span class="token number">9</span><span class="token punctuation">;</span>
+            cout <span class="token operator">&lt;&lt;</span> <span class="token string">". Modulo 9: "</span> <span class="token operator">&lt;&lt;</span> number <span class="token operator">&lt;&lt;</span> <span class="token string">". "</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Switch to Uppercase."</span><span class="token punctuation">;</span>
+                mode <span class="token operator">=</span> UPPERCASE<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>number <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h3>Putting it all Together</h3>
+                <div class="gatsby-highlight" data-language="cpp">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-cpp line-numbers"
+                  ><code class="language-cpp"><span class="token keyword">char</span> outputCharacter<span class="token punctuation">;</span>
+<span class="token keyword">enum</span> <span class="token class-name">modeType</span> <span class="token punctuation">{</span>UPPERCASE<span class="token punctuation">,</span> LOWERCASE<span class="token punctuation">,</span> PUNCTUATION<span class="token punctuation">}</span><span class="token punctuation">;</span>
+modeType mode <span class="token operator">=</span> UPPERCASE<span class="token punctuation">;</span>
+<span class="token keyword">char</span> digitChar<span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Enter numbers to decode: "</span><span class="token punctuation">;</span>
+<span class="token keyword">do</span> <span class="token punctuation">{</span>
+    digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>digitChar <span class="token operator">!=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>digitChar <span class="token operator">!=</span> <span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        number <span class="token operator">=</span> number <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> <span class="token punctuation">(</span>digitChar <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        digitChar <span class="token operator">=</span> cin<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">switch</span><span class="token punctuation">(</span>mode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> UPPERCASE<span class="token operator">:</span>
+            number <span class="token operator">=</span> number <span class="token operator">%</span> <span class="token number">27</span><span class="token punctuation">;</span>
+            outputCharacter <span class="token operator">=</span> number <span class="token operator">+</span> <span class="token string">'A'</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                mode <span class="token operator">=</span> LOWERCASE<span class="token punctuation">;</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> LOWERCASE<span class="token operator">:</span>
+            number <span class="token operator">=</span> number <span class="token operator">%</span> <span class="token number">27</span><span class="token punctuation">;</span>
+            outputCharacter <span class="token operator">=</span> number <span class="token operator">+</span> <span class="token string">'a'</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                mode <span class="token operator">=</span> PUNCTUATION<span class="token punctuation">;</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> PUNCTUATION<span class="token operator">:</span>
+            number <span class="token operator">=</span> number <span class="token operator">%</span> <span class="token number">9</span><span class="token punctuation">;</span>
+            <span class="token keyword">switch</span> <span class="token punctuation">(</span>number<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">'!'</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">'?'</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">','</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">'.'</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">5</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">' '</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">6</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">';'</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">7</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">'"'</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+                <span class="token keyword">case</span> <span class="token number">8</span><span class="token operator">:</span> outputCharacter <span class="token operator">=</span> <span class="token string">'\''</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                mode <span class="token operator">=</span> UPPERCASE<span class="token punctuation">;</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout <span class="token operator">&lt;&lt;</span> outputCharacter<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>digitChar <span class="token operator">!=</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+cout <span class="token operator">&lt;&lt;</span> <span class="token string">"\n"</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <hr />
+                <h2>2.1</h2>
+                <p>
+                  Using only single character output statements that output a
+                  hash mark, space, or end of line, write a program that
+                  produces the following shape:
+                </p>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">########
+ ######
+  ####
+   ##</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>2.2</h2>
+                <p>
+                  Using only single character output statements that output a
+                  hash mark, space, or end of line, write a program that
+                  produces the following shape:
+                </p>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">   ##
+  ####
+ ######
+########
+########
+ ######
+  ####
+   ##</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>2.3</h2>
+                <p>
+                  Using only single character output statements that output a
+                  hash mark, space, or end of line, write a program that
+                  produces the following shape:
+                </p>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">#            #
+ ##        ##
+  ###    ###
+   ########
+   ########
+  ###    ###
+ ##        ##
+#            #</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>2-4</h2>
+                <p>Design a pattern and see if you can code it.</p>
+                <h2>2-5</h2>
+                <p>
+                  If you like the Luhn formula, you can try writing a program
+                  for a different check-digit system, like the 13-digit ISBN
+                  system. The program could take an identification number and
+                  verify it or take a number without a check digit and generate
+                  the check digit.
+                </p>
+                <h2>2-6</h2>
+                <p>
+                  If you've learned about binary numbers and how to convert from
+                  decimal for binary and the reverse, try writing programs to do
+                  those conversions with unlimited length numbers (but you can
+                  assume they are small enough to still be stored in an int).
+                </p>
+                <h2>2-7</h2>
+                <p>
+                  Have you learned about hexadecimal? Try writing a program that
+                  lets the user specify an input in binary, decimal, or
+                  hexadecimal and output in each of the three.
+                </p>
+                <h2>2-8</h2>
+                <p>
+                  Want an extra challenge? Generalize the code for the previous
+                  exercise to make a program that converts from any number
+                  base-16 or less to any other number base. (Ex: Base-9 to
+                  Base-4).
+                </p>
+                <h2>2-9</h2>
+                <p>
+                  Write a program that reads a line of text, counting the number
+                  of words, identifying the length of the longest word, and
+                  greatest number of vowels in a word and/or any other
+                  statistics you can think of.
+                </p>
+              </div>
+              <div class="tagsContainer">
+                <a href="../tags/problem%20solving/index.html"
+                  ><span>Problem solving</span></a
+                ><a href="../tags/think%20like%20a%20programmer/index.html"
+                  ><span>Think Like a Programmer</span></a
+                >
+              </div>
+            </div>
+          </section>
+          <div class="post-suggestionBar">
+            <div class="post-postSuggestion">
+              <a href="../think-like-a-programmer-chapter-i/index.html"
+                ><button value="prev" aria-label="previous" class="prev-post">
+                  <h3 class="prev-post">
+                    &lt;&lt; Previous:<br />Think Like a Programmer:<br />Strategies
+                    for Problem Solving
+                  </h3>
+                </button></a
+              >
+            </div>
+            <div class="post-postSuggestion">
+              <a href="../think-like-a-programmer-chapter-iii/index.html"
+                ><button value="next" aria-label="next" class="next-post">
+                  <h3 class="next-post">
+                    &gt;&gt; Next:<br />Think Like a Programmer:<br />Solving
+                    Problems with Arrays
+                  </h3>
+                </button></a
+              >
+            </div>
+          </div>
+          <footer class="footer-wrapper">
+            <div class="footer-text">
+              <span
+                >Notes for Great Good    <span role="img" aria-label="pawprints"
+                  >🐾</span
+                ><a href="https://amyshackles.com/">Amy Shackles</a></span
+              >
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script id="gatsby-script-loader">
+      /*<![CDATA[*/ window.page = {
+        componentChunkName: "component---src-templates-post-jsx",
+        jsonName: "think-like-a-programmer-chapter-ii-d9a",
+        path: "/Think-Like-a-Programmer-Chapter-II",
+      };
+      window.dataPath =
+        "409/path---think-like-a-programmer-chapter-ii-d-9-a-b13-yM6AfZtUpT4IEztVy6fhc7tRss"; /*]]>*/
+    </script>
+    <script id="gatsby-chunk-mapping">
+      /*<![CDATA[*/ window.___chunkMapping = {
+        app: ["/app-63577178a3bdd725b6eb.js"],
+        "component---src-pages-tags-jsx": [
+          "/component---src-pages-tags-jsx-e522a5598fa2964ee6de.js",
+        ],
+        "component---src-templates-tag-jsx": [
+          "/component---src-templates-tag-jsx-5f637c2edf65bf3f9f1c.js",
+        ],
+        "component---src-templates-post-jsx": [
+          "/component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js",
+        ],
+        "component---src-pages-404-jsx": [
+          "/component---src-pages-404-jsx-095f8c7d93b57e5a6681.js",
+        ],
+        "component---src-pages-blog-jsx": [
+          "/component---src-pages-blog-jsx-316bdf552f6880939952.js",
+        ],
+        "component---src-pages-index-jsx": [
+          "/component---src-pages-index-jsx-89fc494ceffadedf0b62.js",
+        ],
+        "pages-manifest": ["/pages-manifest-e0687b1a66911235678c.js"],
+      }; /*]]>*/
+    </script>
+    <script src="../webpack-runtime-fd7c0e3081b0f1218320.js" async=""></script>
+    <script src="../styles-aa92193d8aa2fe2f8548.js" async=""></script>
+    <script src="../app-63577178a3bdd725b6eb.js" async=""></script>
+    <script src="../1-6c82cfd6aba31a386fde.js" async=""></script>
+    <script
+      src="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"
+      async=""
+    ></script>
+  </body>
+  <!-- Mirrored from notes-for-great-good.netlify.app/think-like-a-programmer-chapter-ii/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:37:12 GMT -->
+</html>

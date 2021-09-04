@@ -1,0 +1,17 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Nine",
+          "title": "Algorithm Design Manual:",
+          "tags": ["algorithms", "NP-complete", "Algorithm Design Manual"],
+          "subtitle": "Intractable Problems and Approximation Algorithms",
+          "chapter": "Chapter Nine"
+        }
+      }
+    ],
+    "tagName": "NP-complete"
+  }
+}

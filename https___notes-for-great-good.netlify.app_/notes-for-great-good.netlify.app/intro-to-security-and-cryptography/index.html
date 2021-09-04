@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<html>
+  <!-- Mirrored from notes-for-great-good.netlify.app/intro-to-security-and-cryptography/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:37:20 GMT -->
+  <!-- Added by HTTrack --><meta
+    http-equiv="content-type"
+    content="text/html;charset=UTF-8"
+  /><!-- /Added by HTTrack -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style id="typography.js">
+      html {
+        font-family: sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      main,
+      menu,
+      nav,
+      section,
+      summary {
+        display: block;
+      }
+      audio,
+      canvas,
+      progress,
+      video {
+        display: inline-block;
+      }
+      audio:not([controls]) {
+        display: none;
+        height: 0;
+      }
+      progress {
+        vertical-align: baseline;
+      }
+      [hidden],
+      template {
+        display: none;
+      }
+      a {
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+      }
+      a:active,
+      a:hover {
+        outline-width: 0;
+      }
+      abbr[title] {
+        border-bottom: none;
+        text-decoration: underline;
+        text-decoration: underline dotted;
+      }
+      b,
+      strong {
+        font-weight: inherit;
+        font-weight: bolder;
+      }
+      dfn {
+        font-style: italic;
+      }
+      h1 {
+        font-size: 2em;
+        margin: 0.67em 0;
+      }
+      mark {
+        background-color: #ff0;
+        color: #000;
+      }
+      small {
+        font-size: 80%;
+      }
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      sub {
+        bottom: -0.25em;
+      }
+      sup {
+        top: -0.5em;
+      }
+      img {
+        border-style: none;
+      }
+      svg:not(:root) {
+        overflow: hidden;
+      }
+      code,
+      kbd,
+      pre,
+      samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+      }
+      figure {
+        margin: 1em 40px;
+      }
+      hr {
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font: inherit;
+        margin: 0;
+      }
+      optgroup {
+        font-weight: 700;
+      }
+      button,
+      input {
+        overflow: visible;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      [type="reset"],
+      [type="submit"],
+      button,
+      html [type="button"] {
+        -webkit-appearance: button;
+      }
+      [type="button"]::-moz-focus-inner,
+      [type="reset"]::-moz-focus-inner,
+      [type="submit"]::-moz-focus-inner,
+      button::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+      [type="button"]:-moz-focusring,
+      [type="reset"]:-moz-focusring,
+      [type="submit"]:-moz-focusring,
+      button:-moz-focusring {
+        outline: 1px dotted ButtonText;
+      }
+      fieldset {
+        border: 1px solid silver;
+        margin: 0 2px;
+        padding: 0.35em 0.625em 0.75em;
+      }
+      legend {
+        box-sizing: border-box;
+        color: inherit;
+        display: table;
+        max-width: 100%;
+        padding: 0;
+        white-space: normal;
+      }
+      textarea {
+        overflow: auto;
+      }
+      [type="checkbox"],
+      [type="radio"] {
+        box-sizing: border-box;
+        padding: 0;
+      }
+      [type="number"]::-webkit-inner-spin-button,
+      [type="number"]::-webkit-outer-spin-button {
+        height: auto;
+      }
+      [type="search"] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+      [type="search"]::-webkit-search-cancel-button,
+      [type="search"]::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      ::-webkit-input-placeholder {
+        color: inherit;
+        opacity: 0.54;
+      }
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+      html {
+        font: 112.5%/1.45 "Open Sans", -apple-system, "BlinkMacSystemFont",
+          "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+        box-sizing: border-box;
+        overflow-y: scroll;
+      }
+      * {
+        box-sizing: inherit;
+      }
+      *:before {
+        box-sizing: inherit;
+      }
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        color: hsla(0, 0%, 0%, 0.8);
+        font-family: "Open Sans", -apple-system, "BlinkMacSystemFont",
+          "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: normal;
+        word-wrap: break-word;
+        font-kerning: normal;
+        -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+        -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+        -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+        font-feature-settings: "kern", "liga", "clig", "calt";
+      }
+      img {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      h1 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 2rem;
+        line-height: 1.1;
+      }
+      h2 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1.51572rem;
+        line-height: 1.1;
+      }
+      h3 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1.31951rem;
+        line-height: 1.1;
+      }
+      h4 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1rem;
+        line-height: 1.1;
+      }
+      h5 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 0.87055rem;
+        line-height: 1.1;
+      }
+      h6 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 0.81225rem;
+        line-height: 1.1;
+      }
+      hgroup {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      ul {
+        margin-left: 1.45rem;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        list-style-position: outside;
+        list-style-image: none;
+      }
+      ol {
+        margin-left: 1.45rem;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        list-style-position: outside;
+        list-style-image: none;
+      }
+      dl {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      dd {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      p {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      figure {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      pre {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      table {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        font-size: 1rem;
+        line-height: 1.45rem;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      fieldset {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      blockquote {
+        margin-left: 1.45rem;
+        margin-right: 1.45rem;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      form {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      noscript {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      iframe {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      hr {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: calc(1.45rem - 1px);
+        background: hsla(0, 0%, 0%, 0.2);
+        border: none;
+        height: 1px;
+      }
+      address {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      b {
+        font-weight: bold;
+      }
+      strong {
+        font-weight: bold;
+      }
+      dt {
+        font-weight: bold;
+      }
+      th {
+        font-weight: bold;
+      }
+      li {
+        margin-bottom: calc(1.45rem / 2);
+      }
+      ol li {
+        padding-left: 0;
+      }
+      ul li {
+        padding-left: 0;
+      }
+      li > ol {
+        margin-left: 1.45rem;
+        margin-bottom: calc(1.45rem / 2);
+        margin-top: calc(1.45rem / 2);
+      }
+      li > ul {
+        margin-left: 1.45rem;
+        margin-bottom: calc(1.45rem / 2);
+        margin-top: calc(1.45rem / 2);
+      }
+      blockquote *:last-child {
+        margin-bottom: 0;
+      }
+      li *:last-child {
+        margin-bottom: 0;
+      }
+      p *:last-child {
+        margin-bottom: 0;
+      }
+      li > p {
+        margin-bottom: calc(1.45rem / 2);
+      }
+      code {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      kbd {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      samp {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      abbr {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+      }
+      acronym {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+      }
+      abbr[title] {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+        text-decoration: none;
+      }
+      thead {
+        text-align: left;
+      }
+      td,
+      th {
+        text-align: left;
+        border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
+        font-feature-settings: "tnum";
+        -moz-font-feature-settings: "tnum";
+        -ms-font-feature-settings: "tnum";
+        -webkit-font-feature-settings: "tnum";
+        padding-left: 0.96667rem;
+        padding-right: 0.96667rem;
+        padding-top: 0.725rem;
+        padding-bottom: calc(0.725rem - 1px);
+      }
+      th:first-child,
+      td:first-child {
+        padding-left: 0;
+      }
+      th:last-child,
+      td:last-child {
+        padding-right: 0;
+      }
+    </style>
+    <link
+      rel="apple-touch-icon"
+      sizes="96x96"
+      href="../icons/icon-96x96c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <title data-react-helmet="true"></title>
+    <style data-href="/styles.d86a406e5dede3da8914.css">
+      .container-wrapper {
+        text-align: center;
+        margin: auto;
+        width: 60%;
+        min-height: calc(100vh - 310px);
+        flex: 1 1;
+      }
+      .container-wrapper section {
+        padding: 3rem 1.5rem;
+      }
+      @media (max-width: 900px) {
+        .container-wrapper {
+          width: 90%;
+          min-height: calc(100vh - 360px);
+        }
+      }
+      @media (max-width: 600px) {
+        .container-wrapper {
+          width: 95%;
+        }
+      }
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #ccc;
+        font-size: 1em;
+        white-space: pre;
+        word-break: normal;
+      }
+      pre[class*="language-"] {
+        margin: 0.5em 0;
+      }
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #2d2d2d;
+      }
+      :not(pre) > code[class*="language-"] {
+        padding: 0.1em;
+        border-radius: 0.3em;
+        white-space: normal;
+      }
+      .token.block-comment,
+      .token.cdata,
+      .token.comment,
+      .token.doctype,
+      .token.prolog {
+        color: #999;
+      }
+      .token.punctuation {
+        color: #ccc;
+      }
+      .token.attr-name,
+      .token.deleted,
+      .token.namespace,
+      .token.tag {
+        color: #e2777a;
+      }
+      .token.function-name {
+        color: #6196cc;
+      }
+      .token.boolean,
+      .token.function,
+      .token.number {
+        color: #f08d49;
+      }
+      .token.class-name,
+      .token.constant,
+      .token.property,
+      .token.symbol {
+        color: #f8c555;
+      }
+      .token.atrule,
+      .token.builtin,
+      .token.important,
+      .token.keyword,
+      .token.selector {
+        color: #cc99cd;
+      }
+      .token.attr-value,
+      .token.char,
+      .token.regex,
+      .token.string,
+      .token.variable {
+        color: #7ec699;
+      }
+      .token.entity,
+      .token.operator,
+      .token.url {
+        color: #67cdcc;
+      }
+      .token.inserted {
+        color: green;
+      }
+      li > code,
+      p > code {
+        background: #131316;
+        word-break: normal;
+        padding: 0.4em 0.5em;
+        margin: 0.5em 0;
+        overflow: auto;
+        border-radius: 0.3em;
+      }
+      code[class*="language-"],
+      li > code,
+      p > code,
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+        text-align: left;
+        word-spacing: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+      code[class*="language-"],
+      pre[class*="language-"] {
+        background: none;
+        word-break: break-word;
+      }
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: 1.5rem 0;
+        overflow: auto;
+        border-radius: 0.3em;
+        background: #131316;
+      }
+      pre[class*="language-"]::-webkit-scrollbar-thumb {
+        background: #3498db;
+      }
+      pre[class*="language-"]::-webkit-scrollbar-track {
+        background: #4b4e57;
+      }
+      pre[class*="language-"]::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+      li > code[class*="language-"],
+      p > code[class*="language-"] {
+        border-radius: 0.3em;
+        background: rgba(52, 152, 219, 0.2);
+        color: #2e3246;
+        bottom: 2px;
+        position: relative;
+      }
+      img {
+        margin-bottom: 0;
+      }
+      .token.operator {
+        color: #bc78d7;
+      }
+      .token.cdata,
+      .token.comment,
+      .token.doctype,
+      .token.prolog {
+        color: #708090;
+      }
+      .token.punctuation {
+        color: #7ad7e2;
+      }
+      .namespace {
+        opacity: 0.7;
+      }
+      .token.constant,
+      .token.deleted,
+      .token.property,
+      .token.symbol,
+      .token.tag {
+        color: #ef514f;
+      }
+      .token.boolean,
+      .token.number {
+        color: #ae81ff;
+      }
+      .token.attr-name,
+      .token.builtin,
+      .token.char,
+      .token.inserted,
+      .token.selector,
+      .token.string {
+        color: #e5db89;
+      }
+      .language-css .token.string,
+      .style .token.string,
+      .token.entity,
+      .token.url,
+      .token.variable {
+        color: #f8f8f2;
+      }
+      .token.atrule,
+      .token.attr-value,
+      .token.class-name {
+        color: #e6db74;
+      }
+      .token.function {
+        color: #84c16a;
+      }
+      .token.keyword {
+        color: #6095ea;
+      }
+      .token.important,
+      .token.regex {
+        color: #fd971f;
+      }
+      .token.bold,
+      .token.important {
+        font-weight: 700;
+      }
+      .token.italic {
+        font-style: italic;
+      }
+      .token.entity {
+        cursor: help;
+      }
+      .table {
+        overflow: auto;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        margin: auto;
+      }
+      .gatsby-highlight pre[class*="language-"].line-numbers {
+        padding-left: 2.8em;
+      }
+      .gatsby-highlight {
+        border-radius: 0.3em;
+        margin: 0.5em 0;
+        padding: 1em;
+        overflow: auto;
+      }
+      .gatsby-highlight pre[class*="language-"].line-numbers {
+        padding: 0 0 0 2.8em;
+        overflow: initial;
+      }
+      .gatsby-highlight
+        pre[class*="language-"].line-numbers
+        span.line-numbers-rows {
+        width: 3em !important;
+      }
+      .language-asm,
+      .language-racket,
+      .language-text {
+        -webkit-margin-start: 15px;
+        margin-inline-start: 15px;
+        display: flex;
+      }
+      code.language-html,
+      code.language-javascript,
+      code.language-md,
+      code.language-ruby {
+        left: 15px;
+      }
+      section.wrapper div.gatsby-highlight,
+      section.wrapper div.tagsContainer {
+        padding: 0;
+      }
+      pre[class*="language-"].line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
+      }
+      pre[class*="language-"].line-numbers > code {
+        position: relative;
+        white-space: inherit;
+      }
+      .line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        font-size: 100%;
+        left: -3.8em;
+        width: 3em;
+        letter-spacing: -1px;
+        border-right: 1px solid #999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+      }
+      .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #999;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+      }
+      .content-wrapper li,
+      .content-wrapper p {
+        letter-spacing: -0.003em;
+        --baseline-multiplier: 0.179;
+        --x-height-multiplier: 0.35;
+        font-size: 1.15rem;
+        line-height: 2;
+      }
+      .content-wrapper li code {
+        padding: 0.2rem 0.5rem;
+        margin: 0.5rem 0;
+      }
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor) {
+        color: #000;
+        box-shadow: inset 0 -2px 0 #3498db;
+        border-bottom: 1px solid #3498db;
+        -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        text-decoration: none;
+      }
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):focus,
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):hover {
+        background: rgba(51, 68, 153, 0.53);
+        color: #000;
+      }
+      .wrapper h1 {
+        margin-top: 3rem;
+      }
+      .wrapper h2 {
+        margin-top: 1rem;
+      }
+      .wrapper h1,
+      .wrapper h2,
+      .wrapper h3,
+      .wrapper h4,
+      .wrapper h5,
+      .wrapper h6 {
+        display: inline-block;
+        position: relative;
+      }
+      .wrapper h1 a,
+      .wrapper h2 a,
+      .wrapper h3 a,
+      .wrapper h4 a,
+      .wrapper h5 a,
+      .wrapper h6 a {
+        box-shadow: none;
+        border-bottom: none;
+      }
+      .wrapper h1 a:focus,
+      .wrapper h1 a:hover,
+      .wrapper h2 a:focus,
+      .wrapper h2 a:hover,
+      .wrapper h3 a:focus,
+      .wrapper h3 a:hover,
+      .wrapper h4 a:focus,
+      .wrapper h4 a:hover,
+      .wrapper h5 a:focus,
+      .wrapper h5 a:hover,
+      .wrapper h6 a:focus,
+      .wrapper h6 a:hover {
+        background: none;
+      }
+      .wrapper:hover .anchor svg {
+        opacity: 0.8;
+      }
+      .footer-wrapper {
+        position: static;
+        height: 60px;
+        width: 100%;
+        justify-content: center;
+        bottom: 0;
+        box-shadow: 0 -3px 26px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(-45deg, #3e5fbc, #284187);
+        font-family: OpenSans, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+          Segoe UI Emoji, Segoe UI Symbol;
+        font-weight: 500;
+      }
+      .footer-text {
+        margin: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        color: #f0f0f0;
+      }
+      .footer-text a {
+        color: #62fdfe;
+        font-weight: 700;
+        margin: 0 15px;
+      }
+      .footer-text span {
+        color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-shadow: 0 0 0 #fff;
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 300;
+        src: local("Open Sans Light "), local("Open Sans-Light"),
+          url(../static/open-sans-latin-300-60c866748ff15f5b347fdba64596b1b1.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-300-521d17bc9f3526c690e8ada6eee55bec.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 300;
+        src: local("Open Sans Light italic"), local("Open Sans-Lightitalic"),
+          url(../static/open-sans-latin-300italic-06bbd3188b34820cd83a0e0b3d0a6f57.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-300italic-8a648ff38ded89ea15916e84529d62d3.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Open Sans Regular "), local("Open Sans-Regular"),
+          url(../static/open-sans-latin-400-cffb686d7d2f4682df8342bd4d276e09.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-400-bf2d0783515b7d75c35bde69e01b3135.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Open Sans Regular italic"), local("Open Sans-Regularitalic"),
+          url(../static/open-sans-latin-400italic-987032ea5d57c93d8da215678eae3b86.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-400italic-db70d0b9cb27ada1a260a2b35e756b8b.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 600;
+        src: local("Open Sans SemiBold "), local("Open Sans-SemiBold"),
+          url(../static/open-sans-latin-600-223a277bd88d8a90c8cdf24cda0ad5f5.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-600-1cd5320f8937d337b61d5117cf9d7b28.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 600;
+        src: local("Open Sans SemiBold italic"),
+          local("Open Sans-SemiBolditalic"),
+          url(../static/open-sans-latin-600italic-4950a7205f0b5cefe41fc03ac346e236.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-600italic-318ea1ada4102c0704a0637228dcad03.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 700;
+        src: local("Open Sans Bold "), local("Open Sans-Bold"),
+          url(../static/open-sans-latin-700-d08c09f2f169f4a6edbcf8b8d1636cb4.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-700-623e3205570002af47fc2b88f9335d19.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 700;
+        src: local("Open Sans Bold italic"), local("Open Sans-Bolditalic"),
+          url(../static/open-sans-latin-700italic-c02f5da6e82e1efe0b45841bfd49ce37.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-700italic-72e19cbb0e38c6773a7751156752cec4.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 800;
+        src: local("Open Sans ExtraBold "), local("Open Sans-ExtraBold"),
+          url(../static/open-sans-latin-800-aaeffaf205b9bbb09920089a14dbe9e8.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-800-c6aa0c4a601fb6ac66f8253fa594dff5.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 800;
+        src: local("Open Sans ExtraBold italic"),
+          local("Open Sans-ExtraBolditalic"),
+          url(../static/open-sans-latin-800italic-6b3973ffe02bb6a8be0f8453506ec032.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-800italic-79b58175343190550489efe46a7f1138.woff)
+            format("woff");
+      }
+      article {
+        padding: 3rem 1.5rem;
+      }
+      .bloglist-image {
+        margin: auto;
+        position: relative;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 0.4rem;
+        min-height: 300px;
+        flex-basis: 100%;
+        max-width: 100%;
+        width: 100%;
+      }
+      @media (max-width: 800px) {
+        .bloglist-image {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+          margin-bottom: 1.5rem;
+        }
+      }
+      @media (max-width: 500px) {
+        .bloglist-image {
+          min-height: 200px;
+        }
+      }
+      .bloglist-image img {
+        border-radius: 0.4rem;
+        height: 100%;
+        width: 100%;
+      }
+      .bloglist-image:hover {
+        box-shadow: 0 40px 45px rgba(0, 0, 0, 0.1);
+        -webkit-transform: scale(1.04);
+        transform: scale(1.04);
+      }
+      .bloglist-image a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 0.4rem;
+      }
+      .bloglist-image a > div,
+      .bloglist-image a > div > div {
+        position: static !important;
+      }
+      .bloglist-image a > div > div:focus {
+        outline: none;
+        box-shadow: 0 0 0 5px #284187;
+      }
+      .bloglist-information h1 {
+        display: inline-block;
+        color: #333438;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+      .bloglist-information h1:hover {
+        color: #3498db;
+      }
+      .bloglist-information {
+        text-align: center;
+        flex-basis: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        word-break: break-word;
+        width: 100%;
+      }
+      @media (max-width: 800px) {
+        .bloglist-information {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+      .bloglist-date {
+        margin-top: 1rem;
+        font-size: 12px;
+        color: #4b4e57;
+      }
+      .bloglist-title {
+        margin: 0;
+        font-size: 24px;
+      }
+      @font-face {
+        font-family: Candal;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Candal Regular "), local("Candal-Regular"),
+          url(../static/candal-latin-400-be36f832d599fa7c57c638a610ce6e2e.woff2)
+            format("woff2"),
+          url(../static/candal-latin-400-089f55042fcefeb66b9e98cdd0eb37ca.woff)
+            format("woff");
+      }
+      .header-wrapper {
+        -webkit-clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
+        clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
+        background: linear-gradient(45deg, #3e5fbc, #284187);
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+      }
+      @media (max-width: 600px) {
+        .header-wrapper {
+          -webkit-clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
+          clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
+        }
+      }
+      .header-text {
+        color: #fff;
+        z-index: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: inherit;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        max-width: 70rem;
+        margin-top: 3rem;
+        align-items: center;
+      }
+      .header-text h1 {
+        font-size: 28px;
+        margin: 20px 0 5px;
+        padding: 0 2rem;
+      }
+      .header-text h2 {
+        font-size: 22px;
+        padding: 0;
+        margin: 2.5px 0 5px;
+      }
+      .header-text h3 {
+        font-size: 20px;
+        margin: 2.5px 0;
+        padding: 0 2rem;
+      }
+      .header-text h4 {
+        font-size: 14px;
+        margin: 5px 0;
+        padding: 0 2rem;
+      }
+      .header-subtitle {
+        max-width: 650px;
+        color: #f0f0f0;
+        margin-top: 30px;
+        padding: 0 2rem;
+      }
+      .headroom-wrapper {
+        position: fixed;
+        height: 102px;
+        z-index: 2000;
+        top: 0;
+      }
+      .headroom {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100vw;
+        height: 2.5rem;
+      }
+      .headroom svg {
+        padding: 1rem 1.5rem;
+      }
+      .headroom svg g {
+        fill: #fff;
+      }
+      .headroom--unfixed {
+        position: relative;
+        padding-left: 15px;
+        padding-top: 15px;
+        justify-content: space-between;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .headroom--scrolled,
+      .headroom--unfixed {
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+      }
+      .headroom--unpinned {
+        padding-left: 15px;
+        padding-top: 15px;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+      }
+      .headroom--pinned,
+      .headroom--unpinned {
+        position: fixed;
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+      }
+      .headroom--pinned {
+        padding: 15px 0 15px 15px;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        background-color: #3e5fbc;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+      }
+      .headroom--pinned nav a {
+        color: #fff;
+      }
+      .headroom--pinned nav a:hover {
+        border-color: #333438;
+        color: #333438;
+      }
+      .headroom--pinned nav a:focus {
+        color: #333438;
+      }
+      .headroom--pinned svg {
+        height: 2.5rem;
+      }
+      .headroom---pinned svg g {
+        fill: #333438;
+      }
+      .headroom--pinned span {
+        color: #333438;
+      }
+      .postlist-wrapper {
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 100;
+        border-radius: 0.4rem;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 17rem;
+        flex-basis: calc(33.3% - 2.5rem);
+        max-width: calc(33.3% - 2.5rem);
+        width: calc(33.3% - 2.5rem);
+      }
+      .postlist-wrapper:hover {
+        box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
+        -webkit-transform: scale(1.04);
+        transform: scale(1.04);
+      }
+      @media (max-width: 1000px) {
+        .postlist-wrapper {
+          flex-basis: calc(49.95% - 1rem);
+          max-width: calc(49.95% - 1rem);
+          width: calc(49.95% - 1rem);
+          height: 18rem;
+        }
+      }
+      @media (max-width: 700px) {
+        .postlist-wrapper {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+          height: 15rem;
+        }
+      }
+      .postlist-styledLink {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        z-index: 3;
+        overflow: hidden;
+      }
+      .postlist-styledLink,
+      .postlist-styledLink:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0.4rem;
+      }
+      .postlist-styledLink:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(transparent),
+          color-stop(50%, rgba(0, 0, 0, 0.3)),
+          color-stop(80%, rgba(0, 0, 0, 0.7)),
+          to(rgba(0, 0, 0, 0.8))
+        );
+        background: linear-gradient(
+          180deg,
+          transparent 0,
+          rgba(0, 0, 0, 0.3) 50%,
+          rgba(0, 0, 0, 0.7) 80%,
+          rgba(0, 0, 0, 0.8)
+        );
+        z-index: -10;
+        -webkit-transition: opacity 0.4s;
+        transition: opacity 0.4s;
+      }
+      .postlist-image {
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 0.4rem;
+      }
+      .postlist-image img {
+        border-radius: 0.4rem;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+      }
+      .postlist-image img > div,
+      .postlist-image img > div > div {
+        position: static !important;
+      }
+      .postlist-info {
+        color: #f0f0f0;
+        margin: auto;
+        bottom: 0;
+        left: 0;
+      }
+      .postlist-info span {
+        font-size: 14px;
+      }
+      .postlist-title h2 {
+        margin: auto;
+        padding-top: 0.5rem;
+        text-align: center;
+        font-size: 26px;
+      }
+      .postlist-title h3 {
+        font-size: 20px;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .postlist-title span {
+        font-size: 16px;
+        display: flex;
+      }
+      .postlist-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .navbar-styledLink {
+        display: flex;
+        font-weight: 700;
+        align-items: center;
+      }
+      .navbar-nav {
+        display: flex;
+        flex-grow: 0.1;
+        padding-right: 15px;
+        justify-content: space-between;
+        font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+          Segoe UI Emoji, Segoe UI Symbol;
+        font-weight: 500;
+        font-size: 1.1rem;
+        align-self: center;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+      }
+      .navbar-nav a {
+        color: #fff;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        text-shadow: 1px 1px 5px #000, 2px 2px 1px #000;
+      }
+      .navbar-nav a:hover {
+        color: #f0f0f0;
+        font-weight: 700;
+      }
+      .tagsContainer {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .tagsContainer a {
+        margin: 0 1rem 1rem 0;
+        color: #2e3246;
+        padding: 0.3rem 0.6rem;
+        background: #cecece;
+        border-radius: 10px;
+      }
+      .tagsContainer a:hover {
+        color: #f0f0f0;
+        background: #3e5fbc;
+        border: #3e5fbc;
+      }
+      .tag-styledLink {
+        color: #f0f0f0;
+        padding: 5px 10px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+      }
+      .tag-styledLink:hover {
+        color: #2e3246;
+        background: #f0f0f0;
+      }
+      .tag-information {
+        text-align: center;
+      }
+      .tag-information h1 {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+      }
+      .post-suggestionBar {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100vw;
+      }
+      .post-postSuggestion {
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+      }
+      .post-postSuggestion a {
+        width: 100%;
+      }
+      .post-postSuggestion h3 {
+        font-size: inherit;
+      }
+      h3.prev-post {
+        text-align: left;
+      }
+      h3.next-post {
+        text-align: right;
+      }
+      button.next-post,
+      button.prev-post {
+        color: grey;
+        background-color: transparent;
+        border: none;
+      }
+      button.next-post:hover,
+      button.prev-post:hover {
+        color: #000;
+      }
+      :focus {
+        outline: none;
+      }
+      *,
+      :after,
+      :before {
+        box-sizing: inherit;
+      }
+      html {
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        -ms-overflow-style: scrollbar;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      a {
+        -webkit-transition: color 0.5s;
+        transition: color 0.5s;
+      }
+      a,
+      a:hover {
+        text-decoration: none;
+      }
+      h1 {
+        font-family: Candal, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+          Segoe UI Symbol;
+      }
+      table {
+        table-layout: fixed;
+        overflow: scroll;
+        width: auto !important;
+      }
+      td,
+      th {
+        padding: 10px !important;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+      }
+      .index-postWrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 4rem 4rem 1rem;
+      }
+      @media (max-width: 1000px) {
+        .index-postWrapper {
+          margin: 4rem 2rem 1rem;
+        }
+      }
+      @media (max-width: 700px) {
+        .index-postWrapper {
+          margin: 4rem 1rem 1rem;
+        }
+      }
+      .gatsby-image-wrapper {
+        height: 100%;
+      }
+      section.container-wrapper {
+        padding: 3rem 1.5rem;
+      }
+      section.wrapper {
+        min-height: calc(100vh - 300px);
+        height: 100%;
+      }
+      section.wrapper div {
+        padding: 3rem 1.5rem;
+      }
+    </style>
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml" />
+    <link
+      rel="shortcut icon"
+      href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <meta name="theme-color" content="#3e7bf2" />
+    <link
+      rel="apple-touch-icon"
+      sizes="48x48"
+      href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="../icons/icon-72x72c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <meta name="generator" content="Gatsby 2.3.25" />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../icons/icon-144x144c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="../icons/icon-192x192c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="256x256"
+      href="../icons/icon-256x256c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="384x384"
+      href="../icons/icon-384x384c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="512x512"
+      href="../icons/icon-512x512c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      as="script"
+      rel="preload"
+      href="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"
+    />
+    <link as="script" rel="preload" href="../1-6c82cfd6aba31a386fde.js" />
+    <link as="script" rel="preload" href="../app-63577178a3bdd725b6eb.js" />
+    <link as="script" rel="preload" href="../styles-aa92193d8aa2fe2f8548.js" />
+    <link
+      as="script"
+      rel="preload"
+      href="../webpack-runtime-fd7c0e3081b0f1218320.js"
+    />
+    <link
+      as="fetch"
+      rel="preload"
+      href="../static/d/349/path---intro-to-security-and-cryptography-a-36-936-gdUanO2zcSxT6N3mwsyDfqkV1Q.json"
+      crossorigin="use-credentials"
+    />
+  </head>
+  <body>
+    <noscript id="gatsby-noscript"
+      >This app works best with JavaScript enabled.</noscript
+    >
+    <div id="___gatsby">
+      <div style="outline: none" tabindex="-1" role="group">
+        <div>
+          <div class="headroom-wrapper">
+            <div class="headroom headroom--unfixed">
+              <a class="navbar-styledLink" href="../index.html"
+                ><img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAoCAYAAAB5ADPdAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAHsIAAB7CAF4JB2hAAABWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgpMwidZAAAHVklEQVRYCcWYW4iVVRSAZ7x1MbXybs7V0szMS5YymIGUIVQQGUEPvXSBIKnXjHoJevMpkKAeiiACKcGEIkenNOpBTTNSM3XUJkcdNUdLx3F0+r59/nX6xzMzzpyXFnyz73utvdba+z9aUVGmdHd3V8ZS6tNhCYyzj3JIjJVTFjcuZ7FrMOA1igZohhHwQWVl5V4No7xKe9BS1olQOFRNlCsoXoJqWAA32qZ/mAZRlnXoYWwyKFERcoXyJhY+Ax0wG0bCrXAYlsI34KGvwKCkHE/FmrlomgYt0JnTOpb6klx70NVQMOiFLHgADI/cAor76bn79GTm0UGHsF+jDBUMhSFZmQ/3vShvBz1jjmnMxKycTFkDyvBsrfvIdY3s0ygWe3tMoCtwNSu7LBkbjTKVXoDxcBb2we3QDTeAoa1gfme21n2E5f0/GfmTu0eSzCBvjydeDpNAZUfgW/DqG7KTMAH2wyYwz8Jr9ayvor0MXO/z4PoNGHYudNAukRJXxmTKWcx+G7w9JrI3y8fR+t+gJ34Fb+DH8Ak0QhPoMZ+H46CONjgP3lDLNzHsODooKj1sDykJH5P0kP2vgwaMgYWgolY4BTOgHuaBMhxqUq2iYj6lBjtfT54B37FFoIGGfiUoJU4p6cx5ySReDRdB9/smheyhotEa5aYapHLDY5j0rKd3rRdhCjhfOQ3fgWnzIg5o681bMZk5ScLyUbRuBhVq0PfwJOyAe+BuMHdC9IpoWIh7TAUvw4dwAPS6+WgY3V8JnYUWf69N9IjvX4yZE3rgH1Chmx4EN1XZbRCHsgyoJtFjTdABEe7mNFIwxNxSQmehxd/YNDpiwp90aJAn+g30zjow0U3uy6DE/Pxp9VYX6Mn54FgcwH7rzYTuDKHTKfm1NHNGMcFN0gQWeIqN4AbHQBkL7fAI+AyoQAM0zHViW7yd5pTh8kkx8fXc+Ky+gdI3zHcvfbgz/XZXDDPRrDDoIr/8Xn2T03eoCupARYbQvNL4MIZqMiZvmPu51ii0gN41f7zJlu7zGHqccxT2o9unI/RXJoPo0JjFFI/C/XAHXAKN0kDzwlxSkR5wncaF+7dQd9xrr4Gu9ZKYj14U5ykq1sNnwQi4h97/Bb7GuIIHaWjQKxRzoRYU3a83ZsIsCCUalU5E6Yb9icaJa8KTrvWAGrstq3uhJoFeXA9v+YF8kIonrINl4ONWDXPAyRrnqfWOm6pENNyQKGthK5h35qEXIYx2TRjlHq41dOozCnqyCtSjgeecYCXySDdPzPCj6obiAjfWEEulGcwFw7EaVoI3U/H2Kq41VM7RUNda2u9Bza/poH7DvxvG+sn2kVsDDeDAHtB6b1gNaJziKfMSxtmvUtt6x7Z1D3yt2K9Byik4AuZoPewAD7k2KcIwO98A3yNPcAGM+3wYD3mFbqJCD+B6lRwC10wDQ+P8MNR558G5jp0AdRyA02Cfa92jkWT/wifB302HKF+mcyHoMZO7FswPxfAZWhNeg1Rgn56x3QaOTQdFgxTnKSoODxkq6641tCa8/IgdGlkQDYt6lPStglZoh8ug+ApvhksZHZSK4z6CShdcTLXu7ibK9+FC1nYv1+4Ak7yH0Kehhbhjoaf2aUjvSbZgKV0HoROcfBL0nMncBIZI71jGO6SHxBAfgyfgXUj7U5oSjl9Cp+NJp8YAXYUH/FoPqUBZDhPBWzQSVK4htl+FaWDIRoAh8u3xVmmcbcPwEzwFW8E9nOPl8QaPwYhllEr85A7dBU8Vxtgts5T2EnDjyeBNbAE33AKH4U7wDYubqWfaQTGJ9ehc+AiqoRGOgh5vBg17GJSiMYVmFr40kn0DOYG3bSr486U+K5+j1Et1oNeU8IqbaoRvjgmsp3xE3cOwbYYzoCGK3nXvu9CV/iVtZ17cOMTNVOCX3bC6WE/9DvZVwSJQzDPFNXrGtgb4EFuGcY4vBp+EJqiFOvBZcK6fFv8RYT4VPZY3KjpNRnFzN5sBG0E5Ap66GsIzVJMSFS2AMEiPdoEH1HMrQDkG9uu55PW8QfQVb435hMHJYp+BA4zpGZN0JpyCVtAjXgDfF/PDR28cGD7bigltrtk+DPtAr3sQE35nVu5Cp89Dyf/O6N6ixATKWjrfAUPjrXIzQ+gjuBfWw/Og8howJCa641tBwxtBD80GD6HXjYAh06urMMp3i+K/0NGfcsKyKDnD3PBxUKkh+AO2s8HPlL4v71HMA0PxUFbqTZ8Cb+rTzD3BvAbqc8DbqqfN0S8Z84Gl6GkQY72LhvU+koxJecicF2AnrIN4wX+gvgk+A0PWpzDeI0r5iflEL/ZjffrdTIfGxQVwE+vR3kbdpB8FcQg9MRq+Yo9OFLt/zI/Sffy/iWjT7Cm9GuWUbJE3qVdhfDdKzS9DZd6pZAr488N8UlR+tVAd+N844cBXMBNjvFnK5+DV/hQ0xJvnz49dzCm5VYwNSPqM6/VWoxTd6Rl5lrkmsmE7CGvo96qncdr/j2DABAntGhT1csp/AQmuNkNaDuFXAAAAAElFTkSuQmCC"
+                  alt="Gatsby Logo"
+              /></a>
+              <nav class="navbar-nav">
+                <a href="../index.html">Home</a
+                ><a href="../blog/index.html">Tagged List</a>
+              </nav>
+            </div>
+          </div>
+          <div class="header-wrapper">
+            <div class="header-text">
+              <h1>
+                Lambda School: Introduction to Security &amp; Cryptography
+              </h1>
+              <h4>2018-07-30</h4>
+            </div>
+          </div>
+          <section class="wrapper">
+            <div>
+              <div class="content-wrapper">
+                <h3>Threat model</h3>
+                <p>
+                  What is the context of security that I'm facing, the
+                  application is facing, the user is facing?
+                </p>
+                <ol>
+                  <li>
+                    <p>
+                      Who are your adversaries - who do you trust and who do you
+                      not trust?
+                    </p>
+                    <ul>
+                      <li>
+                        You have to trust whatever cloud service(s) you're using
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Attack surface - what is exposed? What's most vulnerable to
+                    attack? What live services are you running, what ports do
+                    they have open, what are they doing?
+                  </li>
+                  <li>
+                    Attack vector - how can things be attacked? How do you take
+                    data in, how do you authenticate users?
+                  </li>
+                </ol>
+                <p>
+                  Thinking about adversaries, attack surface, and attack vector
+                  is how you build your threat model.
+                </p>
+                <h2>Common risks facing a user (Three categories):</h2>
+                <h3>Confidentiality/Privacy:</h3>
+                <p>
+                  Making sure that your information is only shown to the parties
+                  you want it to be shown to.
+                </p>
+                <h3>Integrity/Authenticity:</h3>
+                <p>
+                  Having the data or information be shown and given to others or
+                  received in an unaltered fashion.
+                </p>
+                <h3>Availability:</h3>
+                <p>
+                  Having the service be up and work/respond/have data (not
+                  losing data). Availability attacks are often forms of
+                  extortion.
+                </p>
+                <h3>Ransomware:</h3>
+                <p>
+                  Takes over your computer, takes your data, encrypts it so you
+                  can't get at it, and extorts you for it.
+                </p>
+                <h3>Man in the Middle Attack:</h3>
+                <p>
+                  Person intercepting communications between two people and at
+                  the very least listening in (violating confidentiality). Could
+                  change what one sends to the other, violating
+                  integrity/authenticity.
+                </p>
+                <h3>Denial of Service (Distributed Denial of Service/DDOS):</h3>
+                <p>
+                  Attacker has control of a botnet (group of compromised
+                  computers). No particular pattern to IP addresses, so can't
+                  mitigate DDOS easily. Content distribution networks help
+                  mitigate and scale DDOS attacks.
+                </p>
+                <h3>Malware/Backdoors:</h3>
+                <p>
+                  How you end up joining a botnet. Pretty much anyone with a
+                  computer is a target for these. There are also high value
+                  targets. As a developer, you're a mid-value target because if
+                  you can be compromised and they can use that compromise of you
+                  to further attack users of your applications.
+                </p>
+                <h2>Code Injection:</h2>
+                <p>Class of exploits. Don't blindly trust user input.</p>
+                <h3>Cross-site scripting:</h3>
+                <p>
+                  By putting user modified code on the webpage, they might be
+                  able to embed Javascript from their other place and use it to
+                  grab cookies, etc.
+                </p>
+                <h2>Buffer overflows</h2>
+                <p>
+                  If your program allows the user to potentially make something
+                  (a variable) that grows outside of the space you perscribe for
+                  it because you don't make specific guards for it, they could
+                  put code in that ends up in your C program and executing.
+                </p>
+                <h2>Rootkits</h2>
+                <p>
+                  How you end up in a botnet. This is what you get installed on
+                  your computer when you click that bad email, etc.
+                </p>
+                <h1>Defenses Against Attacks:</h1>
+                <p>Setting good passwords</p>
+                <ul>
+                  <li>
+                    Don't think about them as passwords, think of them as pass
+                    phrases
+                  </li>
+                  <li>
+                    One word, even if you mess with it, isn't hard for a
+                    computer to guess
+                  </li>
+                  <li>
+                    If you pick a pass phrase and even if every word in the
+                    phrase is a common word stuck together, it's difficult for a
+                    computer to crack
+                  </li>
+                  <li>
+                    Important to be random (your favorite quote is guessable)
+                  </li>
+                </ul>
+                <h2>Firewalls:</h2>
+                <p>
+                  Not as cool as on TV, but still important. Having the same
+                  policy for what services you have open to be implemented -
+                  what services and ports you allow requests to come in on and
+                  what you don't.
+                </p>
+                <h2>Sanitizing input:</h2>
+                <p>
+                  If it comes from a user, don't trust it. If possible, the code
+                  you run if you're interacting with a database should be
+                  prepared statements or something that is guaranteed to be safe
+                  on the database. Users will still do things that will affect
+                  what you put in the database, but they shouldn't be giving you
+                  anything that will affect the actual interaction with the
+                  database.
+                </p>
+                <h2>Isolation and Permissions:</h2>
+                <p>Use containers and the Content Security Policy.</p>
+                <p>
+                  The Content Security Policy allows you to specify what
+                  resources are allowed to interact or be loaded on your
+                  webpage. It's a way to mitigate cross-site scripting.
+                </p>
+                <p>
+                  Containers are like lightweight virtual machines that let you
+                  isolate different processes so they don't know about each
+                  other.
+                </p>
+                <p>Maybe something still gets attacked, but it knows less.</p>
+                <h2>Encryption:</h2>
+                <p>
+                  Important to encrypt your data. Can give confidentiality and
+                  integrity. Should be encrypted at REST (where it's saved in
+                  your database) and also encrypted in transit (going from Point
+                  A to Point B)
+                </p>
+                <h2>Defense in Depth:</h2>
+                <p>
+                  Practice where you do all of the above. Idea is you want to
+                  prevent attacks in as many levels and ways you can because
+                  they're going to happen and when they happen, you want to
+                  limit their damage.
+                </p>
+                <p>
+                  There will be flaws in your defenses, but if you have another
+                  layer of defense below that, you might still be okay.
+                </p>
+                <h1>XOR:</h1>
+                <p>
+                  Exclusive or. Only true when it's strictly A or B The way a
+                  lot of people view 'or' when they're using the word 'or'.
+                </p>
+                <h2>What makes XOR so important?</h2>
+                <p>Powers one-time pads.</p>
+                <p>
+                  Basically, the idea behind cryptography in general: Good
+                  cryptography comes down to good randomness.
+                </p>
+                <p>
+                  In principle, and has been done in practice for centuries, if
+                  two groups or people want to communicate securely and both
+                  have a shared secret beforehand they can agree on (same copy
+                  of a book word for word), they can use that as data to XOR
+                  with their message.
+                </p>
+                <p>
+                  If you guarantee that only these two people know the key, this
+                  sort of communication has perfect security.
+                </p>
+                <p>
+                  Pad has to be as long or longer than the message you're
+                  encrypting and you can't reuse the pad.
+                </p>
+                <p>
+                  If you're using the same pad, it's vulnerable to the Man in
+                  the Middle attack. 31:33
+                </p>
+                <h1>Cryptography</h1>
+                <h2>XOR Cipher</h2>
+                <p>Example of using XOR:</p>
+                <div class="gatsby-highlight" data-language="javascript">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-javascript line-numbers"
+                  ><code class="language-javascript">message <span class="token operator">=</span> <span class="token string">'foo'</span>
+
+pad <span class="token operator">=</span> <span class="token string">'bar'</span>
+
+cipher <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">ord</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token function">ord</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token keyword">for</span> a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token keyword">in</span> <span class="token function">zip</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> pad<span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+cipher
+<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">29</span><span class="token punctuation">]</span>
+
+ciphertext <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token function">chr</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token keyword">for</span> c <span class="token keyword">in</span> cipher<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+ciphertext
+<span class="token string">'\x04\x0e\x1d'</span>
+
+decrypted <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">ord</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token function">ord</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token keyword">for</span> a<span class="token punctuation">,</span> b <span class="token keyword">in</span> <span class="token function">zip</span><span class="token punctuation">(</span>ciphertext<span class="token punctuation">,</span> pad<span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+decrypted
+<span class="token punctuation">[</span><span class="token number">102</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">]</span>
+
+plaintext <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token function">chr</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token keyword">for</span> c <span class="token keyword">in</span> decrypted<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+plaintext
+<span class="token string">'foo'</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  The way cryptography works in general is not a lot different
+                  than this.
+                </p>
+                <h2>How does encryption work?</h2>
+                <p>
+                  We exchange keys and these keys are used as seeds for random
+                  number generators. A random number generator takes a little
+                  bit of something like a key and expands it into a lot more of
+                  psuedo-randomness that's supposed to still behave a lot like
+                  real randomness but was generated by this algorithm.
+                </p>
+                <p>
+                  After that, it's not just XOR, but XOR is at the heart of a
+                  lot of encryption. The secret and the quality of the
+                  encryption comes down to the quality of the randomness and
+                  it's like a one time pad.
+                </p>
+                <h2>Basic operations:</h2>
+                <h3>Hash functions:</h3>
+                <p>
+                  Take input and output a digest that looks like gobbledygook.
+                  The idea is that it should be a one-way function. A lot of
+                  package managers provide a hash to confirm that what they send
+                  and what you receive are the same.
+                </p>
+                <h3>Signing</h3>
+                <p>
+                  If you take the data you want to sign and then encrypt using
+                  your private key and attach it to the data as a certificate,
+                  the person who receives the signed data (the data plus the
+                  encrypted version of the hash) can take your public key and
+                  decrypt it. They independently calculate using the same hash
+                  function their version of the hash of the data and they see if
+                  the version they get from your signature equals that and then
+                  they know that the data is what you said it was and that
+                  you're who you say you are.
+                </p>
+                <h3>Encrypting</h3>
+                <p>
+                  If you generate a key and you have a secret message and then
+                  you generate a nonce and click encrypt, you get ciphertext.
+                </p>
+                <h3>Verifying</h3>
+                <h3>Decrypting</h3>
+                <p>
+                  If somebody else pastes in the ciphertext, key, and nonce, and
+                  decrypt, they get the secret message.
+                </p>
+                <p>
+                  Key stays the same and both members of the exchange have the
+                  key. Nonces are used once. You change them every time to make
+                  it harder for an attacker to track patterns and figure out
+                  what the secret key is.
+                </p>
+                <h2>Symmetric Cryptography:</h2>
+                <p>Both parties have the same key</p>
+                <h2>Asymmetric Cryptopgraphy:</h2>
+                <p>
+                  Whenever you generate a secret key, you also generate a public
+                  key. Generates ciphertext and a nonce, sends them to someone
+                  else Everyone needs to know the public key of the other
+                  participant
+                </p>
+                <h3>Public key infrastructure</h3>
+                <p>
+                  How your OS and browser knows what to trust and what not to.
+                  Certificate authorities are trusted to keep secure keys and
+                  use their secure keys to sign the keys they give to other
+                  people. Browsers and operating systems then put a list of the
+                  certificate authorities they trust into their products.
+                </p>
+                <p>
+                  No end-user setup. If you trust your vendor, pretty secure.
+                  Downside is centralization - if one certificate authority gets
+                  hacked, can be really bad.
+                </p>
+                <h3>Web of Trust:</h3>
+                <p>
+                  Idealized model for tools like GPG (open-source version of PGP
+                  - pretty good privacy). People make their own keypairs and
+                  manage their own keypairs, go to key signing parties and sign
+                  keys for their friends to verify keys come from their friends,
+                  etc.
+                </p>
+                <p>
+                  If you trust your friend's keys and you see them signing other
+                  keys, you trust those keys, etc.
+                </p>
+                <h3>Keybase:</h3>
+                <p>
+                  Tries to make key management and key signing parties more
+                  manageable. You post your proof that verifies you hold a
+                  public key on your social media
+                </p>
+                <h1>
+                  What do you need to know about cryptography as a developer?
+                </h1>
+                <ol>
+                  <li>
+                    <p>
+                      How to pick the right protocols, tools, parameters
+                      Complicated. Good start is
+                      <a
+                        href="http://www.daemonology.net/blog/2009-06-11-cryptographic-right-answers.html"
+                        >http://www.daemonology.net/blog/2009-06-11-cryptographic-right-answers.html</a
+                      >
+                      Don't need to understand or read all of it - a little
+                      outdated, but it's a good start
+                    </p>
+                    <p>
+                      TweetNaCl is a good tool that makes a lot of decisions for
+                      you.
+                    </p>
+                    <p>
+                      NIST provides recommendations for how long you should make
+                      your keys:
+                      <a href="https://www.keylength.com/en/4/"
+                        >https://www.keylength.com/en/4/</a
+                      >
+                    </p>
+                    <p>
+                      Don't build your own crypto unless you specialize and go
+                      into that area. Established crypto code is
+                      well-established
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Use OAuth integrated log-ins (OAuth2): Open standard for
+                      authorization and logging in Allows you to provide the
+                      login framework and rely on companies like Google,
+                      Facebook, Twitter, Amazon, Apple, etc. to maintain user
+                      accounts and handle password resets, etc. When you can use
+                      it, it's good to.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Personal security is important - keep your own secret
+                      safe. Turn on encryption on your local system Use pass
+                      phrases not passwords Use backups, encrypt them
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Use SSL It's free and easy (Let's Encrypt) There are
+                      packages that integrate with pretty much all frameworks
+                      and languages Trusted in browsers Use SSL for all
+                      production systems Production could mean internal systems
+                      that are on the open internet as well as something that
+                      users use
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Public-private key pairs to log into things Much better
+                      than pass phrases because it's longer than any pass phrase
+                      you're going to remember
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Two Factor/multi-factor authentication Gold standard is
+                      thing you know (pass phrase), thing you have (phone/fob),
+                      thing you are (fingerprint, face, etc.) Not really any
+                      common things that support all things Damage of losing
+                      your pass phrase is lessened when you have multiple
+                      methods of authentication
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Don't reuse the same passphrase for everything Have a few
+                      very good passphrases and use a password manager to
+                      maintain very long random passwords for everything else
+                    </p>
+                  </li>
+                  <li>
+                    <p>Check signatures when installing software</p>
+                  </li>
+                </ol>
+                <h2>Future of Software Security:</h2>
+                <p>
+                  Cryptocurrency built off the same cryptographic primitives -
+                  hash functions. Goal is different - not just two people
+                  passing messages, you're trying to create a decentralized
+                  global and usually public transaction ledger that's a list of
+                  numbers and time stamps. This list is something everyone knows
+                  and agrees on but no group owns it and can change it.
+                </p>
+                <p>
+                  Why does this matter? Money, the entirety of finance, is
+                  basically a list of transactions. To dencentralize that means
+                  we don't have to trust and pay for banks to be these entities
+                  that manage this and instead it's out there and people use it.
+                </p>
+                <p>
+                  Lots of things you can represent as a ledger of transactions:
+                  Tickets News stories Communication
+                </p>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">Public aspect of the ledger means you probably want to encrypt communication on it.</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre>
+                </div>
+                <h2>Newer cryptocurrencies:</h2>
+                <h3>Etherium</h3>
+                <ul>
+                  <li>
+                    More sophisticated scripting than bitcoin - can program
+                    logic into the things on the blockchain to create contracts
+                    enforced by conditional logic.
+                  </li>
+                  <li>
+                    Can be guaranteed that the agreement will be enforced but
+                    without having to trust a third party
+                  </li>
+                </ul>
+                <h3>Proof of Work:</h3>
+                <p>
+                  Most blockchains use that to provide an incentive for miners
+                  to actually run the code to make the crypto work and be
+                  trustworthy.
+                </p>
+                <h2>Quantum Cryptography:</h2>
+                <h3>
+                  The impact of quantum computation on regular cryptography.
+                </h3>
+                <p>
+                  If and when quantum computing gets powerful enough and big
+                  enough to work at a large enough scale to do things to attack
+                  the sides of cryptographic problems, hash functions are no
+                  longer so one-way.
+                </p>
+                <p>Not true for every hash function.</p>
+                <p>
+                  Post-quantum cryptography - trying to figure out what hash
+                  functions and schemes will survive a post-quantum world and
+                  what won't.
+                </p>
+                <p>
+                  Even when it comes, will be held by large organizations at
+                  first but the rest of us will want cryptography that still
+                  works.
+                </p>
+              </div>
+              <div class="tagsContainer">
+                <a href="../tags/security/index.html"><span>Security</span></a
+                ><a href="../tags/cryptography/index.html"
+                  ><span>Cryptography</span></a
+                >
+              </div>
+            </div>
+          </section>
+          <div class="post-suggestionBar">
+            <div class="post-postSuggestion">
+              <a href="../cs5-graphs-i/index.html"
+                ><button value="prev" aria-label="previous" class="prev-post">
+                  <h3 class="prev-post">
+                    &lt;&lt; Previous:<br />CS5: Graphs I<br />
+                  </h3></button
+              ></a>
+            </div>
+            <div class="post-postSuggestion">
+              <a href="../regex/index.html"
+                ><button value="next" aria-label="next" class="next-post">
+                  <h3 class="next-post">
+                    &gt;&gt; Next:<br />Regex<br />
+                  </h3></button
+              ></a>
+            </div>
+          </div>
+          <footer class="footer-wrapper">
+            <div class="footer-text">
+              <span
+                >Notes for Great Good    <span role="img" aria-label="pawprints"
+                  >🐾</span
+                ><a href="https://amyshackles.com/">Amy Shackles</a></span
+              >
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script id="gatsby-script-loader">
+      /*<![CDATA[*/ window.page = {
+        componentChunkName: "component---src-templates-post-jsx",
+        jsonName: "intro-to-security-and-cryptography-a36",
+        path: "/Intro-to-Security-and-Cryptography",
+      };
+      window.dataPath =
+        "349/path---intro-to-security-and-cryptography-a-36-936-gdUanO2zcSxT6N3mwsyDfqkV1Q"; /*]]>*/
+    </script>
+    <script id="gatsby-chunk-mapping">
+      /*<![CDATA[*/ window.___chunkMapping = {
+        app: ["/app-63577178a3bdd725b6eb.js"],
+        "component---src-pages-tags-jsx": [
+          "/component---src-pages-tags-jsx-e522a5598fa2964ee6de.js",
+        ],
+        "component---src-templates-tag-jsx": [
+          "/component---src-templates-tag-jsx-5f637c2edf65bf3f9f1c.js",
+        ],
+        "component---src-templates-post-jsx": [
+          "/component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js",
+        ],
+        "component---src-pages-404-jsx": [
+          "/component---src-pages-404-jsx-095f8c7d93b57e5a6681.js",
+        ],
+        "component---src-pages-blog-jsx": [
+          "/component---src-pages-blog-jsx-316bdf552f6880939952.js",
+        ],
+        "component---src-pages-index-jsx": [
+          "/component---src-pages-index-jsx-89fc494ceffadedf0b62.js",
+        ],
+        "pages-manifest": ["/pages-manifest-e0687b1a66911235678c.js"],
+      }; /*]]>*/
+    </script>
+    <script src="../webpack-runtime-fd7c0e3081b0f1218320.js" async=""></script>
+    <script src="../styles-aa92193d8aa2fe2f8548.js" async=""></script>
+    <script src="../app-63577178a3bdd725b6eb.js" async=""></script>
+    <script src="../1-6c82cfd6aba31a386fde.js" async=""></script>
+    <script
+      src="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"
+      async=""
+    ></script>
+  </body>
+  <!-- Mirrored from notes-for-great-good.netlify.app/intro-to-security-and-cryptography/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:37:21 GMT -->
+</html>

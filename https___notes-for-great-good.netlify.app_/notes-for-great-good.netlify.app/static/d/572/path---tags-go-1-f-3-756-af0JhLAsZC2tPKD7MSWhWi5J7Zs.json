@@ -1,0 +1,17 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/A-Tour-Of-Go",
+          "title": "A Tour Of Go",
+          "tags": ["Go"],
+          "subtitle": "Basics I & II",
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "Go"
+  }
+}

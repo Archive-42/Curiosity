@@ -1,0 +1,26 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Regex",
+          "title": "Regex",
+          "tags": ["regex", "theory of computation"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/State-Machines",
+          "title": "State Machines",
+          "tags": ["state machines", "theory of computation"],
+          "subtitle": null,
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "theory of computation"
+  }
+}

@@ -1,0 +1,2955 @@
+<!DOCTYPE html>
+<html>
+  <!-- Mirrored from notes-for-great-good.netlify.app/programming-foundations--algorithms/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:37:15 GMT -->
+  <!-- Added by HTTrack --><meta
+    http-equiv="content-type"
+    content="text/html;charset=UTF-8"
+  /><!-- /Added by HTTrack -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style id="typography.js">
+      html {
+        font-family: sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      main,
+      menu,
+      nav,
+      section,
+      summary {
+        display: block;
+      }
+      audio,
+      canvas,
+      progress,
+      video {
+        display: inline-block;
+      }
+      audio:not([controls]) {
+        display: none;
+        height: 0;
+      }
+      progress {
+        vertical-align: baseline;
+      }
+      [hidden],
+      template {
+        display: none;
+      }
+      a {
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+      }
+      a:active,
+      a:hover {
+        outline-width: 0;
+      }
+      abbr[title] {
+        border-bottom: none;
+        text-decoration: underline;
+        text-decoration: underline dotted;
+      }
+      b,
+      strong {
+        font-weight: inherit;
+        font-weight: bolder;
+      }
+      dfn {
+        font-style: italic;
+      }
+      h1 {
+        font-size: 2em;
+        margin: 0.67em 0;
+      }
+      mark {
+        background-color: #ff0;
+        color: #000;
+      }
+      small {
+        font-size: 80%;
+      }
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      sub {
+        bottom: -0.25em;
+      }
+      sup {
+        top: -0.5em;
+      }
+      img {
+        border-style: none;
+      }
+      svg:not(:root) {
+        overflow: hidden;
+      }
+      code,
+      kbd,
+      pre,
+      samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+      }
+      figure {
+        margin: 1em 40px;
+      }
+      hr {
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font: inherit;
+        margin: 0;
+      }
+      optgroup {
+        font-weight: 700;
+      }
+      button,
+      input {
+        overflow: visible;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      [type="reset"],
+      [type="submit"],
+      button,
+      html [type="button"] {
+        -webkit-appearance: button;
+      }
+      [type="button"]::-moz-focus-inner,
+      [type="reset"]::-moz-focus-inner,
+      [type="submit"]::-moz-focus-inner,
+      button::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+      [type="button"]:-moz-focusring,
+      [type="reset"]:-moz-focusring,
+      [type="submit"]:-moz-focusring,
+      button:-moz-focusring {
+        outline: 1px dotted ButtonText;
+      }
+      fieldset {
+        border: 1px solid silver;
+        margin: 0 2px;
+        padding: 0.35em 0.625em 0.75em;
+      }
+      legend {
+        box-sizing: border-box;
+        color: inherit;
+        display: table;
+        max-width: 100%;
+        padding: 0;
+        white-space: normal;
+      }
+      textarea {
+        overflow: auto;
+      }
+      [type="checkbox"],
+      [type="radio"] {
+        box-sizing: border-box;
+        padding: 0;
+      }
+      [type="number"]::-webkit-inner-spin-button,
+      [type="number"]::-webkit-outer-spin-button {
+        height: auto;
+      }
+      [type="search"] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+      [type="search"]::-webkit-search-cancel-button,
+      [type="search"]::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      ::-webkit-input-placeholder {
+        color: inherit;
+        opacity: 0.54;
+      }
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+      html {
+        font: 112.5%/1.45 "Open Sans", -apple-system, "BlinkMacSystemFont",
+          "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+        box-sizing: border-box;
+        overflow-y: scroll;
+      }
+      * {
+        box-sizing: inherit;
+      }
+      *:before {
+        box-sizing: inherit;
+      }
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        color: hsla(0, 0%, 0%, 0.8);
+        font-family: "Open Sans", -apple-system, "BlinkMacSystemFont",
+          "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: normal;
+        word-wrap: break-word;
+        font-kerning: normal;
+        -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+        -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+        -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+        font-feature-settings: "kern", "liga", "clig", "calt";
+      }
+      img {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      h1 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 2rem;
+        line-height: 1.1;
+      }
+      h2 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1.51572rem;
+        line-height: 1.1;
+      }
+      h3 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1.31951rem;
+        line-height: 1.1;
+      }
+      h4 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1rem;
+        line-height: 1.1;
+      }
+      h5 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 0.87055rem;
+        line-height: 1.1;
+      }
+      h6 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 0.81225rem;
+        line-height: 1.1;
+      }
+      hgroup {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      ul {
+        margin-left: 1.45rem;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        list-style-position: outside;
+        list-style-image: none;
+      }
+      ol {
+        margin-left: 1.45rem;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        list-style-position: outside;
+        list-style-image: none;
+      }
+      dl {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      dd {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      p {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      figure {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      pre {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      table {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        font-size: 1rem;
+        line-height: 1.45rem;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      fieldset {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      blockquote {
+        margin-left: 1.45rem;
+        margin-right: 1.45rem;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      form {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      noscript {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      iframe {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      hr {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: calc(1.45rem - 1px);
+        background: hsla(0, 0%, 0%, 0.2);
+        border: none;
+        height: 1px;
+      }
+      address {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      b {
+        font-weight: bold;
+      }
+      strong {
+        font-weight: bold;
+      }
+      dt {
+        font-weight: bold;
+      }
+      th {
+        font-weight: bold;
+      }
+      li {
+        margin-bottom: calc(1.45rem / 2);
+      }
+      ol li {
+        padding-left: 0;
+      }
+      ul li {
+        padding-left: 0;
+      }
+      li > ol {
+        margin-left: 1.45rem;
+        margin-bottom: calc(1.45rem / 2);
+        margin-top: calc(1.45rem / 2);
+      }
+      li > ul {
+        margin-left: 1.45rem;
+        margin-bottom: calc(1.45rem / 2);
+        margin-top: calc(1.45rem / 2);
+      }
+      blockquote *:last-child {
+        margin-bottom: 0;
+      }
+      li *:last-child {
+        margin-bottom: 0;
+      }
+      p *:last-child {
+        margin-bottom: 0;
+      }
+      li > p {
+        margin-bottom: calc(1.45rem / 2);
+      }
+      code {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      kbd {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      samp {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      abbr {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+      }
+      acronym {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+      }
+      abbr[title] {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+        text-decoration: none;
+      }
+      thead {
+        text-align: left;
+      }
+      td,
+      th {
+        text-align: left;
+        border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
+        font-feature-settings: "tnum";
+        -moz-font-feature-settings: "tnum";
+        -ms-font-feature-settings: "tnum";
+        -webkit-font-feature-settings: "tnum";
+        padding-left: 0.96667rem;
+        padding-right: 0.96667rem;
+        padding-top: 0.725rem;
+        padding-bottom: calc(0.725rem - 1px);
+      }
+      th:first-child,
+      td:first-child {
+        padding-left: 0;
+      }
+      th:last-child,
+      td:last-child {
+        padding-right: 0;
+      }
+    </style>
+    <link
+      rel="apple-touch-icon"
+      sizes="96x96"
+      href="../icons/icon-96x96c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <title data-react-helmet="true"></title>
+    <style data-href="/styles.d86a406e5dede3da8914.css">
+      .container-wrapper {
+        text-align: center;
+        margin: auto;
+        width: 60%;
+        min-height: calc(100vh - 310px);
+        flex: 1 1;
+      }
+      .container-wrapper section {
+        padding: 3rem 1.5rem;
+      }
+      @media (max-width: 900px) {
+        .container-wrapper {
+          width: 90%;
+          min-height: calc(100vh - 360px);
+        }
+      }
+      @media (max-width: 600px) {
+        .container-wrapper {
+          width: 95%;
+        }
+      }
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #ccc;
+        font-size: 1em;
+        white-space: pre;
+        word-break: normal;
+      }
+      pre[class*="language-"] {
+        margin: 0.5em 0;
+      }
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #2d2d2d;
+      }
+      :not(pre) > code[class*="language-"] {
+        padding: 0.1em;
+        border-radius: 0.3em;
+        white-space: normal;
+      }
+      .token.block-comment,
+      .token.cdata,
+      .token.comment,
+      .token.doctype,
+      .token.prolog {
+        color: #999;
+      }
+      .token.punctuation {
+        color: #ccc;
+      }
+      .token.attr-name,
+      .token.deleted,
+      .token.namespace,
+      .token.tag {
+        color: #e2777a;
+      }
+      .token.function-name {
+        color: #6196cc;
+      }
+      .token.boolean,
+      .token.function,
+      .token.number {
+        color: #f08d49;
+      }
+      .token.class-name,
+      .token.constant,
+      .token.property,
+      .token.symbol {
+        color: #f8c555;
+      }
+      .token.atrule,
+      .token.builtin,
+      .token.important,
+      .token.keyword,
+      .token.selector {
+        color: #cc99cd;
+      }
+      .token.attr-value,
+      .token.char,
+      .token.regex,
+      .token.string,
+      .token.variable {
+        color: #7ec699;
+      }
+      .token.entity,
+      .token.operator,
+      .token.url {
+        color: #67cdcc;
+      }
+      .token.inserted {
+        color: green;
+      }
+      li > code,
+      p > code {
+        background: #131316;
+        word-break: normal;
+        padding: 0.4em 0.5em;
+        margin: 0.5em 0;
+        overflow: auto;
+        border-radius: 0.3em;
+      }
+      code[class*="language-"],
+      li > code,
+      p > code,
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+        text-align: left;
+        word-spacing: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+      code[class*="language-"],
+      pre[class*="language-"] {
+        background: none;
+        word-break: break-word;
+      }
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: 1.5rem 0;
+        overflow: auto;
+        border-radius: 0.3em;
+        background: #131316;
+      }
+      pre[class*="language-"]::-webkit-scrollbar-thumb {
+        background: #3498db;
+      }
+      pre[class*="language-"]::-webkit-scrollbar-track {
+        background: #4b4e57;
+      }
+      pre[class*="language-"]::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+      li > code[class*="language-"],
+      p > code[class*="language-"] {
+        border-radius: 0.3em;
+        background: rgba(52, 152, 219, 0.2);
+        color: #2e3246;
+        bottom: 2px;
+        position: relative;
+      }
+      img {
+        margin-bottom: 0;
+      }
+      .token.operator {
+        color: #bc78d7;
+      }
+      .token.cdata,
+      .token.comment,
+      .token.doctype,
+      .token.prolog {
+        color: #708090;
+      }
+      .token.punctuation {
+        color: #7ad7e2;
+      }
+      .namespace {
+        opacity: 0.7;
+      }
+      .token.constant,
+      .token.deleted,
+      .token.property,
+      .token.symbol,
+      .token.tag {
+        color: #ef514f;
+      }
+      .token.boolean,
+      .token.number {
+        color: #ae81ff;
+      }
+      .token.attr-name,
+      .token.builtin,
+      .token.char,
+      .token.inserted,
+      .token.selector,
+      .token.string {
+        color: #e5db89;
+      }
+      .language-css .token.string,
+      .style .token.string,
+      .token.entity,
+      .token.url,
+      .token.variable {
+        color: #f8f8f2;
+      }
+      .token.atrule,
+      .token.attr-value,
+      .token.class-name {
+        color: #e6db74;
+      }
+      .token.function {
+        color: #84c16a;
+      }
+      .token.keyword {
+        color: #6095ea;
+      }
+      .token.important,
+      .token.regex {
+        color: #fd971f;
+      }
+      .token.bold,
+      .token.important {
+        font-weight: 700;
+      }
+      .token.italic {
+        font-style: italic;
+      }
+      .token.entity {
+        cursor: help;
+      }
+      .table {
+        overflow: auto;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        margin: auto;
+      }
+      .gatsby-highlight pre[class*="language-"].line-numbers {
+        padding-left: 2.8em;
+      }
+      .gatsby-highlight {
+        border-radius: 0.3em;
+        margin: 0.5em 0;
+        padding: 1em;
+        overflow: auto;
+      }
+      .gatsby-highlight pre[class*="language-"].line-numbers {
+        padding: 0 0 0 2.8em;
+        overflow: initial;
+      }
+      .gatsby-highlight
+        pre[class*="language-"].line-numbers
+        span.line-numbers-rows {
+        width: 3em !important;
+      }
+      .language-asm,
+      .language-racket,
+      .language-text {
+        -webkit-margin-start: 15px;
+        margin-inline-start: 15px;
+        display: flex;
+      }
+      code.language-html,
+      code.language-javascript,
+      code.language-md,
+      code.language-ruby {
+        left: 15px;
+      }
+      section.wrapper div.gatsby-highlight,
+      section.wrapper div.tagsContainer {
+        padding: 0;
+      }
+      pre[class*="language-"].line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
+      }
+      pre[class*="language-"].line-numbers > code {
+        position: relative;
+        white-space: inherit;
+      }
+      .line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        font-size: 100%;
+        left: -3.8em;
+        width: 3em;
+        letter-spacing: -1px;
+        border-right: 1px solid #999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+      }
+      .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #999;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+      }
+      .content-wrapper li,
+      .content-wrapper p {
+        letter-spacing: -0.003em;
+        --baseline-multiplier: 0.179;
+        --x-height-multiplier: 0.35;
+        font-size: 1.15rem;
+        line-height: 2;
+      }
+      .content-wrapper li code {
+        padding: 0.2rem 0.5rem;
+        margin: 0.5rem 0;
+      }
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor) {
+        color: #000;
+        box-shadow: inset 0 -2px 0 #3498db;
+        border-bottom: 1px solid #3498db;
+        -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        text-decoration: none;
+      }
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):focus,
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):hover {
+        background: rgba(51, 68, 153, 0.53);
+        color: #000;
+      }
+      .wrapper h1 {
+        margin-top: 3rem;
+      }
+      .wrapper h2 {
+        margin-top: 1rem;
+      }
+      .wrapper h1,
+      .wrapper h2,
+      .wrapper h3,
+      .wrapper h4,
+      .wrapper h5,
+      .wrapper h6 {
+        display: inline-block;
+        position: relative;
+      }
+      .wrapper h1 a,
+      .wrapper h2 a,
+      .wrapper h3 a,
+      .wrapper h4 a,
+      .wrapper h5 a,
+      .wrapper h6 a {
+        box-shadow: none;
+        border-bottom: none;
+      }
+      .wrapper h1 a:focus,
+      .wrapper h1 a:hover,
+      .wrapper h2 a:focus,
+      .wrapper h2 a:hover,
+      .wrapper h3 a:focus,
+      .wrapper h3 a:hover,
+      .wrapper h4 a:focus,
+      .wrapper h4 a:hover,
+      .wrapper h5 a:focus,
+      .wrapper h5 a:hover,
+      .wrapper h6 a:focus,
+      .wrapper h6 a:hover {
+        background: none;
+      }
+      .wrapper:hover .anchor svg {
+        opacity: 0.8;
+      }
+      .footer-wrapper {
+        position: static;
+        height: 60px;
+        width: 100%;
+        justify-content: center;
+        bottom: 0;
+        box-shadow: 0 -3px 26px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(-45deg, #3e5fbc, #284187);
+        font-family: OpenSans, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+          Segoe UI Emoji, Segoe UI Symbol;
+        font-weight: 500;
+      }
+      .footer-text {
+        margin: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        color: #f0f0f0;
+      }
+      .footer-text a {
+        color: #62fdfe;
+        font-weight: 700;
+        margin: 0 15px;
+      }
+      .footer-text span {
+        color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-shadow: 0 0 0 #fff;
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 300;
+        src: local("Open Sans Light "), local("Open Sans-Light"),
+          url(../static/open-sans-latin-300-60c866748ff15f5b347fdba64596b1b1.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-300-521d17bc9f3526c690e8ada6eee55bec.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 300;
+        src: local("Open Sans Light italic"), local("Open Sans-Lightitalic"),
+          url(../static/open-sans-latin-300italic-06bbd3188b34820cd83a0e0b3d0a6f57.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-300italic-8a648ff38ded89ea15916e84529d62d3.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Open Sans Regular "), local("Open Sans-Regular"),
+          url(../static/open-sans-latin-400-cffb686d7d2f4682df8342bd4d276e09.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-400-bf2d0783515b7d75c35bde69e01b3135.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Open Sans Regular italic"), local("Open Sans-Regularitalic"),
+          url(../static/open-sans-latin-400italic-987032ea5d57c93d8da215678eae3b86.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-400italic-db70d0b9cb27ada1a260a2b35e756b8b.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 600;
+        src: local("Open Sans SemiBold "), local("Open Sans-SemiBold"),
+          url(../static/open-sans-latin-600-223a277bd88d8a90c8cdf24cda0ad5f5.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-600-1cd5320f8937d337b61d5117cf9d7b28.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 600;
+        src: local("Open Sans SemiBold italic"),
+          local("Open Sans-SemiBolditalic"),
+          url(../static/open-sans-latin-600italic-4950a7205f0b5cefe41fc03ac346e236.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-600italic-318ea1ada4102c0704a0637228dcad03.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 700;
+        src: local("Open Sans Bold "), local("Open Sans-Bold"),
+          url(../static/open-sans-latin-700-d08c09f2f169f4a6edbcf8b8d1636cb4.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-700-623e3205570002af47fc2b88f9335d19.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 700;
+        src: local("Open Sans Bold italic"), local("Open Sans-Bolditalic"),
+          url(../static/open-sans-latin-700italic-c02f5da6e82e1efe0b45841bfd49ce37.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-700italic-72e19cbb0e38c6773a7751156752cec4.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 800;
+        src: local("Open Sans ExtraBold "), local("Open Sans-ExtraBold"),
+          url(../static/open-sans-latin-800-aaeffaf205b9bbb09920089a14dbe9e8.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-800-c6aa0c4a601fb6ac66f8253fa594dff5.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 800;
+        src: local("Open Sans ExtraBold italic"),
+          local("Open Sans-ExtraBolditalic"),
+          url(../static/open-sans-latin-800italic-6b3973ffe02bb6a8be0f8453506ec032.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-800italic-79b58175343190550489efe46a7f1138.woff)
+            format("woff");
+      }
+      article {
+        padding: 3rem 1.5rem;
+      }
+      .bloglist-image {
+        margin: auto;
+        position: relative;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 0.4rem;
+        min-height: 300px;
+        flex-basis: 100%;
+        max-width: 100%;
+        width: 100%;
+      }
+      @media (max-width: 800px) {
+        .bloglist-image {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+          margin-bottom: 1.5rem;
+        }
+      }
+      @media (max-width: 500px) {
+        .bloglist-image {
+          min-height: 200px;
+        }
+      }
+      .bloglist-image img {
+        border-radius: 0.4rem;
+        height: 100%;
+        width: 100%;
+      }
+      .bloglist-image:hover {
+        box-shadow: 0 40px 45px rgba(0, 0, 0, 0.1);
+        -webkit-transform: scale(1.04);
+        transform: scale(1.04);
+      }
+      .bloglist-image a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 0.4rem;
+      }
+      .bloglist-image a > div,
+      .bloglist-image a > div > div {
+        position: static !important;
+      }
+      .bloglist-image a > div > div:focus {
+        outline: none;
+        box-shadow: 0 0 0 5px #284187;
+      }
+      .bloglist-information h1 {
+        display: inline-block;
+        color: #333438;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+      .bloglist-information h1:hover {
+        color: #3498db;
+      }
+      .bloglist-information {
+        text-align: center;
+        flex-basis: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        word-break: break-word;
+        width: 100%;
+      }
+      @media (max-width: 800px) {
+        .bloglist-information {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+      .bloglist-date {
+        margin-top: 1rem;
+        font-size: 12px;
+        color: #4b4e57;
+      }
+      .bloglist-title {
+        margin: 0;
+        font-size: 24px;
+      }
+      @font-face {
+        font-family: Candal;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Candal Regular "), local("Candal-Regular"),
+          url(../static/candal-latin-400-be36f832d599fa7c57c638a610ce6e2e.woff2)
+            format("woff2"),
+          url(../static/candal-latin-400-089f55042fcefeb66b9e98cdd0eb37ca.woff)
+            format("woff");
+      }
+      .header-wrapper {
+        -webkit-clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
+        clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
+        background: linear-gradient(45deg, #3e5fbc, #284187);
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+      }
+      @media (max-width: 600px) {
+        .header-wrapper {
+          -webkit-clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
+          clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
+        }
+      }
+      .header-text {
+        color: #fff;
+        z-index: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: inherit;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        max-width: 70rem;
+        margin-top: 3rem;
+        align-items: center;
+      }
+      .header-text h1 {
+        font-size: 28px;
+        margin: 20px 0 5px;
+        padding: 0 2rem;
+      }
+      .header-text h2 {
+        font-size: 22px;
+        padding: 0;
+        margin: 2.5px 0 5px;
+      }
+      .header-text h3 {
+        font-size: 20px;
+        margin: 2.5px 0;
+        padding: 0 2rem;
+      }
+      .header-text h4 {
+        font-size: 14px;
+        margin: 5px 0;
+        padding: 0 2rem;
+      }
+      .header-subtitle {
+        max-width: 650px;
+        color: #f0f0f0;
+        margin-top: 30px;
+        padding: 0 2rem;
+      }
+      .headroom-wrapper {
+        position: fixed;
+        height: 102px;
+        z-index: 2000;
+        top: 0;
+      }
+      .headroom {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100vw;
+        height: 2.5rem;
+      }
+      .headroom svg {
+        padding: 1rem 1.5rem;
+      }
+      .headroom svg g {
+        fill: #fff;
+      }
+      .headroom--unfixed {
+        position: relative;
+        padding-left: 15px;
+        padding-top: 15px;
+        justify-content: space-between;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .headroom--scrolled,
+      .headroom--unfixed {
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+      }
+      .headroom--unpinned {
+        padding-left: 15px;
+        padding-top: 15px;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+      }
+      .headroom--pinned,
+      .headroom--unpinned {
+        position: fixed;
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+      }
+      .headroom--pinned {
+        padding: 15px 0 15px 15px;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        background-color: #3e5fbc;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+      }
+      .headroom--pinned nav a {
+        color: #fff;
+      }
+      .headroom--pinned nav a:hover {
+        border-color: #333438;
+        color: #333438;
+      }
+      .headroom--pinned nav a:focus {
+        color: #333438;
+      }
+      .headroom--pinned svg {
+        height: 2.5rem;
+      }
+      .headroom---pinned svg g {
+        fill: #333438;
+      }
+      .headroom--pinned span {
+        color: #333438;
+      }
+      .postlist-wrapper {
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 100;
+        border-radius: 0.4rem;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 17rem;
+        flex-basis: calc(33.3% - 2.5rem);
+        max-width: calc(33.3% - 2.5rem);
+        width: calc(33.3% - 2.5rem);
+      }
+      .postlist-wrapper:hover {
+        box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
+        -webkit-transform: scale(1.04);
+        transform: scale(1.04);
+      }
+      @media (max-width: 1000px) {
+        .postlist-wrapper {
+          flex-basis: calc(49.95% - 1rem);
+          max-width: calc(49.95% - 1rem);
+          width: calc(49.95% - 1rem);
+          height: 18rem;
+        }
+      }
+      @media (max-width: 700px) {
+        .postlist-wrapper {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+          height: 15rem;
+        }
+      }
+      .postlist-styledLink {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        z-index: 3;
+        overflow: hidden;
+      }
+      .postlist-styledLink,
+      .postlist-styledLink:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0.4rem;
+      }
+      .postlist-styledLink:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(transparent),
+          color-stop(50%, rgba(0, 0, 0, 0.3)),
+          color-stop(80%, rgba(0, 0, 0, 0.7)),
+          to(rgba(0, 0, 0, 0.8))
+        );
+        background: linear-gradient(
+          180deg,
+          transparent 0,
+          rgba(0, 0, 0, 0.3) 50%,
+          rgba(0, 0, 0, 0.7) 80%,
+          rgba(0, 0, 0, 0.8)
+        );
+        z-index: -10;
+        -webkit-transition: opacity 0.4s;
+        transition: opacity 0.4s;
+      }
+      .postlist-image {
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 0.4rem;
+      }
+      .postlist-image img {
+        border-radius: 0.4rem;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+      }
+      .postlist-image img > div,
+      .postlist-image img > div > div {
+        position: static !important;
+      }
+      .postlist-info {
+        color: #f0f0f0;
+        margin: auto;
+        bottom: 0;
+        left: 0;
+      }
+      .postlist-info span {
+        font-size: 14px;
+      }
+      .postlist-title h2 {
+        margin: auto;
+        padding-top: 0.5rem;
+        text-align: center;
+        font-size: 26px;
+      }
+      .postlist-title h3 {
+        font-size: 20px;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .postlist-title span {
+        font-size: 16px;
+        display: flex;
+      }
+      .postlist-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .navbar-styledLink {
+        display: flex;
+        font-weight: 700;
+        align-items: center;
+      }
+      .navbar-nav {
+        display: flex;
+        flex-grow: 0.1;
+        padding-right: 15px;
+        justify-content: space-between;
+        font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+          Segoe UI Emoji, Segoe UI Symbol;
+        font-weight: 500;
+        font-size: 1.1rem;
+        align-self: center;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+      }
+      .navbar-nav a {
+        color: #fff;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        text-shadow: 1px 1px 5px #000, 2px 2px 1px #000;
+      }
+      .navbar-nav a:hover {
+        color: #f0f0f0;
+        font-weight: 700;
+      }
+      .tagsContainer {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .tagsContainer a {
+        margin: 0 1rem 1rem 0;
+        color: #2e3246;
+        padding: 0.3rem 0.6rem;
+        background: #cecece;
+        border-radius: 10px;
+      }
+      .tagsContainer a:hover {
+        color: #f0f0f0;
+        background: #3e5fbc;
+        border: #3e5fbc;
+      }
+      .tag-styledLink {
+        color: #f0f0f0;
+        padding: 5px 10px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+      }
+      .tag-styledLink:hover {
+        color: #2e3246;
+        background: #f0f0f0;
+      }
+      .tag-information {
+        text-align: center;
+      }
+      .tag-information h1 {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+      }
+      .post-suggestionBar {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100vw;
+      }
+      .post-postSuggestion {
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+      }
+      .post-postSuggestion a {
+        width: 100%;
+      }
+      .post-postSuggestion h3 {
+        font-size: inherit;
+      }
+      h3.prev-post {
+        text-align: left;
+      }
+      h3.next-post {
+        text-align: right;
+      }
+      button.next-post,
+      button.prev-post {
+        color: grey;
+        background-color: transparent;
+        border: none;
+      }
+      button.next-post:hover,
+      button.prev-post:hover {
+        color: #000;
+      }
+      :focus {
+        outline: none;
+      }
+      *,
+      :after,
+      :before {
+        box-sizing: inherit;
+      }
+      html {
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        -ms-overflow-style: scrollbar;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      a {
+        -webkit-transition: color 0.5s;
+        transition: color 0.5s;
+      }
+      a,
+      a:hover {
+        text-decoration: none;
+      }
+      h1 {
+        font-family: Candal, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+          Segoe UI Symbol;
+      }
+      table {
+        table-layout: fixed;
+        overflow: scroll;
+        width: auto !important;
+      }
+      td,
+      th {
+        padding: 10px !important;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+      }
+      .index-postWrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 4rem 4rem 1rem;
+      }
+      @media (max-width: 1000px) {
+        .index-postWrapper {
+          margin: 4rem 2rem 1rem;
+        }
+      }
+      @media (max-width: 700px) {
+        .index-postWrapper {
+          margin: 4rem 1rem 1rem;
+        }
+      }
+      .gatsby-image-wrapper {
+        height: 100%;
+      }
+      section.container-wrapper {
+        padding: 3rem 1.5rem;
+      }
+      section.wrapper {
+        min-height: calc(100vh - 300px);
+        height: 100%;
+      }
+      section.wrapper div {
+        padding: 3rem 1.5rem;
+      }
+    </style>
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml" />
+    <link
+      rel="shortcut icon"
+      href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <meta name="theme-color" content="#3e7bf2" />
+    <link
+      rel="apple-touch-icon"
+      sizes="48x48"
+      href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="../icons/icon-72x72c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <meta name="generator" content="Gatsby 2.3.25" />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../icons/icon-144x144c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="../icons/icon-192x192c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="256x256"
+      href="../icons/icon-256x256c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="384x384"
+      href="../icons/icon-384x384c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="512x512"
+      href="../icons/icon-512x512c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      as="script"
+      rel="preload"
+      href="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"
+    />
+    <link as="script" rel="preload" href="../1-6c82cfd6aba31a386fde.js" />
+    <link as="script" rel="preload" href="../app-63577178a3bdd725b6eb.js" />
+    <link as="script" rel="preload" href="../styles-aa92193d8aa2fe2f8548.js" />
+    <link
+      as="script"
+      rel="preload"
+      href="../webpack-runtime-fd7c0e3081b0f1218320.js"
+    />
+    <link
+      as="fetch"
+      rel="preload"
+      href="../static/d/441/path---programming-foundations-algorithms-661-fa2-ABU3SgSJ9r8shRp9pHdB9GXmWBE.json"
+      crossorigin="use-credentials"
+    />
+  </head>
+  <body>
+    <noscript id="gatsby-noscript"
+      >This app works best with JavaScript enabled.</noscript
+    >
+    <div id="___gatsby">
+      <div style="outline: none" tabindex="-1" role="group">
+        <div>
+          <div class="headroom-wrapper">
+            <div class="headroom headroom--unfixed">
+              <a class="navbar-styledLink" href="../index.html"
+                ><img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAoCAYAAAB5ADPdAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAHsIAAB7CAF4JB2hAAABWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgpMwidZAAAHVklEQVRYCcWYW4iVVRSAZ7x1MbXybs7V0szMS5YymIGUIVQQGUEPvXSBIKnXjHoJevMpkKAeiiACKcGEIkenNOpBTTNSM3XUJkcdNUdLx3F0+r59/nX6xzMzzpyXFnyz73utvdba+z9aUVGmdHd3V8ZS6tNhCYyzj3JIjJVTFjcuZ7FrMOA1igZohhHwQWVl5V4No7xKe9BS1olQOFRNlCsoXoJqWAA32qZ/mAZRlnXoYWwyKFERcoXyJhY+Ax0wG0bCrXAYlsI34KGvwKCkHE/FmrlomgYt0JnTOpb6klx70NVQMOiFLHgADI/cAor76bn79GTm0UGHsF+jDBUMhSFZmQ/3vShvBz1jjmnMxKycTFkDyvBsrfvIdY3s0ygWe3tMoCtwNSu7LBkbjTKVXoDxcBb2we3QDTeAoa1gfme21n2E5f0/GfmTu0eSzCBvjydeDpNAZUfgW/DqG7KTMAH2wyYwz8Jr9ayvor0MXO/z4PoNGHYudNAukRJXxmTKWcx+G7w9JrI3y8fR+t+gJ34Fb+DH8Ak0QhPoMZ+H46CONjgP3lDLNzHsODooKj1sDykJH5P0kP2vgwaMgYWgolY4BTOgHuaBMhxqUq2iYj6lBjtfT54B37FFoIGGfiUoJU4p6cx5ySReDRdB9/smheyhotEa5aYapHLDY5j0rKd3rRdhCjhfOQ3fgWnzIg5o681bMZk5ScLyUbRuBhVq0PfwJOyAe+BuMHdC9IpoWIh7TAUvw4dwAPS6+WgY3V8JnYUWf69N9IjvX4yZE3rgH1Chmx4EN1XZbRCHsgyoJtFjTdABEe7mNFIwxNxSQmehxd/YNDpiwp90aJAn+g30zjow0U3uy6DE/Pxp9VYX6Mn54FgcwH7rzYTuDKHTKfm1NHNGMcFN0gQWeIqN4AbHQBkL7fAI+AyoQAM0zHViW7yd5pTh8kkx8fXc+Ky+gdI3zHcvfbgz/XZXDDPRrDDoIr/8Xn2T03eoCupARYbQvNL4MIZqMiZvmPu51ii0gN41f7zJlu7zGHqccxT2o9unI/RXJoPo0JjFFI/C/XAHXAKN0kDzwlxSkR5wncaF+7dQd9xrr4Gu9ZKYj14U5ykq1sNnwQi4h97/Bb7GuIIHaWjQKxRzoRYU3a83ZsIsCCUalU5E6Yb9icaJa8KTrvWAGrstq3uhJoFeXA9v+YF8kIonrINl4ONWDXPAyRrnqfWOm6pENNyQKGthK5h35qEXIYx2TRjlHq41dOozCnqyCtSjgeecYCXySDdPzPCj6obiAjfWEEulGcwFw7EaVoI3U/H2Kq41VM7RUNda2u9Bza/poH7DvxvG+sn2kVsDDeDAHtB6b1gNaJziKfMSxtmvUtt6x7Z1D3yt2K9Byik4AuZoPewAD7k2KcIwO98A3yNPcAGM+3wYD3mFbqJCD+B6lRwC10wDQ+P8MNR558G5jp0AdRyA02Cfa92jkWT/wifB302HKF+mcyHoMZO7FswPxfAZWhNeg1Rgn56x3QaOTQdFgxTnKSoODxkq6641tCa8/IgdGlkQDYt6lPStglZoh8ug+ApvhksZHZSK4z6CShdcTLXu7ibK9+FC1nYv1+4Ak7yH0Kehhbhjoaf2aUjvSbZgKV0HoROcfBL0nMncBIZI71jGO6SHxBAfgyfgXUj7U5oSjl9Cp+NJp8YAXYUH/FoPqUBZDhPBWzQSVK4htl+FaWDIRoAh8u3xVmmcbcPwEzwFW8E9nOPl8QaPwYhllEr85A7dBU8Vxtgts5T2EnDjyeBNbAE33AKH4U7wDYubqWfaQTGJ9ehc+AiqoRGOgh5vBg17GJSiMYVmFr40kn0DOYG3bSr486U+K5+j1Et1oNeU8IqbaoRvjgmsp3xE3cOwbYYzoCGK3nXvu9CV/iVtZ17cOMTNVOCX3bC6WE/9DvZVwSJQzDPFNXrGtgb4EFuGcY4vBp+EJqiFOvBZcK6fFv8RYT4VPZY3KjpNRnFzN5sBG0E5Ap66GsIzVJMSFS2AMEiPdoEH1HMrQDkG9uu55PW8QfQVb435hMHJYp+BA4zpGZN0JpyCVtAjXgDfF/PDR28cGD7bigltrtk+DPtAr3sQE35nVu5Cp89Dyf/O6N6ixATKWjrfAUPjrXIzQ+gjuBfWw/Og8howJCa641tBwxtBD80GD6HXjYAh06urMMp3i+K/0NGfcsKyKDnD3PBxUKkh+AO2s8HPlL4v71HMA0PxUFbqTZ8Cb+rTzD3BvAbqc8DbqqfN0S8Z84Gl6GkQY72LhvU+koxJecicF2AnrIN4wX+gvgk+A0PWpzDeI0r5iflEL/ZjffrdTIfGxQVwE+vR3kbdpB8FcQg9MRq+Yo9OFLt/zI/Sffy/iWjT7Cm9GuWUbJE3qVdhfDdKzS9DZd6pZAr488N8UlR+tVAd+N844cBXMBNjvFnK5+DV/hQ0xJvnz49dzCm5VYwNSPqM6/VWoxTd6Rl5lrkmsmE7CGvo96qncdr/j2DABAntGhT1csp/AQmuNkNaDuFXAAAAAElFTkSuQmCC"
+                  alt="Gatsby Logo"
+              /></a>
+              <nav class="navbar-nav">
+                <a href="../index.html">Home</a
+                ><a href="../blog/index.html">Tagged List</a>
+              </nav>
+            </div>
+          </div>
+          <div class="header-wrapper">
+            <div class="header-text">
+              <h1>Programming Foundations:</h1>
+              <h3>Algorithms</h3>
+              <h4>2018-11-21</h4>
+            </div>
+          </div>
+          <section class="wrapper">
+            <div>
+              <div class="content-wrapper">
+                <h2>Algorithm Characteristics:</h2>
+                <h3>Algorithm complexity</h3>
+                <p>
+                  <strong>Space complexity</strong> - How much memory does it
+                  require?
+                </p>
+                <p>
+                  <strong>Time complexity</strong> - How much time does it take
+                  to compute?
+                </p>
+                <p>
+                  <strong>Inputs and output</strong> - What does the algorithm
+                  accept? What does it return?
+                </p>
+                <p><strong>Classification</strong>:</p>
+                <ul>
+                  <li>serial (sequential)</li>
+                  <li>
+                    parallel (breaks dataset into pieces and works on them
+                    simultaneously)
+                  </li>
+                  <li>exact (produces a known predictable answer)</li>
+                  <li>
+                    approximate (tries to find answer that may or may not be
+                    exact)
+                  </li>
+                  <li>
+                    deterministic (executes each step with an exact decision)
+                  </li>
+                  <li>
+                    non-deterministic (attempts to get to solution through
+                    successive guesses that get better over time)
+                  </li>
+                </ul>
+                <h2>Common Algorithms</h2>
+                <p>
+                  <strong>Search</strong> - Find specific data in a structure
+                </p>
+                <p>
+                  <strong>Sorting</strong> - Take dataset and put it in order
+                </p>
+                <p>
+                  <strong>Computational algorithms</strong> - Given a set of
+                  data, calculate another (ex: is a given number prime?)
+                </p>
+                <p>
+                  <strong>Collection algorithms</strong> - Work with collections
+                  of data (count specific items, navigate among data elements,
+                  filter out unwanted data, etc.)
+                </p>
+                <h2>Euclid's Algorithm</h2>
+                <p>
+                  Find the greatest common denominator of two integers (largest
+                  integer that divides both with no remainder):
+                </p>
+                <p>
+                  Example: GCD of 20 and 8 is 4 (because 8 / 4 is 2 and 20 / 4
+                  is 5)
+                </p>
+                <ol>
+                  <li>For two integers a and b, where a > b, divide a by b</li>
+                  <li>If the remainder, r, is 0, then stop - GCD is b.</li>
+                  <li>
+                    Otherwise, set a to b, b to r, and repeat at step 1 until r
+                    is 0.
+                  </li>
+                </ol>
+                <p>
+                  GCD (20, 8) | a | b | r | |----|---|---| | 20 | 8 | 4 | | 8 |
+                  4 | 0 |
+                </p>
+                <p>
+                  Find the greatest common denominator of two numbers using
+                  Euclid's algorithm
+                </p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">def</span> <span class="token function">gcd</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>b <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        t <span class="token operator">=</span> a
+        a <span class="token operator">=</span> b
+        b <span class="token operator">=</span> t <span class="token operator">%</span> b
+
+    <span class="token keyword">return</span> a</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Try out the function with a few examples</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>gcd<span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">96</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">//</span> should be <span class="token number">12</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>gcd<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">//</span> should be <span class="token number">4</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre>
+                </div>
+                <h2>Understanding Algorithm Performance</h2>
+                <p>
+                  Measure how an algorithm responds to dataset size Big-O
+                  Notation:
+                </p>
+                <ul>
+                  <li>Classifies performance as the input size grows</li>
+                  <li>
+                    "O" indicates the order of operation: time scale to perform
+                    an operation Many algorithms and data structures have more
+                    than one O value
+                  </li>
+                  <li>
+                    Inserting data, searching for data, deleting data, etc.
+                  </li>
+                </ul>
+                <h2>Common Big-O Terms</h2>
+                <style type="text/css">
+                  .tg {
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                  }
+                  .tg td {
+                    font-family: Arial, sans-serif;
+                    font-size: 14px;
+                    padding: 10px 5px;
+                    border-style: solid;
+                    border-width: 1px;
+                    overflow: hidden;
+                    word-break: normal;
+                    border-color: black;
+                  }
+                  .tg th {
+                    font-family: Arial, sans-serif;
+                    font-size: 14px;
+                    font-weight: normal;
+                    padding: 10px 5px;
+                    border-style: solid;
+                    border-width: 1px;
+                    overflow: hidden;
+                    word-break: normal;
+                    border-color: black;
+                  }
+                  .tg .tg-0pky {
+                    border-color: inherit;
+                    text-align: left;
+                    vertical-align: top;
+                  }
+                  .tg .tg-0lax {
+                    text-align: left;
+                    vertical-align: top;
+                  }
+                </style>
+                <pre>
+<div class="table">
+<table class="tg">
+  <tr>
+    <th class="tg-0pky">Notation</th>
+    <th class="tg-0pky">Description</th>
+    <th class="tg-0lax">Example</th>
+  </tr>
+  <tr>
+    <td class="tg-0lax">O(1)</td>
+    <td class="tg-0lax">Constant Time</td>
+    <td class="tg-0lax">Looking up a single element in an array</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">O(log n)</td>
+    <td class="tg-0lax">Logarithmic</td>
+    <td class="tg-0lax">Finding an item in a sorted array with a binary search</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">O(n)</td>
+    <td class="tg-0lax">Linear time</td>
+    <td class="tg-0lax">Searching an unsorted array for a specific value</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">O(n log n)</td>
+    <td class="tg-0lax">Log-linear</td>
+    <td class="tg-0lax">Complex sorting algorithms like heap sort and merge sort</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">O(n^2)</td>
+    <td class="tg-0lax">Quadratic</td>
+    <td class="tg-0lax">Simple sorting algorithms, such as bubble sort, selection sort, and insertion sort</td>
+  </tr>
+</table>
+</div>
+</pre>
+                <h2>Data Structures</h2>
+                <p>
+                  Data structures are used to organize data so it can be
+                  processed
+                </p>
+                <h2>Common Data Structures</h2>
+                <ul>
+                  <li>Arrays</li>
+                  <li>Linked lists</li>
+                  <li>Stacks and queues</li>
+                  <li>Trees</li>
+                  <li>Hash tables</li>
+                </ul>
+                <h2>Arrays</h2>
+                <p>
+                  Collection of elements identified by index or key Linear set
+                  of values Element positions can be calculated using a
+                  mathematical expression
+                </p>
+                <ul>
+                  <li>
+                    Allows elements to be accessed in random access fashion
+                    Arrays in most languages start index at 0
+                  </li>
+                </ul>
+                <h2>Array Operations</h2>
+                <p>
+                  Calculate item index: O(1) Inserting or deleting item at
+                  beginning: O(n) Inserting or deleting item in middle: O(n)
+                  Inserting or deleting at the end: O(1)
+                </p>
+                <h2>Linked List</h2>
+                <p>
+                  Linear collection of data elements, called nodes Each node has
+                  a field that points at the next element in the list Each
+                  element can contain data application needs First item in list
+                  is called the head Last item has field that points to nothing
+                  to indicate it's the end of the list Each item only knows
+                  about the next element, unless doubly linked list
+                  Doubly-linked lists have references to previous and next
+                  Elements can be easily inserted and removed Underlying memory
+                  doesn't need to be reorganized Can't do constant-time random
+                  item access Item lookup is linear in time complexity
+                </p>
+                <h2>Linked list example</h2>
+                <p>The Node class</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Node</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>val <span class="token operator">=</span> val
+        self<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> <span class="token boolean">None</span>
+
+    <span class="token keyword">def</span> <span class="token function">get_data</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>val
+
+    <span class="token keyword">def</span> <span class="token function">set_data</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>val <span class="token operator">=</span> val
+
+    <span class="token keyword">def</span> <span class="token function">get_next</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span><span class="token builtin">next</span>
+
+    <span class="token keyword">def</span> <span class="token function">set_next</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token builtin">next</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span><span class="token builtin">next</span> <span class="token operator">=</span> <span class="token builtin">next</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>The Linked List class</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">LinkedList</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> head<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>head <span class="token operator">=</span> head
+        self<span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">def</span> <span class="token function">get_count</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>count
+
+    <span class="token keyword">def</span> <span class="token function">insert</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        new_node <span class="token operator">=</span> Node<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        new_node<span class="token punctuation">.</span>set_next<span class="token punctuation">(</span>self<span class="token punctuation">.</span>head<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>head <span class="token operator">=</span> new_node
+        self<span class="token punctuation">.</span>count <span class="token operator">+=</span> <span class="token number">1</span>
+
+    <span class="token keyword">def</span> <span class="token function">find</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        item <span class="token operator">=</span> self<span class="token punctuation">.</span>head
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>item <span class="token operator">!=</span> <span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> item<span class="token punctuation">.</span>get_data<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span><span class="token operator">=</span> val<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> item
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                item <span class="token operator">=</span> item<span class="token punctuation">.</span>get_next<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token boolean">None</span>
+
+    <span class="token keyword">def</span> <span class="token function">deleteAt</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> index <span class="token operator">></span> self<span class="token punctuation">.</span>count<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span>
+        <span class="token keyword">if</span> index <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>head <span class="token operator">=</span> self<span class="token punctuation">.</span>head<span class="token punctuation">.</span>get_next<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            tempIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            node <span class="token operator">=</span> self<span class="token punctuation">.</span>head
+            <span class="token keyword">while</span> tempIndex <span class="token operator">&lt;</span> index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                node <span class="token operator">=</span> node<span class="token punctuation">.</span>get_next<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                tempIndex <span class="token operator">+=</span> <span class="token number">1</span>
+            node<span class="token punctuation">.</span>set_next<span class="token punctuation">(</span>node<span class="token punctuation">.</span>get_next<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>get_next<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>count <span class="token operator">-=</span> <span class="token number">1</span>
+
+    <span class="token keyword">def</span> <span class="token function">dump_list</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        tempnode <span class="token operator">=</span> self<span class="token punctuation">.</span>head
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>tempnode <span class="token operator">!=</span> Node<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Node: "</span><span class="token punctuation">,</span> tempnode<span class="token punctuation">.</span>get_date<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Create a linked list and insert some items</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">itemlist <span class="token operator">=</span> LinkedList<span class="token punctuation">(</span><span class="token punctuation">)</span>
+itemlist<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">38</span><span class="token punctuation">)</span>
+itemlist<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">49</span><span class="token punctuation">)</span>
+itemlist<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">)</span>
+itemlist<span class="token punctuation">.</span>insert<span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span>
+itemlist<span class="token punctuation">.</span>dump_list<span class="token punctuation">(</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Exercise the list</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Item count: "</span><span class="token punctuation">,</span> itemlist<span class="token punctuation">.</span>get_count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Finding item: "</span><span class="token punctuation">,</span> itemlist<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Finding item: "</span><span class="token punctuation">,</span> itemlist<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token number">78</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Delete an item</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">itemlist<span class="token punctuation">.</span>deleteAt<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Item count: "</span><span class="token punctuation">,</span> itemlist<span class="token punctuation">.</span>get_count<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Finding item: "</span><span class="token punctuation">,</span> itemlist<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token number">38</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+itemlist<span class="token punctuation">.</span>dump_list<span class="token punctuation">(</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>Stacks and Queues</h2>
+                <p>
+                  <strong>Stack</strong> - collection that supports push and pop
+                  operations
+                </p>
+                <ul>
+                  <li>
+                    The last item pushed is the first one popped Pushing a value
+                    onto the stack is a constant time operation Removing from
+                    stack is also constant time
+                  </li>
+                </ul>
+                <p>
+                  <strong>Queue</strong> - collection that supports adding and
+                  removing
+                </p>
+                <ul>
+                  <li>First item added is the first item out</li>
+                </ul>
+                <h3>Practical Applications</h3>
+                <p><strong>Stack</strong></p>
+                <ul>
+                  <li>Expression processing (like Polish notation)</li>
+                  <li>Backtracking: browser and back button, for example</li>
+                </ul>
+                <p><strong>Queue</strong></p>
+                <ul>
+                  <li>Order processing</li>
+                  <li>Message processing</li>
+                </ul>
+                <h2>Stack Example</h2>
+                <p>Create a new empty list that we'll use as a stack</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre>
+                </div>
+                <p>Put items onto the stack</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+stack<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Print the stack contents</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre>
+                </div>
+                <p>Pop an item off the stack</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">x <span class="token operator">=</span> stack<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>stack<span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>Queue Example</h2>
+                <p>
+                  Python deque is optimized for adding and removing elements
+                  from both ends of the collection.
+                  <code class="language-text"
+                    >from collections import deque</code
+                  >
+                </p>
+                <p>
+                  Create an empty deque object that will function as a queue
+                </p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">queue <span class="token operator">=</span> deque<span class="token punctuation">(</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre>
+                </div>
+                <p>Add some items to the queue</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+queue<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Print the queue contents</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre>
+                </div>
+                <p>Pop an item off the front of the queue</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">x <span class="token operator">=</span> queue<span class="token punctuation">.</span>popleft<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>queue<span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>Hash Tables</h2>
+                <p>
+                  Form of associative array that maps keys to their associated
+                  values using hash function Hash function uses key to compute
+                  an index into the slots that are in the hash table and map the
+                  key to the value. Ideally, hash function will assign each key
+                  to a unique slot in the table where the values are stored. In
+                  reality, sometimes there are collisions where two separate
+                  keys map to the same slot in the table. In those cases, the
+                  hash table needs to have a way of resolving those collisions
+                  so the correct value is mapped to the correct key. Most
+                  languages and frameworks have hash table data structures
+                  figured out for you already
+                </p>
+                <h3>Advantages</h3>
+                <p>
+                  Key-to-value mappings are unique Hash tables are typically
+                  very fast
+                </p>
+                <h3>Drawbacks</h3>
+                <p>
+                  For small datasets, arrays are usually more efficient Hash
+                  tables don't order entries in a predictable way
+                </p>
+                <h2>Hash Table Example</h2>
+                <p>Create a hashtable all at once</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">items1 <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">"key1"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"key2"</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"key3"</span><span class="token punctuation">:</span> <span class="token string">"three"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>items1<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token punctuation">{</span><span class="token string">'key3'</span><span class="token punctuation">:</span> <span class="token string">'three'</span><span class="token punctuation">,</span> <span class="token string">'key2'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'key1'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre>
+                </div>
+                <p>Create a hashtable progressively</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">items2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+items2<span class="token punctuation">[</span><span class="token string">"key1"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+items2<span class="token punctuation">[</span><span class="token string">"key2"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span>
+items2<span class="token punctuation">[</span><span class="token string">"key3"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>items2<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token punctuation">{</span><span class="token string">'key3'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'key2'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'key1'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Try to access a nonexistant key</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>items1<span class="token punctuation">[</span><span class="token string">"key6"</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">//</span> Throws an exception</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre>
+                </div>
+                <p>Replace an item</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">items2<span class="token punctuation">[</span><span class="token string">"key2"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"two"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>items2<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token punctuation">{</span><span class="token string">'key3'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'key2'</span><span class="token punctuation">:</span> <span class="token string">'two'</span><span class="token punctuation">,</span> <span class="token string">'key1'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre>
+                </div>
+                <p>Iterate the keys and values in the dictionary</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> items2<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Key: "</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token string">" value: "</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+<span class="token comment"># ('Key: ', 'key3', ' value: ', 3)</span>
+<span class="token comment"># ('Key: ', 'key2', ' value: ', 'two')</span>
+<span class="token comment"># ('Key: ', 'key1', ' value: ', 1)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>Recursion</h2>
+                <p>
+                  Recursion is when a function calls itself
+
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/0fa1099cf2d776658d5fda4d9e157f11/fc977/Recursion.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 750px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 43.826405867970664%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABRElEQVQoz2WS607EIBCFef9n8gHUxMT4w/jHW9Y1bndL2bZQ7scZ2JKukp4wpfD1zDACNGLKyDkD/OTcxO8xRNjFFnHMa6xA8WLqeoqpnRUPnwMzkQma0jWUY+88DocTOhIfLgZihjYLDj9HnI4SwYf2IyG1w+2bhA+pgetHhgLWOig1QkpV4Dx4L0MdvTuCFQOpSniyfvPSYT8Y0lKha7p0aCGg7Ad0XU8A19a19ZjGGdOkMZJmktEGwvqIxy+F5+8z7j+GK5crUNNG1jY1XNyza66t957qGiBK3Wjseo2n/fnKYaBis/iQ4UuhOKWqLRgVUWt4CfHazbh7lyVOzSHBSGY2JbWJ53GCs+5fR6wSjztVIMp4dCO3RiBQLGvFHV2AJpA6zyU1Tnt1uO2GdRb97LAduaVRb9lQ8bk1tre8BfzVL/iXwS4J5cnkAAAAAElFTkSuQmCC');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Recursion"
+                          title=""
+                          src="../static/0fa1099cf2d776658d5fda4d9e157f11/26fb4/Recursion.png"
+                          srcset="
+                            /static/0fa1099cf2d776658d5fda4d9e157f11/f723e/Recursion.png  188w,
+                            /static/0fa1099cf2d776658d5fda4d9e157f11/d744b/Recursion.png  375w,
+                            /static/0fa1099cf2d776658d5fda4d9e157f11/26fb4/Recursion.png  750w,
+                            /static/0fa1099cf2d776658d5fda4d9e157f11/2a761/Recursion.png 1125w,
+                            /static/0fa1099cf2d776658d5fda4d9e157f11/10439/Recursion.png 1500w,
+                            /static/0fa1099cf2d776658d5fda4d9e157f11/fc977/Recursion.png 1636w
+                          "
+                          sizes="(max-width: 750px) 100vw, 750px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                </p>
+                <h3>Important things to remember:</h3>
+                <p>Recursive functions need to have a breaking condition</p>
+                <ul>
+                  <li>This prevents infinite loops and eventual crashes</li>
+                </ul>
+                <p>
+                  Each time the function is called, the old arguments are saved
+                </p>
+                <p>This is called the "call stack"</p>
+                <h2>Recursion Example</h2>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">function countdown(x) {
+    if (x == 0)
+        print(&quot;done!&quot;)
+        return
+    else
+        print(x, &quot;...&quot;)
+        countdown(x-1)
+}
+countdown(4)</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/313475121e5f9a386b9f82b8f29fdaca/b7ee0/Recursion-Example.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 731px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 105.1983584131327%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAYAAABG1c6oAAAACXBIWXMAAAsSAAALEgHS3X78AAAD2ElEQVQ4y41UW3MUZRCdv4dQ+mJheLEsCuVFIU/6P7QiWgikEIKaoCWUFISAikkKYa9hs0tg170Sdnfu99nZ2RxPf7ujxRtT1dUzX3efr29nNMMOUO8YOOhbaHRN1CmiGz0TL3gmNj9MECcpz+d+z3viZ9DHUH7zWANDw4N280kL76xs49TqU5y5XsS5nyo4v17B6WtFLK0WcHzlEcrtMbojG+99s4OTl5/go6sFfPZjBcsbVZxdK2HpylOcuLCL7/5oQKt3X+NWpY07ex1s1Qe4u9fG/f0e7tW6+K3axq+lFg51G6bt4bby6+IubfeedZTvVmOg/G5XOyg1B9BC3weOZkjDgDrDNAqBaQpMEp7Rlk0RhyGiIFR+SCdzoT0TXz5T8cMRQo8lT9MUSRQhTQgQx5jEkZI0iRmXKLBZNoPrehQftu1QXJimDV034fOi4WgMz/Nh8Fsz3ZDNN9F8ZePFwPpPXlLUGW1BNEHAAJ/iEdhjJg6BLdNCFEYEMhAS2DQIuMGhHFvZ4QCKOLNWxrn1Ks5v7OH09RI+4NmJr7fxd3OIWRIhCCIFJqACLqCTZMJMdcRRDNuyoTV6Q9XozWddPGy8wn02+0G9j639PhvfxZ3KPxhwKHEQwPcDBZSDSYYClGdqUmvSSGTpYgDUgY+jSaxEnaXzPgYEi+NkASrgoerrZJIyQwMJM5X+aoLu8kZBFydptOO4sCk6eyJaAtU0OagZByWS8T1bfB9xK9Q7B6zNp+cpQE8B23NANUlLaSlHBlMja4RJ+yKd/7WwptY2MBi70PCWT6F5iHe/fYz3Lxfw4fdlfLq+h+WbNXxyo8LhlXDswmN8ubkPrdgc4avNA9KmhdW/Wri208babhurj1q4yLOVzeekHcu3HDKph4eU3xt96i4e1Dr484DsqrxUtnKzD+1WsYWlS7s4+0MJy+Tw5z9X8cUvVXK6jI9vlHDq0jYKLa4Nl10YIuzI4pCMCpD484E6+khp3+Ha6OzTmH0ajHSle0Mdh4alZEAGvGZP3cWqCCukvw57LhOVHkdcG8OYD9SQxXa4jCGdXVt2LYRtkk6ui4BBYvMchyvjv7HMLkEt2hRDuFL6WFc2+VZTTtOpmrBof7Fv+c4l1EIrCcimGTOKaIvVQstuzmYzdYHYRGuWZanb5WZxkFtUFq5kYan3nMM+M5UgeReaCXcVQ6j9RawmDnIoJYjOgQVEguRdMpQKxJ6XLheKXSoQLisMod6UZUr6QvJElRorkW+hldjk9yUXSbn53ybvo8SMObw807de7IA/B8lWei6gAiiXSPZ5JXL2L3thCiECN8+zAAAAAElFTkSuQmCC');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Recursion-Example"
+                          title=""
+                          src="../static/313475121e5f9a386b9f82b8f29fdaca/b7ee0/Recursion-Example.png"
+                          srcset="
+                            /static/313475121e5f9a386b9f82b8f29fdaca/f723e/Recursion-Example.png 188w,
+                            /static/313475121e5f9a386b9f82b8f29fdaca/d744b/Recursion-Example.png 375w,
+                            /static/313475121e5f9a386b9f82b8f29fdaca/b7ee0/Recursion-Example.png 731w
+                          "
+                          sizes="(max-width: 731px) 100vw, 731px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                </p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">def</span> <span class="token function">countdown</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> x <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Done!"</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token string">"..."</span><span class="token punctuation">)</span>
+        countdown<span class="token punctuation">(</span>x<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span>
+
+countdown<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token comment"># 5 ...</span>
+<span class="token comment"># 4 ...</span>
+<span class="token comment"># 3 ...</span>
+<span class="token comment"># 2 ...</span>
+<span class="token comment"># 1 ...</span>
+<span class="token comment"># Done!</span>
+<span class="token comment"># foo</span>
+<span class="token comment"># foo</span>
+<span class="token comment"># foo</span>
+<span class="token comment"># foo</span>
+<span class="token comment"># foo</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token comment"># 2^4 = 2*2*2*2 = 16</span>
+<span class="token keyword">def</span> <span class="token function">power</span><span class="token punctuation">(</span>num<span class="token punctuation">,</span> pwr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> pwr <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> num <span class="token operator">*</span> power<span class="token punctuation">(</span>num<span class="token punctuation">,</span> pwr<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+
+<span class="token comment"># 5! = 5x4x3x2x1 = 20 but 0! = 1</span>
+<span class="token keyword">def</span> <span class="token function">factorial</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> num <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> num <span class="token operator">*</span> factorial<span class="token punctuation">(</span>num <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{} to the power of {} is {}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> power<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{} to the power of {} is {}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> power<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{}! is {}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> factorial<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"{}! is {}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> factorial<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token operator">/</span><span class="token operator">*</span>
+Console output<span class="token punctuation">:</span>
+<span class="token number">5</span> to the power of <span class="token number">3</span> <span class="token keyword">is</span> <span class="token number">125</span>
+<span class="token number">1</span> to the power of <span class="token number">5</span> <span class="token keyword">is</span> <span class="token number">1</span>
+<span class="token number">4</span>! <span class="token keyword">is</span> <span class="token number">24</span>
+<span class="token number">0</span>! <span class="token keyword">is</span> <span class="token number">1</span>
+<span class="token operator">*</span><span class="token operator">/</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h1>Sorting Data</h1>
+                <h2>Bubble Sort</h2>
+                <p>
+                  Bubble sort compares first two elements to each other to see
+                  which is larger.
+                </p>
+                <p>If the first item is larger than the second, swap</p>
+                <p>Keep swapping until element in correct place</p>
+                <p>Go to next index, repeat</p>
+                <p>Simple to understand and implement</p>
+                <p>Performance: O(n^2)</p>
+                <ul>
+                  <li>
+                    For loops inside for loops are usually n^2 Other sorting
+                    algorithms are generally much better
+                  </li>
+                </ul>
+                <p>Not considered a practical solution</p>
+                <h2>Bubble Sort Example</h2>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">def</span> <span class="token function">bubbleSort</span><span class="token punctuation">(</span>dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Start with the array length and decrement each time</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>dataset<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token operator">//</span> start<span class="token punctuation">,</span> stop<span class="token punctuation">,</span> step
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> dataset<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> dataset<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                temp <span class="token operator">=</span> dataset<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                dataset<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dataset<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
+                dataset<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp
+
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Current state: "</span><span class="token punctuation">,</span> dataset<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    list1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">]</span>
+    bubbleSort<span class="token punctuation">(</span>list1<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Result: "</span><span class="token punctuation">,</span> list1<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Output in console:</p>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">Current state: [6, 8, 19, 20, 23, 56, 41, 49, 53, 87]
+Current state: [6, 8, 19, 20, 23, 41, 49, 53, 56, 87]
+Current state: [6, 8, 19, 20, 23, 41, 49, 53, 56, 87]
+Current state: [6, 8, 19, 20, 23, 41, 49, 53, 56, 87]
+Current state: [6, 8, 19, 20, 23, 41, 49, 53, 56, 87]
+Current state: [6, 8, 19, 20, 23, 41, 49, 53, 56, 87]
+Current state: [6, 8, 19, 20, 23, 41, 49, 53, 56, 87]
+Current state: [6, 8, 19, 20, 23, 41, 49, 53, 56, 87]
+Current state: [6, 8, 19, 20, 23, 41, 49, 53, 56, 87]
+Result: [6, 8, 19, 20, 23, 41, 49, 53, 56, 87]</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>Merge Sort</h2>
+                <p>Divide and conquer algorithm</p>
+                <p>Breaks dataset into individual pieces and merges them</p>
+                <p>Uses recursion to operate on datasets</p>
+                <p>Performs well on large sets of data</p>
+                <p>In general has a performance of O(n log n)</p>
+                <h3>Steps</h3>
+                <p>
+                  Break arrays down into arrays of 1 element Go through and
+                  merge arrays together, maintaining sort
+                </p>
+                <h2>Merge Sort Example</h2>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span>dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>dataset<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span>
+        mid <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>dataset<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+        leftarr <span class="token operator">=</span> dataset<span class="token punctuation">[</span><span class="token punctuation">:</span>mid<span class="token punctuation">]</span>
+        rightarr <span class="token operator">=</span> dataset<span class="token punctuation">[</span>mid<span class="token punctuation">:</span><span class="token punctuation">]</span>
+
+        <span class="token comment"># Recursively break down the arrays</span>
+        mergesort<span class="token punctuation">(</span>leftarr<span class="token punctuation">)</span>
+        mergesort<span class="token punctuation">(</span>rightarr<span class="token punctuation">)</span>
+
+        <span class="token comment"># Perform the merges</span>
+        i <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment"># index into the left array</span>
+        j <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment"># index into the right array</span>
+        k <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment"># index into the merged array</span>
+
+        <span class="token comment"># While both arrays have content</span>
+        <span class="token keyword">while</span> i <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>lefarr<span class="token punctuation">)</span> <span class="token keyword">and</span> j <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>rightarr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> leftarr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> rightarr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                dataset<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> leftarr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+                i <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                dataset<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> rightarr<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                j <span class="token operator">+=</span> <span class="token number">1</span>
+            k <span class="token operator">+=</span> <span class="token number">1</span>
+
+        <span class="token keyword">while</span> i <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>leftarr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dataset<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> leftarr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
+            k <span class="token operator">+=</span> <span class="token number">1</span>
+
+        <span class="token keyword">while</span> j <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span>rightarr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            dataset<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> rightarr<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+            j <span class="token operator">+=</span> <span class="token number">1</span>
+            k <span class="token operator">+=</span> <span class="token number">1</span>
+
+<span class="token comment"># test the merge sort with data</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span>
+mergesort<span class="token punctuation">(</span>items<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Output:</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre>
+                </div>
+                <h2>Quicksort</h2>
+                <p>Divide and conquer algorithm</p>
+                <p>Also uses recursion</p>
+                <p>Generally performs better than merge sort, O(n log n)</p>
+                <p>Operates in place</p>
+                <p>Worst case is O(n^2) when data is mostly sorted already</p>
+                <h2>Procedure</h2>
+                <p>Start by picking a pivot position</p>
+                <p>
+                  Start by incrementing the lower index as long as it's lower
+                  than the upper index until you find a value larger than the
+                  pivot value
+                </p>
+                <p>
+                  On the right side, you increase until you find a value less
+                  than the pivot
+                </p>
+                <p>Swap element at lower index with element at upper index</p>
+                <p>When indexes meet, that's the split</p>
+                <p>
+                  Split into two arrays - one that's lower than the pivot and
+                  one that's larger than pivot
+                </p>
+                <h2>Quick Sort Example</h2>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">quickSort</span><span class="token punctuation">(</span>dataset<span class="token punctuation">,</span> first<span class="token punctuation">,</span> last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> first <span class="token operator">&lt;</span> last<span class="token punctuation">:</span>
+        <span class="token comment"># calculate the split point</span>
+        pivotIndex <span class="token operator">=</span> partition<span class="token punctuation">(</span>dataset<span class="token punctuation">,</span> first<span class="token punctuation">,</span> last<span class="token punctuation">)</span>
+
+        <span class="token comment"># now sort the two partitions</span>
+        quickSort<span class="token punctuation">(</span>dataset<span class="token punctuation">,</span> first<span class="token punctuation">,</span> pivotIndex<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        quickSort<span class="token punctuation">(</span>dataset<span class="token punctuation">,</span> pivotIndex<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> last<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">partition</span><span class="token punctuation">(</span>datavalues<span class="token punctuation">,</span> first<span class="token punctuation">,</span> last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># choose the first item as the pivot value</span>
+    pivotvalue <span class="token operator">=</span> datavalues<span class="token punctuation">[</span>first<span class="token punctuation">]</span>
+    <span class="token comment"># establish the upper and lower indexes</span>
+    lower <span class="token operator">=</span> first <span class="token operator">+</span> <span class="token number">1</span>
+    upper <span class="token operator">=</span> last
+
+    <span class="token comment"># start searching for the crossing point</span>
+    done <span class="token operator">=</span> <span class="token boolean">False</span>
+    <span class="token keyword">while</span> <span class="token keyword">not</span> done<span class="token punctuation">:</span>
+        <span class="token comment"># advance the lower index</span>
+        <span class="token keyword">while</span> lower <span class="token operator">&lt;=</span> upper <span class="token keyword">and</span> datavalues<span class="token punctuation">[</span>lower<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> pivotvalue<span class="token punctuation">:</span>
+            lower <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token comment"># advance the upper index</span>
+        <span class="token keyword">while</span> datavalues<span class="token punctuation">[</span>upper<span class="token punctuation">]</span> <span class="token operator">>=</span> pivotvalue <span class="token keyword">and</span> upper <span class="token operator">>=</span> lower<span class="token punctuation">:</span>
+            upper <span class="token operator">-=</span> <span class="token number">1</span>
+
+        <span class="token comment"># if the two indexes cross, we found the split point</span>
+        <span class="token keyword">if</span> upper <span class="token operator">&lt;</span> lower<span class="token punctuation">:</span>
+            done <span class="token operator">=</span> <span class="token boolean">True</span>
+        <span class="token comment"># otherwise, swap</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            temp <span class="token operator">=</span> datavalues<span class="token punctuation">[</span>lower<span class="token punctuation">]</span>
+            datavalues<span class="token punctuation">[</span>lower<span class="token punctuation">]</span> <span class="token operator">=</span> datavalues<span class="token punctuation">[</span>upper<span class="token punctuation">]</span>
+            datavalues<span class="token punctuation">[</span>upper<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+
+    <span class="token comment"># when the split point is found, exchange the pivot value</span>
+    temp <span class="token operator">=</span> datavalues<span class="token punctuation">[</span>first<span class="token punctuation">]</span>
+    datavalues<span class="token punctuation">[</span>first<span class="token punctuation">]</span> <span class="token operator">=</span> datavalues<span class="token punctuation">[</span>upper<span class="token punctuation">]</span>
+    datavalues<span class="token punctuation">[</span>upper<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+
+    <span class="token comment"># return the split point index</span>
+    <span class="token keyword">return</span> upper
+
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span>
+quickSort<span class="token punctuation">(</span>items<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Output:</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre>
+                </div>
+                <h2>Searching for data in an unordered list (Linear Search)</h2>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token comment"># declare a list of values to operate on</span>
+items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">find_item</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> itemlist<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>itemlist<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> item <span class="token operator">==</span> itemlist<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> i
+
+    <span class="token keyword">return</span> <span class="token boolean">None</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>find_item<span class="token punctuation">(</span><span class="token number">87</span><span class="token punctuation">,</span> items<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>find_item<span class="token punctuation">(</span><span class="token number">250</span><span class="token punctuation">,</span> items<span class="token punctuation">)</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>Searching an Ordered List (Binary Search)</h2>
+                <p>To perform binary search:</p>
+                <ul>
+                  <li>Calculate midpoint of list rounded down</li>
+                  <li>Check if value we're searching for is at the midpoint</li>
+                  <li>
+                    <p>If not:</p>
+                    <ul>
+                      <li>
+                        If number at midpoint is lower than the value searching
+                        for, can ignore indexes following it
+                      </li>
+                      <li>
+                        Advance upper index to midpoint, calculate new midpoint
+                      </li>
+                      <li>
+                        If number at midpoint is higher than the value searching
+                        for, can ignore indexes preceding it
+                      </li>
+                      <li>
+                        Advance lower index to midpoint, calculate new midpoint
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>Performance: O(log n)</p>
+                <h2>Example:</h2>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">binarysearch</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> itemlist<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># get the list size</span>
+    listsize <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>itemlist<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token comment"># start at the two ends of the list</span>
+    lowerIndex <span class="token operator">=</span> <span class="token number">0</span>
+    upperIndex <span class="token operator">=</span> listsize
+
+    <span class="token keyword">while</span> lowerIndex <span class="token operator">&lt;=</span> upperIndex<span class="token punctuation">:</span>
+        <span class="token comment"># calculate the midpoint</span>
+        midPoint <span class="token operator">=</span> <span class="token punctuation">(</span>lowerIndex <span class="token operator">+</span> upperIndex<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+
+        <span class="token comment"># if item found, return the index</span>
+        <span class="token keyword">if</span> itemList<span class="token punctuation">[</span>midPoint<span class="token punctuation">]</span> <span class="token operator">==</span> item<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> midPoint
+
+        <span class="token comment"># otherwise, calculate new midpoint</span>
+        <span class="token keyword">if</span> item <span class="token operator">></span> itemList<span class="token punctuation">[</span>midPoint<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            lowerIndex <span class="token operator">=</span> midPoint <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            upperIndex <span class="token operator">=</span> midPoint <span class="token operator">-</span> <span class="token number">1</span>
+
+    <span class="token keyword">if</span> lowerIndex <span class="token operator">></span> upperIndex<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">None</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>binarysearch<span class="token punctuation">(</span><span class="token number">23</span><span class="token punctuation">,</span> items<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>binarysearch<span class="token punctuation">(</span><span class="token number">87</span><span class="token punctuation">,</span> items<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>binarysearch<span class="token punctuation">(</span><span class="token number">250</span><span class="token punctuation">,</span> items<span class="token punctuation">)</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Output:</p>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">4
+9
+None</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>Example to determine if a list is sorted</h2>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python">items1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">]</span>
+items2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">is_sorted</span><span class="token punctuation">(</span>itemlis<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># using the brute force method</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>itemlist<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>itemlist<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> itemlist<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">False</span>
+
+    <span class="token keyword">return</span> <span class="token boolean">True</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>is_sorted<span class="token punctuation">(</span>items1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>is_sorted<span class="token punctuation">(</span>items2<span class="token punctuation">)</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Output:</p>
+                <div class="gatsby-highlight" data-language="text">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-text line-numbers"
+                  ><code class="language-text">True
+False</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre>
+                </div>
+                <h2>Python Comprehension version</h2>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token keyword">def</span> <span class="token function">is_sorted</span><span class="token punctuation">(</span>itemlist<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token builtin">all</span><span class="token punctuation">(</span>itemlis<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> itemlist<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>length<span class="token punctuation">(</span>itemlist<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre>
+                </div>
+                <h2>Filter with Hash Table Example O(n)</h2>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token comment"># define a set of items that we want to reduce duplicates</span>
+items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"apple"</span><span class="token punctuation">,</span> <span class="token string">"pear"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">,</span>
+<span class="token string">"banana"</span><span class="token punctuation">,</span> <span class="token string">"apple"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">,</span> <span class="token string">"apple"</span><span class="token punctuation">,</span>
+<span class="token string">"pear"</span><span class="token punctuation">,</span> <span class="token string">"banana"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">,</span> <span class="token string">"apple"</span><span class="token punctuation">,</span>
+<span class="token string">"kiwi"</span><span class="token punctuation">,</span> <span class="token string">"pear"</span><span class="token punctuation">,</span> <span class="token string">"apple"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">]</span>
+
+<span class="token comment"># createa  hashtable to perform a filter</span>
+<span class="token builtin">filter</span> <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># loop over each item and add to the hashtable</span>
+<span class="token keyword">for</span> key <span class="token keyword">in</span> items<span class="token punctuation">:</span>
+    <span class="token builtin">filter</span><span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token comment"># create a set from the resulting keys in the hashtable</span>
+result <span class="token operator">=</span> <span class="token builtin">set</span><span class="token punctuation">(</span><span class="token builtin">filter</span><span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <h2>Value Counting with Hash Table O(n)</h2>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token comment"># define a set of items that we want to count</span>
+items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"apple"</span><span class="token punctuation">,</span> <span class="token string">"pear"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">,</span>
+<span class="token string">"banana"</span><span class="token punctuation">,</span> <span class="token string">"apple"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">,</span> <span class="token string">"apple"</span><span class="token punctuation">,</span>
+<span class="token string">"pear"</span><span class="token punctuation">,</span> <span class="token string">"banana"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">,</span> <span class="token string">"apple"</span><span class="token punctuation">,</span>
+<span class="token string">"kiwi"</span><span class="token punctuation">,</span> <span class="token string">"pear"</span><span class="token punctuation">,</span> <span class="token string">"apple"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">]</span>
+
+<span class="token comment"># create a hashtable object to hold the items and counts</span>
+counter <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># iterate over each item and increment the count for each one</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> items<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>item <span class="token keyword">in</span> counter<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        coutner<span class="token punctuation">[</span>item<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        counter<span class="token punctuation">[</span>item<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+
+<span class="token comment"># print results</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+                <p>Output:</p>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token punctuation">{</span><span class="token string">'apple'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'pear'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'orange: 4, '</span>banana<span class="token string">': 2, '</span>kiwi'<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre>
+                </div>
+                <h2>Find maximum value with recursion</h2>
+                <div class="gatsby-highlight" data-language="python">
+                  <pre
+                    style="counter-reset: linenumber NaN"
+                    class="language-python line-numbers"
+                  ><code class="language-python"><span class="token comment"># declare a list of values to operate on</span>
+items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">87</span><span class="token punctuation">,</span> <span class="token number">41</span><span class="token punctuation">,</span> <span class="token number">49</span><span class="token punctuation">,</span> <span class="token number">53</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">find_max</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># breaking condition: last item in list? return it</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> items<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># otherwise get the first item and call function again</span>
+    <span class="token comment"># to operate on the rest of the list</span>
+    op1 <span class="token operator">=</span> items<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    op2 <span class="token operator">=</span> find_max<span class="token punctuation">(</span>items<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># perform the comparison when we're down to just two</span>
+    <span class="token keyword">if</span> op1 <span class="token operator">></span> op2<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> op1
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> op2
+
+
+<span class="token comment"># test the function</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>find_max<span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">87</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+                </div>
+              </div>
+              <div class="tagsContainer">
+                <a href="../tags/foundations/index.html"
+                  ><span>Foundations</span></a
+                ><a href="../tags/algorithms/index.html"
+                  ><span>Algorithms</span></a
+                ><a href="../tags/sorting/index.html"><span>Sorting</span></a>
+              </div>
+            </div>
+          </section>
+          <div class="post-suggestionBar">
+            <div class="post-postSuggestion">
+              <a href="../programming-foundations--coding-efficiency/index.html"
+                ><button value="prev" aria-label="previous" class="prev-post">
+                  <h3 class="prev-post">
+                    &lt;&lt; Previous:<br />Programming Foundations:<br />Coding
+                    Efficiency
+                  </h3>
+                </button></a
+              >
+            </div>
+            <div class="post-postSuggestion">
+              <a href="../programming-foundations--data-structures/index.html"
+                ><button value="next" aria-label="next" class="next-post">
+                  <h3 class="next-post">
+                    &gt;&gt; Next:<br />Programming Foundations:<br />Data
+                    Structures
+                  </h3>
+                </button></a
+              >
+            </div>
+          </div>
+          <footer class="footer-wrapper">
+            <div class="footer-text">
+              <span
+                >Notes for Great Good    <span role="img" aria-label="pawprints"
+                  >🐾</span
+                ><a href="https://amyshackles.com/">Amy Shackles</a></span
+              >
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script id="gatsby-script-loader">
+      /*<![CDATA[*/ window.page = {
+        componentChunkName: "component---src-templates-post-jsx",
+        jsonName: "programming-foundations-algorithms-661",
+        path: "/Programming-Foundations--Algorithms",
+      };
+      window.dataPath =
+        "441/path---programming-foundations-algorithms-661-fa2-ABU3SgSJ9r8shRp9pHdB9GXmWBE"; /*]]>*/
+    </script>
+    <script id="gatsby-chunk-mapping">
+      /*<![CDATA[*/ window.___chunkMapping = {
+        app: ["/app-63577178a3bdd725b6eb.js"],
+        "component---src-pages-tags-jsx": [
+          "/component---src-pages-tags-jsx-e522a5598fa2964ee6de.js",
+        ],
+        "component---src-templates-tag-jsx": [
+          "/component---src-templates-tag-jsx-5f637c2edf65bf3f9f1c.js",
+        ],
+        "component---src-templates-post-jsx": [
+          "/component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js",
+        ],
+        "component---src-pages-404-jsx": [
+          "/component---src-pages-404-jsx-095f8c7d93b57e5a6681.js",
+        ],
+        "component---src-pages-blog-jsx": [
+          "/component---src-pages-blog-jsx-316bdf552f6880939952.js",
+        ],
+        "component---src-pages-index-jsx": [
+          "/component---src-pages-index-jsx-89fc494ceffadedf0b62.js",
+        ],
+        "pages-manifest": ["/pages-manifest-e0687b1a66911235678c.js"],
+      }; /*]]>*/
+    </script>
+    <script src="../webpack-runtime-fd7c0e3081b0f1218320.js" async=""></script>
+    <script src="../styles-aa92193d8aa2fe2f8548.js" async=""></script>
+    <script src="../app-63577178a3bdd725b6eb.js" async=""></script>
+    <script src="../1-6c82cfd6aba31a386fde.js" async=""></script>
+    <script
+      src="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"
+      async=""
+    ></script>
+  </body>
+  <!-- Mirrored from notes-for-great-good.netlify.app/programming-foundations--algorithms/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:37:17 GMT -->
+</html>

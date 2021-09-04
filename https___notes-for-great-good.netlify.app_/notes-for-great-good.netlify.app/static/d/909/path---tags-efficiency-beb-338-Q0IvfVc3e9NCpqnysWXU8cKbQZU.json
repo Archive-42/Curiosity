@@ -1,0 +1,17 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Programming-Foundations--Coding-Efficiency",
+          "title": "Programming Foundations:",
+          "tags": ["foundations", "efficiency"],
+          "subtitle": "Coding Efficiency",
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "efficiency"
+  }
+}

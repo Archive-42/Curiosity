@@ -1,0 +1,62 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/CS5-Docker",
+          "title": "CS5: Docker",
+          "tags": ["CS5", "docker", "DevOps"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS5-Heroku",
+          "title": "CS5: Heroku",
+          "tags": ["CS5", "Heroku", "DevOps"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS5-Netlify",
+          "title": "CS5: Netlify",
+          "tags": ["CS5", "Netlify", "DevOps"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS5-Ngrok",
+          "title": "CS5: Ngrok",
+          "tags": ["CS5", "Ngrok", "DevOps"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS5-Solution-GCP-Docker",
+          "title": "CS5: Google Cloud Platform + Docker",
+          "tags": ["CS5", "docker", "DevOps", "Google Cloud Platform"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/DevOps-Deployment-Mini-Sprint",
+          "title": "DevOps:",
+          "tags": ["DevOps"],
+          "subtitle": "Deployment Mini Sprint",
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "DevOps"
+  }
+}

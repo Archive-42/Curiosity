@@ -1,0 +1,22 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Four",
+          "title": "Algorithm Design Manual:",
+          "tags": [
+            "algorithms",
+            "sorting",
+            "searching",
+            "Algorithm Design Manual"
+          ],
+          "subtitle": "Sorting and Searching",
+          "chapter": "Chapter Four"
+        }
+      }
+    ],
+    "tagName": "searching"
+  }
+}

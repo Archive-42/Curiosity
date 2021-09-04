@@ -1,0 +1,26 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/CS8-Operating-Systems-I",
+          "title": "CS8: Operating Systems I",
+          "tags": ["CS8", "operating systems"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Operating-Systems",
+          "title": "Operating Systems",
+          "tags": ["operating systems"],
+          "subtitle": null,
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "operating systems"
+  }
+}

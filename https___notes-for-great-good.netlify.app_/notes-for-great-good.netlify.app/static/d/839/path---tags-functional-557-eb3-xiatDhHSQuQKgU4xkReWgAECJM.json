@@ -1,0 +1,24 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/4-Programming-Paradigms",
+          "title": "4 Programming Paradigms in 40 Minutes",
+          "tags": [
+            "languages",
+            "programming",
+            "object-oriented",
+            "functional",
+            "logic/constraint",
+            "procedural"
+          ],
+          "subtitle": null,
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "functional"
+  }
+}

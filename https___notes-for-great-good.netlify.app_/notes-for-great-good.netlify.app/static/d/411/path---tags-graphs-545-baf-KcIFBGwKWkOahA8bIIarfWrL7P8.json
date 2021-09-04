@@ -1,0 +1,35 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/CS5-Graphs-I",
+          "title": "CS5: Graphs I",
+          "tags": ["CS5", "graphs"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Five",
+          "title": "Algorithm Design Manual:",
+          "tags": ["algorithms", "graphs", "Algorithm Design Manual"],
+          "subtitle": "Graph Traversal",
+          "chapter": "Chapter Five"
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Six",
+          "title": "Algorithm Design Manual:",
+          "tags": ["algorithms", "graphs", "Algorithm Design Manual"],
+          "subtitle": "Weighted Graph Algorithms",
+          "chapter": "Chapter Six"
+        }
+      }
+    ],
+    "tagName": "graphs"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Intro-to-Computer-Architecture",
+          "title": "Introduction to Computer Architecture",
+          "tags": ["computer architecture"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Computer-Architecture-Subroutines",
+          "title": "Computer Architecture: Subroutines",
+          "tags": ["computer architecture", "subroutines"],
+          "subtitle": null,
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "computer architecture"
+  }
+}

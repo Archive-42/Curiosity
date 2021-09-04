@@ -1,0 +1,2900 @@
+<!DOCTYPE html>
+<html>
+  <!-- Mirrored from notes-for-great-good.netlify.app/computer-science-distilled-chapter-i-continued/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:36:46 GMT -->
+  <!-- Added by HTTrack --><meta
+    http-equiv="content-type"
+    content="text/html;charset=UTF-8"
+  /><!-- /Added by HTTrack -->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style id="typography.js">
+      html {
+        font-family: sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      main,
+      menu,
+      nav,
+      section,
+      summary {
+        display: block;
+      }
+      audio,
+      canvas,
+      progress,
+      video {
+        display: inline-block;
+      }
+      audio:not([controls]) {
+        display: none;
+        height: 0;
+      }
+      progress {
+        vertical-align: baseline;
+      }
+      [hidden],
+      template {
+        display: none;
+      }
+      a {
+        background-color: transparent;
+        -webkit-text-decoration-skip: objects;
+      }
+      a:active,
+      a:hover {
+        outline-width: 0;
+      }
+      abbr[title] {
+        border-bottom: none;
+        text-decoration: underline;
+        text-decoration: underline dotted;
+      }
+      b,
+      strong {
+        font-weight: inherit;
+        font-weight: bolder;
+      }
+      dfn {
+        font-style: italic;
+      }
+      h1 {
+        font-size: 2em;
+        margin: 0.67em 0;
+      }
+      mark {
+        background-color: #ff0;
+        color: #000;
+      }
+      small {
+        font-size: 80%;
+      }
+      sub,
+      sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+      sub {
+        bottom: -0.25em;
+      }
+      sup {
+        top: -0.5em;
+      }
+      img {
+        border-style: none;
+      }
+      svg:not(:root) {
+        overflow: hidden;
+      }
+      code,
+      kbd,
+      pre,
+      samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+      }
+      figure {
+        margin: 1em 40px;
+      }
+      hr {
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible;
+      }
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font: inherit;
+        margin: 0;
+      }
+      optgroup {
+        font-weight: 700;
+      }
+      button,
+      input {
+        overflow: visible;
+      }
+      button,
+      select {
+        text-transform: none;
+      }
+      [type="reset"],
+      [type="submit"],
+      button,
+      html [type="button"] {
+        -webkit-appearance: button;
+      }
+      [type="button"]::-moz-focus-inner,
+      [type="reset"]::-moz-focus-inner,
+      [type="submit"]::-moz-focus-inner,
+      button::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+      [type="button"]:-moz-focusring,
+      [type="reset"]:-moz-focusring,
+      [type="submit"]:-moz-focusring,
+      button:-moz-focusring {
+        outline: 1px dotted ButtonText;
+      }
+      fieldset {
+        border: 1px solid silver;
+        margin: 0 2px;
+        padding: 0.35em 0.625em 0.75em;
+      }
+      legend {
+        box-sizing: border-box;
+        color: inherit;
+        display: table;
+        max-width: 100%;
+        padding: 0;
+        white-space: normal;
+      }
+      textarea {
+        overflow: auto;
+      }
+      [type="checkbox"],
+      [type="radio"] {
+        box-sizing: border-box;
+        padding: 0;
+      }
+      [type="number"]::-webkit-inner-spin-button,
+      [type="number"]::-webkit-outer-spin-button {
+        height: auto;
+      }
+      [type="search"] {
+        -webkit-appearance: textfield;
+        outline-offset: -2px;
+      }
+      [type="search"]::-webkit-search-cancel-button,
+      [type="search"]::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      ::-webkit-input-placeholder {
+        color: inherit;
+        opacity: 0.54;
+      }
+      ::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+      }
+      html {
+        font: 112.5%/1.45 "Open Sans", -apple-system, "BlinkMacSystemFont",
+          "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+        box-sizing: border-box;
+        overflow-y: scroll;
+      }
+      * {
+        box-sizing: inherit;
+      }
+      *:before {
+        box-sizing: inherit;
+      }
+      *:after {
+        box-sizing: inherit;
+      }
+      body {
+        color: hsla(0, 0%, 0%, 0.8);
+        font-family: "Open Sans", -apple-system, "BlinkMacSystemFont",
+          "Segoe UI", "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: normal;
+        word-wrap: break-word;
+        font-kerning: normal;
+        -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+        -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+        -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+        font-feature-settings: "kern", "liga", "clig", "calt";
+      }
+      img {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      h1 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 2rem;
+        line-height: 1.1;
+      }
+      h2 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1.51572rem;
+        line-height: 1.1;
+      }
+      h3 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1.31951rem;
+        line-height: 1.1;
+      }
+      h4 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 1rem;
+        line-height: 1.1;
+      }
+      h5 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 0.87055rem;
+        line-height: 1.1;
+      }
+      h6 {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        color: inherit;
+        font-family: "Candal", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+          "Roboto", "Helvetica", "Arial", sans-serif;
+        font-weight: 500;
+        text-rendering: optimizeLegibility;
+        font-size: 0.81225rem;
+        line-height: 1.1;
+      }
+      hgroup {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      ul {
+        margin-left: 1.45rem;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        list-style-position: outside;
+        list-style-image: none;
+      }
+      ol {
+        margin-left: 1.45rem;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        list-style-position: outside;
+        list-style-image: none;
+      }
+      dl {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      dd {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      p {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      figure {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      pre {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      table {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+        font-size: 1rem;
+        line-height: 1.45rem;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      fieldset {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      blockquote {
+        margin-left: 1.45rem;
+        margin-right: 1.45rem;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      form {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      noscript {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      iframe {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      hr {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: calc(1.45rem - 1px);
+        background: hsla(0, 0%, 0%, 0.2);
+        border: none;
+        height: 1px;
+      }
+      address {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 1.45rem;
+      }
+      b {
+        font-weight: bold;
+      }
+      strong {
+        font-weight: bold;
+      }
+      dt {
+        font-weight: bold;
+      }
+      th {
+        font-weight: bold;
+      }
+      li {
+        margin-bottom: calc(1.45rem / 2);
+      }
+      ol li {
+        padding-left: 0;
+      }
+      ul li {
+        padding-left: 0;
+      }
+      li > ol {
+        margin-left: 1.45rem;
+        margin-bottom: calc(1.45rem / 2);
+        margin-top: calc(1.45rem / 2);
+      }
+      li > ul {
+        margin-left: 1.45rem;
+        margin-bottom: calc(1.45rem / 2);
+        margin-top: calc(1.45rem / 2);
+      }
+      blockquote *:last-child {
+        margin-bottom: 0;
+      }
+      li *:last-child {
+        margin-bottom: 0;
+      }
+      p *:last-child {
+        margin-bottom: 0;
+      }
+      li > p {
+        margin-bottom: calc(1.45rem / 2);
+      }
+      code {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      kbd {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      samp {
+        font-size: 0.85rem;
+        line-height: 1.45rem;
+      }
+      abbr {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+      }
+      acronym {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+      }
+      abbr[title] {
+        border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
+        cursor: help;
+        text-decoration: none;
+      }
+      thead {
+        text-align: left;
+      }
+      td,
+      th {
+        text-align: left;
+        border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
+        font-feature-settings: "tnum";
+        -moz-font-feature-settings: "tnum";
+        -ms-font-feature-settings: "tnum";
+        -webkit-font-feature-settings: "tnum";
+        padding-left: 0.96667rem;
+        padding-right: 0.96667rem;
+        padding-top: 0.725rem;
+        padding-bottom: calc(0.725rem - 1px);
+      }
+      th:first-child,
+      td:first-child {
+        padding-left: 0;
+      }
+      th:last-child,
+      td:last-child {
+        padding-right: 0;
+      }
+    </style>
+    <link
+      rel="apple-touch-icon"
+      sizes="96x96"
+      href="../icons/icon-96x96c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <title data-react-helmet="true"></title>
+    <style data-href="/styles.d86a406e5dede3da8914.css">
+      .container-wrapper {
+        text-align: center;
+        margin: auto;
+        width: 60%;
+        min-height: calc(100vh - 310px);
+        flex: 1 1;
+      }
+      .container-wrapper section {
+        padding: 3rem 1.5rem;
+      }
+      @media (max-width: 900px) {
+        .container-wrapper {
+          width: 90%;
+          min-height: calc(100vh - 360px);
+        }
+      }
+      @media (max-width: 600px) {
+        .container-wrapper {
+          width: 95%;
+        }
+      }
+      code[class*="language-"],
+      pre[class*="language-"] {
+        color: #ccc;
+        font-size: 1em;
+        white-space: pre;
+        word-break: normal;
+      }
+      pre[class*="language-"] {
+        margin: 0.5em 0;
+      }
+      :not(pre) > code[class*="language-"],
+      pre[class*="language-"] {
+        background: #2d2d2d;
+      }
+      :not(pre) > code[class*="language-"] {
+        padding: 0.1em;
+        border-radius: 0.3em;
+        white-space: normal;
+      }
+      .token.block-comment,
+      .token.cdata,
+      .token.comment,
+      .token.doctype,
+      .token.prolog {
+        color: #999;
+      }
+      .token.punctuation {
+        color: #ccc;
+      }
+      .token.attr-name,
+      .token.deleted,
+      .token.namespace,
+      .token.tag {
+        color: #e2777a;
+      }
+      .token.function-name {
+        color: #6196cc;
+      }
+      .token.boolean,
+      .token.function,
+      .token.number {
+        color: #f08d49;
+      }
+      .token.class-name,
+      .token.constant,
+      .token.property,
+      .token.symbol {
+        color: #f8c555;
+      }
+      .token.atrule,
+      .token.builtin,
+      .token.important,
+      .token.keyword,
+      .token.selector {
+        color: #cc99cd;
+      }
+      .token.attr-value,
+      .token.char,
+      .token.regex,
+      .token.string,
+      .token.variable {
+        color: #7ec699;
+      }
+      .token.entity,
+      .token.operator,
+      .token.url {
+        color: #67cdcc;
+      }
+      .token.inserted {
+        color: green;
+      }
+      li > code,
+      p > code {
+        background: #131316;
+        word-break: normal;
+        padding: 0.4em 0.5em;
+        margin: 0.5em 0;
+        overflow: auto;
+        border-radius: 0.3em;
+      }
+      code[class*="language-"],
+      li > code,
+      p > code,
+      pre[class*="language-"] {
+        color: #f8f8f2;
+        font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+        text-align: left;
+        word-spacing: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+      code[class*="language-"],
+      pre[class*="language-"] {
+        background: none;
+        word-break: break-word;
+      }
+      pre[class*="language-"] {
+        padding: 1em;
+        margin: 1.5rem 0;
+        overflow: auto;
+        border-radius: 0.3em;
+        background: #131316;
+      }
+      pre[class*="language-"]::-webkit-scrollbar-thumb {
+        background: #3498db;
+      }
+      pre[class*="language-"]::-webkit-scrollbar-track {
+        background: #4b4e57;
+      }
+      pre[class*="language-"]::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+      li > code[class*="language-"],
+      p > code[class*="language-"] {
+        border-radius: 0.3em;
+        background: rgba(52, 152, 219, 0.2);
+        color: #2e3246;
+        bottom: 2px;
+        position: relative;
+      }
+      img {
+        margin-bottom: 0;
+      }
+      .token.operator {
+        color: #bc78d7;
+      }
+      .token.cdata,
+      .token.comment,
+      .token.doctype,
+      .token.prolog {
+        color: #708090;
+      }
+      .token.punctuation {
+        color: #7ad7e2;
+      }
+      .namespace {
+        opacity: 0.7;
+      }
+      .token.constant,
+      .token.deleted,
+      .token.property,
+      .token.symbol,
+      .token.tag {
+        color: #ef514f;
+      }
+      .token.boolean,
+      .token.number {
+        color: #ae81ff;
+      }
+      .token.attr-name,
+      .token.builtin,
+      .token.char,
+      .token.inserted,
+      .token.selector,
+      .token.string {
+        color: #e5db89;
+      }
+      .language-css .token.string,
+      .style .token.string,
+      .token.entity,
+      .token.url,
+      .token.variable {
+        color: #f8f8f2;
+      }
+      .token.atrule,
+      .token.attr-value,
+      .token.class-name {
+        color: #e6db74;
+      }
+      .token.function {
+        color: #84c16a;
+      }
+      .token.keyword {
+        color: #6095ea;
+      }
+      .token.important,
+      .token.regex {
+        color: #fd971f;
+      }
+      .token.bold,
+      .token.important {
+        font-weight: 700;
+      }
+      .token.italic {
+        font-style: italic;
+      }
+      .token.entity {
+        cursor: help;
+      }
+      .table {
+        overflow: auto;
+        max-width: -webkit-fit-content;
+        max-width: -moz-fit-content;
+        max-width: fit-content;
+        margin: auto;
+      }
+      .gatsby-highlight pre[class*="language-"].line-numbers {
+        padding-left: 2.8em;
+      }
+      .gatsby-highlight {
+        border-radius: 0.3em;
+        margin: 0.5em 0;
+        padding: 1em;
+        overflow: auto;
+      }
+      .gatsby-highlight pre[class*="language-"].line-numbers {
+        padding: 0 0 0 2.8em;
+        overflow: initial;
+      }
+      .gatsby-highlight
+        pre[class*="language-"].line-numbers
+        span.line-numbers-rows {
+        width: 3em !important;
+      }
+      .language-asm,
+      .language-racket,
+      .language-text {
+        -webkit-margin-start: 15px;
+        margin-inline-start: 15px;
+        display: flex;
+      }
+      code.language-html,
+      code.language-javascript,
+      code.language-md,
+      code.language-ruby {
+        left: 15px;
+      }
+      section.wrapper div.gatsby-highlight,
+      section.wrapper div.tagsContainer {
+        padding: 0;
+      }
+      pre[class*="language-"].line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
+      }
+      pre[class*="language-"].line-numbers > code {
+        position: relative;
+        white-space: inherit;
+      }
+      .line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        font-size: 100%;
+        left: -3.8em;
+        width: 3em;
+        letter-spacing: -1px;
+        border-right: 1px solid #999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+      }
+      .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #999;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+      }
+      .content-wrapper li,
+      .content-wrapper p {
+        letter-spacing: -0.003em;
+        --baseline-multiplier: 0.179;
+        --x-height-multiplier: 0.35;
+        font-size: 1.15rem;
+        line-height: 2;
+      }
+      .content-wrapper li code {
+        padding: 0.2rem 0.5rem;
+        margin: 0.5rem 0;
+      }
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor) {
+        color: #000;
+        box-shadow: inset 0 -2px 0 #3498db;
+        border-bottom: 1px solid #3498db;
+        -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        text-decoration: none;
+      }
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):focus,
+      .content-wrapper a:not(.gatsby-resp-image-link):not(.anchor):hover {
+        background: rgba(51, 68, 153, 0.53);
+        color: #000;
+      }
+      .wrapper h1 {
+        margin-top: 3rem;
+      }
+      .wrapper h2 {
+        margin-top: 1rem;
+      }
+      .wrapper h1,
+      .wrapper h2,
+      .wrapper h3,
+      .wrapper h4,
+      .wrapper h5,
+      .wrapper h6 {
+        display: inline-block;
+        position: relative;
+      }
+      .wrapper h1 a,
+      .wrapper h2 a,
+      .wrapper h3 a,
+      .wrapper h4 a,
+      .wrapper h5 a,
+      .wrapper h6 a {
+        box-shadow: none;
+        border-bottom: none;
+      }
+      .wrapper h1 a:focus,
+      .wrapper h1 a:hover,
+      .wrapper h2 a:focus,
+      .wrapper h2 a:hover,
+      .wrapper h3 a:focus,
+      .wrapper h3 a:hover,
+      .wrapper h4 a:focus,
+      .wrapper h4 a:hover,
+      .wrapper h5 a:focus,
+      .wrapper h5 a:hover,
+      .wrapper h6 a:focus,
+      .wrapper h6 a:hover {
+        background: none;
+      }
+      .wrapper:hover .anchor svg {
+        opacity: 0.8;
+      }
+      .footer-wrapper {
+        position: static;
+        height: 60px;
+        width: 100%;
+        justify-content: center;
+        bottom: 0;
+        box-shadow: 0 -3px 26px rgba(0, 0, 0, 0.5);
+        background: linear-gradient(-45deg, #3e5fbc, #284187);
+        font-family: OpenSans, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+          Segoe UI Emoji, Segoe UI Symbol;
+        font-weight: 500;
+      }
+      .footer-text {
+        margin: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        color: #f0f0f0;
+      }
+      .footer-text a {
+        color: #62fdfe;
+        font-weight: 700;
+        margin: 0 15px;
+      }
+      .footer-text span {
+        color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-shadow: 0 0 0 #fff;
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 300;
+        src: local("Open Sans Light "), local("Open Sans-Light"),
+          url(../static/open-sans-latin-300-60c866748ff15f5b347fdba64596b1b1.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-300-521d17bc9f3526c690e8ada6eee55bec.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 300;
+        src: local("Open Sans Light italic"), local("Open Sans-Lightitalic"),
+          url(../static/open-sans-latin-300italic-06bbd3188b34820cd83a0e0b3d0a6f57.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-300italic-8a648ff38ded89ea15916e84529d62d3.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Open Sans Regular "), local("Open Sans-Regular"),
+          url(../static/open-sans-latin-400-cffb686d7d2f4682df8342bd4d276e09.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-400-bf2d0783515b7d75c35bde69e01b3135.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Open Sans Regular italic"), local("Open Sans-Regularitalic"),
+          url(../static/open-sans-latin-400italic-987032ea5d57c93d8da215678eae3b86.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-400italic-db70d0b9cb27ada1a260a2b35e756b8b.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 600;
+        src: local("Open Sans SemiBold "), local("Open Sans-SemiBold"),
+          url(../static/open-sans-latin-600-223a277bd88d8a90c8cdf24cda0ad5f5.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-600-1cd5320f8937d337b61d5117cf9d7b28.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 600;
+        src: local("Open Sans SemiBold italic"),
+          local("Open Sans-SemiBolditalic"),
+          url(../static/open-sans-latin-600italic-4950a7205f0b5cefe41fc03ac346e236.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-600italic-318ea1ada4102c0704a0637228dcad03.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 700;
+        src: local("Open Sans Bold "), local("Open Sans-Bold"),
+          url(../static/open-sans-latin-700-d08c09f2f169f4a6edbcf8b8d1636cb4.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-700-623e3205570002af47fc2b88f9335d19.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 700;
+        src: local("Open Sans Bold italic"), local("Open Sans-Bolditalic"),
+          url(../static/open-sans-latin-700italic-c02f5da6e82e1efe0b45841bfd49ce37.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-700italic-72e19cbb0e38c6773a7751156752cec4.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 800;
+        src: local("Open Sans ExtraBold "), local("Open Sans-ExtraBold"),
+          url(../static/open-sans-latin-800-aaeffaf205b9bbb09920089a14dbe9e8.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-800-c6aa0c4a601fb6ac66f8253fa594dff5.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: Open Sans;
+        font-style: italic;
+        font-display: swap;
+        font-weight: 800;
+        src: local("Open Sans ExtraBold italic"),
+          local("Open Sans-ExtraBolditalic"),
+          url(../static/open-sans-latin-800italic-6b3973ffe02bb6a8be0f8453506ec032.woff2)
+            format("woff2"),
+          url(../static/open-sans-latin-800italic-79b58175343190550489efe46a7f1138.woff)
+            format("woff");
+      }
+      article {
+        padding: 3rem 1.5rem;
+      }
+      .bloglist-image {
+        margin: auto;
+        position: relative;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 0.4rem;
+        min-height: 300px;
+        flex-basis: 100%;
+        max-width: 100%;
+        width: 100%;
+      }
+      @media (max-width: 800px) {
+        .bloglist-image {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+          margin-bottom: 1.5rem;
+        }
+      }
+      @media (max-width: 500px) {
+        .bloglist-image {
+          min-height: 200px;
+        }
+      }
+      .bloglist-image img {
+        border-radius: 0.4rem;
+        height: 100%;
+        width: 100%;
+      }
+      .bloglist-image:hover {
+        box-shadow: 0 40px 45px rgba(0, 0, 0, 0.1);
+        -webkit-transform: scale(1.04);
+        transform: scale(1.04);
+      }
+      .bloglist-image a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 0.4rem;
+      }
+      .bloglist-image a > div,
+      .bloglist-image a > div > div {
+        position: static !important;
+      }
+      .bloglist-image a > div > div:focus {
+        outline: none;
+        box-shadow: 0 0 0 5px #284187;
+      }
+      .bloglist-information h1 {
+        display: inline-block;
+        color: #333438;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+      }
+      .bloglist-information h1:hover {
+        color: #3498db;
+      }
+      .bloglist-information {
+        text-align: center;
+        flex-basis: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        word-break: break-word;
+        width: 100%;
+      }
+      @media (max-width: 800px) {
+        .bloglist-information {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+      .bloglist-date {
+        margin-top: 1rem;
+        font-size: 12px;
+        color: #4b4e57;
+      }
+      .bloglist-title {
+        margin: 0;
+        font-size: 24px;
+      }
+      @font-face {
+        font-family: Candal;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src: local("Candal Regular "), local("Candal-Regular"),
+          url(../static/candal-latin-400-be36f832d599fa7c57c638a610ce6e2e.woff2)
+            format("woff2"),
+          url(../static/candal-latin-400-089f55042fcefeb66b9e98cdd0eb37ca.woff)
+            format("woff");
+      }
+      .header-wrapper {
+        -webkit-clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
+        clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
+        background: linear-gradient(45deg, #3e5fbc, #284187);
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+      }
+      @media (max-width: 600px) {
+        .header-wrapper {
+          -webkit-clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
+          clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
+        }
+      }
+      .header-text {
+        color: #fff;
+        z-index: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: inherit;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        max-width: 70rem;
+        margin-top: 3rem;
+        align-items: center;
+      }
+      .header-text h1 {
+        font-size: 28px;
+        margin: 20px 0 5px;
+        padding: 0 2rem;
+      }
+      .header-text h2 {
+        font-size: 22px;
+        padding: 0;
+        margin: 2.5px 0 5px;
+      }
+      .header-text h3 {
+        font-size: 20px;
+        margin: 2.5px 0;
+        padding: 0 2rem;
+      }
+      .header-text h4 {
+        font-size: 14px;
+        margin: 5px 0;
+        padding: 0 2rem;
+      }
+      .header-subtitle {
+        max-width: 650px;
+        color: #f0f0f0;
+        margin-top: 30px;
+        padding: 0 2rem;
+      }
+      .headroom-wrapper {
+        position: fixed;
+        height: 102px;
+        z-index: 2000;
+        top: 0;
+      }
+      .headroom {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100vw;
+        height: 2.5rem;
+      }
+      .headroom svg {
+        padding: 1rem 1.5rem;
+      }
+      .headroom svg g {
+        fill: #fff;
+      }
+      .headroom--unfixed {
+        position: relative;
+        padding-left: 15px;
+        padding-top: 15px;
+        justify-content: space-between;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .headroom--scrolled,
+      .headroom--unfixed {
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+      }
+      .headroom--unpinned {
+        padding-left: 15px;
+        padding-top: 15px;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+      }
+      .headroom--pinned,
+      .headroom--unpinned {
+        position: fixed;
+        -webkit-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+      }
+      .headroom--pinned {
+        padding: 15px 0 15px 15px;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        background-color: #3e5fbc;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+      }
+      .headroom--pinned nav a {
+        color: #fff;
+      }
+      .headroom--pinned nav a:hover {
+        border-color: #333438;
+        color: #333438;
+      }
+      .headroom--pinned nav a:focus {
+        color: #333438;
+      }
+      .headroom--pinned svg {
+        height: 2.5rem;
+      }
+      .headroom---pinned svg g {
+        fill: #333438;
+      }
+      .headroom--pinned span {
+        color: #333438;
+      }
+      .postlist-wrapper {
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 100;
+        border-radius: 0.4rem;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 17rem;
+        flex-basis: calc(33.3% - 2.5rem);
+        max-width: calc(33.3% - 2.5rem);
+        width: calc(33.3% - 2.5rem);
+      }
+      .postlist-wrapper:hover {
+        box-shadow: 0 50px 50px rgba(0, 0, 0, 0.1);
+        -webkit-transform: scale(1.04);
+        transform: scale(1.04);
+      }
+      @media (max-width: 1000px) {
+        .postlist-wrapper {
+          flex-basis: calc(49.95% - 1rem);
+          max-width: calc(49.95% - 1rem);
+          width: calc(49.95% - 1rem);
+          height: 18rem;
+        }
+      }
+      @media (max-width: 700px) {
+        .postlist-wrapper {
+          flex-basis: 100%;
+          max-width: 100%;
+          width: 100%;
+          height: 15rem;
+        }
+      }
+      .postlist-styledLink {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        z-index: 3;
+        overflow: hidden;
+      }
+      .postlist-styledLink,
+      .postlist-styledLink:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0.4rem;
+      }
+      .postlist-styledLink:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(transparent),
+          color-stop(50%, rgba(0, 0, 0, 0.3)),
+          color-stop(80%, rgba(0, 0, 0, 0.7)),
+          to(rgba(0, 0, 0, 0.8))
+        );
+        background: linear-gradient(
+          180deg,
+          transparent 0,
+          rgba(0, 0, 0, 0.3) 50%,
+          rgba(0, 0, 0, 0.7) 80%,
+          rgba(0, 0, 0, 0.8)
+        );
+        z-index: -10;
+        -webkit-transition: opacity 0.4s;
+        transition: opacity 0.4s;
+      }
+      .postlist-image {
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 0.4rem;
+      }
+      .postlist-image img {
+        border-radius: 0.4rem;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+      }
+      .postlist-image img > div,
+      .postlist-image img > div > div {
+        position: static !important;
+      }
+      .postlist-info {
+        color: #f0f0f0;
+        margin: auto;
+        bottom: 0;
+        left: 0;
+      }
+      .postlist-info span {
+        font-size: 14px;
+      }
+      .postlist-title h2 {
+        margin: auto;
+        padding-top: 0.5rem;
+        text-align: center;
+        font-size: 26px;
+      }
+      .postlist-title h3 {
+        font-size: 20px;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .postlist-title span {
+        font-size: 16px;
+        display: flex;
+      }
+      .postlist-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .navbar-styledLink {
+        display: flex;
+        font-weight: 700;
+        align-items: center;
+      }
+      .navbar-nav {
+        display: flex;
+        flex-grow: 0.1;
+        padding-right: 15px;
+        justify-content: space-between;
+        font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji,
+          Segoe UI Emoji, Segoe UI Symbol;
+        font-weight: 500;
+        font-size: 1.1rem;
+        align-self: center;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+      }
+      .navbar-nav a {
+        color: #fff;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        text-shadow: 1px 1px 5px #000, 2px 2px 1px #000;
+      }
+      .navbar-nav a:hover {
+        color: #f0f0f0;
+        font-weight: 700;
+      }
+      .tagsContainer {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .tagsContainer a {
+        margin: 0 1rem 1rem 0;
+        color: #2e3246;
+        padding: 0.3rem 0.6rem;
+        background: #cecece;
+        border-radius: 10px;
+      }
+      .tagsContainer a:hover {
+        color: #f0f0f0;
+        background: #3e5fbc;
+        border: #3e5fbc;
+      }
+      .tag-styledLink {
+        color: #f0f0f0;
+        padding: 5px 10px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+      }
+      .tag-styledLink:hover {
+        color: #2e3246;
+        background: #f0f0f0;
+      }
+      .tag-information {
+        text-align: center;
+      }
+      .tag-information h1 {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+      }
+      .post-suggestionBar {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100vw;
+      }
+      .post-postSuggestion {
+        display: flex;
+        align-items: center;
+        margin: 1rem;
+      }
+      .post-postSuggestion a {
+        width: 100%;
+      }
+      .post-postSuggestion h3 {
+        font-size: inherit;
+      }
+      h3.prev-post {
+        text-align: left;
+      }
+      h3.next-post {
+        text-align: right;
+      }
+      button.next-post,
+      button.prev-post {
+        color: grey;
+        background-color: transparent;
+        border: none;
+      }
+      button.next-post:hover,
+      button.prev-post:hover {
+        color: #000;
+      }
+      :focus {
+        outline: none;
+      }
+      *,
+      :after,
+      :before {
+        box-sizing: inherit;
+      }
+      html {
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        -ms-overflow-style: scrollbar;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      a {
+        -webkit-transition: color 0.5s;
+        transition: color 0.5s;
+      }
+      a,
+      a:hover {
+        text-decoration: none;
+      }
+      h1 {
+        font-family: Candal, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+          Segoe UI Symbol;
+      }
+      table {
+        table-layout: fixed;
+        overflow: scroll;
+        width: auto !important;
+      }
+      td,
+      th {
+        padding: 10px !important;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+      }
+      .index-postWrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 4rem 4rem 1rem;
+      }
+      @media (max-width: 1000px) {
+        .index-postWrapper {
+          margin: 4rem 2rem 1rem;
+        }
+      }
+      @media (max-width: 700px) {
+        .index-postWrapper {
+          margin: 4rem 1rem 1rem;
+        }
+      }
+      .gatsby-image-wrapper {
+        height: 100%;
+      }
+      section.container-wrapper {
+        padding: 3rem 1.5rem;
+      }
+      section.wrapper {
+        min-height: calc(100vh - 300px);
+        height: 100%;
+      }
+      section.wrapper div {
+        padding: 3rem 1.5rem;
+      }
+    </style>
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml" />
+    <link
+      rel="shortcut icon"
+      href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <meta name="theme-color" content="#3e7bf2" />
+    <link
+      rel="apple-touch-icon"
+      sizes="48x48"
+      href="../icons/icon-48x48c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="../icons/icon-72x72c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <meta name="generator" content="Gatsby 2.3.25" />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="../icons/icon-144x144c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="../icons/icon-192x192c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="256x256"
+      href="../icons/icon-256x256c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="384x384"
+      href="../icons/icon-384x384c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="512x512"
+      href="../icons/icon-512x512c6b6.png?v=9668d14baa2fedfee7875f4801ea5d85"
+    />
+    <link
+      as="script"
+      rel="preload"
+      href="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"
+    />
+    <link as="script" rel="preload" href="../1-6c82cfd6aba31a386fde.js" />
+    <link as="script" rel="preload" href="../app-63577178a3bdd725b6eb.js" />
+    <link as="script" rel="preload" href="../styles-aa92193d8aa2fe2f8548.js" />
+    <link
+      as="script"
+      rel="preload"
+      href="../webpack-runtime-fd7c0e3081b0f1218320.js"
+    />
+    <link
+      as="fetch"
+      rel="preload"
+      href="../static/d/213/path---computer-science-distilled-chapter-i-continued-2-ea-67d-As3lfh6D8RZ41F6dar2gktarI.json"
+      crossorigin="use-credentials"
+    />
+  </head>
+  <body>
+    <noscript id="gatsby-noscript"
+      >This app works best with JavaScript enabled.</noscript
+    >
+    <div id="___gatsby">
+      <div style="outline: none" tabindex="-1" role="group">
+        <div>
+          <div class="headroom-wrapper">
+            <div class="headroom headroom--unfixed">
+              <a class="navbar-styledLink" href="../index.html"
+                ><img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAoCAYAAAB5ADPdAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAHsIAAB7CAF4JB2hAAABWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgpMwidZAAAHVklEQVRYCcWYW4iVVRSAZ7x1MbXybs7V0szMS5YymIGUIVQQGUEPvXSBIKnXjHoJevMpkKAeiiACKcGEIkenNOpBTTNSM3XUJkcdNUdLx3F0+r59/nX6xzMzzpyXFnyz73utvdba+z9aUVGmdHd3V8ZS6tNhCYyzj3JIjJVTFjcuZ7FrMOA1igZohhHwQWVl5V4No7xKe9BS1olQOFRNlCsoXoJqWAA32qZ/mAZRlnXoYWwyKFERcoXyJhY+Ax0wG0bCrXAYlsI34KGvwKCkHE/FmrlomgYt0JnTOpb6klx70NVQMOiFLHgADI/cAor76bn79GTm0UGHsF+jDBUMhSFZmQ/3vShvBz1jjmnMxKycTFkDyvBsrfvIdY3s0ygWe3tMoCtwNSu7LBkbjTKVXoDxcBb2we3QDTeAoa1gfme21n2E5f0/GfmTu0eSzCBvjydeDpNAZUfgW/DqG7KTMAH2wyYwz8Jr9ayvor0MXO/z4PoNGHYudNAukRJXxmTKWcx+G7w9JrI3y8fR+t+gJ34Fb+DH8Ak0QhPoMZ+H46CONjgP3lDLNzHsODooKj1sDykJH5P0kP2vgwaMgYWgolY4BTOgHuaBMhxqUq2iYj6lBjtfT54B37FFoIGGfiUoJU4p6cx5ySReDRdB9/smheyhotEa5aYapHLDY5j0rKd3rRdhCjhfOQ3fgWnzIg5o681bMZk5ScLyUbRuBhVq0PfwJOyAe+BuMHdC9IpoWIh7TAUvw4dwAPS6+WgY3V8JnYUWf69N9IjvX4yZE3rgH1Chmx4EN1XZbRCHsgyoJtFjTdABEe7mNFIwxNxSQmehxd/YNDpiwp90aJAn+g30zjow0U3uy6DE/Pxp9VYX6Mn54FgcwH7rzYTuDKHTKfm1NHNGMcFN0gQWeIqN4AbHQBkL7fAI+AyoQAM0zHViW7yd5pTh8kkx8fXc+Ky+gdI3zHcvfbgz/XZXDDPRrDDoIr/8Xn2T03eoCupARYbQvNL4MIZqMiZvmPu51ii0gN41f7zJlu7zGHqccxT2o9unI/RXJoPo0JjFFI/C/XAHXAKN0kDzwlxSkR5wncaF+7dQd9xrr4Gu9ZKYj14U5ykq1sNnwQi4h97/Bb7GuIIHaWjQKxRzoRYU3a83ZsIsCCUalU5E6Yb9icaJa8KTrvWAGrstq3uhJoFeXA9v+YF8kIonrINl4ONWDXPAyRrnqfWOm6pENNyQKGthK5h35qEXIYx2TRjlHq41dOozCnqyCtSjgeecYCXySDdPzPCj6obiAjfWEEulGcwFw7EaVoI3U/H2Kq41VM7RUNda2u9Bza/poH7DvxvG+sn2kVsDDeDAHtB6b1gNaJziKfMSxtmvUtt6x7Z1D3yt2K9Byik4AuZoPewAD7k2KcIwO98A3yNPcAGM+3wYD3mFbqJCD+B6lRwC10wDQ+P8MNR558G5jp0AdRyA02Cfa92jkWT/wifB302HKF+mcyHoMZO7FswPxfAZWhNeg1Rgn56x3QaOTQdFgxTnKSoODxkq6641tCa8/IgdGlkQDYt6lPStglZoh8ug+ApvhksZHZSK4z6CShdcTLXu7ibK9+FC1nYv1+4Ak7yH0Kehhbhjoaf2aUjvSbZgKV0HoROcfBL0nMncBIZI71jGO6SHxBAfgyfgXUj7U5oSjl9Cp+NJp8YAXYUH/FoPqUBZDhPBWzQSVK4htl+FaWDIRoAh8u3xVmmcbcPwEzwFW8E9nOPl8QaPwYhllEr85A7dBU8Vxtgts5T2EnDjyeBNbAE33AKH4U7wDYubqWfaQTGJ9ehc+AiqoRGOgh5vBg17GJSiMYVmFr40kn0DOYG3bSr486U+K5+j1Et1oNeU8IqbaoRvjgmsp3xE3cOwbYYzoCGK3nXvu9CV/iVtZ17cOMTNVOCX3bC6WE/9DvZVwSJQzDPFNXrGtgb4EFuGcY4vBp+EJqiFOvBZcK6fFv8RYT4VPZY3KjpNRnFzN5sBG0E5Ap66GsIzVJMSFS2AMEiPdoEH1HMrQDkG9uu55PW8QfQVb435hMHJYp+BA4zpGZN0JpyCVtAjXgDfF/PDR28cGD7bigltrtk+DPtAr3sQE35nVu5Cp89Dyf/O6N6ixATKWjrfAUPjrXIzQ+gjuBfWw/Og8howJCa641tBwxtBD80GD6HXjYAh06urMMp3i+K/0NGfcsKyKDnD3PBxUKkh+AO2s8HPlL4v71HMA0PxUFbqTZ8Cb+rTzD3BvAbqc8DbqqfN0S8Z84Gl6GkQY72LhvU+koxJecicF2AnrIN4wX+gvgk+A0PWpzDeI0r5iflEL/ZjffrdTIfGxQVwE+vR3kbdpB8FcQg9MRq+Yo9OFLt/zI/Sffy/iWjT7Cm9GuWUbJE3qVdhfDdKzS9DZd6pZAr488N8UlR+tVAd+N844cBXMBNjvFnK5+DV/hQ0xJvnz49dzCm5VYwNSPqM6/VWoxTd6Rl5lrkmsmE7CGvo96qncdr/j2DABAntGhT1csp/AQmuNkNaDuFXAAAAAElFTkSuQmCC"
+                  alt="Gatsby Logo"
+              /></a>
+              <nav class="navbar-nav">
+                <a href="../index.html">Home</a
+                ><a href="../blog/index.html">Tagged List</a>
+              </nav>
+            </div>
+          </div>
+          <div class="header-wrapper">
+            <div class="header-text">
+              <h1>Computer Science Distilled</h1>
+              <h2>Chapter One</h2>
+              <h3>1.2 Logic, 1.3 Counting &amp;&amp; 1.4 Probability</h3>
+              <h4>2019-01-29</h4>
+            </div>
+          </div>
+          <section class="wrapper">
+            <div>
+              <div class="content-wrapper">
+                <h3>Logic in Computing</h3>
+                <p>
+                  Logic gates perform logic operations on electric current.
+                  Logic gates include NOT, AND, OR, NAND, NOR, XOR, etc.
+                </p>
+                <p>
+                  <strong
+                    >Logic gates calculating 2 + 3 = 5 (10 + 11 = 101)</strong
+                  >:
+
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/35de99570c6644b12cdf5698a7405e7a/6941e/LogicGates.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 750px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 51.18306351183064%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAABrUlEQVQoz12SW2/bMAyF8///2oC9FHvYEHTpsjSxHce2JN9ki9+OnLQLSprWhcLh4WVX7X8Q3g8QPOY63PVC+/rC2pRcizNVWRFmjyc8rH9Y0L/XP3z6/rRv7G59TbVe5RplA7+XI8GV9Mlxm1qGYWTBWBatUdY7ltETlwmnfT/1LOu8+cfBs0OSWAkWGG1AHIl9w9w2FGI3ew8+QH2DWwM/f8HhjVRVlJeCrutICprfjPu9AA2iRXEbthQGy7uRaZ3EbsBSQuHzMyyfVRbLZ90vebXsYfPrcAdcbaWRHu1Im9Ua/nLCTaqMIsclKo2E1bUAHTQN3fVKnc/L+gATTlrZGf/VmRPDnosVHDjThI6yVD2DUs7szmdMKSLQUaUYZJZLIulVskPzKkC7g+Wvt9yaQf0amJ9TeazPtklOOQeTdNYRU7w35eNF2KAGtUWpqq4fsgX9avk+xk+GebCSdOcmpx6vJEt488xMYppHKGocInOc1QDjK91tuyZcVW6j1a7thrP7fvrGRXo2DbFV2/5k79TcOPkTVVHhR38fYAV8tnxXNAU3jdQUpy3WP6ujCgaah81RAAAAAElFTkSuQmCC');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="LogicGates"
+                          title=""
+                          src="../static/35de99570c6644b12cdf5698a7405e7a/26fb4/LogicGates.png"
+                          srcset="
+                            /static/35de99570c6644b12cdf5698a7405e7a/f723e/LogicGates.png 188w,
+                            /static/35de99570c6644b12cdf5698a7405e7a/d744b/LogicGates.png 375w,
+                            /static/35de99570c6644b12cdf5698a7405e7a/26fb4/LogicGates.png 750w,
+                            /static/35de99570c6644b12cdf5698a7405e7a/6941e/LogicGates.png 803w
+                          "
+                          sizes="(max-width: 750px) 100vw, 750px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                </p>
+                <h2>1.3 Counting</h2>
+                <p>
+                  Both counting and logic belong in the field of
+                  <em>discrete mathematics</em>.
+                </p>
+                <h3>Multiplying:</h3>
+                <p>
+                  If one event happens <em>n</em> ways and another
+                  <em>m</em> ways, the way to calculate the number of ways both
+                  can happen is to multiply them.
+                </p>
+                <h4>Creating a PIN:</h4>
+                <p>
+                  <em>Problem</em>: A PIN is comprised of two numbers and a
+                  letter. It takes one second to try a PIN. Worst case, how much
+                  time is needed to crack a PIN?
+                </p>
+                <p>
+                  <em>Solution</em>: Two digits can be chosen 100 ways (00-99)
+                  and a possible letter in 26 ways (A-Z), making 100 * 26 = 2600
+                  possible PINs. Worst case would mean having to try every
+                  single combination and arriving at the right PIN on the last
+                  attempt. Since each attempt is a second and worst case is 2600
+                  attempts, the worst case would be 2600 seconds or around 43
+                  minutes.
+                </p>
+                <h4>Hiring a Team:</h4>
+                <p>
+                  <em>Problem</em>: There are 23 candidates wanting to join your
+                  team. For every candidate, you flip a coin and hire if the
+                  coin lands on heads. How many team configurations are
+                  possible?
+                </p>
+                <p>
+                  <em>Solution</em>: When you start, the only configuration is
+                  you alone working at the company. Every coin toss then doubles
+                  the number of possible configurations. Since there are 23
+                  candidates, that would mean 2<sup>23</sup> or 8388608
+                  configurations.
+                </p>
+                <h3>Permutations:</h3>
+                <p>
+                  If you have <em>n</em> items, you can order them
+                  <em>n</em> factorial (<em>n!</em>) different ways.
+                  <em>n! = n x (n-1) x (n-2) x...2 x 1</em>.
+                </p>
+                <h4>Traveling Salesman:</h4>
+                <p>
+                  <em>Problem</em>: Truck company delivers to 15 different
+                  cities and you want to know the best order to serve the cities
+                  such that you use the least amount of gas. If it takes one
+                  microsecond to calculate the length of one route, how long
+                  does it take to compute the length of all possible routes?
+                </p>
+                <p>
+                  <em>Solution</em>: Each permutation of the 15 cities is a
+                  different route -
+                  <em
+                    >15 x 14 x 13 x 12 x 11 x 10 x 9 x 8 x 7 x 6 x 5 x 4 x 3 x 2
+                    x 1</em
+                  >
+                  = ~1.3 trillion routes. In microseconds, roughly 15 days.
+                </p>
+                <h4>Precious Tune:</h4>
+                <p>
+                  <em>Problem</em>: A musician is studying a scale of 13 notes.
+                  She wants to render all possible melodies that use six notes
+                  only. Each note should play once per melody and each six-node
+                  melody should play for a second. What would be the audio
+                  run-time for this song?
+                </p>
+                <p>
+                  <em>Solution</em>: To count permutations of 6 out of the 13
+                  notes, we need to ignore permutations of unused notes and stop
+                  developing the factorial after the sixth factor.
+                  <em>n!/(n-m)!</em> is the number of possible permutations of
+                  <em>m</em> out of <em>n</em> possible items.
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/7c6f13042c33b35a76b08bdd967d64c2/9238b/melodies.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 565px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 7.433628318584071%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAABCAYAAADeko4lAAAACXBIWXMAAAsSAAALEgHS3X78AAAAUklEQVQI12Pw9/eXSklJ0fTz8+NMSkqSDQsLUwkPD1cCYnUgXwMop5aQkKAWExMjlZeXJ1RSUiJfVFQkWVpaKlNdXa1YV1cnn56ezldVVaUNwgD0qhqBmNnFEwAAAABJRU5ErkJggg==');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="melodies"
+                          title=""
+                          src="../static/7c6f13042c33b35a76b08bdd967d64c2/9238b/melodies.png"
+                          srcset="
+                            /static/7c6f13042c33b35a76b08bdd967d64c2/f723e/melodies.png 188w,
+                            /static/7c6f13042c33b35a76b08bdd967d64c2/d744b/melodies.png 375w,
+                            /static/7c6f13042c33b35a76b08bdd967d64c2/9238b/melodies.png 565w
+                          "
+                          sizes="(max-width: 565px) 100vw, 565px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                  melodies, which would take 343 hours or so.
+                </p>
+                <h3>Permutations with Identical Items:</h3>
+                <p>
+                  In a sequence of <em>n</em> items of which <em>n</em> are
+                  identical, there are <em>r!</em> ways to reorder the items. So
+                  to count distinct permutations, need to divide <em>n!</em> by
+                  the overcount factor.
+                </p>
+                <p>
+                  Example: "COD<strong>E</strong>
+                  <strong>E</strong>N<strong>E</strong>RGY" would be
+                  <em>10!/3!</em>
+                </p>
+                <h4>Playing with DNA:</h4>
+                <p>
+                  <em>Problem</em>: A biologist is studying a DNA segment
+                  relating to a specific disease. The segment is made of 23 base
+                  pairs where 9 must be A-T and 14 must be G-C. She wants to run
+                  a simulation on every possible DNA segment having this number
+                  of base pairs. How many simulations would that take?
+                </p>
+                <p>
+                  <em>Solution</em>: First, calculate all possible permutations
+                  of the 23 base pairs then divide the result to account for the
+                  9 repeated A-T and 14 repeated G-C base pairs:
+                </p>
+                <p>
+                  <em>23!/(9! * 14!) = 817190</em> base pair mutations. But the
+                  question isn't looking for base pairs, it's looking for
+                  segments. Because there are 23 base pairs, we multiply the
+                  number of base pair mutations by 2<sup>23</sup> to get ~ 7
+                  trillion sequences.
+                </p>
+                <h3>Combinations:</h3>
+                <p>
+                  Picture a deck of 13 cards of the same suit. How many ways can
+                  you deal six cards? The binomial
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/98ad5ad9e065a2bfca9e61008f176f1c/6deb8/binomial.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 36px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 125%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAZCAYAAAAxFw7TAAAACXBIWXMAAAsSAAALEgHS3X78AAAEj0lEQVQ4y6VVWUxkRRSt7teoX6jEL4OgJBBDQDICfgBREkBAApGdNDCsCWFrQNZmX8MODdIEgrJDYHAQGvhgCxlcoAUkTgjqD5CoBAZitHUGJ5P081RNvRcc4wexku66davqvnvPPfcWIRhXV1cKOoui+ML09PRvKysrjXS9vr6uIs+M5eVlgc6bm5vJjY2Nu5J+Y2NDIR+Ki4uzoHNVVdVqT0/PAQwz/fn5udDX16eqrKwUYEhRUlIi2NjYEBhiRhMTEzXFxcVbkh12LyEhgW02NzffTk9PfyBtGo1GJfmP4erqSsLCwti93Nzc44GBgbtUrqmpsZAsK7Kzs8WJiQktXet0uufpfHBwEAmPd8fGxtaGh4d18HQVZ+zo3uDgILs8Pj7ul5WVJZ6entrKX6yrq9OmpaU9poalD8TGxiqPjo70HR0dD/38/D7j3oh2dnbuVIaORsC8TE1NvQ8bM5J3SoT6Owzk0TVwYonIzMxkHiC0L4BjIpWTk5N/hSe3qGwwGJQhISHMIGCLwv0/ZQ8DAgIe5eTkOFE5IiJCuba2xg7u7OwEYf2Qygi3DcnbxV4RXS8uLir29/cZziaTyTYyMvLJ0tJSHKmtrc2Ojo7+C56+ynFTaLVadhCzF4C+Q+WpqamU1tbWe6BLKV1PTk6yM3l5eSwSb2/vb8LDwzUEf/329vZ3uacWktcwJPOqvb1duJ7l7u5uNsMj4uzszPaSkpKMbm5urcTa2loHnBapMigoSAVsSEtLC7uAhNDsswvQKcFTYX5+nnk2MjLCzsTExLD9rq6ur8rKykRqUI9LBp4IFbnh8PDwEDg8+Wq1WiRgughDQ1RZVFR0Y4MYUgG87u/vL5L6+noR/PqEauDyjQ1aWVlJBt8GN0Wi0WiegF8MEIT+fzx8IzQ0VCSWlpYdMLhENVFRUaqLiwu2i/okTU1NZGtri4AuNNPk8PCQYkVQhrI1X19fgVdbXUZGhkg8PT0/9vLyYlxDxTDabG9vE7PZrOzt7aXUUXBKyTRycXGRSlQ2CAZ8jZ9IhW6U0JHUsmBI8WxMIO1zkuzg4CDIreppOTKYgoODv3RycqqkJaQGjuLl5aUj7zQq7mVNW1vbL6Ojo8b+/v4uEP0HNNxVVNY4OMlohoQqpX4QGBj4ID8/X0M4do/i4+M/kLxYWFh4+eTkpLmiouIPd3f3Yg6H6Ojo+BYMv4PuYqK62dlZC16WfkiIGUXxIuF0+Rw/I5VLS0vl8NAYftzb26Pt6hU0hkuqKywsHMSHvuNHBH5/EqF/K2OErL0JDH5C03xJ0s3MzGjx1Z+p3NnZec/Hx2eEk99UXV19B0/Cbekszl0i+x8S3suY2wjZAI900iF48j7ejloql5eXf4S6VlN5aGioGpiOgULvccw/TUlJuS9zcm5ujgF7dnb2GgpcRDP1v55h9EGZ7A0NDf94Z9D+bcG9x8DSjXP36X5BQQHDQq/X+6NavgeJbTm3pNdQQJhKboTpjo+PXeCdGVB5XKcPDY3N6NgqHkIAPHmXygj5Xy8faMZ0iMwXmGdyNeMu3iXyN9NZF1hIp/rBAAAAAElFTkSuQmCC');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Binomial"
+                          title=""
+                          src="../static/98ad5ad9e065a2bfca9e61008f176f1c/6deb8/binomial.png"
+                          srcset="
+                            /static/98ad5ad9e065a2bfca9e61008f176f1c/6deb8/binomial.png 36w
+                          "
+                          sizes="(max-width: 36px) 100vw, 36px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                  is the number of ways to select <em>m</em> items of a set of
+                  <em>n</em> items regardless of order:<br />
+
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/03d109b805f58194a04dc760f846fb2e/ab19c/binomial2.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 155px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 29.032258064516125%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsSAAALEgHS3X78AAABZklEQVQY02NYuHCh/bRp07ibm5t1WltbDRiAIDs7mykuLo6Bh4eHAQb8/f0ZQfTWrVu5m5qaZMrKyqycnZ0ZMMDMmTPFqoGgr69PKjc31yMtLY2VAQ+YMWOGYktLS2l3d7clTkVA13CD6IiICHcgWzAgIIAjOjqaFygEchU/FHMCMcjJAhoaGmKhoaFySHICQAwygwts4KpVq9hAdGxsrBfQQH6gYi2g4YaRkZFMgoKCUuLi4lKurq7Wfn5+xkBlIkAsCsSCzMzMEsLCwlIiIiJSUVFRdkBgwtDf329QV1dX39bW5pCenu4aExPDAXP5smXL+IHiOVOmTEksKiqKnThxogcwnJM2btzI6+bmJgGkhTo7O3O6uroiCwoKXHt6euwZKioqjIDhJgXkOBUWFmqBDMrIyGAC0UAL2IFYoaOjQwMYcUpAw/WLi4vVZs2axSkqKsoaHx/PBdQrDzRUB6jfCBjBvAD+p3DK0aA4cwAAAABJRU5ErkJggg==');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Binomial2"
+                          title=""
+                          src="../static/03d109b805f58194a04dc760f846fb2e/ab19c/binomial2.png"
+                          srcset="
+                            /static/03d109b805f58194a04dc760f846fb2e/ab19c/binomial2.png 155w
+                          "
+                          sizes="(max-width: 155px) 100vw, 155px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+
+                  The binomial is read "<em>n</em> choose <em>m</em>".
+                </p>
+                <h4>Chess Queens:</h4>
+                <p>
+                  <em>Problem</em>: You have an empty chessboard and 8 queens
+                  which can be placed anywhere on the board - how many different
+                  ways can the queens be placed? Board has 64 squares (8x8)<br />
+                  <em>Solution</em>:
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/7ec1231e9924b06149587a70fd926cd1/dbcef/chess.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 150px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 30%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAPoAAAD6AG1e1JrAAABeklEQVQY03VRTUsCURR9lpJlUH5tIkoUw6QccCMTSNm0EEKxAVMUR41xYFCMEcHxI79ScdQBXbjxz9p5s6pFFy7n8N6997zzLtlut35d14X5fP60XC5fhsMht9/vTQRRq9VIpVKhlHg8HgNtNpsZNYndbhfpdDo8x3Gn9JxhGKOHiKIYbzQaj4PB4Lter4uKojxUq9Vb8k90u10rBikQ/2w2mwLED/4U5PP5D4rpdNq4KBQK/lwux1KeyWScqqrScwvSSh9I0el02oEOvO4K4QA/Rp4YCEsybYain1rFMK8gCBGe5+3ZbPY5FAodFovFcCqV4pLJJEszFovdu93ua7SdIV3xeDwsyzKXSCSiBOQdgwgsa+Px+EaSpCBEmN8uJpOJOp1O1Xa7/fqFmM1mOqzflctlO5wdLRYLaTQalfr9/htptVpB/IlP0zT3ZrM5B49ihomKBAIBA7GECzi4XK/X4V6v54MDb6lUopbNLMtaIOharVYMluv9AQsghihP5aEDAAAAAElFTkSuQmCC');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Chess"
+                          title=""
+                          src="../static/7ec1231e9924b06149587a70fd926cd1/dbcef/chess.png"
+                          srcset="
+                            /static/7ec1231e9924b06149587a70fd926cd1/dbcef/chess.png 150w
+                          "
+                          sizes="(max-width: 150px) 100vw, 150px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                  which equals 4426165368.
+                </p>
+                <h3>Sums:</h3>
+                <p>
+                  Sequential sums are expressed using the capital-sigma Σ
+                  notation which indicates how an expression will be summed for
+                  each value of <em>i</em>:<br />
+
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/3cfaa2b3b5611c469f86b75a955e5419/5a94a/sum.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 153px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 36.60130718954248%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAnUlEQVQoz6XRywrCMBCF4alVQai3hVAtar0g3qDVqrjShU/h+7+If+AEFCyIDXyLTJJhMmNmdscYa+zRQ9sqrB2WyJCji1bJ3eDXpE/E2CL6s7Aman7jKru9HSYocMQBF2xwxknxQrGG3rv4yCeYYKGv1tXHRD3N1eMhZkgx1/1UCV18gI5PeNV3H1UH4tZUQ1mp5D7CkmEEX3wM6wWTZgiGwiQtPwAAAABJRU5ErkJggg==');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="sum"
+                          title=""
+                          src="../static/3cfaa2b3b5611c469f86b75a955e5419/5a94a/sum.png"
+                          srcset="
+                            /static/3cfaa2b3b5611c469f86b75a955e5419/5a94a/sum.png 153w
+                          "
+                          sizes="(max-width: 153px) 100vw, 153px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                </p>
+                <p>
+                  Summing the first five odd numbers is written:<br />
+
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/0c8ffcf3103647523e4617a5b6ddd54d/cee2d/sumfirstfive.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 242px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 21.90082644628099%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAYElEQVQY063PuwqAMAyF4QjVwabewNskODg4+Ai+/2P5F87groEPmqZJqJlZg9l+jBsrerQIKJUHqVEhIqmeVIvqKzDmgSc6Dd11zo83uH4wvCwaMGmp697VYwcubf0cD+UxAx71trl4AAAAAElFTkSuQmCC');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="sumfirstfive"
+                          title=""
+                          src="../static/0c8ffcf3103647523e4617a5b6ddd54d/cee2d/sumfirstfive.png"
+                          srcset="
+                            /static/0c8ffcf3103647523e4617a5b6ddd54d/f723e/sumfirstfive.png 188w,
+                            /static/0c8ffcf3103647523e4617a5b6ddd54d/cee2d/sumfirstfive.png 242w
+                          "
+                          sizes="(max-width: 242px) 100vw, 242px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                  because the i is replaced by the numbers 0 - 4 in the
+                  equation.<br />
+                  <em>(2(0) + 1) = 1</em> <br />
+                  <em>(2(1) + 1) = 3</em> <br />
+                  <em>(2(2) + 1) = 5</em> <br />
+                  <em>(2(3) + 1) = 7</em> <br />
+                  <em>(2(4) + 1) = 9</em>
+                </p>
+                <p>
+                  Summing the first <em>n</em> natural numbers is thus:<br />
+
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/a70d077d1a9c64fcc479b94835fc5568/51a56/sumnatural.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 247px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 20.647773279352226%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAW0lEQVQY063P7Q2AIAxF0ZooBlHALyYwMa7h/kP5SK4bQHL+tI9CzcyKbNbwvHLILEEinJySZSA7ysInHPXCXS97DV0MnBAIVKsk6j29RN4j80j8Bz5yS9di3Q/F1gLBPrc9kQAAAABJRU5ErkJggg==');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Sum Natural"
+                          title=""
+                          src="../static/a70d077d1a9c64fcc479b94835fc5568/51a56/sumnatural.png"
+                          srcset="
+                            /static/a70d077d1a9c64fcc479b94835fc5568/f723e/sumnatural.png 188w,
+                            /static/a70d077d1a9c64fcc479b94835fc5568/51a56/sumnatural.png 247w
+                          "
+                          sizes="(max-width: 247px) 100vw, 247px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                </p>
+                <h4>Gauss's Trick:</h4>
+                <p>
+                  Legend has it that a teacher once punished Gauss by making him
+                  sum all numbers 1 to 100 and that's what lead him to come up
+                  with this solution:
+                </p>
+                <p>
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/2829cf1d00ce3015c3e2e948179ccc30/72413/gauss100.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 466px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 20.815450643776824%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAb0lEQVQY03WPCQqAMAwEq+J93yii/v+VbnUUEQwMSZfstjXmqkC4IhOlqESEPqPvohC5qJl9ziOe1SBsmBIRY2jRLA17tkICckKtZxIpu+ew8DIr9ISOdI/bO4Jrgp1Xd+m39nw5JXDgJfeC9+G3DopDA1Sea5PIAAAAAElFTkSuQmCC');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Gauss 100"
+                          title=""
+                          src="../static/2829cf1d00ce3015c3e2e948179ccc30/72413/gauss100.png"
+                          srcset="
+                            /static/2829cf1d00ce3015c3e2e948179ccc30/f723e/gauss100.png 188w,
+                            /static/2829cf1d00ce3015c3e2e948179ccc30/d744b/gauss100.png 375w,
+                            /static/2829cf1d00ce3015c3e2e948179ccc30/72413/gauss100.png 466w
+                          "
+                          sizes="(max-width: 466px) 100vw, 466px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                  <br />
+                  Dividing by 2 then gives the answer of 5,050.
+                </p>
+                <p>
+                  We can formally write this as:<br />
+
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/ac757b132db4d48903d8d0a849e6cf65/dec9c/gauss2.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 253px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 66.798418972332%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA3ElEQVQ4y62TWw+CMAyFueMFRRFRMd5CfFCMPpn4/3+ZXfI9NGSiGE5ystG1p+1WHKcdG2GqvsfCUug5HTEUZsIX6wSRi/AmzLGH7AdCn2RWxDidhIVwRJKlsk2xpfiamEVblR7VHJXNCN0R+wqPjAYua0J27eOr849CBmfhgQAHIVPNStlscV7z3AjNaS/jTlLaenB/O3wKVsO1MGJfatGYLJWwpjKXtSZhjC1QLQfqeiJb67nl2QtGpjfM+hQ0f8WT2UoY4ujXkWliisiVKreq2v2/FYY8SNUl6A1ZjAgLSieUsQAAAABJRU5ErkJggg==');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Gauss2"
+                          title=""
+                          src="../static/ac757b132db4d48903d8d0a849e6cf65/dec9c/gauss2.png"
+                          srcset="
+                            /static/ac757b132db4d48903d8d0a849e6cf65/f723e/gauss2.png 188w,
+                            /static/ac757b132db4d48903d8d0a849e6cf65/dec9c/gauss2.png 253w
+                          "
+                          sizes="(max-width: 253px) 100vw, 253px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                </p>
+                <p>
+                  As there is no <em>i</em> in the last line, <em>(n+1)</em> is
+                  summed over and over again <em>n</em> times. Therefore:<br />
+
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/3155352998c4ce52c49166dbe6c3ef63/71afe/gausstrick.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 128px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 39.84375%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAwUlEQVQoz42SWQ6CYAyES6JGXCKiEMA1og+KS9xO4LOX8Cbe3KkOSYNimOQjP23/plMQ+egE5jw7Uq46KaoGOqCpLxFogRAMC4V58x44ghWYgh1zM+CyR8acPMEFTMDVTGLVpQutGYE940sO0wYLDvV+PMzlBATAAwdaaQAfxMz3iUdXIXNjYfHGNNSCAacMuB+XxREvKluQMpYwpme5cydq+ybVdab9L6VcZsYdlX1px5A39H/l1MqaC44r/Dp/9QLpkAoa01TvPAAAAABJRU5ErkJggg==');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Gauss Trick"
+                          title=""
+                          src="../static/3155352998c4ce52c49166dbe6c3ef63/71afe/gausstrick.png"
+                          srcset="
+                            /static/3155352998c4ce52c49166dbe6c3ef63/71afe/gausstrick.png 128w
+                          "
+                          sizes="(max-width: 128px) 100vw, 128px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                </p>
+                <h4>Flying Cheap:</h4>
+                <p>
+                  <em>Problem</em>: You need to fly to New York City any time in
+                  the next 30 days. Ticket prices change unpredictably according
+                  to departure and return dates. How many pairs of days must be
+                  checked to find the cheapest tickets to fly to NYC within the
+                  next 30 days?
+                </p>
+                <p>
+                  <em>Solution</em>: Any pair between Day 1 (today) and Day 30
+                  is valid as long as the return flight is after the departure.
+                  So 30 pairs begin with Day 1, 29 begin with Day 2, 28 with Day
+                  3, etc. We can use Gauss's Trick!<br />
+
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/41a25fddf6d334b3c5d7f63fbf8cfc1a/a6b4f/flights.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 229px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 23.580786026200876%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAgklEQVQY042QPQuDQBBE9y5IjGJhJGI+EDuxSIoUKfz/P8wxvIWzSRx4zLI3MMuZmc22VSauohatOLPLRSWC/dGdoKsQHzGKF17DICK5SIkreFnFQwsFvl7Z4Rd2Hfl1vom3eIhJPPHvFU3SmvrRQ+xCcs2BrzhRUjJb/+Nfoof2agFABQSuSo/wcQAAAABJRU5ErkJggg==');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Flights"
+                          title=""
+                          src="../static/41a25fddf6d334b3c5d7f63fbf8cfc1a/a6b4f/flights.png"
+                          srcset="
+                            /static/41a25fddf6d334b3c5d7f63fbf8cfc1a/f723e/flights.png 188w,
+                            /static/41a25fddf6d334b3c5d7f63fbf8cfc1a/a6b4f/flights.png 229w
+                          "
+                          sizes="(max-width: 229px) 100vw, 229px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                  <br />We could also solve this using combinations: <br />
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/20727c1039e65c71466e7708af9bbecd/eb403/binomialflight.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 84px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 53.57142857142857%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA3klEQVQoz52SSwvCMBCEt0Xx/UAPvluptqKI9aDe1IPagwhePAt69P//ACcwhVAoNQ58JN0kk81uRUQC4AIfeGAAhmAFWvKHThzX4AW2jHXBxcDHiicqG5sZfcARXLlhD8bJA1kqc3PA5/aAw7UlOGQYNkCHL8vUBESc50CNFBmrghv3haAgKbfbHEc8IDTagJ1WhgV40lC95p008dmMWFOtaer2PsvSZCzPxjk0VGtS52KJnb5rhiGbZNQUT5vPwUz7Pse30tD6xTjSMnzw91Fq09BYLmuTlMq2Ymr2BUeJDiAauGT/AAAAAElFTkSuQmCC');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Binomial Flight"
+                          title=""
+                          src="../static/20727c1039e65c71466e7708af9bbecd/eb403/binomialflight.png"
+                          srcset="
+                            /static/20727c1039e65c71466e7708af9bbecd/eb403/binomialflight.png 84w
+                          "
+                          sizes="(max-width: 84px) 100vw, 84px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                </p>
+                <h2>1.4 Probability:</h2>
+                <h3>Counting Outcomes:</h3>
+                <p>
+                  A die roll has six possible outcomes:
+                  <style type="text/css">
+                    .dice {
+                      font-size: 40px;
+                    }
+                  </style>
+                  <span class="dice">⚀ ⚁ ⚂ ⚃ ⚄ ⚅ </span>, so the chance of
+                  getting one particular number (say 4), is 1/6. The chance of
+                  rolling an odd is 3/6 or 1/2 because there are three odd dice
+                  - <span class="dice">⚀ ⚂ ⚄</span>.
+                </p>
+                <p>
+                  Probability can be calculated using this formula:<br />
+
+                  <a
+                    class="gatsby-resp-image-link"
+                    href="../static/5813e1fe28172c54a3126284a2be7046/5892a/probability.png"
+                    style="display: block"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <span
+                      class="gatsby-resp-image-wrapper"
+                      style="
+                        position: relative;
+                        display: block;
+                        max-width: 315px;
+                        margin-left: auto;
+                        margin-right: auto;
+                      "
+                    >
+                      <span
+                        class="gatsby-resp-image-background-image"
+                        style="
+                          padding-bottom: 13.333333333333334%;
+                          position: relative;
+                          bottom: 0;
+                          left: 0;
+                          background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAaUlEQVQI1zXO2wqDQAxF0VPF1z5IvbXa8VJLoZX+/995gtvAgiQkk5GkHIWOKG2x0Z72pW6ofzbZYG/yv31sE4uz9XZFSV2z+CBPzDeImYpD0W/5lDK74IwYvtmd4cQvVg7GkZd19OJR7cMiBb6ddd4HAAAAAElFTkSuQmCC');
+                          background-size: cover;
+                          display: block;
+                        "
+                      >
+                        <img
+                          class="gatsby-resp-image-image"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            vertical-align: middle;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            box-shadow: inset 0px 0px 0px 400px white;
+                          "
+                          alt="Probability"
+                          title=""
+                          src="../static/5813e1fe28172c54a3126284a2be7046/5892a/probability.png"
+                          srcset="
+                            /static/5813e1fe28172c54a3126284a2be7046/f723e/probability.png 188w,
+                            /static/5813e1fe28172c54a3126284a2be7046/5892a/probability.png 315w
+                          "
+                          sizes="(max-width: 315px) 100vw, 315px"
+                        />
+                      </span>
+                    </span>
+                  </a>
+                </p>
+                <h4>Team Odds</h4>
+                <p>
+                  <em>Problem</em>: Given 23 candidates, throw coin and hire if
+                  heads. What are the chances of hiring nobody?
+                </p>
+                <p>
+                  <em>Solution</em>: There is only one way to hire nobody - to
+                  throw tails 23 consecutive times. We've already established
+                  that there are 8,388,608 combinations of hiring, so the
+                  chances of hiring nobody is 1/8388608
+                </p>
+                <h3>Independent Events:</h3>
+                <p>
+                  If the outcome of an event doesn't influence the outcome of
+                  another event, they are <em>independent</em>. The probability
+                  of two independent events occurring is the product of the
+                  individual probabilities. A coin toss ending in heds is 1/2
+                  and a die being rolled a 2 is 1/6, so the probability of both
+                  is 1/2 * 1/6 = 1/12.
+                </p>
+                <h4>Backing Up:</h4>
+                <p>
+                  <em>Problem</em>: You need to store data for a year. One disk
+                  has a probability of failing of one in a billion. The other
+                  disk costs 20% less and has a probability of failing of one in
+                  2000. What should you buy?
+                </p>
+                <p>
+                  <em>Solution</em>: If you use three cheap disks, you only lose
+                  the data if all three disks fail. The probability of that
+                  happening is (1/2000)<sup>3</sup> -> 1/8,000,000,000. That
+                  redundancy achieves a lower risk of data loss than the
+                  expensive disk while costing 60% the price.
+                </p>
+                <h3>Mutually Exclusive Events:</h3>
+                <p>
+                  When two events cannot happen simultaneously, they are
+                  <em>mutually exclusive</em>. Probability is calculated by
+                  summing the indidivual probabilities. Rolling a 4 and rolling
+                  an odd are mutually exclusive, so can be calculated by 1/6 +
+                  1/2 = 2/3
+                </p>
+                <h4>Subscription Choice:</h4>
+                <p>
+                  <em>Problem</em>: Your site offers a free, basic, and pro
+                  plan. Random new users have a 70% probability of choosing the
+                  free tier, 10% pro, and 20% basic. What are the chances a new
+                  user will sign up for a paying plan?
+                </p>
+                <p>
+                  <em>Solution</em>: Customer cannot have multiple plans at the
+                  same time, so you sum the probability of both paid plans - 0.2
+                  + 0.1 = 0.3
+                </p>
+                <h3>Complementary Events:</h3>
+                <p>
+                  When two mutually exclusive events cover all possible
+                  outcomes, they are <em>complementary</em>. The sum of
+                  individual probabilities of complementary events is 100%.
+                </p>
+                <h4>Tower Defense:</h4>
+                <p>
+                  <em>Problem</em>: Your castle is defended by 5 towers. Each
+                  tower has a 20% chance of disabling an invader before they
+                  reach the gate. What are the chances of stopping an attacker?
+                </p>
+                <p>
+                  <em>Solution</em>:
+                  <strong
+                    >DO NOT SUM THE PROBABILITIES OF INDEPENDENT EVENTS</strong
+                  >. This is an example of complementary events.
+                </p>
+                <ul>
+                  <li>20% chance of a hit means 80% miss rate.</li>
+                  <li>
+                    Probability of all 5 towers missing is 0.8<sup>5</sup> which
+                    is around 0.33.
+                  </li>
+                  <li>
+                    The count of "all towers miss" is complementary to "at least
+                    one tower hits". The probability of stopping the enemy,
+                    then, is 1 - 0.33 = 0.67.
+                  </li>
+                </ul>
+                <h3>Gambler's Fallacy:</h3>
+                <p>
+                  If you flip a normal coin 10 times and get 10 heads, the 11th
+                  flip is more likely to be tails. <strong>NEVER</strong> assume
+                  that past events affect the outcome of an independent event.
+                </p>
+                <h4>Advanced Probabilities:</h4>
+                <p>
+                  <em>Problem</em>: 23 candidates and the coin toss. AGAIN. What
+                  are the chances of hiring seven people or less?
+                </p>
+                <p>
+                  <em>Solution</em>: Binomial distribution. Type
+                  <em>B(23, 1/2) &#x3C;= 7</em> into Wolfram Alpha to visualize
+                  this.
+                </p>
+                <p>
+                  References:<br />
+                  <em>Discrete Mathematics and Its Applications</em> :
+                  code.energy/rosen<br />
+                  <em>Prof Jeanette Wing's slides on computational thinking</em>
+                  : code.energy/wing
+                </p>
+              </div>
+              <div class="tagsContainer">
+                <a href="../tags/computer%20science/index.html"
+                  ><span>Computer science</span></a
+                ><a href="../tags/computer%20science%20distilled/index.html"
+                  ><span>Computer Science Distilled</span></a
+                ><a href="../tags/logic/index.html"><span>Logic</span></a
+                ><a href="../tags/probability/index.html"
+                  ><span>Probability</span></a
+                ><a href="../tags/counting/index.html"><span>Counting</span></a>
+              </div>
+            </div>
+          </section>
+          <div class="post-suggestionBar">
+            <div class="post-postSuggestion">
+              <a href="../algorithm-design-manual--chapter-ten/index.html"
+                ><button value="prev" aria-label="previous" class="prev-post">
+                  <h3 class="prev-post">
+                    &lt;&lt; Previous:<br />Algorithm Design Manual:<br />How to
+                    Design Algorithms
+                  </h3>
+                </button></a
+              >
+            </div>
+            <div class="post-postSuggestion">
+              <a href="../computer-science-distilled-chapter-ii/index.html"
+                ><button value="next" aria-label="next" class="next-post">
+                  <h3 class="next-post">
+                    &gt;&gt; Next:<br />Computer Science Distilled<br />Complexity
+                  </h3>
+                </button></a
+              >
+            </div>
+          </div>
+          <footer class="footer-wrapper">
+            <div class="footer-text">
+              <span
+                >Notes for Great Good    <span role="img" aria-label="pawprints"
+                  >🐾</span
+                ><a href="https://amyshackles.com/">Amy Shackles</a></span
+              >
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script id="gatsby-script-loader">
+      /*<![CDATA[*/ window.page = {
+        componentChunkName: "component---src-templates-post-jsx",
+        jsonName: "computer-science-distilled-chapter-i-continued-2ea",
+        path: "/Computer-Science-Distilled-Chapter-I-Continued",
+      };
+      window.dataPath =
+        "213/path---computer-science-distilled-chapter-i-continued-2-ea-67d-As3lfh6D8RZ41F6dar2gktarI"; /*]]>*/
+    </script>
+    <script id="gatsby-chunk-mapping">
+      /*<![CDATA[*/ window.___chunkMapping = {
+        app: ["/app-63577178a3bdd725b6eb.js"],
+        "component---src-pages-tags-jsx": [
+          "/component---src-pages-tags-jsx-e522a5598fa2964ee6de.js",
+        ],
+        "component---src-templates-tag-jsx": [
+          "/component---src-templates-tag-jsx-5f637c2edf65bf3f9f1c.js",
+        ],
+        "component---src-templates-post-jsx": [
+          "/component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js",
+        ],
+        "component---src-pages-404-jsx": [
+          "/component---src-pages-404-jsx-095f8c7d93b57e5a6681.js",
+        ],
+        "component---src-pages-blog-jsx": [
+          "/component---src-pages-blog-jsx-316bdf552f6880939952.js",
+        ],
+        "component---src-pages-index-jsx": [
+          "/component---src-pages-index-jsx-89fc494ceffadedf0b62.js",
+        ],
+        "pages-manifest": ["/pages-manifest-e0687b1a66911235678c.js"],
+      }; /*]]>*/
+    </script>
+    <script src="../webpack-runtime-fd7c0e3081b0f1218320.js" async=""></script>
+    <script src="../styles-aa92193d8aa2fe2f8548.js" async=""></script>
+    <script src="../app-63577178a3bdd725b6eb.js" async=""></script>
+    <script src="../1-6c82cfd6aba31a386fde.js" async=""></script>
+    <script
+      src="../component---src-templates-post-jsx-90d047fd0d1ef306b5bf.js"
+      async=""
+    ></script>
+  </body>
+  <!-- Mirrored from notes-for-great-good.netlify.app/computer-science-distilled-chapter-i-continued/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Sep 2021 11:36:53 GMT -->
+</html>

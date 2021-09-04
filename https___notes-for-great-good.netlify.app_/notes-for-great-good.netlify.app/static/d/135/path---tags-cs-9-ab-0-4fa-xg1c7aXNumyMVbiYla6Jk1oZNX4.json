@@ -1,0 +1,80 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/CS9-Mongo-Day-1",
+          "title": "CS9 Mongo Day 1",
+          "tags": ["MongoDB", "CS9"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS9-Mongo-Day-2",
+          "title": "CS9 Mongo Day 2",
+          "tags": ["MongoDB", "CS9"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS9-Mongo-Day-3",
+          "title": "CS9 Mongo Day 3",
+          "tags": ["MongoDB", "CS9"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS9-Mongo-Day-4",
+          "title": "CS9 Mongo Day 4",
+          "tags": ["MongoDB", "CS9"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS9-Auth-I-Guided-Demo-I",
+          "title": "CS9: Auth I",
+          "tags": ["authentication", "CS9"],
+          "subtitle": "Guided Demo I",
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS9-Auth-I-Guided-Demo-II",
+          "title": "CS9: Auth I",
+          "tags": ["authentication", "CS9"],
+          "subtitle": "Guided Demo II",
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS9-Auth-II-Guided-Demo-I",
+          "title": "CS9: Auth II",
+          "tags": ["authentication", "CS9"],
+          "subtitle": "Guided Demo I",
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS9-Auth-II-Guided-Demo-II",
+          "title": "CS9: Auth II",
+          "tags": ["authentication", "CS9"],
+          "subtitle": "Guided Demo II",
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "CS9"
+  }
+}

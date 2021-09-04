@@ -1,0 +1,116 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-One",
+          "title": "Algorithm Design Manual:",
+          "tags": ["algorithms", "Algorithm Design Manual"],
+          "subtitle": "Introduction to Algorithm Design",
+          "chapter": "Chapter One"
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Two",
+          "title": "Algorithm Design Manual:",
+          "tags": [
+            "algorithms",
+            "algorithm analysis",
+            "Algorithm Design Manual"
+          ],
+          "subtitle": "Algorithm Analysis",
+          "chapter": "Chapter Two"
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Three",
+          "title": "Algorithm Design Manual:",
+          "tags": ["algorithms", "data structures", "Algorithm Design Manual"],
+          "subtitle": "Data Structures",
+          "chapter": "Chapter Three"
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Four",
+          "title": "Algorithm Design Manual:",
+          "tags": [
+            "algorithms",
+            "sorting",
+            "searching",
+            "Algorithm Design Manual"
+          ],
+          "subtitle": "Sorting and Searching",
+          "chapter": "Chapter Four"
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Five",
+          "title": "Algorithm Design Manual:",
+          "tags": ["algorithms", "graphs", "Algorithm Design Manual"],
+          "subtitle": "Graph Traversal",
+          "chapter": "Chapter Five"
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Six",
+          "title": "Algorithm Design Manual:",
+          "tags": ["algorithms", "graphs", "Algorithm Design Manual"],
+          "subtitle": "Weighted Graph Algorithms",
+          "chapter": "Chapter Six"
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Seven",
+          "title": "Algorithm Design Manual:",
+          "tags": [
+            "algorithms",
+            "heuristics",
+            "search",
+            "Algorithm Design Manual"
+          ],
+          "subtitle": "Combinatorial Search and Heuristic Methods",
+          "chapter": "Chapter Seven"
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Nine",
+          "title": "Algorithm Design Manual:",
+          "tags": ["algorithms", "NP-complete", "Algorithm Design Manual"],
+          "subtitle": "Intractable Problems and Approximation Algorithms",
+          "chapter": "Chapter Nine"
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Eight",
+          "title": "Algorithm Design Manual:",
+          "tags": [
+            "algorithms",
+            "dynamic programming",
+            "Algorithm Design Manual"
+          ],
+          "subtitle": "Dynamic Programming",
+          "chapter": "Chapter Eight"
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/Algorithm-Design-Manual--Chapter-Ten",
+          "title": "Algorithm Design Manual:",
+          "tags": ["algorithms", "algorithm design", "Algorithm Design Manual"],
+          "subtitle": "How to Design Algorithms",
+          "chapter": "Chapter Ten"
+        }
+      }
+    ],
+    "tagName": "Algorithm Design Manual"
+  }
+}

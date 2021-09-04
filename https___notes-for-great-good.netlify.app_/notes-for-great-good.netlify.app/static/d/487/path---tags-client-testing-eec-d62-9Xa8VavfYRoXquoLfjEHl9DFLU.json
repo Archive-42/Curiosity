@@ -1,0 +1,26 @@
+{
+  "pageContext": {
+    "isCreatedByStatefulCreatePages": false,
+    "posts": [
+      {
+        "frontmatter": {
+          "path": "/CS9-Client-Testing-I",
+          "title": "CS9: Client Testing I",
+          "tags": ["client testing", "testing"],
+          "subtitle": null,
+          "chapter": null
+        }
+      },
+      {
+        "frontmatter": {
+          "path": "/CS9-Client-Testing-II",
+          "title": "CS9: Client Testing II",
+          "tags": ["client testing", "testing"],
+          "subtitle": null,
+          "chapter": null
+        }
+      }
+    ],
+    "tagName": "client testing"
+  }
+}
