@@ -9,7 +9,7 @@
   "author": "Michael Shuff",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/opus": "^0.3.2",
+    "@discordjs/opus": "^0.8.0",
     "chai": "^4.2.0",
     "chai-spies": "^1.0.0",
     "chalk": "^4.1.0",
