@@ -59,7 +59,7 @@
     "babel-traverse": "^6.24.1",
     "babel-types": "^6.24.1",
     "babylon": "^6.17.4",
-    "debug": "^2.6.8",
+    "debug": "^3.1.0",
     "minimatch": "^3.0.4",
     "object.values": "^1.0.4",
     "opticss": "^0.3.0"
