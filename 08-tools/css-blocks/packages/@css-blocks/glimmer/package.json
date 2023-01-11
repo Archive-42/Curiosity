@@ -63,7 +63,7 @@
     "@opticss/template-api": "^0.3.0",
     "@opticss/util": "^0.3.0",
     "@types/glob": "^5.0.30",
-    "debug": "^2.6.8",
+    "debug": "^3.1.0",
     "glimmer-analyzer": "^0.2.0",
     "glob": "^7.1.2",
     "object.values": "^1.0.4"
