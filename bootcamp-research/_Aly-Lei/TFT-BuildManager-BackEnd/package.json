@@ -33,7 +33,7 @@
     "luxon": "^1.25.0",
     "morgan": "~1.9.1",
     "pg": "^8.0.3",
-    "sequelize": "^5.21.7",
+    "sequelize": "^6.28.2",
     "sequelize-cli": "^5.5.1",
     "uuid": "^8.0.0"
   },
